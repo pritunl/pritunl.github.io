@@ -14,7 +14,7 @@ $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
 
   if ($(evt.target).is('img')) {
     screenshot = parseInt(curScreenshot, 10) + 1;
-    if (screenshot > 5) {
+    if (screenshot > 4) {
       screenshot = 1;
     }
     screenshot = screenshot.toString();
