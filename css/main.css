@@ -201,7 +201,7 @@ a:focus {
 }
 
 .intro-screenshots {
-  height: 820px;
+  height: 865px;
   padding-top: 55px;
   background-color: #c52323;
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
@@ -209,7 +209,7 @@ a:focus {
 
 .intro-screenshots .screenshots {
   width: 900px;
-  height: 570px;
+  height: 595px;
   margin: 0 auto;
   display: block;
   box-shadow: 0 0 10px #aaaaaa;
