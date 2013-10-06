@@ -212,7 +212,7 @@ a:focus {
   height: 595px;
   margin: 0 auto;
   display: block;
-  box-shadow: 0 0 10px #aaaaaa;
+  box-shadow: 0 0 5px #222;
 }
 
 .intro-screenshots img {
