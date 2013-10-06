@@ -4,7 +4,7 @@ $('a[href^="#"]').on('click', function(evt) {
         'scrollTop': $(this.hash).offset().top
     }, 750, 'swing', function() {
         window.location.hash = this.hash;
-    });
+    }.bind(this));
 });
 
 $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
