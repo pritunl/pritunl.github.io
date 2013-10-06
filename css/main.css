@@ -82,7 +82,8 @@ a:focus {
 .intro,
 .intro-info,
 .intro-screenshots,
-.intro-install {
+.intro-install,
+.intro-footer {
   background-image: url('../img/background.png');
 }
 
@@ -292,7 +293,6 @@ a:focus {
   color: #fff;
   background-color: #ee3e12;
   text-align: center;
-  background-image: url('../img/background.png');
 }
 
 .intro-footer a {
