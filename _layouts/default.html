@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+
+                     /$$   /$$                         /$$
+                    |__/  | $$                        | $$
+  /$$$$$$   /$$$$$$  /$$ /$$$$$$   /$$   /$$ /$$$$$$$ | $$
+ /$$__  $$ /$$__  $$| $$|_  $$_/  | $$  | $$| $$__  $$| $$
+| $$  \ $$| $$  \__/| $$  | $$    | $$  | $$| $$  \ $$| $$
+| $$  | $$| $$      | $$  | $$ /$$| $$  | $$| $$  | $$| $$
+| $$$$$$$/| $$      | $$  |  $$$$/|  $$$$$$/| $$  | $$| $$
+| $$____/ |__/      |__/   \___/   \______/ |__/  |__/|__/
+| $$
+| $$
+|__/
+
+-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=1024">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu:400,500,700|Fredoka+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <!--[if lt IE 9]>
+    <style>
+    body { margin: 0; height: 100%; }
+    </style>
+    <div class="chromeframe" style="background: #191919; width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 10000;">
+      <p style="color: #ffffff; text-align: center; vertical-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 2em; width: 500px; height: 300px; position: relative; top: 50%; left: 50%; margin-top: -150px; margin-left: -250px; line-height: normal;">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/" style="color: #00a9ff; text-decoration: none;">upgrade your browser</a> to view this webpage.
+      </p>
+    </div>
+    <![endif]-->
+    <a class="github-logo" href="//github.com/zachhuff386/pritunl">
+      <img src="img/github.png" alt="Fork me on GitHub">
+    </a>
+    <div class="navbar navbar-fixed-top">
+      <a class="navbar-brand" href="#intro">
+        pritunl
+      </a>
+      <ul class="nav navbar-nav">
+        <li><a href="demo">Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#screenshots">Screenshots</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="//github.com/zachhuff386/pritunl">Development</a></li>
+      </ul>
+    </div>
+{{ content }}
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-20492194-14', 'zachhuff386.github.io');
+      ga('send', 'pageview');
+    </script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

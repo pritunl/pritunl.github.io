@@ -1,0 +1,307 @@
+body {
+  font-family: arial, helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+a.anchor {
+  position: relative;
+  top: -50px;
+  visibility: hidden;
+  display: block;
+}
+
+a:focus {
+  outline: none;
+}
+
+.title {
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.row {
+  margin: 0;
+  width: 100%;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  min-height: 80px;
+  border-radius: 0;
+  margin-bottom: 0;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
+  padding-right: 50px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.navbar .nav {
+  float: right;
+}
+
+.navbar .navbar-brand {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4.2em;
+  padding: 3px 0 0 22px;
+  max-width: none;
+  color: #1685fc;
+  line-height: 70px;
+  text-shadow: 0 1px 5px rgba(22, 133, 252, 0.2);
+}
+
+.navbar .nav > li > a {
+  font-size: 1.3em;
+  padding: 32px 35px 32px 35px;
+  color: #535353;
+}
+
+.navbar .nav .active a,
+.navbar .nav .active a:focus {
+  background-color: #1a1a1a;
+}
+
+.navbar-nav > .active > a,
+.navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus,
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover {
+  color: #2e2e2e;
+  background-color: transparent;
+}
+
+.github-logo {
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.intro,
+.intro-info,
+.intro-screenshots,
+.intro-install {
+  background-image: url('../img/background.png');
+}
+
+.intro {
+  margin-top: 20px;
+  padding-top: 100px;
+  height: 665px;
+  background-color: #1685fc;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.intro .intro-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 15em;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.intro .intro-label {
+  font-weight: 700;
+  font-size: 2.5em;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.intro .intro-button-group {
+  margin: 45px auto 0 auto;
+  width: 485px;
+}
+
+.intro .intro-button {
+  font-size: 1.4em;
+  letter-spacing: 5px;
+  color: #f0f0f0;
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  text-align: center;
+  width: 220px;
+  text-decoration: none;
+}
+
+.intro .intro-button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.intro .intro-button.first {
+  margin-right: 40px;
+}
+
+.intro-info {
+  height: 730px;
+  background-color: #27c52e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  padding-top: 55px;
+}
+
+.intro-info .features-title,
+.intro-screenshots .screenshots-title {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.3);
+  font-size: 1.2em;
+}
+
+.intro-info .features-boxes {
+  width: 1030px;
+  margin: 0 auto;
+  clear: both;
+}
+
+.intro-info .features-box {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  border-radius: 6px;
+  list-style-type: none;
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  height: 220px;
+}
+
+.intro-info .features-box.last {
+  margin-right: 0;
+}
+
+.intro-info .features-box .title {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #f0f0f0;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 5px;
+}
+
+.intro-info .features-box .description {
+  font-size: 1.2em;
+  padding: 15px;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.intro-screenshots {
+  height: 820px;
+  padding-top: 55px;
+  background-color: #c52323;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.intro-screenshots .screenshots {
+  width: 900px;
+  height: 570px;
+  margin: 0 auto;
+  display: block;
+  box-shadow: 0 0 10px #aaaaaa;
+}
+
+.intro-screenshots img {
+  position: absolute;
+  width: 900px;
+  display: block;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.intro-screenshots img.current {
+  opacity: 1;
+}
+
+.intro-screenshots .buttons {
+  margin: 30px auto 0 auto;
+  width: 140px;
+  white-space: nowrap;
+}
+
+.intro-screenshots .button {
+  background-color: #3f3f3f;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.intro-screenshots .button:hover {
+  background-color: #ffffff;
+}
+
+.intro-screenshots .button:active {
+  background-color: #3f3f3f;
+}
+
+.intro-screenshots .button.current,
+.intro-screenshots .button.current:hover {
+  background-color: #d6d6d6;
+}
+
+.intro-install {
+  height: 1050px;
+  padding-top: 5px;
+  background-color: #5f11b4;
+}
+
+.intro-install .title {
+  margin-top: 75px;
+  font-weight: 700;
+  font-size:  2.5em;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.intro-install pre {
+  padding: 30px 0;
+  margin: 10px auto;
+  width: 550px;
+  color: #ffffff;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.10);
+}
+
+.intro-footer {
+  font-size: 1em;
+  height: 60px;
+  padding-top: 20px;
+  letter-spacing: 1px;
+  color: #fff;
+  background-color: #ee3e12;
+  text-align: center;
+  background-image: url('../img/background.png');
+}
+
+.intro-footer a {
+  color: #000;
+}
+
+.intro-footer a:active,
+.intro-footer a:hover {
+  color: #fff;
+}
+
+
