@@ -319,6 +319,7 @@ a:focus {
   width: 583px;
   white-space: nowrap;
   border-radius: 10px;
+  display: block;
 }
 
 .install-buttons button,
@@ -333,7 +334,6 @@ a:focus {
   border: 0 none;
   background-color: rgba(255, 255, 255, 0.35);
   box-shadow: none;
-  display: block;
 }
 
 .install-buttons button:hover {
