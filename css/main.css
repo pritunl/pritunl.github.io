@@ -262,7 +262,7 @@ a:focus {
 }
 
 .intro-install {
-  height: 1050px;
+  height: 1450px;
   padding-top: 5px;
   background-color: #5f11b4;
 }
@@ -363,7 +363,7 @@ a:focus {
 
 .install-point {
   clear: both;
-  width: 730px;
+  width: 735px;
   padding-top: 30px;
   margin: 0 auto;
 }
@@ -384,7 +384,7 @@ a:focus {
 
 .install-point-description {
   font-weight: bold;
-  width: 670px;
+  width: 675px;
   height: 50px;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 6px;

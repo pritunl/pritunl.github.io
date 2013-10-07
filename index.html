@@ -89,9 +89,9 @@ title: Pritunl
         <h1 class="title">Install</h1>
         <h2 class="install-header">Select vps provider</h2>
         <div class="install-buttons btn-group clearfix">
-            <button type="button" class="btn digital-ocean active"></button>
-            <button type="button" class="btn linode"></button>
-            <button type="button" class="btn amazon-aws"></button>
+          <button type="button" class="btn digital-ocean active"></button>
+          <button type="button" class="btn linode"></button>
+          <button type="button" class="btn amazon-aws"></button>
         </div>
         <div class="instructions">
           <div class="digital-ocean-instructions">
@@ -124,7 +124,7 @@ title: Pritunl
                 <span>4</span>
               </div>
               <div class="install-point-description">
-                Select "Ubuntu 12.04 x64" under "Linux Distributions".
+                Select "Ubuntu 12.04 x32" under "Linux Distributions".
               </div>
             </div>
             <div class="install-point clearfix">
@@ -150,7 +150,7 @@ title: Pritunl
                 <span>1</span>
               </div>
               <div class="install-point-description">
-                Login and click "Create Droplet2".
+                Login and choose the datacenter closet to you for the new server.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -158,7 +158,7 @@ title: Pritunl
                 <span>2</span>
               </div>
               <div class="install-point-description">
-                Enter a hostname for the server.
+                Select "Ubuntu 12.04 LTS" in the distribution menu.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -166,7 +166,7 @@ title: Pritunl
                 <span>3</span>
               </div>
               <div class="install-point-description">
-                Select the region that is closet to you.
+                Enter a root password and click "Rebuild".
               </div>
             </div>
             <div class="install-point clearfix">
@@ -174,7 +174,7 @@ title: Pritunl
                 <span>4</span>
               </div>
               <div class="install-point-description">
-                Select "Ubuntu 12.04 x64" under "Linux Distributions".
+                Select the server in the "Linodes" section.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -182,7 +182,7 @@ title: Pritunl
                 <span>5</span>
               </div>
               <div class="install-point-description">
-                Click "Create Droplet".
+                Click "Boot" to start the server.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -190,7 +190,7 @@ title: Pritunl
                 <span>6</span>
               </div>
               <div class="install-point-description">
-                Login into the server using the password that is emailed to you.
+                Login into the server using the root password.
               </div>
             </div>
           </div>
@@ -200,7 +200,7 @@ title: Pritunl
                 <span>1</span>
               </div>
               <div class="install-point-description">
-                Login and click "Create Droplet3".
+                Login to the AWS Management Console and goto "EC2" page.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -208,7 +208,7 @@ title: Pritunl
                 <span>2</span>
               </div>
               <div class="install-point-description">
-                Enter a hostname for the server.
+                Click "Launch Instance" then select "Quick Launch Wizard".
               </div>
             </div>
             <div class="install-point clearfix">
@@ -216,7 +216,7 @@ title: Pritunl
                 <span>3</span>
               </div>
               <div class="install-point-description">
-                Select the region that is closet to you.
+                Enter a name for the instance.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -224,7 +224,7 @@ title: Pritunl
                 <span>4</span>
               </div>
               <div class="install-point-description">
-                Select "Ubuntu 12.04 x64" under "Linux Distributions".
+                Select "Create New" key pair and enter a name for the new keypair.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -232,7 +232,7 @@ title: Pritunl
                 <span>5</span>
               </div>
               <div class="install-point-description">
-                Click "Create Droplet".
+                Chen "Download" to download the new key pair.
               </div>
             </div>
             <div class="install-point clearfix">
@@ -240,7 +240,39 @@ title: Pritunl
                 <span>6</span>
               </div>
               <div class="install-point-description">
-                Login into the server using the password that is emailed to you.
+                Select "Ubuntu Server 12.04.2 LTS" and click "32 bit".
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>7</span>
+              </div>
+              <div class="install-point-description">
+                Click "Continue" then "Launch". The click "Close" and goto the list of instances.
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>8</span>
+              </div>
+              <div class="install-point-description">
+                Right click the new instance and click "Connect".
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>9</span>
+              </div>
+              <div class="install-point-description">
+                Click "Connect with a standalone SSH Client".
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>10</span>
+              </div>
+              <div class="install-point-description">
+                 Follow the instructions to login.
               </div>
             </div>
           </div>
