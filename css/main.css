@@ -393,3 +393,8 @@ a:focus {
   padding: 13px;
   float: right;
 }
+
+.linode-instructions,
+.amazon-aws-instructions {
+  display: none;
+}

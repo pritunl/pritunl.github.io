@@ -42,3 +42,30 @@ $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
   $('.intro-screenshots img.current').removeClass('current');
   $('.intro-screenshots img.screenshot' + screenshot).addClass('current');
 });
+
+$('.install-buttons button').click(function(evt) {
+  $('.install-buttons button').removeClass('active');
+  $(this).addClass('active');
+
+  if ($(this).hasClass('digital-ocean')) {
+    $('.instructions').fadeOut(450, function() {
+      $('.linode-instructions, .amazon-aws-instructions').hide();
+      $('.digital-ocean-instructions').show();
+      $('.instructions').fadeIn(450);
+    });
+  }
+  else if ($(this).hasClass('linode')) {
+    $('.instructions').fadeOut(450, function() {
+      $('.digital-ocean-instructions, .amazon-aws-instructions').hide();
+      $('.linode-instructions').show();
+      $('.instructions').fadeIn(450);
+    });
+  }
+  else if ($(this).hasClass('amazon-aws')) {
+    $('.instructions').fadeOut(450, function() {
+      $('.digital-ocean-instructions, .linode-instructions').hide();
+      $('.amazon-aws-instructions').show();
+      $('.instructions').fadeIn(450);
+    });
+  }
+});
