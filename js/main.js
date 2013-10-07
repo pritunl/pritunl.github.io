@@ -1,3 +1,5 @@
+$('[data-toggle="tooltip"]').tooltip();
+
 $('a[href^="#"]').on('click', function(evt) {
     evt.preventDefault();
     $('html, body').stop().animate({

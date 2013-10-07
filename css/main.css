@@ -337,6 +337,13 @@ a:focus {
   box-shadow: none;
 }
 
+.install-buttons button .label {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #5f3496;
+}
+
 .install-buttons button:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
