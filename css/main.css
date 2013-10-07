@@ -14,7 +14,8 @@ a:focus {
   outline: none;
 }
 
-.title {
+.title,
+.header {
   font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -358,4 +359,37 @@ a:focus {
 
 .install-buttons .amazonAws {
   background-image: url('../img/amazon-aws.png');
+}
+
+.install-point {
+  clear: both;
+  width: 730px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+
+.install-point-label {
+  width: 50px;
+  height: 50px;
+  padding-top: 7px;
+  border-radius: 50%;
+  color: #f0f0f0;
+  font-size: 1.8em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
+  vertical-align: top;
+  float: left;
+}
+
+.install-point-description {
+  font-weight: bold;
+  width: 670px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  color: #f0f0f0;
+  font-size: 1.2em;
+  padding: 13px;
+  float: right;
 }

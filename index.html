@@ -23,7 +23,7 @@ title: Pritunl
         <div class="features-title">
           <h1 class="title">Features</h1>
         </div>
-        <ul class="features-boxes">
+        <ul class="features-boxes clearfix">
           <li class="features-box">
             <div class="title">Simple web interface</div>
             <p class="description">
@@ -54,7 +54,7 @@ title: Pritunl
               All traffic between your computer and the vpn server is encrypted. The traffic can't be monitored or exploited by your ISP/college or while on public wifi.
             </p>
           </li>
-          <li class="features-box">
+          <li class="features-box last">
             <div class="title">Bypass Censors</div>
             <p class="description">
               Bypass censored websites and blocked ports. Websites that block access to countries outside the US can also be accessed if your VPN server is located in the US.
@@ -88,10 +88,59 @@ title: Pritunl
       <div class="intro-install">
         <h1 class="title">Install</h1>
         <h2 class="install-header">Select vps provider</h2>
-        <div class="install-buttons btn-group">
+        <div class="install-buttons btn-group clearfix">
             <button type="button" class="btn digitalOcean active"></button>
             <button type="button" class="btn linode"></button>
             <button type="button" class="btn amazonAws"></button>
+        </div>
+
+        <div class="install-point clearfix">
+          <div class="install-point-label header">
+            <span>1</span>
+          </div>
+          <div class="install-point-description">
+            Login and click "Create Droplet".
+          </div>
+        </div>
+        <div class="install-point clearfix">
+          <div class="install-point-label header">
+            <span>2</span>
+          </div>
+          <div class="install-point-description">
+            Enter a hostname for the server.
+          </div>
+        </div>
+        <div class="install-point clearfix">
+          <div class="install-point-label header">
+            <span>3</span>
+          </div>
+          <div class="install-point-description">
+            Select the region that is closet to you.
+          </div>
+        </div>
+        <div class="install-point clearfix">
+          <div class="install-point-label header">
+            <span>4</span>
+          </div>
+          <div class="install-point-description">
+            Select "Ubuntu 12.04 x64" under "Linux Distributions".
+          </div>
+        </div>
+        <div class="install-point clearfix">
+          <div class="install-point-label header">
+            <span>5</span>
+          </div>
+          <div class="install-point-description">
+            Click "Create Droplet".
+          </div>
+        </div>
+        <div class="install-point clearfix">
+          <div class="install-point-label header">
+            <span>6</span>
+          </div>
+          <div class="install-point-description">
+            Login into the server using the password that is emailed to you.
+          </div>
         </div>
       </div>
     </div>
