@@ -349,7 +349,7 @@ a:focus {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.install-buttons .digitalOcean {
+.install-buttons .digital-ocean {
   background-image: url('../img/digital-ocean.png');
 }
 
@@ -357,7 +357,7 @@ a:focus {
   background-image: url('../img/linode.png');
 }
 
-.install-buttons .amazonAws {
+.install-buttons .amazon-aws {
   background-image: url('../img/amazon-aws.png');
 }
 
