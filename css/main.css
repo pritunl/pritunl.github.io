@@ -321,10 +321,10 @@ a:focus {
   border-radius: 10px;
 }
 
-.btn-group button,
-.btn-group button:hover,
-.btn-group button.active,
-.btn-group button.active:hover {
+.install-buttons button,
+.install-buttons button:hover,
+.install-buttons button.active,
+.install-buttons button.active:hover {
   height: 80px;
   width: 195px;
   background-repeat: no-repeat;
@@ -335,26 +335,26 @@ a:focus {
   box-shadow: none;
 }
 
-.btn-group button:hover {
+.install-buttons button:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
 
-.btn-group button.active {
+.install-buttons button.active {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.btn-group button.active:hover {
+.install-buttons button.active:hover {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.btn-group .digitalOcean {
+.install-buttons .digitalOcean {
   background-image: url('../img/digital-ocean.png');
 }
 
-.btn-group .linode {
+.install-buttons .linode {
   background-image: url('../img/linode.png');
 }
 
-.btn-group .amazonAws {
+.install-buttons .amazonAws {
   background-image: url('../img/amazon-aws.png');
 }
