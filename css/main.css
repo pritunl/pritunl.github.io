@@ -419,3 +419,12 @@ a:focus {
 .centos-instructions {
   display: none;
 }
+
+.install-point-description pre {
+  position: relative;
+  top: -2px;
+  display: inline;
+  padding: 4px 4px 2px 4px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
