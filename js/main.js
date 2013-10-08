@@ -48,26 +48,26 @@ $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
 $('.install-buttons button').click(function(evt) {
   $('.install-buttons button').removeClass('active');
   $(this).addClass('active');
-
-  if ($(this).hasClass('digital-ocean')) {
+  var changeInstructions = function(page) {
     $('.instructions').fadeOut(450, function() {
-      $('.linode-instructions, .amazon-aws-instructions').hide();
-      $('.digital-ocean-instructions').show();
+      var pages = [
+        '.digital-ocean-instructions',
+        '.linode-instructions',
+        '.amazon-aws-instructions'
+      ];
+      pages.splice(pages.indexOf(page), 1);
+      $(pages.join(', ')).hide();
+      $(page).show();
       $('.instructions').fadeIn(450);
     });
+  };
+  if ($(this).hasClass('digital-ocean')) {
+    changeInstructions('.digital-ocean-instructions');
   }
   else if ($(this).hasClass('linode')) {
-    $('.instructions').fadeOut(450, function() {
-      $('.digital-ocean-instructions, .amazon-aws-instructions').hide();
-      $('.linode-instructions').show();
-      $('.instructions').fadeIn(450);
-    });
+    changeInstructions('.linode-instructions');
   }
   else if ($(this).hasClass('amazon-aws')) {
-    $('.instructions').fadeOut(450, function() {
-      $('.digital-ocean-instructions, .linode-instructions').hide();
-      $('.amazon-aws-instructions').show();
-      $('.instructions').fadeIn(450);
-    });
+    changeInstructions('.amazon-aws-instructions');
   }
 });
