@@ -327,6 +327,15 @@ title: Pritunl
                 <pre>apt-get install -y pritunl</pre>
               </div>
             </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>5</span>
+              </div>
+              <div class="install-point-description">
+                <span>Upgrade packages</span>
+                <pre>apt-get upgrade -y</pre>
+              </div>
+            </div>
           </div>
           <div class="arch-instructions">
             <div class="install-point clearfix">
@@ -334,7 +343,8 @@ title: Pritunl
                 <span>1</span>
               </div>
               <div class="install-point-description">
-                Arch instructions.
+                <span>Download</span>
+                <pre>curl -O https://aur.archlinux.org/packages/pa/package-query/package-query.tar.gz</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -342,7 +352,98 @@ title: Pritunl
                 <span>2</span>
               </div>
               <div class="install-point-description">
-                Arch instructions.
+                <span>Download</span>
+                <pre>curl -O https://aur.archlinux.org/packages/ya/yaourt/yaourt.tar.gz</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>3</span>
+              </div>
+              <div class="install-point-description">
+                <span>Extract archive</span>
+                <pre>tar zxf package-query.tar.gz</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>4</span>
+              </div>
+              <div class="install-point-description">
+                <span>Extract archive</span>
+                <pre>tar zxf yaourt.tar.gz</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>5</span>
+              </div>
+              <div class="install-point-description">
+                <span>Change directory</span>
+                <pre>cd package-query</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>6</span>
+              </div>
+              <div class="install-point-description">
+                <span>Build and install package-query</span>
+                <pre>makepkg -si --asroot</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>7</span>
+              </div>
+              <div class="install-point-description">
+                <span>Change directory</span>
+                <pre>cd ../yaourt</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>8</span>
+              </div>
+              <div class="install-point-description">
+                <span>Build and install yaourt</span>
+                <pre>makepkg -si --asroot</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>9</span>
+              </div>
+              <div class="install-point-description">
+                <span>Install pritunl</span>
+                <pre>yaourt -S pritunl</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>10</span>
+              </div>
+              <div class="install-point-description">
+                <span>Start pritunl service</span>
+                <pre>systemctl start pritunl.service</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>11</span>
+              </div>
+              <div class="install-point-description">
+                <span>Enable pritunl service to autostart</span>
+                <pre>systemctl enable pritunl.service</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>12</span>
+              </div>
+              <div class="install-point-description">
+                <span>Upgrade packages</span>
+                <pre>yaourt -Syua</pre>
               </div>
             </div>
           </div>
