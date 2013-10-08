@@ -428,3 +428,7 @@ a:focus {
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+.conf-instructions .install-point:first-child {
+  padding-top: 0;
+}
