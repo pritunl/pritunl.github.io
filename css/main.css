@@ -262,8 +262,8 @@ a:focus {
 }
 
 .intro-install {
-  height: 1450px;
   padding-top: 5px;
+  padding-bottom: 75px;
   background-color: #5f11b4;
 }
 
@@ -368,6 +368,18 @@ a:focus {
   background-image: url('../img/amazon-aws.png');
 }
 
+.install-buttons .ubuntu {
+  background-image: url('../img/ubuntu.png');
+}
+
+.install-buttons .arch {
+  background-image: url('../img/arch.png');
+}
+
+.install-buttons .centos {
+  background-image: url('../img/centos.png');
+}
+
 .install-point {
   clear: both;
   width: 735px;
@@ -402,6 +414,8 @@ a:focus {
 }
 
 .linode-instructions,
-.amazon-aws-instructions {
+.amazon-aws-instructions,
+.arch-instructions,
+.centos-instructions {
   display: none;
 }

@@ -46,28 +46,47 @@ $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
 });
 
 $('.install-buttons button').click(function(evt) {
-  $('.install-buttons button').removeClass('active');
+  $(this).siblings().removeClass('active');
   $(this).addClass('active');
-  var changeInstructions = function(page) {
-    $('.instructions').fadeOut(450, function() {
-      var pages = [
-        '.digital-ocean-instructions',
-        '.linode-instructions',
-        '.amazon-aws-instructions'
-      ];
+  var changeInstructions = function(group, page) {
+    $(group).fadeOut(450, function() {
+      var pages;
+      if (group === '.vps-instructions') {
+        pages = [
+          '.digital-ocean-instructions',
+          '.linode-instructions',
+          '.amazon-aws-instructions'
+        ];
+      }
+      else {
+        pages = [
+          '.ubuntu-instructions',
+          '.arch-instructions',
+          '.centos-instructions'
+        ];
+      }
       pages.splice(pages.indexOf(page), 1);
       $(pages.join(', ')).hide();
       $(page).show();
-      $('.instructions').fadeIn(450);
+      $(group).fadeIn(450);
     });
   };
   if ($(this).hasClass('digital-ocean')) {
-    changeInstructions('.digital-ocean-instructions');
+    changeInstructions('.vps-instructions', '.digital-ocean-instructions');
   }
   else if ($(this).hasClass('linode')) {
-    changeInstructions('.linode-instructions');
+    changeInstructions('.vps-instructions', '.linode-instructions');
   }
   else if ($(this).hasClass('amazon-aws')) {
-    changeInstructions('.amazon-aws-instructions');
+    changeInstructions('.vps-instructions', '.amazon-aws-instructions');
+  }
+  else if ($(this).hasClass('ubuntu')) {
+    changeInstructions('.distro-instructions', '.ubuntu-instructions');
+  }
+  else if ($(this).hasClass('arch')) {
+    changeInstructions('.distro-instructions', '.arch-instructions');
+  }
+  else if ($(this).hasClass('centos')) {
+    changeInstructions('.distro-instructions', '.centos-instructions');
   }
 });
