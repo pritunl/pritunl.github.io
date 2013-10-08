@@ -317,7 +317,7 @@ a:focus {
 
 .install-buttons {
   margin: 0 auto;
-  width: 583px;
+  width: 585px;
   white-space: nowrap;
   border-radius: 10px;
   display: block;
@@ -328,7 +328,7 @@ a:focus {
 .install-buttons button.active,
 .install-buttons button.active:hover {
   height: 80px;
-  width: 195px;
+  width: 33.333333%;
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 6px;
