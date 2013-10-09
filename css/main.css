@@ -84,6 +84,7 @@ a:focus {
 .intro-info,
 .intro-screenshots,
 .intro-install,
+.intro-faq,
 .intro-footer {
   background-image: url('../img/background.png');
 }
@@ -148,7 +149,8 @@ a:focus {
 }
 
 .intro-info .features-title,
-.intro-screenshots .screenshots-title {
+.intro-screenshots .screenshots-title,
+.intro-faq .faq-title {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 15px;
@@ -446,4 +448,11 @@ a:focus {
 
 .intro-install a {
   color: #9cc7fd;
+}
+
+.intro-faq {
+  height: 865px;
+  padding-top: 55px;
+  background-color: #e6380d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
