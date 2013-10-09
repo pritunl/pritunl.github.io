@@ -443,3 +443,7 @@ a:focus {
 .conf-instructions .install-point:first-child {
   padding-top: 0;
 }
+
+.intro-install a {
+  color: #9cc7fd;
+}
