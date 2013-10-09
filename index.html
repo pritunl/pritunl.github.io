@@ -599,7 +599,44 @@ title: Pritunl
                 <span>1</span>
               </div>
               <div class="install-point-description">
-                <span>Ubuntu instructions</span>
+                <span>Install openvpn</span>
+                <pre>sudo apt-get install openvpn</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>2</span>
+              </div>
+              <div class="install-point-description">
+                <span>Change to the directory containing the downloaded key archive</span>
+                <pre>cd ~/Downloads</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>3</span>
+              </div>
+              <div class="install-point-description">
+                <span>Extract the user files</span>
+                <pre>sudo tar xf user*.tar -C /etc/openvpn</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>4</span>
+              </div>
+              <div class="install-point-description">
+                <span>Change the ovpn file extension</span>
+                <pre>sudo rename 's/\.ovpn$/.conf/' /etc/openvpn/*.ovpn</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>5</span>
+              </div>
+              <div class="install-point-description">
+                <span>Restart the openvpn service to connect</span>
+                <pre>sudo /etc/init.d/openvpn restart</pre>
               </div>
             </div>
           </div>
