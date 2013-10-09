@@ -368,7 +368,8 @@ a:focus {
   background-image: url('../img/amazon-aws.png');
 }
 
-.install-buttons .ubuntu {
+.install-buttons .ubuntu,
+.install-buttons .ubuntu-client {
   background-image: url('../img/ubuntu.png');
 }
 
@@ -378,6 +379,14 @@ a:focus {
 
 .install-buttons .centos {
   background-image: url('../img/centos.png');
+}
+
+.install-buttons .windows-client {
+  background-image: url('../img/windows.png');
+}
+
+.install-buttons .osx-client {
+  background-image: url('../img/osx.png');
 }
 
 .install-point {
