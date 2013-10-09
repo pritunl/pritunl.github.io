@@ -416,7 +416,9 @@ a:focus {
 .linode-instructions,
 .amazon-aws-instructions,
 .arch-instructions,
-.centos-instructions {
+.centos-instructions,
+.windows-client-instructions,
+.osx-client-instructions {
   display: none;
 }
 
