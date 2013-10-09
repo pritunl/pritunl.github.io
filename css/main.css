@@ -87,6 +87,7 @@ a:focus {
 .intro-faq,
 .intro-footer {
   background-image: url('../img/background.png');
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .intro {
@@ -94,7 +95,6 @@ a:focus {
   padding-top: 100px;
   height: 665px;
   background-color: #1685fc;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .intro .intro-title {
@@ -144,7 +144,6 @@ a:focus {
 .intro-info {
   height: 730px;
   background-color: #27c52e;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   padding-top: 55px;
 }
 
@@ -208,7 +207,6 @@ a:focus {
   height: 865px;
   padding-top: 55px;
   background-color: #c52323;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
 
 .intro-screenshots .screenshots {
@@ -454,5 +452,4 @@ a:focus {
   height: 865px;
   padding-top: 55px;
   background-color: #e6380d;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
 }
