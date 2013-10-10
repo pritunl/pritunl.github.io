@@ -93,7 +93,7 @@ a:focus {
 .intro {
   margin-top: 20px;
   padding-top: 100px;
-  height: 665px;
+  padding-bottom: 110px;
   background-color: #1685fc;
 }
 
@@ -142,9 +142,9 @@ a:focus {
 }
 
 .intro-info {
-  height: 730px;
   background-color: #27c52e;
   padding-top: 55px;
+  padding-bottom: 90px;
 }
 
 .intro-info .features-title,
@@ -204,8 +204,8 @@ a:focus {
 }
 
 .intro-screenshots {
-  height: 865px;
   padding-top: 55px;
+  padding-bottom: 80px;
   background-color: #c52323;
 }
 
@@ -299,8 +299,8 @@ a:focus {
 
 .intro-footer {
   font-size: 1em;
-  height: 60px;
   padding-top: 20px;
+  padding-bottom: 20px;
   letter-spacing: 1px;
   color: #fff;
   background-color: #0c9791;
