@@ -287,7 +287,8 @@ a:focus {
   font-size:  1.9em;
 }
 
-.intro-install pre {
+.intro-install pre,
+.intro-faq pre {
   padding: 30px 0;
   margin: 10px auto;
   width: 550px;
@@ -389,14 +390,16 @@ a:focus {
   background-image: url('../img/osx.png');
 }
 
-.install-point {
+.install-point,
+.faq-point {
   clear: both;
   width: 753px;
   padding-top: 30px;
   margin: 0 auto;
 }
 
-.install-point-label {
+.install-point-label,
+.faq-point-label {
   width: 50px;
   height: 50px;
   padding-top: 7px;
@@ -410,16 +413,30 @@ a:focus {
   float: left;
 }
 
-.install-point-description {
+.install-point-description,
+.faq-point-description {
   font-weight: bold;
   width: 690px;
-  height: 50px;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 6px;
   color: #f0f0f0;
   font-size: 1.2em;
   padding: 13px;
   float: right;
+}
+
+.question .faq-point-description {
+  font-size: 1.8em;
+  padding: 8px 13px;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.answer {
+  padding-top: 10px;
+}
+
+.answer .faq-point-label {
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 .linode-instructions,
@@ -431,7 +448,8 @@ a:focus {
   display: none;
 }
 
-.install-point-description pre {
+.install-point-description pre,
+.faq-point-description pre {
   position: relative;
   top: -2px;
   display: inline;
@@ -440,7 +458,8 @@ a:focus {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.conf-instructions .install-point:first-child {
+.conf-instructions .install-point:first-child,
+.faq .faq-point:first-child {
   padding-top: 0;
 }
 
@@ -449,7 +468,7 @@ a:focus {
 }
 
 .intro-faq {
-  height: 865px;
   padding-top: 55px;
+  padding-bottom: 75px;
   background-color: #e6380d;
 }
