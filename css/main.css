@@ -81,7 +81,7 @@ a:focus {
 }
 
 .intro,
-.intro-info,
+.intro-features,
 .intro-screenshots,
 .intro-install,
 .intro-faq,
@@ -141,13 +141,13 @@ a:focus {
   margin-right: 40px;
 }
 
-.intro-info {
+.intro-features {
   background-color: #27c52e;
   padding-top: 55px;
   padding-bottom: 90px;
 }
 
-.intro-info .features-title,
+.intro-features .features-title,
 .intro-screenshots .screenshots-title,
 .intro-faq .faq-title {
   margin: 0 auto;
@@ -158,13 +158,13 @@ a:focus {
   font-size: 1.2em;
 }
 
-.intro-info .features-boxes {
+.intro-features .features-boxes {
   width: 1030px;
   margin: 0 auto;
   clear: both;
 }
 
-.intro-info .features-box {
+.intro-features .features-box {
   font-weight: 700;
   letter-spacing: 1px;
   color: #f0f0f0;
@@ -180,11 +180,11 @@ a:focus {
   height: 220px;
 }
 
-.intro-info .features-box.last {
+.intro-features .features-box.last {
   margin-right: 0;
 }
 
-.intro-info .features-box .title {
+.intro-features .features-box .title {
   font-weight: 700;
   font-size: 1.5em;
   color: #f0f0f0;
@@ -196,7 +196,7 @@ a:focus {
   padding: 5px;
 }
 
-.intro-info .features-box .description {
+.intro-features .features-box .description {
   font-size: 1.2em;
   padding: 15px;
   color: #f0f0f0;
