@@ -453,13 +453,76 @@ title: Pritunl
                 <span>1</span>
               </div>
               <div class="install-point-description">
+                <span>Install devel packages</span>
+                <pre>yum install gcc make openssl-devel lzo-devel pam-devel</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>2</span>
+              </div>
+              <div class="install-point-description">
+                <span>Download source</span>
+                <pre>wget http://swupdate.openvpn.org/community/releases/openvpn-2.3.2.tar.gz</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>3</span>
+              </div>
+              <div class="install-point-description">
+                <span>Extract openvpn source</span>
+                <pre>tar zxf openvpn-2.3.2.tar.gz</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>4</span>
+              </div>
+              <div class="install-point-description">
+                <span>Change to source directory</span>
+                <pre>cd openvpn-2.3.2</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>5</span>
+              </div>
+              <div class="install-point-description">
+                <span>Configure openvpn source</span>
+                <pre>./configure</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>6</span>
+              </div>
+              <div class="install-point-description">
+                <span>Build openvpn</span>
+                <pre>make</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>7</span>
+              </div>
+              <div class="install-point-description">
+                <span>Install openvpn</span>
+                <pre>make install</pre>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>8</span>
+              </div>
+              <div class="install-point-description">
                 <span>Install python easy_install</span>
                 <pre>yum install python-setuptools</pre>
               </div>
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>2</span>
+                <span>9</span>
               </div>
               <div class="install-point-description">
                 <span>Install python-pip</span>
@@ -468,7 +531,7 @@ title: Pritunl
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>3</span>
+                <span>10</span>
               </div>
               <div class="install-point-description">
                 <span>Install importlib if python2.7 is not installed</span>
@@ -477,7 +540,7 @@ title: Pritunl
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>4</span>
+                <span>11</span>
               </div>
               <div class="install-point-description">
                 <span>Install pritunl</span>
@@ -486,7 +549,7 @@ title: Pritunl
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>5</span>
+                <span>12</span>
               </div>
               <div class="install-point-description">
                 <span>Start pritunl service</span>
