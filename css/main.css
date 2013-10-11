@@ -28,7 +28,8 @@ a:focus {
 .navbar {
   width: 100%;
   background-color: #fff;
-  min-height: 80px;
+  height: 80px;
+  overflow-y: hidden;
   border-radius: 0;
   margin-bottom: 0;
   border-bottom: 3px solid rgba(0, 0, 0, 0.4);
