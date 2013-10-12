@@ -46,7 +46,7 @@ a:focus {
 .navbar .navbar-brand {
   font-family: 'Fredoka One', cursive;
   font-size: 4.2em;
-  padding: 3px 0 0 22px;
+  padding: 0 0 0 22px;
   max-width: none;
   color: #1685fc;
   line-height: 70px;
