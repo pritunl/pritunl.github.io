@@ -457,6 +457,7 @@ a:focus {
   padding: 4px 4px 2px 4px;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
 }
 
 .conf-instructions .install-point:first-child,
