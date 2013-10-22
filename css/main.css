@@ -48,9 +48,32 @@ a:focus {
   font-size: 4.2em;
   padding: 3px 0 0 22px;
   max-width: none;
-  color: #1685fc;
   line-height: 70px;
+}
+
+.navbar .navbar-brand.blue {
+  color: #1685fc;
   text-shadow: 0 1px 5px rgba(22, 133, 252, 0.2);
+}
+
+.navbar .navbar-brand.green {
+  color: #27c52e;
+  text-shadow: 0 1px 5px rgba(39, 197, 46, 0.2);
+}
+
+.navbar .navbar-brand.red {
+  color: #c52323;
+  text-shadow: 0 1px 5px rgba(197, 35, 35, 0.2);
+}
+
+.navbar .navbar-brand.purple {
+  color: #5f11b4;
+  text-shadow: 0 1px 5px rgba(95, 17, 180, 0.2);
+}
+
+.navbar .navbar-brand.orange {
+  color: #e6380d;
+  text-shadow: 0 1px 5px rgba(230, 56, 13, 0.2);
 }
 
 .navbar .nav > li > a {

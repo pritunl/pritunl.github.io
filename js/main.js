@@ -1,5 +1,30 @@
 $('[data-toggle="tooltip"]').tooltip();
 
+$(window).scroll(function(evt) {
+  var scrollTop = $(this).scrollTop();
+
+  if (scrollTop >= $('#faq').offset().top) {
+    $('.navbar-brand').removeClass('blue green red purple');
+    $('.navbar-brand').addClass('orange');
+  }
+  else if (scrollTop >= $('#install').offset().top) {
+    $('.navbar-brand').removeClass('blue green red orange');
+    $('.navbar-brand').addClass('purple');
+  }
+  else if (scrollTop >= $('#screenshots').offset().top) {
+    $('.navbar-brand').removeClass('blue green purple orange');
+    $('.navbar-brand').addClass('red');
+  }
+  else if (scrollTop >= $('#features').offset().top) {
+    $('.navbar-brand').removeClass('blue red purple orange');
+    $('.navbar-brand').addClass('green');
+  }
+  else {
+    $('.navbar-brand').removeClass('green red purple orange');
+    $('.navbar-brand').addClass('blue');
+  }
+});
+
 $('a[href^="#"]').on('click', function(evt) {
     evt.preventDefault();
     $('html, body').stop().animate({
