@@ -49,6 +49,10 @@ a:focus {
   padding: 3px 0 0 22px;
   max-width: none;
   line-height: 70px;
+  -webkit-transition: color 500ms, text-shadow 500ms;
+  -moz-transition: color 500ms, text-shadow 500ms;
+  -o-transition: color 500ms, text-shadow 500ms;
+  transition: color 500ms, text-shadow 500ms;
 }
 
 .navbar .navbar-brand.blue {
