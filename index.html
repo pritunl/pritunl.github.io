@@ -652,9 +652,60 @@ title: Pritunl - Simple self-hosted OpenVPN server
               <span>Click "Start Server"</span>
             </div>
           </div>
+        </div>
+        <h2 class="install-header">Enable optional two-step authentication</h2>
+        <div class="conf-instructions">
           <div class="install-point clearfix">
             <div class="install-point-label header">
-              <span>11</span>
+              <span>1</span>
+            </div>
+            <div class="install-point-description">
+              <span>Goto the "Servers" tab</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>2</span>
+            </div>
+            <div class="install-point-description">
+              <span>Click "Stop Server" if it is running</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>3</span>
+            </div>
+            <div class="install-point-description">
+              <span>Click on the servers name to open the server settings</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>4</span>
+            </div>
+            <div class="install-point-description">
+              <span>Click "Enable Two-Step Authentication"</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>5</span>
+            </div>
+            <div class="install-point-description">
+              <span>Click "Save" to save the server settings</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>6</span>
+            </div>
+            <div class="install-point-description">
+              <span>Click "Start Server"</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>7</span>
             </div>
             <div class="install-point-description">
               <span>Goto the "Users" tab</span>
@@ -662,10 +713,50 @@ title: Pritunl - Simple self-hosted OpenVPN server
           </div>
           <div class="install-point clearfix">
             <div class="install-point-label header">
+              <span>8</span>
+            </div>
+            <div class="install-point-description">
+              <span>Click the QR-Code icon to get the two-step authentication key</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>9</span>
+            </div>
+            <div class="install-point-description">
+              <span>Install "Google Authenticator" on a mobile device</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>10</span>
+            </div>
+            <div class="install-point-description">
+              <span>Open "Google Authenticator" and click "Set up account"</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>11</span>
+            </div>
+            <div class="install-point-description">
+              <span>Select "Scan a barcode" or "Enter provided key"</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
               <span>12</span>
             </div>
             <div class="install-point-description">
-              <span>Click the icon on the far right of the user created early to download the key archive</span>
+              <span>Scan the barcode or enter the key in the "Two-Step Authentication Key" dialog</span>
+            </div>
+          </div>
+          <div class="install-point clearfix">
+            <div class="install-point-label header">
+              <span>13</span>
+            </div>
+            <div class="install-point-description">
+              <span>Use the authenticator code as the password when connecting to the vpn server</span>
             </div>
           </div>
         </div>
@@ -682,13 +773,29 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>1</span>
               </div>
               <div class="install-point-description">
+                <span>Goto the "Users" tab</span>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>2</span>
+              </div>
+              <div class="install-point-description">
+                <span>Click the icon on the far right of the user created early to download the key archive</span>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>3</span>
+              </div>
+              <div class="install-point-description">
                 <span>Install openvpn</span>
                 <pre>sudo apt-get install openvpn</pre>
               </div>
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>2</span>
+                <span>4</span>
               </div>
               <div class="install-point-description">
                 <span>Change to the directory containing the downloaded key archive</span>
@@ -697,7 +804,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>3</span>
+                <span>5</span>
               </div>
               <div class="install-point-description">
                 <span>Extract the user files</span>
@@ -706,7 +813,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>4</span>
+                <span>6</span>
               </div>
               <div class="install-point-description">
                 <span>Change the ovpn file extension</span>
@@ -715,7 +822,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>5</span>
+                <span>7</span>
               </div>
               <div class="install-point-description">
                 <span>Restart the openvpn service to connect</span>
@@ -729,7 +836,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>1</span>
               </div>
               <div class="install-point-description">
-                <span>Download the <a href="http://swupdate.openvpn.net/downloads/openvpn-client.msi">OpenVPN Desktop Client</a></span>
+                <span>Goto the "Users" tab</span>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -737,7 +844,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>2</span>
               </div>
               <div class="install-point-description">
-                <span>Run the installer to install the client</span>
+                <span>Click the icon on the far right of the user created early to download the key archive</span>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -745,7 +852,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>3</span>
               </div>
               <div class="install-point-description">
-                <span>Extract the client files from the downloaded key archive using <a href="http://www.7-zip.org/">7-Zip</a></span>
+                <span>Download the <a href="http://swupdate.openvpn.net/downloads/openvpn-client.msi">OpenVPN Desktop Client</a></span>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -753,7 +860,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>4</span>
               </div>
               <div class="install-point-description">
-                <span>Launch the OpenVPN Client</span>
+                <span>Run the installer to install the client</span>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -761,7 +868,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>5</span>
               </div>
               <div class="install-point-description">
-                <span>Click the "+" button next to "Connection Profiles"</span>
+                <span>Extract the client files from the downloaded key archive using <a href="http://www.7-zip.org/">7-Zip</a></span>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -769,7 +876,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>6</span>
               </div>
               <div class="install-point-description">
-                <span>Select "Local file" and click "Import"</span>
+                <span>Launch the OpenVPN Client</span>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -777,12 +884,28 @@ title: Pritunl - Simple self-hosted OpenVPN server
                 <span>7</span>
               </div>
               <div class="install-point-description">
-                <span>Browse to the directory containing the extracted client files and open the ovpn file</span>
+                <span>Click the "+" button next to "Connection Profiles"</span>
               </div>
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
                 <span>8</span>
+              </div>
+              <div class="install-point-description">
+                <span>Select "Local file" and click "Import"</span>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>9</span>
+              </div>
+              <div class="install-point-description">
+                <span>Browse to the directory containing the extracted client files and open the ovpn file</span>
+              </div>
+            </div>
+            <div class="install-point clearfix">
+              <div class="install-point-label header">
+                <span>10</span>
               </div>
               <div class="install-point-description">
                 <span>Click "Save" then click on the new profile under "Connection Profiles" to connect</span>
