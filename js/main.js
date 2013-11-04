@@ -41,7 +41,7 @@ $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
 
   if ($(evt.target).is('img')) {
     screenshot = parseInt(curScreenshot, 10) + 1;
-    if (screenshot > 4) {
+    if (screenshot > 5) {
       screenshot = 1;
     }
     screenshot = screenshot.toString();
@@ -57,6 +57,9 @@ $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
   }
   else if ($(evt.target).hasClass('screenshot4')) {
     screenshot = '4';
+  }
+  else if ($(evt.target).hasClass('screenshot5')) {
+    screenshot = '5';
   }
 
   if (!screenshot || screenshot === curScreenshot) {
