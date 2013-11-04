@@ -1140,6 +1140,22 @@ title: Pritunl - Simple self-hosted OpenVPN server
               After a two-step authentication code has been validated it will be stored in a file and any further attempts to use the same code will be invalid
             </div>
           </div>
+          <div class="faq-point question clearfix">
+            <div class="faq-point-label header">
+              <span>Q</span>
+            </div>
+            <div class="faq-point-description">
+              <span>Are failed vpn authentication attempts logged?</span>
+            </div>
+          </div>
+          <div class="faq-point answer clearfix">
+            <div class="faq-point-label header">
+              <span>A</span>
+            </div>
+            <div class="faq-point-description">
+              All failed vpn authentication attempts of revoked user certs and invalid two-step authentication codes are logged to <pre>/var/lib/pritunl/auth.log</pre>
+            </div>
+          </div>
         </div>
       </div>
     </div>
