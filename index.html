@@ -1124,6 +1124,22 @@ title: Pritunl - Simple self-hosted OpenVPN server
               Each time a user attempts to connect OpenVPN will pass the user and two-step authentication code to a python script. The script will validate the code and respond with an exit code indicating if the code was valid
             </div>
           </div>
+          <div class="faq-point question clearfix">
+            <div class="faq-point-label header">
+              <span>Q</span>
+            </div>
+            <div class="faq-point-description">
+              <span>Can a two-step authentication code be used twice?</span>
+            </div>
+          </div>
+          <div class="faq-point answer clearfix">
+            <div class="faq-point-label header">
+              <span>A</span>
+            </div>
+            <div class="faq-point-description">
+              After a two-step authentication code has been validated it will be stored in a file and any further attempts to use the same code will be invalid
+            </div>
+          </div>
         </div>
       </div>
     </div>
