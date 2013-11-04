@@ -1108,6 +1108,22 @@ title: Pritunl - Simple self-hosted OpenVPN server
               User keys will need to be updated after attaching the users organization to a server or when a servers public ip or port is changed
             </div>
           </div>
+          <div class="faq-point question clearfix">
+            <div class="faq-point-label header">
+              <span>Q</span>
+            </div>
+            <div class="faq-point-description">
+              <span>How is the two-step authentication code validated?</span>
+            </div>
+          </div>
+          <div class="faq-point answer clearfix">
+            <div class="faq-point-label header">
+              <span>A</span>
+            </div>
+            <div class="faq-point-description">
+              Each time a user attempts to connect OpenVPN will pass the user and two-step authentication code to a python script. The script will validate the code and respond with an exit code indicating if the code was valid
+            </div>
+          </div>
         </div>
       </div>
     </div>
