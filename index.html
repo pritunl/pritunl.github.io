@@ -934,7 +934,7 @@ title: Pritunl - Simple self-hosted OpenVPN server
               <span>A</span>
             </div>
             <div class="faq-point-description">
-              By default the vpn servers will only generate 1536bit DH parameters, higher values can take a very long time depending on the availability of random data on the server. This can be improved by adding <pre>dh_param_bits=2048</pre> or <pre>dh_param_bits=4096</pre> to the conf file <pre>/etc/pritunl.conf</pre> then restarting the pritunl service. This will only apply to servers created after restarting the service and can sometimes take several hours to create a new server if there is limited random data available
+              By default the vpn servers will only generate 1536bit DH parameters, higher values can take a very long time depending on the availability of random data on the server. This can be increased by adding <pre>dh_param_bits=2048</pre> or <pre>dh_param_bits=4096</pre> to the conf file <pre>/etc/pritunl.conf</pre> then restarting the pritunl service. This will only apply to servers created after restarting the service and can sometimes take several hours to create a new server if there is limited random data available
             </div>
           </div>
           <div class="faq-point question clearfix">
