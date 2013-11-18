@@ -129,7 +129,7 @@ a:focus {
   font-family: 'Fredoka One', cursive;
   font-size: 15em;
   color: #fff;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
   text-align: center;
 }
 
