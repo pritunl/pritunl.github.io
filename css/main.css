@@ -45,7 +45,7 @@ a:focus {
 
 .navbar .navbar-brand {
   font-family: 'Fredoka One', cursive;
-  font-size: 4.2em;
+  font-size: 59px;
   padding: 3px 0 0 22px;
   max-width: none;
   line-height: 70px;
@@ -81,7 +81,7 @@ a:focus {
 }
 
 .navbar .nav > li > a {
-  font-size: 1.3em;
+  font-size: 18px;
   padding: 32px 32px;
   color: #535353;
 }
@@ -127,7 +127,7 @@ a:focus {
 
 .intro .intro-title {
   font-family: 'Fredoka One', cursive;
-  font-size: 15em;
+  font-size: 210px;
   color: #fff;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -135,7 +135,7 @@ a:focus {
 
 .intro .intro-label {
   font-weight: 700;
-  font-size: 2.5em;
+  font-size: 35px;
   letter-spacing: 1px;
   color: #f0f0f0;
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.3);
@@ -148,7 +148,7 @@ a:focus {
 }
 
 .intro .intro-button {
-  font-size: 1.4em;
+  font-size: 20px;
   letter-spacing: 5px;
   color: #f0f0f0;
   cursor: pointer;
@@ -177,13 +177,21 @@ a:focus {
 
 .intro-features .features-title,
 .intro-screenshots .screenshots-title,
+.intro-install .install-title,
 .intro-faq .faq-title {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 15px;
+}
+
+.intro-features .features-title .title,
+.intro-screenshots .screenshots-title .title,
+.intro-install .install-title .title,
+.intro-faq .faq-title .title {
   color: #fff;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.3);
-  font-size: 1.2em;
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.5);
+  font-size: 36px;
+  letter-spacing: 1px;
 }
 
 .intro-features .features-boxes {
@@ -214,7 +222,7 @@ a:focus {
 
 .intro-features .features-box .title {
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 21px;
   color: #f0f0f0;
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
   background-color: rgba(0, 0, 0, 0.3);
@@ -225,7 +233,7 @@ a:focus {
 }
 
 .intro-features .features-box .description {
-  font-size: 1.2em;
+  font-size: 17px;
   padding: 15px;
   color: #f0f0f0;
   text-align: center;
@@ -295,7 +303,11 @@ a:focus {
   background-color: #5f11b4;
 }
 
-.intro-install .title,
+.intro-install .install-title {
+  margin-top: 75px;
+  padding-bottom: 0px;
+}
+
 .intro-install .install-header {
   font-weight: 700;
   letter-spacing: 1px;
@@ -304,15 +316,10 @@ a:focus {
   text-align: center;
 }
 
-.intro-install .title {
-  margin-top: 75px;
-  font-size:  2.5em;
-}
-
 .intro-install .install-header {
   margin-top: 35px;
   margin-bottom: 15px;
-  font-size:  1.9em;
+  font-size: 27px;
 }
 
 .intro-install pre,
@@ -326,7 +333,6 @@ a:focus {
 }
 
 .intro-footer {
-  font-size: 1em;
   padding-top: 20px;
   padding-bottom: 20px;
   letter-spacing: 1px;
@@ -430,7 +436,7 @@ a:focus {
   padding-top: 7px;
   border-radius: 50%;
   color: #f0f0f0;
-  font-size: 1.8em;
+  font-size: 25px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3);
   text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
@@ -445,13 +451,13 @@ a:focus {
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 6px;
   color: #f0f0f0;
-  font-size: 1.2em;
+  font-size: 17px;
   padding: 13px;
   float: right;
 }
 
 .question .faq-point-description {
-  font-size: 1.8em;
+  font-size: 25px;
   padding: 8px 13px;
   background-color: rgba(0, 0, 0, 0.35);
 }
