@@ -45,7 +45,7 @@ a:focus {
 
 .navbar .navbar-brand {
   font-family: 'Fredoka One', cursive;
-  font-size: 59px;
+  font-size: 4.2em;
   padding: 3px 0 0 22px;
   max-width: none;
   line-height: 70px;
@@ -81,7 +81,7 @@ a:focus {
 }
 
 .navbar .nav > li > a {
-  font-size: 18px;
+  font-size: 1.3em;;
   padding: 32px 32px;
   color: #535353;
 }
@@ -127,7 +127,7 @@ a:focus {
 
 .intro .intro-title {
   font-family: 'Fredoka One', cursive;
-  font-size: 210px;
+  font-size: 15em;
   color: #fff;
   text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -135,7 +135,7 @@ a:focus {
 
 .intro .intro-label {
   font-weight: 700;
-  font-size: 35px;
+  font-size: 2.5em;
   letter-spacing: 1px;
   color: #f0f0f0;
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.3);
@@ -148,7 +148,7 @@ a:focus {
 }
 
 .intro .intro-button {
-  font-size: 20px;
+  font-size: 1.4em;
   letter-spacing: 5px;
   color: #f0f0f0;
   cursor: pointer;
@@ -190,7 +190,6 @@ a:focus {
 .intro-faq .faq-title .title {
   color: #fff;
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.5);
-  font-size: 36px;
   letter-spacing: 1px;
 }
 
@@ -222,7 +221,7 @@ a:focus {
 
 .intro-features .features-box .title {
   font-weight: 700;
-  font-size: 21px;
+  font-size: 1.5em;
   color: #f0f0f0;
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
   background-color: rgba(0, 0, 0, 0.3);
@@ -233,7 +232,7 @@ a:focus {
 }
 
 .intro-features .features-box .description {
-  font-size: 17px;
+  font-size: 1.2em;
   padding: 15px;
   color: #f0f0f0;
   text-align: center;
@@ -319,7 +318,7 @@ a:focus {
 .intro-install .install-header {
   margin-top: 35px;
   margin-bottom: 15px;
-  font-size: 27px;
+  font-size: 1.9em;
 }
 
 .intro-install pre,
@@ -436,7 +435,7 @@ a:focus {
   padding-top: 7px;
   border-radius: 50%;
   color: #f0f0f0;
-  font-size: 25px;
+  font-size: 1.8em;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3);
   text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
@@ -451,13 +450,13 @@ a:focus {
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 6px;
   color: #f0f0f0;
-  font-size: 17px;
+  font-size: 1.2em;
   padding: 13px;
   float: right;
 }
 
 .question .faq-point-description {
-  font-size: 25px;
+  font-size: 1.8em;
   padding: 8px 13px;
   background-color: rgba(0, 0, 0, 0.35);
 }
