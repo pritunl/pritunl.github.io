@@ -56,12 +56,12 @@ a:focus {
 }
 
 .navbar .navbar-brand.blue {
-  color: #1685fc;
+  color: #1d6bbe;
   text-shadow: 0 1px 5px rgba(22, 133, 252, 0.2);
 }
 
 .navbar .navbar-brand.green {
-  color: #27c52e;
+  color: #21a827;
   text-shadow: 0 1px 5px rgba(39, 197, 46, 0.2);
 }
 
@@ -76,7 +76,7 @@ a:focus {
 }
 
 .navbar .navbar-brand.orange {
-  color: #e6380d;
+  color: #d8360e;
   text-shadow: 0 1px 5px rgba(230, 56, 13, 0.2);
 }
 
@@ -122,7 +122,7 @@ a:focus {
   margin-top: 20px;
   padding-top: 100px;
   padding-bottom: 110px;
-  background-color: #1685fc;
+  background-color: #1d6bbe;
 }
 
 .intro .intro-title {
@@ -170,7 +170,7 @@ a:focus {
 }
 
 .intro-features {
-  background-color: #27c52e;
+  background-color: #21a827;
   padding-top: 55px;
   padding-bottom: 90px;
 }
@@ -501,5 +501,5 @@ a:focus {
 .intro-faq {
   padding-top: 55px;
   padding-bottom: 75px;
-  background-color: #e6380d;
+  background-color: #d8360e;
 }
