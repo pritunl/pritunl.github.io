@@ -1488,7 +1488,7 @@ print response.json()
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Returns general information about the pritunl server
+              Returns general information about the pritunl server.
             </div>
             <table class="table">
               <thead>
@@ -1574,7 +1574,7 @@ print response.json()
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Returns a list of server log entries
+              Returns a list of server log entries.
             </div>
             <table class="table">
               <thead>
@@ -1647,7 +1647,7 @@ print response.json()
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Change the server password
+              Change the server password.
             </div>
             <table class="table">
               <thead>
@@ -1698,6 +1698,270 @@ print response.json()
 {
     'password': 'pass',
 }</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /organization</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns a list of organizations on the server sorted by name.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.get(
+    'https://localhost:9700/organization',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+[
+    {
+        'id': '060e54e627904abf9402bf3f2e0e16a2',
+        'name': 'org1',
+    },
+    {
+        'id': 'c002529764334d63b7035ad1939eb7ca',
+        'name': 'org2',
+    },
+]</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>POST /organization</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Create a new organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Name of organization</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.post(
+    'https://localhost:9700/organization',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+        'name': 'new_org',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'fb48734e859242e2800f077216401736',
+    'name': 'new_org',
+}</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>PUT /organization/:organization_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Rename an existing organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Name of organization</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.put(
+    'https://localhost:9700/organization/fb48734e859242e2800f077216401736',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+        'name': 'new_name',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'fb48734e859242e2800f077216401736',
+    'name': 'new_name',
+}</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>DELETE /organization/:organization_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Delete an existing organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.delete(
+    'https://localhost:9700/organization/fb48734e859242e2800f077216401736',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)</div>
           </div>
         </div>
       </div>
