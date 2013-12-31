@@ -1553,6 +1553,79 @@ print response.json()
 ]</div>
           </div>
         </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /status</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns general status about the pritunl server
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users</td>
+                </tr>
+                <tr>
+                  <td>servers_online</td>
+                  <td>Number of servers online</td>
+                </tr>
+                <tr>
+                  <td>server_count</td>
+                  <td>Number of servers</td>
+                </tr>
+                <tr>
+                  <td>server_version</td>
+                  <td>Pritunl version running on server</td>
+                </tr>
+                <tr>
+                  <td>public_ip</td>
+                  <td>Public IP address of server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.get(
+  'https://localhost:9700/status',
+  headers={'Content-Type': 'application/json'},
+  data=json.dumps({
+    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'org_count': 2,
+  'users_online': 2,
+  'user_count': 8,
+  'servers_online': 2,
+  'server_count': 2,
+  'server_version': '0.10.4',
+  'public_ip': '8.8.8.8',
+}</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
