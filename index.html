@@ -1378,7 +1378,7 @@ assert(response.status_code == 200)</div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Long polling request that returns a list of events that have occurred. Request will poll for up to 30 seconds. The current time should always be retrieved from a time event to avoid problems with out of sync clocks. A list of events can be found in <pre>constants.py</pre>
+              Long polling request that returns a list of events that have occurred. Request will poll for up to 30 seconds. The current time should always be retrieved from a time event to avoid problems with out of sync clocks. A list of events can be found in <pre>constants.py</pre>. New event IDs should be check against a list of events already recieved to avoid processing an event more then once.
             </div>
             <table class="table">
               <thead>
@@ -1476,6 +1476,79 @@ print response.json()
     'type': 'server_organizations_updated',
     'time': 1388495805330,
     'resource_id': '6551f49596ca42c4942cb71162916b69',
+  },
+]</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /log</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns a list of server log entries
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Log entry ID</td>
+                </tr>
+                <tr>
+                  <td>time</td>
+                  <td>Log entry epoch time</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>Log message</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.get(
+  'https://localhost:9700/log',
+  headers={'Content-Type': 'application/json'},
+  data=json.dumps({
+    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+    'id': 'ebb8af4a72d548a889c4d6ca45254a5a',
+    'time': 1388389241,
+    'message': 'Web server started.',
+  },
+  {
+    'id': 'f5ebb4ed2bc74181ad70060bfec30c81',
+    'time': 1388389217,
+    'message': 'Web server stopped.',
   },
 ]</div>
           </div>
