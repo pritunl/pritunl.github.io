@@ -1265,12 +1265,12 @@ title: Pritunl - Simple OpenVPN Server
               </div>
             </noscript>
 <div class="editor">response = requests.get(
-  'https://localhost:9700/auth',
+    'https://localhost:9700/auth',
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'authenticated': False,
+    'authenticated': False,
 }</div>
           </div>
         </div>
@@ -1321,17 +1321,17 @@ print response.json()
               </div>
             </noscript>
 <div class="editor">response = requests.post(
-  'https://localhost:9700/auth/token',
-  headers={'Content-Type': 'application/json'},
-  data=json.dumps({
-      'username': 'admin',
-      'password': 'admin',
-  }),
+    'https://localhost:9700/auth/token',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'username': 'admin',
+        'password': 'admin',
+    }),
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
 }</div>
           </div>
         </div>
@@ -1365,7 +1365,7 @@ print response.json()
               </div>
             </noscript>
 <div class="editor">response = requests.delete(
-  'https://localhost:9700/auth/token/264e30e7032b467bb0174b22bdb8ce13',
+    'https://localhost:9700/auth/token/264e30e7032b467bb0174b22bdb8ce13',
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -1438,45 +1438,45 @@ assert(response.status_code == 200)</div>
               </div>
             </noscript>
 <div class="editor">response = requests.get(
-  'https://localhost:9700/event',
-  headers={'Content-Type': 'application/json'},
-  data=json.dumps({
-    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-  }),
+    'https://localhost:9700/event',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
 )
 assert(response.status_code == 200)
 print response.json()
 [
-  {
-    'id': '35a9a8c126f04451bebc5b6bb2c84ca4',
-    'type': 'time',
-    'time': 1388495668154,
-    'resource_id': None,
-  }
+    {
+        'id': '35a9a8c126f04451bebc5b6bb2c84ca4',
+        'type': 'time',
+        'time': 1388495668154,
+        'resource_id': None,
+    }
 ]
 
 response = requests.get(
-  'https://localhost:9700/event/1388495668154',
-  headers={'Content-Type': 'application/json'},
-  data=json.dumps({
-    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-  }),
+    'https://localhost:9700/event/1388495668154',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
 )
 assert(response.status_code == 200)
 print response.json()
 [
-  {
-    'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
-    'type': 'users_updated',
-    'time': 1388495793330,
-    'resource_id': None,
-  },
-  {
-    'id': '09b86897d4e44130b5fec95ca7101a5a',
-    'type': 'server_organizations_updated',
-    'time': 1388495805330,
-    'resource_id': '6551f49596ca42c4942cb71162916b69',
-  },
+    {
+        'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
+        'type': 'users_updated',
+        'time': 1388495793330,
+        'resource_id': None,
+    },
+    {
+        'id': '09b86897d4e44130b5fec95ca7101a5a',
+        'type': 'server_organizations_updated',
+        'time': 1388495805330,
+        'resource_id': '6551f49596ca42c4942cb71162916b69',
+    },
 ]</div>
           </div>
         </div>
@@ -1531,25 +1531,25 @@ print response.json()
               </div>
             </noscript>
 <div class="editor">response = requests.get(
-  'https://localhost:9700/log',
-  headers={'Content-Type': 'application/json'},
-  data=json.dumps({
-    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-  }),
+    'https://localhost:9700/log',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
 )
 assert(response.status_code == 200)
 print response.json()
 [
-  {
-    'id': 'ebb8af4a72d548a889c4d6ca45254a5a',
-    'time': 1388389241,
-    'message': 'Web server started.',
-  },
-  {
-    'id': 'f5ebb4ed2bc74181ad70060bfec30c81',
-    'time': 1388389217,
-    'message': 'Web server stopped.',
-  },
+    {
+        'id': 'ebb8af4a72d548a889c4d6ca45254a5a',
+        'time': 1388389241,
+        'message': 'Web server started.',
+    },
+    {
+        'id': 'f5ebb4ed2bc74181ad70060bfec30c81',
+        'time': 1388389217,
+        'message': 'Web server stopped.',
+    },
 ]</div>
           </div>
         </div>
@@ -1607,22 +1607,22 @@ print response.json()
               </div>
             </noscript>
 <div class="editor">response = requests.get(
-  'https://localhost:9700/status',
-  headers={'Content-Type': 'application/json'},
-  data=json.dumps({
-    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-  }),
+    'https://localhost:9700/status',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'org_count': 2,
-  'users_online': 2,
-  'user_count': 8,
-  'servers_online': 2,
-  'server_count': 2,
-  'server_version': '0.10.4',
-  'public_ip': '8.8.8.8',
+    'org_count': 2,
+    'users_online': 2,
+    'user_count': 8,
+    'servers_online': 2,
+    'server_count': 2,
+    'server_version': '0.10.4',
+    'public_ip': '8.8.8.8',
 }</div>
           </div>
         </div>
