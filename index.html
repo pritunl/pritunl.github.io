@@ -1230,6 +1230,149 @@ title: Pritunl - Simple OpenVPN Server
       </div>
     </div>
     <div class="row">
+      <a id="api" class="anchor"></a>
+      <div class="intro-api">
+        <div class="api-title">
+          <h1 class="title">REST API</h1>
+        </div>
+          <div class="api-call endpoint clearfix">
+            <div class="api-call-description">
+              <span>GET /auth</span>
+            </div>
+          </div>
+          <div class="api-call info clearfix">
+            <div class="api-call-description">
+              <p>
+                Returns authentication status
+              </p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Response</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>authenticated</td>
+                    <td>True if authenticated otherwise false</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="editor-title">Python Example</span>
+              <noscript>
+                <p>
+                  JavaScript is required to view example code
+                </p>
+              </noscript>
+<div class="editor">response = requests.get(
+    'https://localhost:9700/auth',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'authenticated': False,
+}</div>
+            </div>
+          </div>
+          <div class="api-call endpoint clearfix">
+            <div class="api-call-description">
+              <span>POST /auth/token</span>
+            </div>
+          </div>
+          <div class="api-call info clearfix">
+            <div class="api-call-description">
+              <p>
+                Returns authentication token required for making protected API calls. API token stays valid until server is restarted
+              </p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Parameters</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>username</td>
+                    <td>String username default is "admin"</td>
+                  </tr>
+                  <tr>
+                    <td>password</td>
+                    <td>String password</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Response</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>auth_token</td>
+                    <td>Authentication token</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="editor-title">Python Example</span>
+              <noscript>
+                <p>
+                  JavaScript is required to view example code
+                </p>
+              </noscript>
+<div class="editor">response = requests.post(
+    'https://localhost:9700/auth/token',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'username': 'admin',
+        'password': 'admin',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+}</div>
+            </div>
+          </div>
+          <div class="api-call endpoint clearfix">
+            <div class="api-call-description">
+              <span>DELETE /auth/token/:auth_token</span>
+            </div>
+          </div>
+          <div class="api-call info clearfix">
+            <div class="api-call-description">
+              <p>
+                Revoke an authentication token
+              </p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">URL Parameters</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>auth_token</td>
+                    <td>Authentication token</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class="editor-title">Python Example</span>
+              <noscript>
+                <p>
+                  JavaScript is required to view example code
+                </p>
+              </noscript>
+<div class="editor">response = requests.delete(
+    'https://localhost:9700/auth/token/264e30e7032b467bb0174b22bdb8ce13',
+)
+assert(response.status_code == 200)</div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="intro-footer">
         <span>created by <a href="//github.com/zachhuff386">github.com/zachhuff386</a></span>
       </div>

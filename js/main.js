@@ -3,24 +3,28 @@ $('[data-toggle="tooltip"]').tooltip();
 $(window).scroll(function(evt) {
   var scrollTop = $(this).scrollTop();
 
-  if (scrollTop >= $('#faq').offset().top) {
-    $('.navbar-brand').removeClass('blue green red purple');
+  if (scrollTop >= $('#api').offset().top) {
+    $('.navbar-brand').removeClass('blue green red purple orange');
+    $('.navbar-brand').addClass('pink');
+  }
+  else if (scrollTop >= $('#faq').offset().top) {
+    $('.navbar-brand').removeClass('blue green red purple pink');
     $('.navbar-brand').addClass('orange');
   }
   else if (scrollTop >= $('#install').offset().top) {
-    $('.navbar-brand').removeClass('blue green red orange');
+    $('.navbar-brand').removeClass('blue green red orange pink');
     $('.navbar-brand').addClass('purple');
   }
   else if (scrollTop >= $('#screenshots').offset().top) {
-    $('.navbar-brand').removeClass('blue green purple orange');
+    $('.navbar-brand').removeClass('blue green purple orange pink');
     $('.navbar-brand').addClass('red');
   }
   else if (scrollTop >= $('#features').offset().top) {
-    $('.navbar-brand').removeClass('blue red purple orange');
+    $('.navbar-brand').removeClass('blue red purple orange pink');
     $('.navbar-brand').addClass('green');
   }
   else {
-    $('.navbar-brand').removeClass('green red purple orange');
+    $('.navbar-brand').removeClass('green red purple orange pink');
     $('.navbar-brand').addClass('blue');
   }
 });
@@ -133,4 +137,18 @@ $('.install-buttons button').click(function(evt) {
   else if ($(this).hasClass('osx-client')) {
     changeInstructions('.client-instructions', '.osx-client-instructions');
   }
+});
+
+$('.editor').show();
+$('.editor').each(function(index, element) {
+  var editor = ace.edit(element);
+  editor.setTheme('ace/theme/tomorrow_night');
+  editor.setReadOnly(true);
+  editor.setShowPrintMargin(false);
+  editor.setHighlightActiveLine(false);
+  editor.setHighlightGutterLine(false);
+  editor.setShowFoldWidgets(false);
+  editor.getSession().setMode('ace/mode/python');
+  $(element).css('height', editor.getSession().getScreenLength() *
+    editor.renderer.lineHeight + 2);
 });

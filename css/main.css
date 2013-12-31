@@ -80,6 +80,11 @@ a:focus {
   text-shadow: 0 1px 5px rgba(230, 56, 13, 0.2);
 }
 
+.navbar .navbar-brand.pink {
+  color: #881a76;
+  text-shadow: 0 1px 5px rgba(230, 56, 13, 0.2);
+}
+
 .navbar .nav > li > a {
   font-size: 1.3em;;
   padding: 32px 32px;
@@ -113,6 +118,7 @@ a:focus {
 .intro-screenshots,
 .intro-install,
 .intro-faq,
+.intro-api,
 .intro-footer {
   background-image: url('../img/background.png');
   border-bottom: 1px solid rgba(255, 255, 255, 0.13);
@@ -178,7 +184,8 @@ a:focus {
 .intro-features .features-title,
 .intro-screenshots .screenshots-title,
 .intro-install .install-title,
-.intro-faq .faq-title {
+.intro-faq .faq-title,
+.intro-api .api-title {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 15px;
@@ -187,7 +194,8 @@ a:focus {
 .intro-features .features-title .title,
 .intro-screenshots .screenshots-title .title,
 .intro-install .install-title .title,
-.intro-faq .faq-title .title {
+.intro-faq .faq-title .title,
+.intro-api .api-title .title {
   color: #fff;
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.5);
   letter-spacing: 1px;
@@ -421,7 +429,8 @@ a:focus {
 }
 
 .install-point,
-.faq-point {
+.faq-point,
+.api-call {
   clear: both;
   width: 753px;
   padding-top: 30px;
@@ -444,7 +453,8 @@ a:focus {
 }
 
 .install-point-description,
-.faq-point-description {
+.faq-point-description,
+.api-call-description {
   font-weight: bold;
   width: 690px;
   background-color: rgba(255, 255, 255, 0.35);
@@ -455,14 +465,32 @@ a:focus {
   float: right;
 }
 
-.question .faq-point-description {
+.api-call-description {
+  font-weight: normal;
+  width: 753px;
+  float: none;
+}
+
+.api-call-description p,
+.api-call-description table,
+.api-call.endpoint .api-call-description {
+  font-weight: bold;
+}
+
+.faq-point.question .faq-point-description,
+.api-call.endpoint .api-call-description {
   font-size: 1.8em;
   padding: 8px 13px;
   background-color: rgba(0, 0, 0, 0.35);
 }
 
-.answer {
+.faq-point.answer,
+.api-call.info {
   padding-top: 10px;
+}
+
+.api-call .table tbody tr td:first-child {
+  width: 200px;
 }
 
 .answer .faq-point-label {
@@ -479,7 +507,8 @@ a:focus {
 }
 
 .install-point-description pre,
-.faq-point-description pre {
+.faq-point-description pre,
+.api-call-description pre {
   position: relative;
   top: -2px;
   display: inline;
@@ -490,7 +519,8 @@ a:focus {
 }
 
 .conf-instructions .install-point:first-child,
-.faq .faq-point:first-child {
+.faq .faq-point:first-child,
+.api .api-call:first-child {
   padding-top: 0;
 }
 
@@ -502,4 +532,28 @@ a:focus {
   padding-top: 55px;
   padding-bottom: 75px;
   background-color: #d8360e;
+}
+
+.intro-api {
+  padding-top: 55px;
+  padding-bottom: 75px;
+  background-color: #881a76;
+}
+
+.editor {
+  width: 727px;
+  display: none;
+}
+
+.editor-title {
+  width: 100%;
+  font-weight: bold;
+  padding: 0 8px 8px 8px;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.ace_scrollbar {
+    display: none !important;
 }
