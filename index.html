@@ -1639,6 +1639,67 @@ print response.json()
 ]</div>
           </div>
         </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>POST /password</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Change the server password
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+                <tr>
+                  <td>password</td>
+                  <td>New password</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>password</td>
+                  <td>New password</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.post(
+    'https://localhost:9700/password',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+        'password': 'pass',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'password': 'pass',
+}</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
