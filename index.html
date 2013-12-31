@@ -1242,9 +1242,9 @@ title: Pritunl - Simple OpenVPN Server
         </div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
-            <p>
-              Returns authentication status
-            </p>
+            <div class="text">
+              Returns authentication status.
+            </div>
             <table class="table">
               <thead>
                 <tr>
@@ -1260,9 +1260,9 @@ title: Pritunl - Simple OpenVPN Server
             </table>
             <span class="editor-title">Python Example</span>
             <noscript>
-              <p>
+              <div class="text">
                 JavaScript is required to view example code
-              </p>
+              </div>
             </noscript>
 <div class="editor">response = requests.get(
   'https://localhost:9700/auth',
@@ -1281,9 +1281,9 @@ print response.json()
         </div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
-            <p>
-              Returns authentication token required for making protected API calls. API token stays valid until server is restarted
-            </p>
+            <div class="text">
+              Returns authentication token required for making protected API calls. API token stays valid until server is restarted.
+            </div>
             <table class="table">
               <thead>
                 <tr>
@@ -1316,9 +1316,9 @@ print response.json()
             </table>
             <span class="editor-title">Python Example</span>
             <noscript>
-              <p>
+              <div class="text">
                 JavaScript is required to view example code
-              </p>
+              </div>
             </noscript>
 <div class="editor">response = requests.post(
   'https://localhost:9700/auth/token',
@@ -1342,9 +1342,9 @@ print response.json()
         </div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
-            <p>
-              Revoke an authentication token
-            </p>
+            <div class="text">
+              Revoke an authentication token.
+            </div>
             <table class="table">
               <thead>
                 <tr>
@@ -1360,14 +1360,124 @@ print response.json()
             </table>
             <span class="editor-title">Python Example</span>
             <noscript>
-              <p>
+              <div class="text">
                 JavaScript is required to view example code
-              </p>
+              </div>
             </noscript>
 <div class="editor">response = requests.delete(
   'https://localhost:9700/auth/token/264e30e7032b467bb0174b22bdb8ce13',
 )
 assert(response.status_code == 200)</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /event/:last_event</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Long polling request that returns a list of events that have occurred. Request will poll for up to 30 seconds. The current time should always be retrieved from a time event to avoid problems with out of sync clocks. A list of events can be found in <pre>constants.py</pre>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>last_event</td>
+                  <td>Optional epoch time in milliseconds of last event. If left out a time event will be returned giving the current epoch time in milliseconds on the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Event ID</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>Event type</td>
+                </tr>
+                <tr>
+                  <td>resource_id</td>
+                  <td>Event resource ID</td>
+                </tr>
+                <tr>
+                  <td>time</td>
+                  <td>Event epoch time in milliseconds</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.get(
+  'https://localhost:9700/event',
+  headers={'Content-Type': 'application/json'},
+  data=json.dumps({
+    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+    'id': '35a9a8c126f04451bebc5b6bb2c84ca4',
+    'type': 'time',
+    'time': 1388495668154,
+    'resource_id': None,
+  }
+]
+
+response = requests.get(
+  'https://localhost:9700/event/1388495668154',
+  headers={'Content-Type': 'application/json'},
+  data=json.dumps({
+    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+    'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
+    'type': 'users_updated',
+    'time': 1388495793330,
+    'resource_id': None,
+  },
+  {
+    'id': '09b86897d4e44130b5fec95ca7101a5a',
+    'type': 'server_organizations_updated',
+    'time': 1388495805330,
+    'resource_id': '6551f49596ca42c4942cb71162916b69',
+  },
+]</div>
           </div>
         </div>
       </div>

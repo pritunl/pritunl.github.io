@@ -330,7 +330,8 @@ a:focus {
 }
 
 .intro-install pre,
-.intro-faq pre {
+.intro-faq pre,
+.intro-api pre {
   padding: 30px 0;
   margin: 10px auto;
   width: 550px;
@@ -471,10 +472,14 @@ a:focus {
   float: none;
 }
 
-.api-call-description p,
+.api-call-description .text,
 .api-call-description table,
 .api-call.endpoint .api-call-description {
   font-weight: bold;
+}
+
+.api-call-description .text {
+  margin-bottom: 10px;
 }
 
 .faq-point.question .faq-point-description,
