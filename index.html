@@ -2327,6 +2327,62 @@ print response.json()
         </div>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
+            <span>DELETE /user/:organization_id/:user_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Delete an existing user in an organization. This will restart any servers the user is connected to.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.delete(
+    'https://localhost:9700/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
             <span>PUT /user/:organization_id/:user_id/otp_secret</span>
           </div>
         </div>
