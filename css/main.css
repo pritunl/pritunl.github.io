@@ -523,6 +523,12 @@ a:focus {
   text-decoration: none;
 }
 
+.api-call-list .list-title {
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+}
+
 .answer .faq-point-label {
   background-color: rgba(255, 255, 255, 0.35);
 }
