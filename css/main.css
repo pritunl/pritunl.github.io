@@ -499,6 +499,7 @@ a:focus {
   font-size: 1.8em;
   padding: 8px 13px;
   background-color: rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
 }
 
 .faq-point.answer,
