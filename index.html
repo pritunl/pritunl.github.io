@@ -1235,6 +1235,28 @@ title: Pritunl - Simple OpenVPN Server
         <div class="api-title">
           <h1 class="title">REST API</h1>
         </div>
+        <ul class="api-call-list">
+          <li><a href="#get-auth">GET /auth</a></li>
+
+          <li><a href="#post-auth-token">POST /auth/token</a></li>
+          <li><a href="#delete-auth-token-var">DELETE /auth/token/:auth_token</a></li>
+          <li><a href="#get-event-var">GET /event/:last_event</a></li>
+          <li><a href="#get-status">GET /status</a></li>
+          <li><a href="#get-log">GET /log</a></li>
+          <li><a href="#post-password">POST /password</a></li>
+          <li><a href="#get-organization">GET /organization</a></li>
+          <li><a href="#post-organization">POST /organization</a></li>
+          <li><a href="#put-organization-var">PUT /organization/:organization_id</a></li>
+          <li><a href="#delete-organization-var">DELETE /organization/:organization_id</a></li>
+          <li><a href="#get-user-var">GET /user/:organization_id</a></li>
+          <li><a href="#post-user-var">POST /user/:organization_id</a></li>
+          <li><a href="#put-user-var">PUT /user/:organization_id/:user_id</a></li>
+          <li><a href="#delete-user-var">DELETE /user/:organization_id/:user_id</a></li>
+          <li><a href="#put-user-var-otp-secret">PUT /user/:organization_id/:user_id/otp_secret</a></li>
+          <li><a href="#get-key-var-tar">GET /key/:organization_id/:user_id.tar</a></li>
+          <li><a href="#get-key-var">GET /key/:organization_id/:user_id</a></li>
+        </ul>
+        <a id="get-auth" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /auth</span>
@@ -1274,6 +1296,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="post-auth-token" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>POST /auth/token</span>
@@ -1335,6 +1358,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="delete-auth-token-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>DELETE /auth/token/:auth_token</span>
@@ -1370,6 +1394,7 @@ print response.json()
 assert(response.status_code == 200)</div>
           </div>
         </div>
+        <a id="get-event-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /event/:last_event</span>
@@ -1480,6 +1505,7 @@ print response.json()
 ]</div>
           </div>
         </div>
+        <a id="get-status" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /status</span>
@@ -1566,6 +1592,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="get-log" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /log</span>
@@ -1639,6 +1666,7 @@ print response.json()
 ]</div>
           </div>
         </div>
+        <a id="post-password" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>POST /password</span>
@@ -1700,6 +1728,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="get-organization" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /organization</span>
@@ -1767,6 +1796,7 @@ print response.json()
 ]</div>
           </div>
         </div>
+        <a id="post-organization" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>POST /organization</span>
@@ -1833,6 +1863,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="put-organization-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>PUT /organization/:organization_id</span>
@@ -1912,6 +1943,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="delete-organization-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>DELETE /organization/:organization_id</span>
@@ -1964,6 +1996,7 @@ print response.json()
 assert(response.status_code == 200)</div>
           </div>
         </div>
+        <a id="get-user-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /user/:organization_id</span>
@@ -2123,6 +2156,7 @@ print response.json()
 ]</div>
           </div>
         </div>
+        <a id="post-user-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>POST /user/:organization_id</span>
@@ -2222,6 +2256,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="put-user-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>PUT /user/:organization_id/:user_id</span>
@@ -2325,6 +2360,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="delete-user-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>DELETE /user/:organization_id/:user_id</span>
@@ -2381,6 +2417,7 @@ print response.json()
 assert(response.status_code == 200)</div>
           </div>
         </div>
+        <a id="put-user-var-otp-secret" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>PUT /user/:organization_id/:user_id/otp_secret</span>
@@ -2479,6 +2516,7 @@ print response.json()
 }</div>
           </div>
         </div>
+        <a id="get-key-var-tar" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /key/:organization_id/:user_id.tar</span>
@@ -2535,6 +2573,7 @@ print response.json()
 assert(response.status_code == 200)</div>
           </div>
         </div>
+        <a id="get-key-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
             <span>GET /key/:organization_id/:user_id</span>

@@ -10,6 +10,10 @@ a.anchor {
   display: block;
 }
 
+a.anchor.api {
+  top: -70px;
+}
+
 a:focus {
   outline: none;
 }
@@ -468,8 +472,7 @@ a:focus {
 
 .api-call-description {
   font-weight: normal;
-  width: 753px;
-  float: none;
+  width: 710px;
 }
 
 .api-call-description .text,
@@ -496,6 +499,28 @@ a:focus {
 
 .api-call .table tbody tr td:first-child {
   width: 200px;
+}
+
+.api-call-list {
+  margin: 30px 10px 10px 10px;
+  position: absolute;
+  list-style-type: none;
+  color: #b6b6b6;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.35);
+  font-weight: bold;
+  font-size: 0.7em;
+  width: 232px;
+}
+
+.api-call-list li a {
+  color: #b6b6b6;
+}
+
+.api-call-list li a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .answer .faq-point-label {
@@ -546,7 +571,7 @@ a:focus {
 }
 
 .editor {
-  width: 727px;
+  width: 100%;
   display: none;
 }
 
