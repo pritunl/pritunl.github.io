@@ -507,6 +507,7 @@ a:focus {
 }
 
 .api-call .table tbody tr td:first-child {
+  font-weight: bold;
   width: 200px;
 }
 
