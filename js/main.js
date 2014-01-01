@@ -7,7 +7,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
   $('.api-call-description').css('margin-right', '0');
 }
 
-$(window).scroll(function(evt) {
+var onScroll = function() {
   var scrollTop = $(this).scrollTop();
 
   if (scrollTop >= $('#api').offset().top + 122) {
@@ -43,7 +43,9 @@ $(window).scroll(function(evt) {
     $('.navbar-brand').removeClass('green red purple orange pink');
     $('.navbar-brand').addClass('blue');
   }
-});
+}
+$(window).scroll(onScroll);
+onScroll();
 
 $('a[href^="#"]').on('click', function(evt) {
     evt.preventDefault();
