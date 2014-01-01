@@ -3,6 +3,8 @@ $('[data-toggle="tooltip"]').tooltip();
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent)) {
   $('.api-call-list').hide();
+  $('.api-call').css('width', '694px');
+  $('.api-call-description').css('margin-right', '0');
 }
 
 $(window).scroll(function(evt) {
