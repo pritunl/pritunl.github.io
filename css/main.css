@@ -445,7 +445,7 @@ a:focus {
 
 .api-call,
 .api-call-list-box {
-  width: 1190px;
+  width: 1207px;
 }
 
 .api-call-list-box {
@@ -482,7 +482,7 @@ a:focus {
 
 .api-call-description {
   font-weight: normal;
-  width: 706px;
+  width: 705px;
   margin-right: 187px;
 }
 
@@ -522,7 +522,7 @@ a:focus {
   background-color: rgba(0, 0, 0, 0.35);
   font-weight: bold;
   font-size: 0.7em;
-  width: 277px;
+  width: 295px;
   float: left;
 }
 
@@ -604,4 +604,9 @@ a:focus {
 
 .ace_scrollbar {
     display: none !important;
+}
+
+.ace_scroller {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
