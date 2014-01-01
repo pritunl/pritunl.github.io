@@ -1256,6 +1256,16 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#put-user-var-otp-secret">PUT /user/:organization_id/:user_id/otp_secret</a></li>
             <li><a href="#get-key-var-tar">GET /key/:organization_id/:user_id.tar</a></li>
             <li><a href="#get-key-var">GET /key/:organization_id/:user_id</a></li>
+            <li><a href="#get-server">GET /server</a></li>
+            <li><a href="#post-server">POST /server</a></li>
+            <li><a href="#put-server-var">PUT /server/:server_id</a></li>
+            <li><a href="#delete-server-var">DELETE /server/:server_id</a></li>
+            <li><a href="#put-server-var-var">PUT /server/:server_id/:operation</a></li>
+            <li><a href="#get-server-var-organization">GET /server/:server_id/organization</a></li>
+            <li><a href="#put-server-var-organization-var">PUT /server/:server_id/organization/:organization_id</a></li>
+            <li><a href="#delete-server-var-organization-var">DELETE /server/:server_id/organization/:organization_id</a></li>
+            <li><a href="#get-server-var-output">GET /server/:server_id/output</a></li>
+            <li><a href="#delete-server-var-output">DELETE /server/:server_id/output</a></li>
           </ul>
         </div>
         <a id="get-auth" class="anchor api"></a>
@@ -1288,8 +1298,9 @@ title: Pritunl - Simple OpenVPN Server
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/auth',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/auth',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1345,8 +1356,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.post(
-    'https://localhost:9700/auth/token',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.post(
+    BASE_URL + '/auth/token',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'username': 'admin',
@@ -1390,8 +1402,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.delete(
-    'https://localhost:9700/auth/token/264e30e7032b467bb0174b22bdb8ce13',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.delete(
+    BASE_URL + '/auth/token/264e30e7032b467bb0174b22bdb8ce13',
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -1464,8 +1477,9 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/event',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/event',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1481,9 +1495,8 @@ print response.json()
         'resource_id': None,
     }
 ]
-
 response = requests.get(
-    'https://localhost:9700/event/1388495668154',
+    BASE_URL + '/event/1388495668154',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1574,8 +1587,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/status',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/status',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1645,8 +1659,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/log',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/log',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1715,8 +1730,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.post(
-    'https://localhost:9700/password',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.post(
+    BASE_URL + '/password',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1777,8 +1793,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/organization',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/organization',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1849,8 +1866,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.post(
-    'https://localhost:9700/organization',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.post(
+    BASE_URL + '/organization',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1929,8 +1947,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.put(
-    'https://localhost:9700/organization/fb48734e859242e2800f077216401736',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.put(
+    BASE_URL + '/organization/fb48734e859242e2800f077216401736',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -1988,8 +2007,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.delete(
-    'https://localhost:9700/organization/fb48734e859242e2800f077216401736',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.delete(
+    BASE_URL + '/organization/fb48734e859242e2800f077216401736',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2115,8 +2135,9 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/user/060e54e627904abf9402bf3f2e0e16a2',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2238,8 +2259,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.post(
-    'https://localhost:9700/user/060e54e627904abf9402bf3f2e0e16a2',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.post(
+    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2342,8 +2364,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.put(
-    'https://localhost:9700/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.put(
+    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2409,8 +2432,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.delete(
-    'https://localhost:9700/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.delete(
+    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2499,8 +2523,9 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.put(
-    'https://localhost:9700/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.put(
+    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2565,8 +2590,9 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2643,8 +2669,9 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">response = requests.get(
-    'https://localhost:9700/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
@@ -2657,6 +2684,1080 @@ print response.json()
     'key_url': '/key/ca03ad46c20043aca6a4a571ea6c5e76.tar',
     'otp_url': '/key/647ecc34f195490981c5ede421e3b383.html',
 }</div>
+          </div>
+        </div>
+        <a id="get-server" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /server</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns a list of servers sorted by name.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>local_network</td>
+                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/server',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+[
+    {
+        'id': '6551f49596ca42c4942cb71162916b69',
+        'name': 'server1',
+        'status': True,
+        'uptime': 463,
+        'users_online': 1,
+        'user_count': 6,
+        'network': '10.139.82.0/24',
+        'interface': 'tun0',
+        'port': 12524,
+        'protocol': 'udp',
+        'public_address': '8.8.8.8',
+        'otp_auth': True,
+        'lzo_compression': False,
+        'debug': True,
+        'org_count': 2,
+    },
+    {
+        'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+        'name': 'server2',
+        'status': False,
+        'uptime': null,
+        'users_online': 0,
+        'user_count': 2,
+        'network': '10.86.88.0/24',
+        'interface': 'tun1',
+        'port': 18387,
+        'protocol': 'udp',
+        'public_address': '8.8.8.8',
+        'otp_auth': False,
+        'lzo_compression': False,
+        'debug': False,
+        'org_count': 1,
+    },
+]</div>
+          </div>
+        </div>
+        <a id="post-server" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>POST /server</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Create a new server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>local_network</td>
+                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>local_network</td>
+                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.post(
+    BASE_URL + '/server',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+        'name': 'new_server',
+        'network': '10.32.32.0/24',
+        'interface': 'tun2',
+        'port': 14823,
+        'protocol': 'udp',
+        'local_network': None,
+        'public_address': '8.8.8.8',
+        'otp_auth': True,
+        'lzo_compression': False,
+        'debug': False,
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'c4ceb6102ed941d7b1794aead89ab20e',
+    'name': 'new_server',
+    'status': False,
+    'uptime': None,
+    'users_online': 0,
+    'user_count': 0,
+    'network': '10.32.32.0/24',
+    'interface': 'tun2',
+    'port': 14823,
+    'protocol': 'udp',
+    'public_address': '8.8.8.8',
+    'otp_auth': True,
+    'lzo_compression': False,
+    'debug': False,
+    'org_count': 0,
+}</div>
+          </div>
+        </div>
+        <a id="put-server-var" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>PUT /server/:server_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Update an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>local_network</td>
+                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>local_network</td>
+                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.put(
+    BASE_URL + '/server/c4ceb6102ed941d7b1794aead89ab20e',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+        'name': 'new_name',
+        'network': '10.32.32.0/24',
+        'interface': 'tun2',
+        'port': 14823,
+        'protocol': 'udp',
+        'local_network': None,
+        'public_address': '8.8.8.8',
+        'otp_auth': True,
+        'lzo_compression': False,
+        'debug': False,
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'c4ceb6102ed941d7b1794aead89ab20e',
+    'name': 'new_name',
+    'status': False,
+    'uptime': None,
+    'users_online': 0,
+    'user_count': 0,
+    'network': '10.32.32.0/24',
+    'interface': 'tun2',
+    'port': 14823,
+    'protocol': 'udp',
+    'public_address': '8.8.8.8',
+    'otp_auth': True,
+    'lzo_compression': False,
+    'debug': False,
+    'org_count': 0,
+}</div>
+          </div>
+        </div>
+        <a id="delete-server-var" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>DELETE /server/:server_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Delete an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.delete(
+    BASE_URL + '/server/c4ceb6102ed941d7b1794aead89ab20e',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+        <a id="put-server-var-var" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>PUT /server/:server_id/:operation</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Start, stop or restart an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>operation</td>
+                  <td>Server operation</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>local_network</td>
+                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.put(
+    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+    'name': 'server2',
+    'status': True,
+    'uptime': 1,
+    'users_online': 0,
+    'user_count': 2,
+    'network': '10.86.88.0/24',
+    'interface': 'tun1',
+    'port': 18387,
+    'protocol': 'udp',
+    'public_address': '8.8.8.8',
+    'otp_auth': False,
+    'lzo_compression': False,
+    'debug': False,
+    'org_count': 1,
+}</div>
+          </div>
+        </div>
+        <a id="get-server-var-organization" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /server/:server_id/organization</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns a list of organizations attached to a server sorted by name.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>server</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+[
+    {
+        'id': '060e54e627904abf9402bf3f2e0e16a2',
+        'server': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+        'name': 'org1',
+    },
+]</div>
+          </div>
+        </div>
+        <a id="put-server-var-organization-var" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>PUT /server/:server_id/organization/:organization_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Attach an organization to an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>server</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.put(
+    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'c002529764334d63b7035ad1939eb7ca',
+    'server': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+    'name': 'org2',
+}</div>
+          </div>
+        </div>
+        <a id="delete-server-var-organization-var" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>DELETE /server/:server_id/organization/:organization_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Remove an organization from an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.delete(
+    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+        <a id="get-server-var-output" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /server/:server_id/output</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Get the output of a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>output</td>
+                  <td>Server output</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+    'output': '',
+}</div>
+          </div>
+        </div>
+        <a id="delete-server-var-output" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>DELETE /server/:server_id/output</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Clear the output of a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.delete(
+    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)</div>
           </div>
         </div>
       </div>
