@@ -1266,6 +1266,7 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#delete-server-var-organization-var">DELETE /server/:server_id/organization/:organization_id</a></li>
             <li><a href="#get-server-var-output">GET /server/:server_id/output</a></li>
             <li><a href="#delete-server-var-output">DELETE /server/:server_id/output</a></li>
+            <li><a href="#get-export">GET /export/pritunl.tar</a></li>
           </ul>
         </div>
         <a id="get-auth" class="anchor api"></a>
@@ -3752,6 +3753,47 @@ print response.json()
 <div class="editor">BASE_URL = 'https://localhost:9700'
 response = requests.delete(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+        <a id="get-export" class="anchor api"></a>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /export/pritunl.tar</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Download a tar archive of all server data.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/export/pritunl.tar',
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
         'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
