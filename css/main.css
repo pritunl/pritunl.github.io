@@ -11,7 +11,7 @@ a.anchor {
 }
 
 a.anchor.api {
-  top: -70px;
+  top: -67px;
 }
 
 a:focus {
@@ -435,11 +435,21 @@ a:focus {
 
 .install-point,
 .faq-point,
-.api-call {
+.api-call,
+.api-call-list-box {
   clear: both;
   width: 753px;
   padding-top: 30px;
   margin: 0 auto;
+}
+
+.api-call,
+.api-call-list-box {
+  width: 1090px;
+}
+
+.api-call-list-box {
+  padding-top: 0;
 }
 
 .install-point-label,
@@ -472,7 +482,8 @@ a:focus {
 
 .api-call-description {
   font-weight: normal;
-  width: 710px;
+  width: 650px;
+  margin-right: 187px;
 }
 
 .api-call-description .text,
@@ -502,7 +513,7 @@ a:focus {
 }
 
 .api-call-list {
-  margin: 30px 10px 10px 10px;
+  margin: 30px 10px 0 10px;
   position: absolute;
   list-style-type: none;
   color: #b6b6b6;
@@ -512,6 +523,7 @@ a:focus {
   font-weight: bold;
   font-size: 0.7em;
   width: 232px;
+  float: left;
 }
 
 .api-call-list li a {
