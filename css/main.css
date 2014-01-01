@@ -486,8 +486,6 @@ a:focus {
   margin-right: 187px;
 }
 
-.api-call-description .text,
-.api-call-description table,
 .api-call.endpoint .api-call-description {
   font-weight: bold;
 }
