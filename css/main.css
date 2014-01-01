@@ -515,7 +515,6 @@ a:focus {
   margin: 30px 10px 0 10px;
   position: absolute;
   list-style-type: none;
-  color: #b6b6b6;
   padding: 8px;
   border-radius: 6px;
   background-color: rgba(0, 0, 0, 0.35);
@@ -526,7 +525,7 @@ a:focus {
 }
 
 .api-call-list li a {
-  color: #b6b6b6;
+  color: #c6c6c6;
 }
 
 .api-call-list li a:hover {
