@@ -8,11 +8,14 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
 $(window).scroll(function(evt) {
   var scrollTop = $(this).scrollTop();
 
-  $('.api-call-list').stop().animate(
-    {top: Math.max($('#api').offset().top + 189, scrollTop + 67) + 'px'},
-    150, null, function() {
-      animateLock = false;
-    });
+  if (scrollTop >= $('#api').offset().top + 122) {
+    $('.api-call-list').css('position', 'fixed');
+    $('.api-call-list').css('top', '67px');
+  }
+  else {
+    $('.api-call-list').css('position', 'absolute');
+    $('.api-call-list').css('top', 'auto');
+  }
 
   if (scrollTop >= $('#api').offset().top) {
     $('.navbar-brand').removeClass('blue green red purple orange');
