@@ -2479,6 +2479,145 @@ print response.json()
 }</div>
           </div>
         </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /key/:organization_id/:user_id.tar</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Download a users key tar archive.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.get(
+    'https://localhost:9700/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+        <div class="api-call endpoint clearfix">
+          <div class="api-call-description">
+            <span>GET /key/:organization_id/:user_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Generate a temporary url to download a users key archive and view the two-step authentication key. Both urls can be viewed without authenticating and will be removed after opened.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>auth_token</td>
+                  <td>Authentication token</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Key link ID</td>
+                </tr>
+                <tr>
+                  <td>key_url</td>
+                  <td>Temporary url to download user key tar archive</td>
+                </tr>
+                <tr>
+                  <td>otp_url</td>
+                  <td>Temporary url to view the two-step authentication key and download key tar archive</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = requests.get(
+    'https://localhost:9700/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
+    headers={'Content-Type': 'application/json'},
+    data=json.dumps({
+        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
+    }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': 'ca03ad46c20043aca6a4a571ea6c5e76',
+    'key_url': '/key/ca03ad46c20043aca6a4a571ea6c5e76.tar',
+    'otp_url': '/key/647ecc34f195490981c5ede421e3b383.html',
+}</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
