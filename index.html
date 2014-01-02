@@ -1419,7 +1419,7 @@ assert(response.status_code == 200)</div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Long polling request that returns a list of events that have occurred. Request will poll for up to 30 seconds. The current time should always be retrieved from a time event to avoid problems with out of sync clocks. A list of events can be found in <pre>constants.py</pre>. New event IDs should be check against a list of events already recieved to avoid processing an event more then once.
+              Long polling request that returns a list of events that have occurred sorted by time. Request will poll for up to 30 seconds. The current time should always be retrieved from a time event to avoid problems with out of sync clocks. A list of events can be found in <pre>constants.py</pre>. New event IDs should be check against a list of events already recieved to avoid processing an event more then once.
             </div>
             <table class="table">
               <thead>
