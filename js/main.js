@@ -119,7 +119,7 @@ $('.install-buttons button').click(function(evt) {
         pages = [
           '.ubuntu-client-instructions',
           '.windows-client-instructions',
-          '.osx-client-instructions'
+          '.android-client-instructions'
         ];
       }
       pages.splice(pages.indexOf(page), 1);
@@ -152,8 +152,8 @@ $('.install-buttons button').click(function(evt) {
   else if ($(this).hasClass('windows-client')) {
     changeInstructions('.client-instructions', '.windows-client-instructions');
   }
-  else if ($(this).hasClass('osx-client')) {
-    changeInstructions('.client-instructions', '.osx-client-instructions');
+  else if ($(this).hasClass('android-client')) {
+    changeInstructions('.client-instructions', '.android-client-instructions');
   }
 });
 

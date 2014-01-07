@@ -429,8 +429,8 @@ a:focus {
   background-image: url('../img/windows.png');
 }
 
-.install-buttons .osx-client {
-  background-image: url('../img/osx.png');
+.install-buttons .android-client {
+  background-image: url('../img/android.png');
 }
 
 .install-point,
@@ -549,7 +549,7 @@ a:focus {
 .arch-instructions,
 .centos-instructions,
 .windows-client-instructions,
-.osx-client-instructions {
+.android-client-instructions {
   display: none;
 }
 
