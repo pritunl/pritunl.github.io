@@ -257,8 +257,8 @@ a:focus {
 }
 
 .intro-screenshots .screenshots {
-  width: 900px;
-  height: 595px;
+  width: 940px;
+  height: 621px;
   margin: 0 auto;
   display: block;
   box-shadow: 0 0 5px #222;
@@ -266,7 +266,7 @@ a:focus {
 
 .intro-screenshots img {
   position: absolute;
-  width: 900px;
+  width: 940px;
   display: block;
   opacity: 0;
   -webkit-transition: opacity 1s ease-in-out;
@@ -281,7 +281,7 @@ a:focus {
 
 .intro-screenshots .buttons {
   margin: 30px auto 0 auto;
-  width: 140px;
+  width: 212px;
   white-space: nowrap;
 }
 
