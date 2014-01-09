@@ -1368,6 +1368,7 @@ title: Pritunl - Simple OpenVPN Server
 <div class="editor">BASE_URL = 'https://localhost:9700'
 response = requests.get(
     BASE_URL + '/auth',
+    verify=False,
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1473,6 +1474,7 @@ print response.json()
 <div class="editor">BASE_URL = 'https://localhost:9700'
 response = requests.delete(
     BASE_URL + '/auth/token/264e30e7032b467bb0174b22bdb8ce13',
+    verify=False,
 )
 assert(response.status_code == 200)</div>
           </div>
