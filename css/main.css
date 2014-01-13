@@ -3,6 +3,17 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: #324768;
+}
+
+a:hover,
+a:focus {
+  color: #12233d;
+  text-decoration: underline;
+  outline: none;
+}
+
 a.anchor {
   position: relative;
   top: -50px;
@@ -12,10 +23,6 @@ a.anchor {
 
 a.anchor.api {
   top: -67px;
-}
-
-a:focus {
-  outline: none;
 }
 
 .title,
