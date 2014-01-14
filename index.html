@@ -450,7 +450,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>1</span>
               </div>
               <div class="install-point-description">
-                Install devel packages <pre>yum install gcc make openssl-devel lzo-devel pam-devel</pre>
+                Python 2.7 is required to run pritunl
               </div>
             </div>
             <div class="install-point clearfix">
@@ -458,7 +458,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>2</span>
               </div>
               <div class="install-point-description">
-                Download source <pre>curl -O http://swupdate.openvpn.org/community/releases/openvpn-2.3.2.tar.gz</pre>
+                Install devel packages <pre>yum install gcc make openssl-devel lzo-devel pam-devel</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -466,7 +466,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>3</span>
               </div>
               <div class="install-point-description">
-                Extract openvpn source <pre>tar zxf openvpn-2.3.2.tar.gz</pre>
+                Get source <pre>curl -O http://swupdate.openvpn.org/community/releases/openvpn-2.3.2.tar.gz</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -474,7 +474,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>4</span>
               </div>
               <div class="install-point-description">
-                Change to source directory <pre>cd openvpn-2.3.2</pre>
+                Extract openvpn source <pre>tar zxf openvpn-2.3.2.tar.gz</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -482,7 +482,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>5</span>
               </div>
               <div class="install-point-description">
-                Configure openvpn source <pre>./configure --prefix=/usr</pre>
+                Change to source directory <pre>cd openvpn-2.3.2</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -490,7 +490,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>6</span>
               </div>
               <div class="install-point-description">
-                Build openvpn <pre>make</pre>
+                Configure openvpn source <pre>./configure --prefix=/usr/local</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -498,7 +498,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>7</span>
               </div>
               <div class="install-point-description">
-                Install openvpn <pre>make install</pre>
+                Build openvpn <pre>make</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -506,7 +506,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>8</span>
               </div>
               <div class="install-point-description">
-                Install python easy_install <pre>yum install python-setuptools</pre>
+                Install openvpn <pre>make install</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -514,7 +514,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>9</span>
               </div>
               <div class="install-point-description">
-                Install python-pip <pre>easy_install pip</pre>
+                Install pritunl <pre>pip install pritunl</pre>
               </div>
             </div>
             <div class="install-point clearfix">
@@ -522,28 +522,12 @@ title: Pritunl - Simple OpenVPN Server
                 <span>10</span>
               </div>
               <div class="install-point-description">
-                Install importlib if python2.7 is not installed <pre>pip install importlib</pre>
-              </div>
-            </div>
-            <div class="install-point clearfix">
-              <div class="install-point-label header">
-                <span>11</span>
-              </div>
-              <div class="install-point-description">
-                Install pritunl <pre>pip install pritunl</pre>
-              </div>
-            </div>
-            <div class="install-point clearfix">
-              <div class="install-point-label header">
-                <span>12</span>
-              </div>
-              <div class="install-point-description">
                 Start pritunl service <pre>start pritunl</pre>
               </div>
             </div>
             <div class="install-point clearfix">
               <div class="install-point-label header">
-                <span>13</span>
+                <span>11</span>
               </div>
               <div class="install-point-description">
                 Use <pre>pip install --upgrade pritunl</pre> to update when a new version is released. When upgrading with pip <pre>/etc/pritunl.conf</pre> will be overwritten so a backup will need to be created before upgrading
