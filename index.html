@@ -1291,7 +1291,7 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#get-auth">GET /auth</a></li>
             <li><a href="#post-auth-token">POST /auth/token</a></li>
             <li><a href="#delete-auth-token-var">DELETE /auth/token/:auth_token</a></li>
-            <li><a href="#get-event-var">GET /event/:last_event</a></li>
+            <li><a href="#get-event-var">GET /event/:cursor</a></li>
             <li><a href="#get-status">GET /status</a></li>
             <li><a href="#get-log">GET /log</a></li>
             <li><a href="#put-password">PUT /password</a></li>
@@ -1466,13 +1466,13 @@ assert(response.status_code == 200)</div>
         <a id="get-event-var" class="anchor api"></a>
         <div class="api-call endpoint clearfix">
           <div class="api-call-description">
-            <span>GET /event/:last_event</span>
+            <span>GET /event/:cursor</span>
           </div>
         </div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Long polling request that returns a list of events that have occurred sorted by time. Request will poll for up to 30 seconds. The current time should always be retrieved from a time event to avoid problems with out of sync clocks. A list of events can be found in <pre>constants.py</pre>. New event IDs should be check against a list of events already recieved to avoid processing an event more then once.
+              Long polling request that returns a list of events that have occurred sorted by creation. Events will only be sent once. Request will poll for up to 30 seconds. A list of events can be found in <pre>constants.py</pre>.
             </div>
             <table class="table">
               <thead>
@@ -1482,8 +1482,8 @@ assert(response.status_code == 200)</div>
               </thead>
               <tbody>
                 <tr>
-                  <td>last_event</td>
-                  <td>Optional epoch time in milliseconds of last event. If left out a time event will be returned giving the current epoch time in milliseconds on the server</td>
+                  <td>cursor</td>
+                  <td>Optional id of last event. If left out only events that occurred after request is sent will be returned</td>
                 </tr>
               </tbody>
             </table>
@@ -1517,7 +1517,7 @@ assert(response.status_code == 200)</div>
                 </tr>
                 <tr>
                   <td>time</td>
-                  <td>Event epoch time in milliseconds</td>
+                  <td>Event epoch time</td>
                 </tr>
                 <tr>
                   <td>resource_id</td>
@@ -1546,13 +1546,13 @@ print response.json()
     {
         'id': '35a9a8c126f04451bebc5b6bb2c84ca4',
         'type': 'time',
-        'time': 1388495668154,
+        'time': 1388495668,
         'resource_id': None,
     }
 ]
 
 response = requests.get(
-    BASE_URL + '/event/1388495668154',
+    BASE_URL + '/event/35a9a8c126f04451bebc5b6bb2c84ca4',
     verify=False,
     headers={'Content-Type': 'application/json'},
     data=json.dumps({
@@ -1565,13 +1565,13 @@ print response.json()
     {
         'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
         'type': 'users_updated',
-        'time': 1388495793330,
+        'time': 1388495793,
         'resource_id': None,
     },
     {
         'id': '09b86897d4e44130b5fec95ca7101a5a',
         'type': 'server_organizations_updated',
-        'time': 1388495805330,
+        'time': 1388495805,
         'resource_id': '6551f49596ca42c4942cb71162916b69',
     },
 ]</div>
