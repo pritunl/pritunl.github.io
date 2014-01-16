@@ -1636,6 +1636,10 @@ print response.json()
                   <td>public_ip</td>
                   <td>Public IP address of server</td>
                 </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks on server</td>
+                </tr>
               </tbody>
             </table>
             <span class="editor-title">Python Example</span>
@@ -1663,6 +1667,11 @@ print response.json()
     'server_count': 2,
     'server_version': '0.10.4',
     'public_ip': '8.8.8.8',
+    'local_networks': [
+        '10.0.0.0/24',
+        '10.5.0.0/24',
+        '192.168.0.0/24',
+    ],
 }</div>
           </div>
         </div>
