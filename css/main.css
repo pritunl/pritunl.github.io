@@ -172,7 +172,7 @@ a.anchor.api {
   display: inline-block;
   padding: 15px 0;
   background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 6px;
+  border-radius: 5px;
   text-align: center;
   width: 220px;
   text-decoration: none;
@@ -226,7 +226,7 @@ a.anchor.api {
   width: 300px;
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
-  border-radius: 6px;
+  border-radius: 5px;
   list-style-type: none;
   float: left;
   margin-right: 25px;
@@ -245,8 +245,8 @@ a.anchor.api {
   text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
   background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   padding: 5px;
 }
 
@@ -385,7 +385,7 @@ a.anchor.api {
   width: 33.333333%;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 6px;
+  border-radius: 5px;
   border: 0 none;
   background-color: rgba(255, 255, 255, 0.35);
   box-shadow: none;
@@ -445,7 +445,7 @@ a.anchor.api {
 .api-call,
 .api-call-list-box {
   clear: both;
-  width: 753px;
+  width: 750px;
   padding-top: 30px;
   margin: 0 auto;
 }
@@ -464,27 +464,62 @@ a.anchor.api {
   width: 50px;
   height: 50px;
   padding-top: 7px;
-  border-radius: 50%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   color: #f0f0f0;
   font-size: 1.8em;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3);
   text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
   vertical-align: top;
-  float: left;
+  display: table-cell;
+}
+
+.faq-point.question .faq-point-label {
+  border-bottom-left-radius: 0;
+}
+
+.faq-point.answer .faq-point-label {
+  border-top-left-radius: 0;
 }
 
 .install-point-description,
 .faq-point-description,
 .api-call-description {
   font-weight: bold;
-  width: 690px;
+  width: 700px;
   background-color: rgba(255, 255, 255, 0.35);
-  border-radius: 6px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   color: #f0f0f0;
   font-size: 1.2em;
   padding: 13px;
+  display: table-cell;
+}
+
+.api-call.endpoint .api-call-description {
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 0;
   float: right;
+}
+
+.api-call.info .api-call-description {
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  float: right;
+}
+
+.faq-point.question .faq-point-description {
+  border-bottom-right-radius: 0;
+}
+
+.faq-point.answer .faq-point-description {
+  border-top-right-radius: 0;
+}
+
+.install-point-description,
+.question .faq-point-description {
+  height: 50px;
 }
 
 .api-call-description {
@@ -511,7 +546,7 @@ a.anchor.api {
 
 .faq-point.answer,
 .api-call.info {
-  padding-top: 10px;
+  padding-top: 0;
 }
 
 .api-call .table tbody tr td:first-child {
@@ -524,7 +559,7 @@ a.anchor.api {
   position: absolute;
   list-style-type: none;
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.35);
   font-weight: bold;
   font-size: 0.7em;
@@ -547,8 +582,12 @@ a.anchor.api {
   font-size: 1.1em;
 }
 
-.answer .faq-point-label {
-  background-color: rgba(255, 255, 255, 0.35);
+.faq-point.question .faq-point-label {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.faq-point.answer .faq-point-label {
+  background-color: rgba(94, 94, 94, 0.35);
 }
 
 .linode-instructions,
