@@ -1325,7 +1325,7 @@ title: Pritunl - Simple OpenVPN Server
             <span>GET /auth</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns authentication status.
@@ -1367,7 +1367,7 @@ print response.json()
             <span>POST /auth/token</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns authentication token required for making protected API calls. API token stays valid until server is restarted.
@@ -1431,7 +1431,7 @@ print response.json()
             <span>DELETE /auth/token/:auth_token</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Revoke an authentication token.
@@ -1469,7 +1469,7 @@ assert(response.status_code == 200)</div>
             <span>GET /event/:cursor</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Long polling request that returns a list of events that have occurred sorted by creation. Events will only be sent once. Request will poll for up to 30 seconds. A list of events can be found in <pre>constants.py</pre>.
@@ -1583,7 +1583,7 @@ print response.json()
             <span>GET /status</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns general information about the pritunl server.
@@ -1681,7 +1681,7 @@ print response.json()
             <span>GET /log</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns a list of server log entries sorted by time.
@@ -1757,7 +1757,7 @@ print response.json()
             <span>PUT /password</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Change the server password.
@@ -1821,7 +1821,7 @@ print response.json()
             <span>GET /organization</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns a list of organizations on the server sorted by name.
@@ -1891,7 +1891,7 @@ print response.json()
             <span>POST /organization</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Create a new organization.
@@ -1960,7 +1960,7 @@ print response.json()
             <span>PUT /organization/:organization_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Rename an existing organization.
@@ -2042,7 +2042,7 @@ print response.json()
             <span>DELETE /organization/:organization_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Delete an existing organization.
@@ -2097,7 +2097,7 @@ assert(response.status_code == 200)</div>
             <span>GET /user/:organization_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns a list of users in an organization sorted by name.
@@ -2259,7 +2259,7 @@ print response.json()
             <span>POST /user/:organization_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Create a new user in an organization.
@@ -2361,7 +2361,7 @@ print response.json()
             <span>PUT /user/:organization_id/:user_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Rename an existing user in an organization.
@@ -2467,7 +2467,7 @@ print response.json()
             <span>DELETE /user/:organization_id/:user_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Delete an existing user in an organization. This will restart any servers the user is connected to.
@@ -2526,7 +2526,7 @@ assert(response.status_code == 200)</div>
             <span>PUT /user/:organization_id/:user_id/otp_secret</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Generate a new two-step authentication secret for an existing user.
@@ -2627,7 +2627,7 @@ print response.json()
             <span>GET /key/:organization_id/:user_id.tar</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Download a users key tar archive.
@@ -2686,7 +2686,7 @@ assert(response.status_code == 200)</div>
             <span>GET /key/:organization_id/:user_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Generate a temporary url to download a users key archive and view the two-step authentication key. Both urls can be viewed without authenticating and will expire after 24 hours.
@@ -2772,7 +2772,7 @@ print response.json()
             <span>GET /server</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns a list of servers sorted by name.
@@ -2926,7 +2926,7 @@ print response.json()
             <span>POST /server</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Create a new server.
@@ -3110,7 +3110,7 @@ print response.json()
             <span>PUT /server/:server_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Update an existing server.
@@ -3307,7 +3307,7 @@ print response.json()
             <span>DELETE /server/:server_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Delete an existing server.
@@ -3362,7 +3362,7 @@ assert(response.status_code == 200)</div>
             <span>PUT /server/:server_id/:operation</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Start, stop or restart an existing server.
@@ -3499,7 +3499,7 @@ print response.json()
             <span>GET /server/:server_id/organization</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Returns a list of organizations attached to a server sorted by name.
@@ -3583,7 +3583,7 @@ print response.json()
             <span>PUT /server/:server_id/organization/:organization_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Attach an organization to an existing server.
@@ -3669,7 +3669,7 @@ print response.json()
             <span>DELETE /server/:server_id/organization/:organization_id</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Remove an organization from an existing server.
@@ -3728,7 +3728,7 @@ assert(response.status_code == 200)</div>
             <span>GET /server/:server_id/output</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Get the output of a server.
@@ -3805,7 +3805,7 @@ print response.json()
             <span>DELETE /server/:server_id/output</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Clear the output of a server.
@@ -3860,7 +3860,7 @@ assert(response.status_code == 200)</div>
             <span>GET /export/pritunl.tar</span>
           </div>
         </div>
-        <div class="api-call info">
+        <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
               Download a tar archive of all server data.
