@@ -1327,7 +1327,7 @@ title: Pritunl - Simple OpenVPN Server
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Returns authentication token required for making protected API calls by including the token in the X-Auth-Token header. Auth token stays valid until server is restarted.
+              Returns authentication token required for making protected API calls by including the token in the Auth-Token header. Auth token stays valid until server is restarted.
             </div>
             <table class="table">
               <thead>
@@ -1480,7 +1480,7 @@ response = requests.get(
     BASE_URL + '/event',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -1498,7 +1498,7 @@ response = requests.get(
     BASE_URL + '/event/35a9a8c126f04451bebc5b6bb2c84ca4',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -1582,7 +1582,7 @@ response = requests.get(
     BASE_URL + '/status',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -1646,7 +1646,7 @@ response = requests.get(
     BASE_URL + '/log',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -1714,7 +1714,7 @@ response = requests.put(
     verify=False,
     headers={
         'Content-Type': 'application/json',
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'password': 'pass',
@@ -1766,7 +1766,7 @@ response = requests.get(
     BASE_URL + '/organization',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -1836,7 +1836,7 @@ response = requests.post(
     verify=False,
     headers={
         'Content-Type': 'application/json',
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_org',
@@ -1916,7 +1916,7 @@ response = requests.put(
     verify=False,
     headers={
         'Content-Type': 'application/json',
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_name',
@@ -1965,7 +1965,7 @@ response = requests.delete(
     BASE_URL + '/organization/fb48734e859242e2800f077216401736',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)</div>
@@ -2080,7 +2080,7 @@ response = requests.get(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -2201,7 +2201,7 @@ response = requests.post(
     verify=False,
     headers={
         'Content-Type': 'application/json',
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_user',
@@ -2305,7 +2305,7 @@ response = requests.put(
     verify=False,
     headers={
         'Content-Type': 'application/json',
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_name',
@@ -2362,7 +2362,7 @@ response = requests.delete(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)</div>
@@ -2440,7 +2440,7 @@ response = requests.put(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -2494,7 +2494,7 @@ response = requests.get(BASE_URL +
     '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)</div>
@@ -2560,7 +2560,7 @@ response = requests.get(
     BASE_URL + '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -2667,7 +2667,7 @@ response = requests.get(
     BASE_URL + '/server',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -2857,7 +2857,7 @@ response = requests.post(
     verify=False,
     headers={
         'Content-Type': 'application/json',
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_server',
@@ -3052,7 +3052,7 @@ response = requests.put(
     verify=False,
     headers={
         'Content-Type': 'application/json',
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_name',
@@ -3124,7 +3124,7 @@ response = requests.delete(
     BASE_URL + '/server/c4ceb6102ed941d7b1794aead89ab20e',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)</div>
@@ -3242,7 +3242,7 @@ response = requests.put(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -3322,7 +3322,7 @@ response = requests.get(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -3396,7 +3396,7 @@ response = requests.put(BASE_URL +
     '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -3447,7 +3447,7 @@ response = requests.delete(BASE_URL +
     '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)</div>
@@ -3505,7 +3505,7 @@ response = requests.get(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)
@@ -3551,7 +3551,7 @@ response = requests.delete(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)</div>
@@ -3579,7 +3579,7 @@ response = requests.get(
     BASE_URL + '/export/pritunl.tar',
     verify=False,
     headers={
-        'X-Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
 )
 assert(response.status_code == 200)</div>
