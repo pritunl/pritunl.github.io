@@ -1487,24 +1487,6 @@ assert(response.status_code == 200)
 print response.json()
 [
     {
-        'id': '35a9a8c126f04451bebc5b6bb2c84ca4',
-        'type': 'time',
-        'time': 1388495668,
-        'resource_id': None,
-    }
-]
-
-response = requests.get(
-    BASE_URL + '/event/35a9a8c126f04451bebc5b6bb2c84ca4',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
-)
-assert(response.status_code == 200)
-print response.json()
-[
-    {
         'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
         'type': 'users_updated',
         'time': 1388495793,
