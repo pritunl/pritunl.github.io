@@ -7067,6 +7067,7 @@ header.blur {
 }
 .users-list .user,
 .users-list .no-users,
+.users-list .no-users-search,
 .users-list .loading,
 .server-orgs-list .org,
 .server-orgs-list .no-orgs {
@@ -7086,6 +7087,7 @@ header.blur {
   background-clip: padding-box;
 }
 .users-list .no-users,
+.users-list .no-users-search,
 .users-list .loading,
 .server-orgs-list .no-orgs {
   text-align: center;
@@ -7355,7 +7357,7 @@ header.blur {
   margin-right: 0;
 }
 .dashboard .status-container .status-item .status-icon.glyphicon-cloud {
-  top: 0;
+  top: 4px;
 }
 .servers-list .server .server-info .server-port .status-icon {
   top: 0;
