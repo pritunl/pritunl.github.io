@@ -1288,10 +1288,9 @@ title: Pritunl - Simple OpenVPN Server
         <div class="api-call-list-box">
           <ul class="api-call-list">
             <li class="list-title">API Endpoints</li>
-            <li><a href="#get-auth">GET /auth</a></li>
             <li><a href="#post-auth-token">POST /auth/token</a></li>
             <li><a href="#delete-auth-token-var">DELETE /auth/token/:auth_token</a></li>
-            <li><a href="#get-event-var">GET /event/:last_event</a></li>
+            <li><a href="#get-event-var">GET /event/:cursor</a></li>
             <li><a href="#get-status">GET /status</a></li>
             <li><a href="#get-log">GET /log</a></li>
             <li><a href="#put-password">PUT /password</a></li>
@@ -1319,48 +1318,6 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#get-export">GET /export/pritunl.tar</a></li>
           </ul>
         </div>
-        <a id="get-auth" class="anchor api"></a>
-        <div class="api-call endpoint">
-          <div class="api-call-description">
-            <span>GET /auth</span>
-          </div>
-        </div>
-        <div class="api-call info clearfix">
-          <div class="api-call-description">
-            <div class="text">
-              Returns authentication status.
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Response</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>authenticated</td>
-                  <td>True if authenticated otherwise false</td>
-                </tr>
-              </tbody>
-            </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/auth',
-    verify=False,
-)
-assert(response.status_code == 200)
-print response.json()
-{
-    'authenticated': False,
-}</div>
-          </div>
-        </div>
         <a id="post-auth-token" class="anchor api"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
@@ -1370,7 +1327,7 @@ print response.json()
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Returns authentication token required for making protected API calls. API token stays valid until server is restarted.
+              Returns authentication token required for making protected API calls by including the token in the Auth-Token header. Auth token stays valid until server is restarted.
             </div>
             <table class="table">
               <thead>
@@ -1466,13 +1423,13 @@ assert(response.status_code == 200)</div>
         <a id="get-event-var" class="anchor api"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
-            <span>GET /event/:last_event</span>
+            <span>GET /event/:cursor</span>
           </div>
         </div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Long polling request that returns a list of events that have occurred sorted by time. Request will poll for up to 30 seconds. The current time should always be retrieved from a time event to avoid problems with out of sync clocks. A list of events can be found in <pre>constants.py</pre>. New event IDs should be check against a list of events already recieved to avoid processing an event more then once.
+              Long polling request that returns a list of events that have occurred sorted by creation. Events will only be sent once. Request will poll for up to 30 seconds. A list of events can be found in <pre>constants.py</pre>.
             </div>
             <table class="table">
               <thead>
@@ -1482,21 +1439,8 @@ assert(response.status_code == 200)</div>
               </thead>
               <tbody>
                 <tr>
-                  <td>last_event</td>
-                  <td>Optional epoch time in milliseconds of last event. If left out a time event will be returned giving the current epoch time in milliseconds on the server</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
+                  <td>cursor</td>
+                  <td>Optional id of last event. If left out only events that occurred after request is sent will be returned</td>
                 </tr>
               </tbody>
             </table>
@@ -1517,7 +1461,7 @@ assert(response.status_code == 200)</div>
                 </tr>
                 <tr>
                   <td>time</td>
-                  <td>Event epoch time in milliseconds</td>
+                  <td>Event epoch time</td>
                 </tr>
                 <tr>
                   <td>resource_id</td>
@@ -1535,10 +1479,9 @@ assert(response.status_code == 200)</div>
 response = requests.get(
     BASE_URL + '/event',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1546,18 +1489,17 @@ print response.json()
     {
         'id': '35a9a8c126f04451bebc5b6bb2c84ca4',
         'type': 'time',
-        'time': 1388495668154,
+        'time': 1388495668,
         'resource_id': None,
     }
 ]
 
 response = requests.get(
-    BASE_URL + '/event/1388495668154',
+    BASE_URL + '/event/35a9a8c126f04451bebc5b6bb2c84ca4',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1565,13 +1507,13 @@ print response.json()
     {
         'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
         'type': 'users_updated',
-        'time': 1388495793330,
+        'time': 1388495793,
         'resource_id': None,
     },
     {
         'id': '09b86897d4e44130b5fec95ca7101a5a',
         'type': 'server_organizations_updated',
-        'time': 1388495805330,
+        'time': 1388495805,
         'resource_id': '6551f49596ca42c4942cb71162916b69',
     },
 ]</div>
@@ -1588,19 +1530,6 @@ print response.json()
             <div class="text">
               Returns general information about the pritunl server.
             </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <table class="table">
               <thead>
                 <tr>
@@ -1636,6 +1565,10 @@ print response.json()
                   <td>public_ip</td>
                   <td>Public IP address of server</td>
                 </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks on server</td>
+                </tr>
               </tbody>
             </table>
             <span class="editor-title">Python Example</span>
@@ -1648,10 +1581,9 @@ print response.json()
 response = requests.get(
     BASE_URL + '/status',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1663,6 +1595,11 @@ print response.json()
     'server_count': 2,
     'server_version': '0.10.4',
     'public_ip': '8.8.8.8',
+    'local_networks': [
+        '10.0.0.0/24',
+        '10.5.0.0/24',
+        '192.168.0.0/24',
+    ],
 }</div>
           </div>
         </div>
@@ -1677,19 +1614,6 @@ print response.json()
             <div class="text">
               Returns a list of server log entries sorted by time.
             </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <table class="table">
               <thead>
                 <tr>
@@ -1721,10 +1645,9 @@ print response.json()
 response = requests.get(
     BASE_URL + '/log',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1761,10 +1684,6 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-                <tr>
                   <td>password</td>
                   <td>New password</td>
                 </tr>
@@ -1793,9 +1712,11 @@ print response.json()
 response = requests.put(
     BASE_URL + '/password',
     verify=False,
-    headers={'Content-Type': 'application/json'},
+    headers={
+        'Content-Type': 'application/json',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
     data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
         'password': 'pass',
     }),
 )
@@ -1817,19 +1738,6 @@ print response.json()
             <div class="text">
               Returns a list of organizations on the server sorted by name.
             </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <table class="table">
               <thead>
                 <tr>
@@ -1857,10 +1765,9 @@ print response.json()
 response = requests.get(
     BASE_URL + '/organization',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1895,10 +1802,6 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>Name of organization</td>
                 </tr>
@@ -1931,9 +1834,11 @@ print response.json()
 response = requests.post(
     BASE_URL + '/organization',
     verify=False,
-    headers={'Content-Type': 'application/json'},
+    headers={
+        'Content-Type': 'application/json',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
     data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
         'name': 'new_org',
     }),
 )
@@ -1977,10 +1882,6 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>New name of organization</td>
                 </tr>
@@ -2013,9 +1914,11 @@ print response.json()
 response = requests.put(
     BASE_URL + '/organization/fb48734e859242e2800f077216401736',
     verify=False,
-    headers={'Content-Type': 'application/json'},
+    headers={
+        'Content-Type': 'application/json',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
     data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
         'name': 'new_name',
     }),
 )
@@ -2051,19 +1954,6 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <span class="editor-title">Python Example</span>
             <noscript>
               <div class="text">
@@ -2074,10 +1964,9 @@ print response.json()
 response = requests.delete(
     BASE_URL + '/organization/fb48734e859242e2800f077216401736',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -2103,19 +1992,6 @@ assert(response.status_code == 200)</div>
                 <tr>
                   <td>organization_id</td>
                   <td>Organization ID</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
                 </tr>
               </tbody>
             </table>
@@ -2203,10 +2079,9 @@ assert(response.status_code == 200)</div>
 response = requests.get(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2276,10 +2151,6 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>User name</td>
                 </tr>
@@ -2328,9 +2199,11 @@ print response.json()
 response = requests.post(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2',
     verify=False,
-    headers={'Content-Type': 'application/json'},
+    headers={
+        'Content-Type': 'application/json',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
     data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
         'name': 'new_user',
     }),
 )
@@ -2382,10 +2255,6 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>New user name</td>
                 </tr>
@@ -2434,9 +2303,11 @@ print response.json()
 response = requests.put(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
     verify=False,
-    headers={'Content-Type': 'application/json'},
+    headers={
+        'Content-Type': 'application/json',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
     data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
         'name': 'new_name',
     }),
 )
@@ -2480,19 +2351,6 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <span class="editor-title">Python Example</span>
             <noscript>
               <div class="text">
@@ -2503,10 +2361,9 @@ print response.json()
 response = requests.delete(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -2536,19 +2393,6 @@ assert(response.status_code == 200)</div>
                 <tr>
                   <td>user_id</td>
                   <td>User ID</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
                 </tr>
               </tbody>
             </table>
@@ -2595,10 +2439,9 @@ assert(response.status_code == 200)</div>
 response = requests.put(
     BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2640,19 +2483,6 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <span class="editor-title">Python Example</span>
             <noscript>
               <div class="text">
@@ -2663,10 +2493,9 @@ print response.json()
 response = requests.get(BASE_URL +
     '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -2680,7 +2509,7 @@ assert(response.status_code == 200)</div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Generate a temporary url to download a users key archive and view the two-step authentication key. Both urls can be viewed without authenticating and will expire after one hour.
+              Generate a temporary url to download a users key archive and view the two-step authentication key. Both urls can be viewed without authenticating and will expire after 24 hours.
             </div>
             <table class="table">
               <thead>
@@ -2696,19 +2525,6 @@ assert(response.status_code == 200)</div>
                 <tr>
                   <td>user_id</td>
                   <td>User ID</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
                 </tr>
               </tbody>
             </table>
@@ -2743,10 +2559,9 @@ assert(response.status_code == 200)</div>
 response = requests.get(
     BASE_URL + '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2768,19 +2583,6 @@ print response.json()
             <div class="text">
               Returns a list of servers sorted by name.
             </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <table class="table">
               <thead>
                 <tr>
@@ -2829,8 +2631,8 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
-                  <td>local_network</td>
-                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -2864,10 +2666,9 @@ print response.json()
 response = requests.get(
     BASE_URL + '/server',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2883,6 +2684,7 @@ print response.json()
         'interface': 'tun0',
         'port': 12524,
         'protocol': 'udp',
+        'local_networks': [],
         'public_address': '8.8.8.8',
         'otp_auth': True,
         'lzo_compression': False,
@@ -2900,6 +2702,7 @@ print response.json()
         'interface': 'tun1',
         'port': 18387,
         'protocol': 'udp',
+        'local_networks': [],
         'public_address': '8.8.8.8',
         'otp_auth': False,
         'lzo_compression': False,
@@ -2928,10 +2731,6 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>Server name</td>
                 </tr>
@@ -2952,8 +2751,8 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
-                  <td>local_network</td>
-                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise null to route all traffic</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -3021,8 +2820,8 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
-                  <td>local_network</td>
-                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -3056,15 +2855,17 @@ print response.json()
 response = requests.post(
     BASE_URL + '/server',
     verify=False,
-    headers={'Content-Type': 'application/json'},
+    headers={
+        'Content-Type': 'application/json',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
     data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
         'name': 'new_server',
         'network': '10.32.32.0/24',
         'interface': 'tun2',
         'port': 14823,
         'protocol': 'udp',
-        'local_network': None,
+        'local_networks': None,
         'public_address': '8.8.8.8',
         'otp_auth': True,
         'lzo_compression': False,
@@ -3084,6 +2885,7 @@ print response.json()
     'interface': 'tun2',
     'port': 14823,
     'protocol': 'udp',
+    'local_networks': [],
     'public_address': '8.8.8.8',
     'otp_auth': True,
     'lzo_compression': False,
@@ -3124,10 +2926,6 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>Server name</td>
                 </tr>
@@ -3148,8 +2946,8 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
-                  <td>local_network</td>
-                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise null to route all traffic</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -3217,8 +3015,8 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
-                  <td>local_network</td>
-                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -3252,15 +3050,17 @@ print response.json()
 response = requests.put(
     BASE_URL + '/server/c4ceb6102ed941d7b1794aead89ab20e',
     verify=False,
-    headers={'Content-Type': 'application/json'},
+    headers={
+        'Content-Type': 'application/json',
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
     data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
         'name': 'new_name',
         'network': '10.32.32.0/24',
         'interface': 'tun2',
         'port': 14823,
         'protocol': 'udp',
-        'local_network': None,
+        'local_networks': None,
         'public_address': '8.8.8.8',
         'otp_auth': True,
         'lzo_compression': False,
@@ -3280,6 +3080,7 @@ print response.json()
     'interface': 'tun2',
     'port': 14823,
     'protocol': 'udp',
+    'local_networks': [],
     'public_address': '8.8.8.8',
     'otp_auth': True,
     'lzo_compression': False,
@@ -3312,19 +3113,6 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <span class="editor-title">Python Example</span>
             <noscript>
               <div class="text">
@@ -3335,10 +3123,9 @@ print response.json()
 response = requests.delete(
     BASE_URL + '/server/c4ceb6102ed941d7b1794aead89ab20e',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -3419,8 +3206,8 @@ assert(response.status_code == 200)</div>
                   <td>Server protocol</td>
                 </tr>
                 <tr>
-                  <td>local_network</td>
-                  <td>Servers local network if the server is routing traffic to a local network otherwise null</td>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -3454,10 +3241,9 @@ assert(response.status_code == 200)</div>
 response = requests.put(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3507,19 +3293,6 @@ print response.json()
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
                   <th colspan="2">Response</th>
                 </tr>
               </thead>
@@ -3548,10 +3321,9 @@ print response.json()
 response = requests.get(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3595,19 +3367,6 @@ print response.json()
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
                   <th colspan="2">Response</th>
                 </tr>
               </thead>
@@ -3636,10 +3395,9 @@ print response.json()
 response = requests.put(BASE_URL +
     '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3678,19 +3436,6 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <span class="editor-title">Python Example</span>
             <noscript>
               <div class="text">
@@ -3701,10 +3446,9 @@ print response.json()
 response = requests.delete(BASE_URL +
     '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -3736,19 +3480,6 @@ assert(response.status_code == 200)</div>
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
                   <th colspan="2">Response</th>
                 </tr>
               </thead>
@@ -3773,10 +3504,9 @@ assert(response.status_code == 200)</div>
 response = requests.get(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3810,19 +3540,6 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <span class="editor-title">Python Example</span>
             <noscript>
               <div class="text">
@@ -3833,10 +3550,9 @@ print response.json()
 response = requests.delete(
     BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -3852,19 +3568,6 @@ assert(response.status_code == 200)</div>
             <div class="text">
               Download a tar archive of all server data.
             </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
             <span class="editor-title">Python Example</span>
             <noscript>
               <div class="text">
@@ -3875,10 +3578,9 @@ assert(response.status_code == 200)</div>
 response = requests.get(
     BASE_URL + '/export/pritunl.tar',
     verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-    }),
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
 )
 assert(response.status_code == 200)</div>
           </div>
