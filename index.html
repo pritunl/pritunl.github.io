@@ -1277,7 +1277,7 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#get-event-var">GET /event/:cursor</a></li>
             <li><a href="#get-status">GET /status</a></li>
             <li><a href="#get-log">GET /log</a></li>
-            <li><a href="#put-password">PUT /password</a></li>
+            <li><a href="#put-auth">PUT /auth</a></li>
             <li><a href="#get-organization">GET /organization</a></li>
             <li><a href="#post-organization">POST /organization</a></li>
             <li><a href="#put-organization-var">PUT /organization/:organization_id</a></li>
@@ -1631,16 +1631,16 @@ print response.json()
 ]</div>
           </div>
         </div>
-        <a id="put-password" class="anchor api"></a>
+        <a id="put-auth" class="anchor api"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
-            <span>PUT /password</span>
+            <span>PUT /auth</span>
           </div>
         </div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Change the server password.
+              Change the server username and password.
             </div>
             <table class="table">
               <thead>
@@ -1649,6 +1649,10 @@ print response.json()
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td>username</td>
+                  <td>New username</td>
+                </tr>
                 <tr>
                   <td>password</td>
                   <td>New password</td>
@@ -1663,8 +1667,8 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>password</td>
-                  <td>New password</td>
+                  <td>username</td>
+                  <td>Current username</td>
                 </tr>
               </tbody>
             </table>
@@ -1676,20 +1680,21 @@ print response.json()
             </noscript>
 <div class="editor">BASE_URL = 'https://localhost:9700'
 response = requests.put(
-    BASE_URL + '/password',
+    BASE_URL + '/auth',
     verify=False,
     headers={
         'Content-Type': 'application/json',
         'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
+        'username': 'user',
         'password': 'pass',
     }),
 )
 assert(response.status_code == 200)
 print response.json()
 {
-    'password': 'pass',
+    'username': 'user',
 }</div>
           </div>
         </div>
