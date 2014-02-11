@@ -2602,8 +2602,16 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -2655,7 +2663,9 @@ print response.json()
         'interface': 'tun0',
         'port': 12524,
         'protocol': 'udp',
+        'dh_param_bits': 1536,
         'local_networks': [],
+        'dns_servers': [],
         'public_address': '8.8.8.8',
         'otp_auth': True,
         'lzo_compression': False,
@@ -2673,7 +2683,9 @@ print response.json()
         'interface': 'tun1',
         'port': 18387,
         'protocol': 'udp',
+        'dh_param_bits': 1536,
         'local_networks': [],
+        'dns_servers': [],
         'public_address': '8.8.8.8',
         'otp_auth': False,
         'lzo_compression': False,
@@ -2722,8 +2734,16 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise null to route all traffic</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -2791,8 +2811,16 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -2836,7 +2864,9 @@ response = requests.post(
         'interface': 'tun2',
         'port': 14823,
         'protocol': 'udp',
+        'dh_param_bits': 1536,
         'local_networks': None,
+        'dns_servers': None,
         'public_address': '8.8.8.8',
         'otp_auth': True,
         'lzo_compression': False,
@@ -2856,7 +2886,9 @@ print response.json()
     'interface': 'tun2',
     'port': 14823,
     'protocol': 'udp',
+    'dh_param_bits': 1536,
     'local_networks': [],
+    'dns_servers': [],
     'public_address': '8.8.8.8',
     'otp_auth': True,
     'lzo_compression': False,
@@ -2917,8 +2949,16 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise null to route all traffic</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -2986,8 +3026,16 @@ print response.json()
                   <td>Server protocol</td>
                 </tr>
                 <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -3027,15 +3075,6 @@ response = requests.put(
     },
     data=json.dumps({
         'name': 'new_name',
-        'network': '10.32.32.0/24',
-        'interface': 'tun2',
-        'port': 14823,
-        'protocol': 'udp',
-        'local_networks': None,
-        'public_address': '8.8.8.8',
-        'otp_auth': True,
-        'lzo_compression': False,
-        'debug': False,
     }),
 )
 assert(response.status_code == 200)
@@ -3051,7 +3090,9 @@ print response.json()
     'interface': 'tun2',
     'port': 14823,
     'protocol': 'udp',
+    'dh_param_bits': 1536,
     'local_networks': [],
+    'dns_servers': [],
     'public_address': '8.8.8.8',
     'otp_auth': True,
     'lzo_compression': False,
