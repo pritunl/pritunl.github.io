@@ -1212,22 +1212,6 @@ title: Pritunl - Simple OpenVPN Server
               When the service starts an HTTP requests is sent to ip.pritunl.com to get the public IP address of the server. This is used to automatically fill in the public IP setting when creating a new server. The source code for the ip.pritunl.com server is available at github.com/pritunl/pritunl-ip. This can be disabled by adding <pre>get_public_ip=false</pre> to <pre>/etc/pritunl.conf</pre>
             </div>
           </div>
-          <div class="faq-point question">
-            <div class="faq-point-label header">
-              <span>Q</span>
-            </div>
-            <div class="faq-point-description">
-              <span>How can inline certificates be disabled?</span>
-            </div>
-          </div>
-          <div class="faq-point answer">
-            <div class="faq-point-label header">
-              <span>A</span>
-            </div>
-            <div class="faq-point-description">
-              By default the certificates and key for openvpn will be included in the user configuration file instead of having seperate files for the certificates and keys. This can be disabled by adding <pre>inline_certs=false</pre> to <pre>/etc/pritunl.conf</pre>
-            </div>
-          </div>
         </div>
       </div>
     </div>
