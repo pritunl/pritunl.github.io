@@ -302,7 +302,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>1</span>
               </div>
               <div class="install-point-description">
-                Install "add-apt-repository" <pre>apt-get install -y python-software-properties</pre>
+                Update package list <pre>apt-get update</pre>
               </div>
             </div>
             <div class="install-point">
@@ -310,7 +310,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>2</span>
               </div>
               <div class="install-point-description">
-                Add pritunl repository <pre>add-apt-repository ppa:pritunl/ppa</pre>
+                Install "add-apt-repository" <pre>apt-get install -y python-software-properties</pre>
               </div>
             </div>
             <div class="install-point">
@@ -318,7 +318,7 @@ title: Pritunl - Simple OpenVPN Server
                 <span>3</span>
               </div>
               <div class="install-point-description">
-                Update package list <pre>apt-get update</pre>
+                Add pritunl repository <pre>add-apt-repository ppa:pritunl/ppa</pre>
               </div>
             </div>
             <div class="install-point">
@@ -326,12 +326,20 @@ title: Pritunl - Simple OpenVPN Server
                 <span>4</span>
               </div>
               <div class="install-point-description">
-                Install pritunl <pre>apt-get install -y pritunl</pre>
+                Update package list <pre>apt-get update</pre>
               </div>
             </div>
             <div class="install-point">
               <div class="install-point-label header">
                 <span>5</span>
+              </div>
+              <div class="install-point-description">
+                Install pritunl <pre>apt-get install -y pritunl</pre>
+              </div>
+            </div>
+            <div class="install-point">
+              <div class="install-point-label header">
+                <span>6</span>
               </div>
               <div class="install-point-description">
                 Use <pre>apt-get upgrade -y</pre> to update when a new version is released
