@@ -21,26 +21,26 @@ var onScroll = function() {
 
   if (scrollTop >= $('#api').offset().top) {
     $('.navbar-brand').removeClass('blue green red purple orange');
-    $('.navbar-brand').addClass('pink');
+    $('.navbar-brand').addClass('brown');
   }
   else if (scrollTop >= $('#faq').offset().top) {
-    $('.navbar-brand').removeClass('blue green red purple pink');
+    $('.navbar-brand').removeClass('blue green red purple brown');
     $('.navbar-brand').addClass('orange');
   }
   else if (scrollTop >= $('#install').offset().top) {
-    $('.navbar-brand').removeClass('blue green red orange pink');
+    $('.navbar-brand').removeClass('blue green red orange brown');
     $('.navbar-brand').addClass('purple');
   }
   else if (scrollTop >= $('#screenshots').offset().top) {
-    $('.navbar-brand').removeClass('blue green purple orange pink');
+    $('.navbar-brand').removeClass('blue green purple orange brown');
     $('.navbar-brand').addClass('red');
   }
   else if (scrollTop >= $('#features').offset().top) {
-    $('.navbar-brand').removeClass('blue red purple orange pink');
+    $('.navbar-brand').removeClass('blue red purple orange brown');
     $('.navbar-brand').addClass('green');
   }
   else {
-    $('.navbar-brand').removeClass('green red purple orange pink');
+    $('.navbar-brand').removeClass('green red purple orange brown');
     $('.navbar-brand').addClass('blue');
   }
 }

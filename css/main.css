@@ -1,6 +1,7 @@
 body {
-  font-family: arial, helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   overflow-x: hidden;
+  color: #fff;
 }
 
 a {
@@ -25,12 +26,6 @@ a.anchor.api {
   top: -67px;
 }
 
-.title,
-.header {
-  font-weight: bold;
-  font-family: 'Ubuntu', sans-serif;
-}
-
 .row {
   margin: 0;
   width: 100%;
@@ -43,7 +38,6 @@ a.anchor.api {
   overflow-y: hidden;
   border-radius: 0;
   margin-bottom: 0;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.4);
   padding-right: 50px;
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
@@ -67,33 +61,27 @@ a.anchor.api {
 }
 
 .navbar .navbar-brand.blue {
-  color: #1c5ca0;
-  text-shadow: 0 1px 5px rgba(22, 133, 252, 0.2);
+  color: #2e4153;
 }
 
 .navbar .navbar-brand.green {
-  color: #0d7e15;
-  text-shadow: 0 1px 5px rgba(39, 197, 46, 0.2);
+  color: #2e5335;
 }
 
 .navbar .navbar-brand.red {
-  color: #c52323;
-  text-shadow: 0 1px 5px rgba(197, 35, 35, 0.2);
+  color: #5a2a30;
 }
 
 .navbar .navbar-brand.purple {
-  color: #5f11b4;
-  text-shadow: 0 1px 5px rgba(95, 17, 180, 0.2);
+  color: #432f5e;
 }
 
 .navbar .navbar-brand.orange {
-  color: #d8360e;
-  text-shadow: 0 1px 5px rgba(230, 56, 13, 0.2);
+  color: #994732;
 }
 
-.navbar .navbar-brand.pink {
-  color: #881a76;
-  text-shadow: 0 1px 5px rgba(230, 56, 13, 0.2);
+.navbar .navbar-brand.brown {
+  color: #4b3b2b;
 }
 
 .navbar .nav > li > a {
@@ -124,57 +112,55 @@ a.anchor.api {
   border: 0;
 }
 
-.intro,
-.intro-features,
-.intro-screenshots,
-.intro-install,
-.intro-faq,
-.intro-api,
-.intro-footer {
-  background-image: url('../img/background.png');
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+.intro {
+  text-align: center;
 }
 
 .intro {
   margin-top: 20px;
-  padding-top: 100px;
+  padding-top: 180px;
   padding-bottom: 110px;
-  background-color: #1c5ca0;
+  background-color: #2e4153;
 }
 
 .intro .intro-title {
   font-family: 'Fredoka One', cursive;
-  font-size: 15em;
+  font-size: 9em;
   color: #fff;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
   text-align: center;
+  margin-bottom: 15px;
+}
+
+.intro .intro-description {
+  font-size: 1.4em;
+  font-weight: 300;
+  max-width: 550px;
+  margin: 30px auto 0 auto;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.56);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.56);
 }
 
 .intro .intro-label {
-  font-weight: 700;
   font-size: 2.5em;
-  letter-spacing: 1px;
   color: #f0f0f0;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.3);
   text-align: center;
-}
-
-.intro .intro-button-group {
-  margin: 45px auto 0 auto;
-  width: 485px;
 }
 
 .intro .intro-button {
-  font-size: 1.4em;
-  letter-spacing: 5px;
-  color: #f0f0f0;
+  margin-top: 50px;
+  font-size: 1.6em;
+  font-weight: 300;
+  color: #2e4153;
   cursor: pointer;
   display: inline-block;
   padding: 15px 0;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #fff;
   border-radius: 5px;
   text-align: center;
-  width: 220px;
+  width: 215px;
   text-decoration: none;
 }
 
@@ -187,7 +173,7 @@ a.anchor.api {
 }
 
 .intro-features {
-  background-color: #0d7e15;
+  background-color: #2e5335;
   padding-top: 55px;
   padding-bottom: 90px;
 }
@@ -208,21 +194,18 @@ a.anchor.api {
 .intro-faq .faq-title .title,
 .intro-api .api-title .title {
   color: #fff;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.5);
-  letter-spacing: 1px;
+  font-weight: 300;
 }
 
 .intro-features .features-boxes {
   width: 1030px;
   margin: 0 auto;
   clear: both;
+  color: #fff;
 }
 
 .intro-features .features-box {
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #f0f0f0;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
+  font-weight: 300;
   width: 300px;
   background-color: rgba(255, 255, 255, 0.3);
   text-align: center;
@@ -231,7 +214,7 @@ a.anchor.api {
   float: left;
   margin-right: 25px;
   margin-bottom: 25px;
-  height: 220px;
+  height: 200px;
 }
 
 .intro-features .features-box.last {
@@ -239,11 +222,8 @@ a.anchor.api {
 }
 
 .intro-features .features-box .title {
-  font-weight: 700;
   font-size: 1.5em;
-  color: #f0f0f0;
-  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.4);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -253,14 +233,13 @@ a.anchor.api {
 .intro-features .features-box .description {
   font-size: 1.2em;
   padding: 15px;
-  color: #f0f0f0;
   text-align: center;
 }
 
 .intro-screenshots {
   padding-top: 55px;
   padding-bottom: 80px;
-  background-color: #c52323;
+  background-color: #5a2a30;
 }
 
 .intro-screenshots .screenshots {
@@ -268,7 +247,6 @@ a.anchor.api {
   height: 621px;
   margin: 0 auto;
   display: block;
-  box-shadow: 0 0 5px #222;
 }
 
 .intro-screenshots img {
@@ -293,7 +271,7 @@ a.anchor.api {
 }
 
 .intro-screenshots .button {
-  background-color: #3f3f3f;
+  background-color: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   width: 12px;
   height: 12px;
@@ -303,22 +281,22 @@ a.anchor.api {
 }
 
 .intro-screenshots .button:hover {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .intro-screenshots .button:active {
-  background-color: #3f3f3f;
+  background-color: rgba(255, 255, 255, 0.10);;
 }
 
 .intro-screenshots .button.current,
 .intro-screenshots .button.current:hover {
-  background-color: #d6d6d6;
+  background-color: #fff;
 }
 
 .intro-install {
   padding-top: 5px;
   padding-bottom: 75px;
-  background-color: #5f11b4;
+  background-color: #432f5e;
 }
 
 .intro-install .install-title {
@@ -327,10 +305,8 @@ a.anchor.api {
 }
 
 .intro-install .install-header {
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 300;2
   color: #f0f0f0;
-  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
   text-align: center;
 }
 
@@ -354,9 +330,8 @@ a.anchor.api {
 .intro-footer {
   padding-top: 20px;
   padding-bottom: 20px;
-  letter-spacing: 1px;
   color: #fff;
-  background-color: #161616;
+  background-color: #202020;
   text-align: center;
 }
 
@@ -470,7 +445,6 @@ a.anchor.api {
   font-size: 1.8em;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.3);
-  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.5);
   vertical-align: top;
   display: table-cell;
 }
@@ -486,9 +460,9 @@ a.anchor.api {
 .install-point-description,
 .faq-point-description,
 .api-call-description {
-  font-weight: bold;
+  font-weight: 300;
   width: 700px;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.3);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   color: #f0f0f0;
@@ -523,17 +497,16 @@ a.anchor.api {
 }
 
 .api-call-description {
-  font-weight: normal;
   width: 705px;
   margin-right: 187px;
 }
 
-.api-call.endpoint .api-call-description {
-  font-weight: bold;
-}
-
 .api-call-description .text {
   margin-bottom: 10px;
+}
+
+.api-call-description .table th {
+  font-weight: 400;
 }
 
 .faq-point.question .faq-point-description,
@@ -550,7 +523,7 @@ a.anchor.api {
 }
 
 .api-call .table tbody tr td:first-child {
-  font-weight: bold;
+  font-weight: 400;
   width: 200px;
 }
 
@@ -561,7 +534,7 @@ a.anchor.api {
   padding: 8px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.35);
-  font-weight: bold;
+  font-weight: 400;
   font-size: 0.7em;
   width: 295px;
   float: left;
@@ -624,13 +597,13 @@ a.anchor.api {
 .intro-faq {
   padding-top: 55px;
   padding-bottom: 75px;
-  background-color: #d8360e;
+  background-color: #994732;
 }
 
 .intro-api {
   padding-top: 55px;
   padding-bottom: 75px;
-  background-color: #881a76;
+  background-color: #4b3b2b;
 }
 
 .editor {
@@ -640,7 +613,7 @@ a.anchor.api {
 
 .editor-title {
   width: 100%;
-  font-weight: bold;
+  font-weight: 400;
   padding: 0 8px 8px 8px;
   border-bottom: 2px solid #ddd;
   margin-bottom: 5px;
