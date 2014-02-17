@@ -144,6 +144,8 @@ a.anchor.api {
 }
 
 .intro .intro-label {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
   font-size: 2.5em;
   color: #f0f0f0;
   text-align: center;
@@ -193,8 +195,9 @@ a.anchor.api {
 .intro-install .install-title .title,
 .intro-faq .faq-title .title,
 .intro-api .api-title .title {
-  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
+  color: #fff;
 }
 
 .intro-features .features-boxes {
@@ -305,7 +308,8 @@ a.anchor.api {
 }
 
 .intro-install .install-header {
-  font-weight: 300;2
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
   color: #f0f0f0;
   text-align: center;
 }
