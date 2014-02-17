@@ -34,7 +34,7 @@ a.anchor {
   display: block;
 }
 
-a.anchor.api {
+a.anchor.api-anchor {
   top: -67px;
 }
 
@@ -186,40 +186,40 @@ a.anchor.api {
   margin-right: 40px;
 }
 
-.intro-features {
+.features {
   background-color: #2e5335;
   padding-top: 55px;
   padding-bottom: 90px;
 }
 
-.intro-features .features-title,
-.intro-screenshots .screenshots-title,
-.intro-install .install-title,
-.intro-faq .faq-title,
-.intro-api .api-title {
+.features .features-title,
+.screenshots .screenshots-title,
+.install .install-title,
+.faq .faq-title,
+.api .api-title {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 15px;
 }
 
-.intro-features .features-title .title,
-.intro-screenshots .screenshots-title .title,
-.intro-install .install-title .title,
-.intro-faq .faq-title .title,
-.intro-api .api-title .title {
+.features .features-title .title,
+.screenshots .screenshots-title .title,
+.install .install-title .title,
+.faq .faq-title .title,
+.api .api-title .title {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
   color: #fff;
 }
 
-.intro-features .features-boxes {
+.features .features-boxes {
   width: 1030px;
   margin: 0 auto;
   clear: both;
   color: #fff;
 }
 
-.intro-features .features-box {
+.features .features-box {
   font-weight: 300;
   width: 300px;
   background-color: rgba(255, 255, 255, 0.3);
@@ -232,11 +232,11 @@ a.anchor.api {
   height: 220px;
 }
 
-.intro-features .features-box.last {
+.features .features-box.last {
   margin-right: 0;
 }
 
-.intro-features .features-box .title {
+.features .features-box .title {
   font-size: 1.5em;
   background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -245,26 +245,26 @@ a.anchor.api {
   padding: 5px;
 }
 
-.intro-features .features-box .description {
+.features .features-box .description {
   font-size: 1.2em;
   padding: 15px;
   text-align: center;
 }
 
-.intro-screenshots {
+.screenshots {
   padding-top: 55px;
   padding-bottom: 80px;
   background-color: #5a2a30;
 }
 
-.intro-screenshots .screenshots {
+.screenshots .screenshots-container {
   width: 940px;
   height: 621px;
   margin: 0 auto;
   display: block;
 }
 
-.intro-screenshots img {
+.screenshots img {
   position: absolute;
   width: 940px;
   display: block;
@@ -275,17 +275,17 @@ a.anchor.api {
   transition: opacity 1s ease-in-out;
 }
 
-.intro-screenshots img.current {
+.screenshots img.current {
   opacity: 1;
 }
 
-.intro-screenshots .buttons {
+.screenshots .buttons {
   margin: 30px auto 0 auto;
   width: 212px;
   white-space: nowrap;
 }
 
-.intro-screenshots .button {
+.screenshots .button {
   background-color: rgba(255, 255, 255, 0.25);
   border-radius: 50%;
   width: 12px;
@@ -295,46 +295,46 @@ a.anchor.api {
   cursor: pointer;
 }
 
-.intro-screenshots .button:hover {
+.screenshots .button:hover {
   background-color: #fff;
 }
 
-.intro-screenshots .button:active {
+.screenshots .button:active {
   background-color: rgba(255, 255, 255, 0.10);;
 }
 
-.intro-screenshots .button.current,
-.intro-screenshots .button.current:hover {
+.screenshots .button.current,
+.screenshots .button.current:hover {
   background-color: #fff;
 }
 
-.intro-install {
+.install {
   padding-top: 5px;
   padding-bottom: 75px;
   background-color: #432f5e;
 }
 
-.intro-install .install-title {
+.install .install-title {
   margin-top: 75px;
   padding-bottom: 0px;
 }
 
-.intro-install .install-header {
+.install .install-header {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
   color: #f0f0f0;
   text-align: center;
 }
 
-.intro-install .install-header {
+.install .install-header {
   margin-top: 35px;
   margin-bottom: 15px;
   font-size: 1.9em;
 }
 
-.intro-install pre,
-.intro-faq pre,
-.intro-api pre {
+.install pre,
+.faq pre,
+.api pre {
   padding: 30px 0;
   margin: 10px auto;
   width: 550px;
@@ -343,7 +343,7 @@ a.anchor.api {
   background-color: rgba(255, 255, 255, 0.10);
 }
 
-.intro-footer {
+.footer {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
@@ -351,12 +351,12 @@ a.anchor.api {
   text-align: center;
 }
 
-.intro-footer a {
+.footer a {
   color: #5e5e5e;
 }
 
-.intro-footer a:active,
-.intro-footer a:hover {
+.footer a:active,
+.footer a:hover {
   color: #fff;
 }
 
@@ -607,17 +607,17 @@ a.anchor.api {
   padding-top: 0;
 }
 
-.intro-install a {
+.install a {
   color: #9cc7fd;
 }
 
-.intro-faq {
+.faq {
   padding-top: 55px;
   padding-bottom: 75px;
   background-color: #994732;
 }
 
-.intro-api {
+.api {
   padding-top: 55px;
   padding-bottom: 75px;
   background-color: #4b3b2b;

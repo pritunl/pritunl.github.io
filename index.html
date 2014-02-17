@@ -22,7 +22,7 @@ title: Pritunl - Simple OpenVPN Server
     </div>
     <div class="row">
       <a id="features" class="anchor"></a>
-      <div class="intro-features">
+      <div class="features">
         <div class="features-title">
           <h1 class="title">Features</h1>
         </div>
@@ -68,11 +68,11 @@ title: Pritunl - Simple OpenVPN Server
     </div>
     <div class="row">
       <a id="screenshots" class="anchor"></a>
-      <div class="intro-screenshots">
+      <div class="screenshots">
         <div class="screenshots-title">
           <h1 class="title">Screenshots</h1>
         </div>
-        <div class="screenshots">
+        <div class="screenshots-container">
           <img class="screenshot1 current" src="img/screenshot1.png" alt="Screenshot 1">
           <img class="screenshot2" src="img/screenshot2.png" alt="Screenshot 2">
           <img class="screenshot3" src="img/screenshot3.png" alt="Screenshot 3">
@@ -92,7 +92,7 @@ title: Pritunl - Simple OpenVPN Server
     </div>
     <div class="row">
       <a id="install" class="anchor"></a>
-      <div class="intro-install">
+      <div class="install">
         <div class="install-title">
           <h1 class="title">Install</h1>
         </div>
@@ -962,11 +962,11 @@ title: Pritunl - Simple OpenVPN Server
     </div>
     <div class="row">
       <a id="faq" class="anchor"></a>
-      <div class="intro-faq">
+      <div class="faq">
         <div class="faq-title">
           <h1 class="title">Frequently Asked Questions</h1>
         </div>
-        <div class="faq">
+        <div class="faq-container">
           <div class="faq-point question">
             <div class="faq-point-label header">
               <span>Q</span>
@@ -1228,7 +1228,7 @@ title: Pritunl - Simple OpenVPN Server
     </div>
     <div class="row">
       <a id="api" class="anchor"></a>
-      <div class="intro-api">
+      <div class="api">
         <div class="api-title">
           <h1 class="title">REST API</h1>
         </div>
@@ -1265,7 +1265,7 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#get-export">GET /export/pritunl.tar</a></li>
           </ul>
         </div>
-        <a id="post-auth-token" class="anchor api"></a>
+        <a id="post-auth-token" class="anchor api-anchor"></a>
         <div class="api-call endpoint first">
           <div class="api-call-description">
             <span>POST /auth/token</span>
@@ -1329,7 +1329,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="delete-auth-token-var" class="anchor api"></a>
+        <a id="delete-auth-token-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>DELETE /auth/token/:auth_token</span>
@@ -1367,7 +1367,7 @@ response = requests.delete(
 assert(response.status_code == 200)</div>
           </div>
         </div>
-        <a id="get-event-var" class="anchor api"></a>
+        <a id="get-event-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /event/:cursor</span>
@@ -1448,7 +1448,7 @@ print response.json()
 ]</div>
           </div>
         </div>
-        <a id="get-status" class="anchor api"></a>
+        <a id="get-status" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /status</span>
@@ -1532,7 +1532,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="get-log" class="anchor api"></a>
+        <a id="get-log" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /log</span>
@@ -1594,7 +1594,7 @@ print response.json()
 ]</div>
           </div>
         </div>
-        <a id="put-auth" class="anchor api"></a>
+        <a id="put-auth" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>PUT /auth</span>
@@ -1661,7 +1661,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="get-organization" class="anchor api"></a>
+        <a id="get-organization" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /organization</span>
@@ -1717,7 +1717,7 @@ print response.json()
 ]</div>
           </div>
         </div>
-        <a id="post-organization" class="anchor api"></a>
+        <a id="post-organization" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>POST /organization</span>
@@ -1784,7 +1784,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="put-organization-var" class="anchor api"></a>
+        <a id="put-organization-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>PUT /organization/:organization_id</span>
@@ -1864,7 +1864,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="delete-organization-var" class="anchor api"></a>
+        <a id="delete-organization-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>DELETE /organization/:organization_id</span>
@@ -1905,7 +1905,7 @@ response = requests.delete(
 assert(response.status_code == 200)</div>
           </div>
         </div>
-        <a id="get-user-var" class="anchor api"></a>
+        <a id="get-user-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /user/:organization_id</span>
@@ -2053,7 +2053,7 @@ print response.json()
 ]</div>
           </div>
         </div>
-        <a id="post-user-var" class="anchor api"></a>
+        <a id="post-user-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>POST /user/:organization_id</span>
@@ -2153,7 +2153,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="put-user-var" class="anchor api"></a>
+        <a id="put-user-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>PUT /user/:organization_id/:user_id</span>
@@ -2257,7 +2257,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="delete-user-var" class="anchor api"></a>
+        <a id="delete-user-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>DELETE /user/:organization_id/:user_id</span>
@@ -2302,7 +2302,7 @@ response = requests.delete(
 assert(response.status_code == 200)</div>
           </div>
         </div>
-        <a id="put-user-var-otp-secret" class="anchor api"></a>
+        <a id="put-user-var-otp-secret" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>PUT /user/:organization_id/:user_id/otp_secret</span>
@@ -2389,7 +2389,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="get-key-var-tar" class="anchor api"></a>
+        <a id="get-key-var-tar" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /key/:organization_id/:user_id.tar</span>
@@ -2434,7 +2434,7 @@ response = requests.get(BASE_URL +
 assert(response.status_code == 200)</div>
           </div>
         </div>
-        <a id="get-key-var" class="anchor api"></a>
+        <a id="get-key-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /key/:organization_id/:user_id</span>
@@ -2506,7 +2506,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="get-server" class="anchor api"></a>
+        <a id="get-server" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /server</span>
@@ -2658,7 +2658,7 @@ print response.json()
 ]</div>
           </div>
         </div>
-        <a id="post-server" class="anchor api"></a>
+        <a id="post-server" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>POST /server</span>
@@ -2860,7 +2860,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="put-server-var" class="anchor api"></a>
+        <a id="put-server-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>PUT /server/:server_id</span>
@@ -3064,7 +3064,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="delete-server-var" class="anchor api"></a>
+        <a id="delete-server-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>DELETE /server/:server_id</span>
@@ -3105,7 +3105,7 @@ response = requests.delete(
 assert(response.status_code == 200)</div>
           </div>
         </div>
-        <a id="put-server-var-var" class="anchor api"></a>
+        <a id="put-server-var-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>PUT /server/:server_id/:operation</span>
@@ -3241,7 +3241,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="get-server-var-organization" class="anchor api"></a>
+        <a id="get-server-var-organization" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /server/:server_id/organization</span>
@@ -3311,7 +3311,7 @@ print response.json()
 ]</div>
           </div>
         </div>
-        <a id="put-server-var-organization-var" class="anchor api"></a>
+        <a id="put-server-var-organization-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>PUT /server/:server_id/organization/:organization_id</span>
@@ -3383,7 +3383,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="delete-server-var-organization-var" class="anchor api"></a>
+        <a id="delete-server-var-organization-var" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>DELETE /server/:server_id/organization/:organization_id</span>
@@ -3428,7 +3428,7 @@ response = requests.delete(BASE_URL +
 assert(response.status_code == 200)</div>
           </div>
         </div>
-        <a id="get-server-var-output" class="anchor api"></a>
+        <a id="get-server-var-output" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /server/:server_id/output</span>
@@ -3491,7 +3491,7 @@ print response.json()
 }</div>
           </div>
         </div>
-        <a id="delete-server-var-output" class="anchor api"></a>
+        <a id="delete-server-var-output" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>DELETE /server/:server_id/output</span>
@@ -3532,7 +3532,7 @@ response = requests.delete(
 assert(response.status_code == 200)</div>
           </div>
         </div>
-        <a id="get-export" class="anchor api"></a>
+        <a id="get-export" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
             <span>GET /export/pritunl.tar</span>
@@ -3563,7 +3563,7 @@ assert(response.status_code == 200)</div>
       </div>
     </div>
     <div class="row">
-      <div class="intro-footer">
+      <div class="footer">
         <span>created by <a href="//github.com/zachhuff386">github.com/zachhuff386</a></span>
       </div>
     </div>
