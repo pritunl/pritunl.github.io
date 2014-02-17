@@ -5,12 +5,12 @@ body {
 }
 
 a {
-  color: #324768;
+  color: #000000;
 }
 
 a:hover,
 a:focus {
-  color: #12233d;
+  color: #000000;
   text-decoration: underline;
   outline: none;
 }
@@ -214,7 +214,7 @@ a.anchor.api {
   float: left;
   margin-right: 25px;
   margin-bottom: 25px;
-  height: 200px;
+  height: 220px;
 }
 
 .intro-features .features-box.last {
