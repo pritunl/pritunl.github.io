@@ -1242,10 +1242,12 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#get-log">GET /log</a></li>
             <li><a href="#put-auth">PUT /auth</a></li>
             <li><a href="#get-organization">GET /organization</a></li>
+            <li><a href="#get-organization-var">GET /organization/:organization_id</a></li>
             <li><a href="#post-organization">POST /organization</a></li>
             <li><a href="#put-organization-var">PUT /organization/:organization_id</a></li>
             <li><a href="#delete-organization-var">DELETE /organization/:organization_id</a></li>
             <li><a href="#get-user-var">GET /user/:organization_id</a></li>
+            <li><a href="#get-user-var-var">GET /user/:organization_id/:user_id</a></li>
             <li><a href="#post-user-var">POST /user/:organization_id</a></li>
             <li><a href="#put-user-var">PUT /user/:organization_id/:user_id</a></li>
             <li><a href="#delete-user-var">DELETE /user/:organization_id/:user_id</a></li>
@@ -1253,6 +1255,7 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#get-key-var-tar">GET /key/:organization_id/:user_id.tar</a></li>
             <li><a href="#get-key-var">GET /key/:organization_id/:user_id</a></li>
             <li><a href="#get-server">GET /server</a></li>
+            <li><a href="#get-server-var">GET /server/:server_id</a></li>
             <li><a href="#post-server">POST /server</a></li>
             <li><a href="#put-server-var">PUT /server/:server_id</a></li>
             <li><a href="#delete-server-var">DELETE /server/:server_id</a></li>
@@ -1717,6 +1720,69 @@ print response.json()
 ]</div>
           </div>
         </div>
+        <a id="get-organization-var" class="anchor api-anchor"></a>
+        <div class="api-call endpoint">
+          <div class="api-call-description">
+            <span>GET /organization/:organization_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns an organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/organization/060e54e627904abf9402bf3f2e0e16a2',
+    verify=False,
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': '060e54e627904abf9402bf3f2e0e16a2',
+    'name': 'org1',
+}</div>
+          </div>
+        </div>
         <a id="post-organization" class="anchor api-anchor"></a>
         <div class="api-call endpoint">
           <div class="api-call-description">
@@ -2051,6 +2117,137 @@ print response.json()
         },
     },
 ]</div>
+          </div>
+        </div>
+        <a id="get-user-var-var" class="anchor api-anchor"></a>
+        <div class="api-call endpoint">
+          <div class="api-call-description">
+            <span>GET /user/:organization_id/:user_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns a user from an organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>User ID</td>
+                </tr>
+                <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>User name</td>
+                </tr>
+                <tr>
+                  <td>organization_name</td>
+                  <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if user uses two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>servers</td>
+                  <td>Object of client parameters listed below for each server ID that the user is connected to</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Client Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>connected_since</td>
+                  <td>Epoch time connection was started</td>
+                </tr>
+                <tr>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address</td>
+                </tr>
+                <tr>
+                  <td>real_address</td>
+                  <td>Real OpenVPN IP address</td>
+                </tr>
+                <tr>
+                  <td>bytes_sent</td>
+                  <td>Bytes sent</td>
+                </tr>
+                <tr>
+                  <td>bytes_received</td>
+                  <td>Bytes received</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/99a38859bcb248bdaf395a6c83305531',
+    verify=False,
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': '99a38859bcb248bdaf395a6c83305531',
+    'organization': '060e54e627904abf9402bf3f2e0e16a2',
+    'name': 'server_6551f49596ca42c4942cb71162916b69',
+    'organization_name': 'org1',
+    'type': 'server',
+    'status': False,
+    'otp_auth': True,
+    'otp_secret': 'OPT4HTURJTW6JLQN',
+    'servers': {},
+}</div>
           </div>
         </div>
         <a id="post-user-var" class="anchor api-anchor"></a>
@@ -2656,6 +2853,136 @@ print response.json()
         'org_count': 1,
     },
 ]</div>
+          </div>
+        </div>
+        <a id="get-server-var" class="anchor api-anchor"></a>
+        <div class="api-call endpoint">
+          <div class="api-call-description">
+            <span>GET /server/:server_id</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Returns a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/server/6551f49596ca42c4942cb71162916b69',
+    verify=False,
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'id': '6551f49596ca42c4942cb71162916b69',
+    'name': 'server1',
+    'status': True,
+    'uptime': 463,
+    'users_online': 1,
+    'user_count': 6,
+    'network': '10.139.82.0/24',
+    'interface': 'tun0',
+    'port': 12524,
+    'protocol': 'udp',
+    'dh_param_bits': 1536,
+    'local_networks': [],
+    'dns_servers': [],
+    'public_address': '8.8.8.8',
+    'otp_auth': True,
+    'lzo_compression': False,
+    'debug': True,
+    'org_count': 2,
+}</div>
           </div>
         </div>
         <a id="post-server" class="anchor api-anchor"></a>
