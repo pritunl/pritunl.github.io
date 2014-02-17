@@ -170,7 +170,7 @@ a.anchor.api {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-.intro .intro-button.first {
+.intro .intro-button:first-child {
   margin-right: 40px;
 }
 
@@ -434,6 +434,7 @@ a.anchor.api {
   width: 1207px;
 }
 
+.api-call.first,
 .api-call-list-box {
   padding-top: 0;
 }
@@ -532,7 +533,7 @@ a.anchor.api {
 }
 
 .api-call-list {
-  margin: 30px 10px 0 10px;
+  margin: 0 10px;
   position: absolute;
   list-style-type: none;
   padding: 8px;

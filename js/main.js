@@ -10,9 +10,9 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
 var onScroll = function() {
   var scrollTop = $(this).scrollTop();
 
-  if (scrollTop >= $('#api').offset().top + 122) {
+  if (scrollTop >= $('#api').offset().top + 92) {
     $('.api-call-list').css('position', 'fixed');
-    $('.api-call-list').css('top', '67px');
+    $('.api-call-list').css('top', '97px');
   }
   else {
     $('.api-call-list').css('position', 'absolute');
