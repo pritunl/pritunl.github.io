@@ -56,9 +56,9 @@ $('a[href^="#"]').on('click', function(evt) {
     }.bind(this));
 });
 
-$('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
+$('.screenshots .button, .screenshots img').click(function(evt) {
   var screenshot;
-  var curScreenshot = $('.intro-screenshots img.current').attr(
+  var curScreenshot = $('.screenshots img.current').attr(
     'src').substr(14, 1);
 
   if ($(evt.target).is('img')) {
@@ -91,11 +91,11 @@ $('.intro-screenshots .button, .intro-screenshots img').click(function(evt) {
     return;
   }
 
-  $('.intro-screenshots .button.current').removeClass('current');
-  $('.intro-screenshots .button.screenshot' + screenshot).addClass('current');
+  $('.screenshots .button.current').removeClass('current');
+  $('.screenshots .button.screenshot' + screenshot).addClass('current');
 
-  $('.intro-screenshots img.current').removeClass('current');
-  $('.intro-screenshots img.screenshot' + screenshot).addClass('current');
+  $('.screenshots img.current').removeClass('current');
+  $('.screenshots img.screenshot' + screenshot).addClass('current');
 });
 
 $('.install-buttons button').click(function(evt) {
