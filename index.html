@@ -1265,6 +1265,7 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#delete-server-var-organization-var">DELETE /server/:server_id/organization/:organization_id</a></li>
             <li><a href="#get-server-var-output">GET /server/:server_id/output</a></li>
             <li><a href="#delete-server-var-output">DELETE /server/:server_id/output</a></li>
+            <li><a href="#get-server-var-bandwidth">GET /server/:server_id/bandwidth</a></li>
             <li><a href="#get-export">GET /export/pritunl.tar</a></li>
           </ul>
         </div>
@@ -3857,6 +3858,121 @@ response = requests.delete(
     },
 )
 assert(response.status_code == 200)</div>
+          </div>
+        </div>
+        <a id="get-server-var-bandwidth" class="anchor api-anchor"></a>
+        <div class="api-call endpoint">
+          <div class="api-call-description">
+            <span>GET /server/:server_id/bandwidth</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Get the bandwidth usage history of a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1m</td>
+                  <td>Bandwidth data at 1 minute intervals for last 6 hours</td>
+                </tr>
+                <tr>
+                  <td>5m</td>
+                  <td>Bandwidth data at 5 minute intervals for last 24 hours</td>
+                </tr>
+                <tr>
+                  <td>30m</td>
+                  <td>Bandwidth data at 30 minute intervals for last 7 days</td>
+                </tr>
+                <tr>
+                  <td>2h</td>
+                  <td>Bandwidth data at 2 hour intervals for last 30 days</td>
+                </tr>
+                <tr>
+                  <td>1d</td>
+                  <td>Bandwidth data at 1 day intervals for last 365 days</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Bandwidth Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>received</td>
+                  <td>Array of containing the utc timestamp and bandwidth usage in bytes for data received</td>
+                </tr>
+                <tr>
+                  <td>sent</td>
+                  <td>Array of containing the utc timestamp and bandwidth usage in bytes for data sent</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">BASE_URL = 'https://localhost:9700'
+response = requests.get(
+    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/bandwidth',
+    verify=False,
+    headers={
+        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
+    },
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  '1m': [
+    (1393115280, 753),
+    (1393115340, 321),
+    (1393115400, 453),
+  ],
+  '5m': [
+    (1393050720, 3753),
+    (1393051020, 7382),
+    (1393051320, 3234),
+  ],
+  '30m': [
+    (1392532200, 19452),
+    (1392534000, 23921),
+    (1392535800, 18523),
+  ],
+  '2h': [
+    (1390552020, 91752),
+    (1390559220, 89316),
+    (1390566420, 95534),
+  ],
+  '1d': [
+    (1361687220, 867242),
+    (1361773620, 948342),
+    (1361860020, 772394),
+  ],
+}</div>
           </div>
         </div>
         <a id="get-export" class="anchor api-anchor"></a>
