@@ -3927,8 +3927,16 @@ assert(response.status_code == 200)</div>
                   <td>Array of containing the utc timestamp and bandwidth usage in bytes for data received</td>
                 </tr>
                 <tr>
+                  <td>received_total</td>
+                  <td>Total bytes received</td>
+                </tr>
+                <tr>
                   <td>sent</td>
                   <td>Array of containing the utc timestamp and bandwidth usage in bytes for data sent</td>
+                </tr>
+                <tr>
+                  <td>sent_total</td>
+                  <td>Total bytes sent</td>
                 </tr>
               </tbody>
             </table>
@@ -3949,31 +3957,66 @@ response = requests.get(
 assert(response.status_code == 200)
 print response.json()
 {
-  '1m': [
-    (1393115280, 753),
-    (1393115340, 321),
-    (1393115400, 453),
-  ],
-  '5m': [
-    (1393050720, 3753),
-    (1393051020, 7382),
-    (1393051320, 3234),
-  ],
-  '30m': [
-    (1392532200, 19452),
-    (1392534000, 23921),
-    (1392535800, 18523),
-  ],
-  '2h': [
-    (1390552020, 91752),
-    (1390559220, 89316),
-    (1390566420, 95534),
-  ],
-  '1d': [
-    (1361687220, 867242),
-    (1361773620, 948342),
-    (1361860020, 772394),
-  ],
+  '1m': {
+    'received': [
+      (1393115280, 753),
+      (1393115340, 321),
+    ],
+    'received_total': 1074,
+    'sent': [
+      (1393115280, 865),
+      (1393115340, 421),
+    ],
+    'sent_total': 1286,
+  },
+  '5m': {
+    'received': [
+      (1393050720, 3753),
+      (1393051020, 4784),
+    ],
+    'received_total': 8537,
+    'sent': [
+      (1393050720, 4723),
+      (1393051020, 6723),
+    ],
+    'sent_total': 11446,
+  },
+  '30m': {
+    'received': [
+      (1392532200, 19452),
+      (1392534000, 23921),
+    ],
+    'received_total': 43373,
+    'sent': [
+      (1392532200, 20123),
+      (1392534000, 17853),
+    ],
+    'sent_total': 37976,
+  },
+  '2h': {
+    'received': [
+      (1390552020, 91752),
+      (1390559220, 89316),
+    ],
+    'received_total': 181068,
+    'sent': [
+      (1390552020, 96296),
+      (1390559220, 83478),
+    ],
+    'sent_total': 179774,
+  },
+  '1d': {
+    'received': [
+      (1361687220, 867242),
+      (1361773620, 948342),
+    ],
+    'received_total': 1815584,
+    'sent': [
+      (1361687220, 852067),
+      (1361773620, 935672),
+    ],
+    'sent_total': 1787739,
+  },
 }</div>
           </div>
         </div>
