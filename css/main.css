@@ -283,6 +283,7 @@ a.anchor.api-anchor {
   margin: 30px auto 0 auto;
   width: 248px;
   white-space: nowrap;
+  cursor: default;
 }
 
 .screenshots .button {
