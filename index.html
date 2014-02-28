@@ -998,7 +998,7 @@ title: Pritunl - Simple OpenVPN Server
               <span>A</span>
             </div>
             <div class="faq-point-description">
-              By default the servers will route all traffic trough the vpn tunnel. This can be changed in the server settings by selecting "Local Network Only" and entering the network address and subnet mask of the local network such as "192.168.0.0/24" or "10.0.0.0/8". This will route only traffic destined to the local network.
+              By default the servers will route all traffic trough the vpn tunnel. This can be changed in the server settings by selecting "Local Network Only" and entering the network address and subnet mask of the local network such as "192.168.0.0/24" or "10.0.0.0/8". This will route only traffic destined to the local network
             </div>
           </div>
           <div class="faq-point question">
@@ -1030,7 +1030,7 @@ title: Pritunl - Simple OpenVPN Server
               <span>A</span>
             </div>
             <div class="faq-point-description">
-              All data is stored in <pre>/var/lib/pritunl</pre>. A backup can be downloaded by logging into the web interface and opening <pre>https://&#60;SERVER_ADDRESS&#62;:9700/export</pre>. To restore stop the pritunl service and remove any existing files in <pre>/var/lib/pritunl</pre> then extract the backup archive to the directory. Then start the pritunl service.
+              All data is stored in <pre>/var/lib/pritunl</pre>. A backup can be downloaded by logging into the web interface and opening <pre>https://&#60;SERVER_ADDRESS&#62;:9700/export</pre>. To restore stop the pritunl service and remove any existing files in <pre>/var/lib/pritunl</pre> then extract the backup archive to the directory. Then start the pritunl service
             </div>
           </div>
           <div class="faq-point question">
@@ -1207,6 +1207,22 @@ title: Pritunl - Simple OpenVPN Server
             </div>
             <div class="faq-point-description">
               The username is not checked or used by the server and can be left blank, only the password is used with two-step authentication
+            </div>
+          </div>
+          <div class="faq-point question">
+            <div class="faq-point-label header">
+              <span>Q</span>
+            </div>
+            <div class="faq-point-description">
+              <span>Can options be set using environment variables?</span>
+            </div>
+          </div>
+          <div class="faq-point answer">
+            <div class="faq-point-label header">
+              <span>A</span>
+            </div>
+            <div class="faq-point-description">
+              All conf options can be set using environment variables by prefixing the conf option with <pre>PRITUNL_</pre> and upper casing the option name such as <pre>PRITUNL_PORT=9700</pre>
             </div>
           </div>
           <div class="faq-point question">
