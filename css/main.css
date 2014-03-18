@@ -66,6 +66,7 @@ a.anchor.api-anchor {
   padding: 3px 0 0 22px;
   max-width: none;
   line-height: 70px;
+  color: #2e4153;
   -webkit-transition: color 500ms, text-shadow 500ms;
   -moz-transition: color 500ms, text-shadow 500ms;
   -o-transition: color 500ms, text-shadow 500ms;
