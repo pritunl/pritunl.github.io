@@ -7123,6 +7123,23 @@ fieldset[disabled] .form-control {
   margin-top: 15px;
   width: 192px;
 }
+.modal .generate-new-api-key {
+  margin-top: 25px;
+  margin-left: 42px;
+  width: 200px;
+}
+.modal .modal-body .split .api-key-info {
+  width: 264px;
+}
+.modal .api-token,
+.modal .api-secret {
+  width: 284px;
+}
+.modal .api-token input,
+.modal .api-secret input {
+  font-family: 'Lucida Console', Monaco, monospace;
+  width: 100%;
+}
 .navbar .navbar-brand,
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:active,
@@ -7803,6 +7820,11 @@ header.blur {
   color: #777777;
   float: right;
 }
+.notification-modal .notification {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
 .server-settings-modal .modal .modal-dialog {
   top: -webkit-calc(50% - 366px);
   top: -moz-calc(50% - 366px);
@@ -7811,6 +7833,15 @@ header.blur {
 }
 .server-settings-modal .modal .form-group {
   margin: 0 0 15px 0;
+}
+.server-settings-modal .modal .network {
+  position: relative;
+}
+.server-settings-modal .modal .network .label {
+  cursor: default;
+  position: absolute;
+  top: 34px;
+  right: 47px;
 }
 .server-settings-modal .modal .left .otp-auth-toggle {
   margin-top: 17px;
@@ -7869,4 +7900,10 @@ header.blur {
   top: -moz-calc(50% - 325px);
   top: -o-calc(50% - 325px);
   top: calc(50% - 325px);
+}
+.notification-modal .modal .modal-dialog {
+  top: -webkit-calc(50% - 146px);
+  top: -moz-calc(50% - 146px);
+  top: -o-calc(50% - 146px);
+  top: calc(50% - 146px);
 }
