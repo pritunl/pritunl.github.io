@@ -9,10 +9,10 @@ title: Pritunl - Simple OpenVPN Server
           pritunl
         </div>
         <div class="intro-label">
-          simple openvpn server
+          simple vpn server
         </div>
         <div class="intro-description">
-          Pritunl is a free and open source application to create and manage multiple openvpn servers with a web interface.
+          Pritunl is a free and open source application to create and manage multiple vpn servers with a web interface.
         </div>
         <div class="intro-button-group">
           <a class="intro-button" href="demo">Demo</a>
@@ -1253,11 +1253,11 @@ title: Pritunl - Simple OpenVPN Server
         <div class="api-call-list-box">
           <ul class="api-call-list">
             <li class="list-title">API Endpoints</li>
-            <li><a href="#post-auth-token">POST /auth/token</a></li>
-            <li><a href="#delete-auth-token-var">DELETE /auth/token/:auth_token</a></li>
+            <li><a href="#authentication">Authentication</a></li>
             <li><a href="#get-event-var">GET /event/:cursor</a></li>
             <li><a href="#get-status">GET /status</a></li>
             <li><a href="#get-log">GET /log</a></li>
+            <li><a href="#get-auth">GET /auth</a></li>
             <li><a href="#put-auth">PUT /auth</a></li>
             <li><a href="#get-organization">GET /organization</a></li>
             <li><a href="#get-organization-var">GET /organization/:organization_id</a></li>
@@ -1287,44 +1287,39 @@ title: Pritunl - Simple OpenVPN Server
             <li><a href="#get-export">GET /export/pritunl.tar</a></li>
           </ul>
         </div>
-        <a id="post-auth-token" class="anchor api-anchor"></a>
+        <a id="authentication" class="anchor api-anchor"></a>
         <div class="api-call endpoint first">
           <div class="api-call-description">
-            <span>POST /auth/token</span>
+            <span>Authentication</span>
           </div>
         </div>
         <div class="api-call info clearfix">
           <div class="api-call-description">
             <div class="text">
-              Returns authentication token required for making protected API calls by including the token in the Auth-Token header. Auth token stays valid until server is restarted.
+              All API requests must be signed with the API token and secret. Below is an example wrapper function to sign API requests. The API token and secret can be found by clicking Change Password in the web interface.
             </div>
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="2">Parameters</th>
+                  <th colspan="2">Header Parameters</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>username</td>
-                  <td>Username default is "admin"</td>
+                  <td>Auth-Token</td>
+                  <td>API token</td>
                 </tr>
                 <tr>
-                  <td>password</td>
-                  <td>Password</td>
+                  <td>Auth-Timestamp</td>
+                  <td>Epoch timestamp must be accurate to +/-5 minutes of server time</td>
                 </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
                 <tr>
-                  <th colspan="2">Response</th>
+                  <td>Auth-Nonce</td>
+                  <td>Random alphanumeric string of 32 characters must be unique for each request</td>
                 </tr>
-              </thead>
-              <tbody>
                 <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
+                  <td>Auth-Signature</td>
+                  <td>Base64 digest of hash signing algorithm</td>
                 </tr>
               </tbody>
             </table>
@@ -1334,21 +1329,32 @@ title: Pritunl - Simple OpenVPN Server
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.post(
-    BASE_URL + '/auth/token',
-    verify=False,
-    headers={'Content-Type': 'application/json'},
-    data=json.dumps({
-        'username': 'admin',
-        'password': 'admin',
-    }),
-)
-assert(response.status_code == 200)
-print response.json()
-{
-    'auth_token': '264e30e7032b467bb0174b22bdb8ce13',
-}</div>
+<div class="editor">import requests, time, uuid, hmac, hashlib, base64
+BASE_URL = 'https://localhost:9700'
+API_TOKEN = 'iAfH2TnpB0oe2Pu6s0qHh2w2iLh27b6P'
+API_SECRET = 'N4coHGtsZ2VIp0KdjfzZeULsiu4Ey8Lx'
+
+def auth_request(method, path, headers=None, data=None):
+    auth_timestamp = str(int(time.time()))
+    auth_nonce = uuid.uuid4().hex
+    auth_string = '&'.join([API_TOKEN, auth_timestamp, auth_nonce,
+        method.upper(), path] + ([data] if data else []))
+    auth_signature = base64.b64encode(hmac.new(
+        API_SECRET, auth_string, hashlib.sha1).digest())
+    auth_headers = {
+        'Auth-Token': API_TOKEN,
+        'Auth-Timestamp': auth_timestamp,
+        'Auth-Nonce': auth_nonce,
+        'Auth-Signature': auth_signature,
+    }
+    if headers:
+        auth_headers.update(headers)
+    return getattr(requests, method.lower())(
+        BASE_URL + path,
+        verify=False,
+        headers=auth_headers,
+        data=data,
+    )</div>
           </div>
         </div>
         <a id="delete-auth-token-var" class="anchor api-anchor"></a>
@@ -1381,10 +1387,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.delete(
-    BASE_URL + '/auth/token/264e30e7032b467bb0174b22bdb8ce13',
-    verify=False,
+<div class="editor">response = auth_request('DELETE',
+    '/auth/token/264e30e7032b467bb0174b22bdb8ce13',
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -1444,13 +1448,8 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/event',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/event',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1532,13 +1531,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/status',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/status',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1597,13 +1591,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/log',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/log',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1619,6 +1608,59 @@ print response.json()
         'message': 'Web server stopped.',
     },
 ]</div>
+          </div>
+        </div>
+        <a id="get-auth" class="anchor api-anchor"></a>
+        <div class="api-call endpoint">
+          <div class="api-call-description">
+            <span>GET /auth</span>
+          </div>
+        </div>
+        <div class="api-call info clearfix">
+          <div class="api-call-description">
+            <div class="text">
+              Get authentication information.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>username</td>
+                  <td>Current username</td>
+                </tr>
+                <tr>
+                  <td>token</td>
+                  <td>Encrypted API token</td>
+                </tr>
+                <tr>
+                  <td>secret</td>
+                  <td>API secret</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor">response = auth_request('GET',
+    '/auth',
+    headers={
+        'Content-Type': 'application/json',
+    },
+)
+assert(response.status_code == 200)
+print response.json()
+{
+    'username': 'user',
+    'token': '2$kNvK4+IhmHU=$oBGfGOLHsbl+RqmngrN4M/JCgnKacQb7yNrvkOT3DC8=',
+    'secret': 'NXLmn2nn1rv0NYQ4zG94XSiAY7TQd1Ks',
+}</div>
           </div>
         </div>
         <a id="put-auth" class="anchor api-anchor"></a>
@@ -1668,13 +1710,10 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.put(
-    BASE_URL + '/auth',
-    verify=False,
+<div class="editor">response = auth_request('PUT',
+    '/auth',
     headers={
         'Content-Type': 'application/json',
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'username': 'user',
@@ -1722,13 +1761,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/organization',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/organization',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1791,13 +1825,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/organization/060e54e627904abf9402bf3f2e0e16a2',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/organization/060e54e627904abf9402bf3f2e0e16a2',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -1854,13 +1883,10 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.post(
-    BASE_URL + '/organization',
-    verify=False,
+<div class="editor">response = auth_request('POST',
+    '/organization',
     headers={
         'Content-Type': 'application/json',
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_org',
@@ -1934,13 +1960,10 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.put(
-    BASE_URL + '/organization/fb48734e859242e2800f077216401736',
-    verify=False,
+<div class="editor">response = auth_request('PUT',
+    '/organization/fb48734e859242e2800f077216401736',
     headers={
         'Content-Type': 'application/json',
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_name',
@@ -1984,13 +2007,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.delete(
-    BASE_URL + '/organization/fb48734e859242e2800f077216401736',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('DELETE',
+    '/organization/fb48734e859242e2800f077216401736',
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -2099,13 +2117,8 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/user/060e54e627904abf9402bf3f2e0e16a2',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2251,13 +2264,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/99a38859bcb248bdaf395a6c83305531',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/user/060e54e627904abf9402bf3f2e0e16a2/99a38859bcb248bdaf395a6c83305531',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2350,13 +2358,10 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.post(
-    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2',
-    verify=False,
+<div class="editor">response = auth_request('POST',
+    '/user/060e54e627904abf9402bf3f2e0e16a2',
     headers={
         'Content-Type': 'application/json',
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_user',
@@ -2454,13 +2459,10 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.put(
-    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
-    verify=False,
+<div class="editor">response = auth_request('PUT',
+    '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
     headers={
         'Content-Type': 'application/json',
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_name',
@@ -2512,13 +2514,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.delete(
-    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('DELETE',
+    '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -2590,13 +2587,8 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.put(
-    BASE_URL + '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('PUT',
+    '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2644,13 +2636,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(BASE_URL +
+<div class="editor">response = auth_request('GET',
     '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -2710,13 +2697,8 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2825,13 +2807,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/server',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/server',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -2977,13 +2954,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/server/6551f49596ca42c4942cb71162916b69',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/server/6551f49596ca42c4942cb71162916b69',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3164,13 +3136,10 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.post(
-    BASE_URL + '/server',
-    verify=False,
+<div class="editor">response = auth_request('POST',
+    '/server',
     headers={
         'Content-Type': 'application/json',
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_server',
@@ -3379,13 +3348,10 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.put(
-    BASE_URL + '/server/c4ceb6102ed941d7b1794aead89ab20e',
-    verify=False,
+<div class="editor">response = auth_request('PUT',
+    '/server/c4ceb6102ed941d7b1794aead89ab20e',
     headers={
         'Content-Type': 'application/json',
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
     },
     data=json.dumps({
         'name': 'new_name',
@@ -3445,13 +3411,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.delete(
-    BASE_URL + '/server/c4ceb6102ed941d7b1794aead89ab20e',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('DELETE',
+    '/server/c4ceb6102ed941d7b1794aead89ab20e',
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -3563,13 +3524,8 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.put(
-    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('PUT',
+    '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3643,13 +3599,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3717,13 +3668,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.put(BASE_URL +
+<div class="editor">response = auth_request('PUT',
     '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3768,13 +3714,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.delete(BASE_URL +
+<div class="editor">response = auth_request('DELETE',
     '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -3826,13 +3767,8 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -3872,13 +3808,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.delete(
-    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('DELETE',
+    '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
 )
 assert(response.status_code == 200)</div>
           </div>
@@ -3967,13 +3898,8 @@ assert(response.status_code == 200)</div>
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/bandwidth',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/bandwidth',
 )
 assert(response.status_code == 200)
 print response.json()
@@ -4058,13 +3984,8 @@ print response.json()
                 JavaScript is required to view example code
               </div>
             </noscript>
-<div class="editor">BASE_URL = 'https://localhost:9700'
-response = requests.get(
-    BASE_URL + '/export/pritunl.tar',
-    verify=False,
-    headers={
-        'Auth-Token': '264e30e7032b467bb0174b22bdb8ce13',
-    },
+<div class="editor">response = auth_request('GET',
+    '/export/pritunl.tar',
 )
 assert(response.status_code == 200)</div>
           </div>
