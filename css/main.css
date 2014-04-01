@@ -38,6 +38,10 @@ a.anchor.api-anchor {
   top: -67px;
 }
 
+a.anchor.api-anchor.first {
+  top: -97px;
+}
+
 .row {
   margin: 0;
   width: 100%;
