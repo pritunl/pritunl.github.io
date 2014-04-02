@@ -1,4 +1,4 @@
-# Pritunl
+# pritunl.github.io
 Simple self-hosted openvpn server. Visit
 [pritunl.com](http://pritunl.com/) for more info.
 
