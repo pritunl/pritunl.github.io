@@ -1,5 +1,5 @@
 # pritunl.github.io
-Simple self-hosted openvpn server. Visit
+Github pages for pritunl.com homepage. Visit
 [pritunl.com](http://pritunl.com/) for more info.
 
 ### Testing
