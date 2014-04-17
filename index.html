@@ -2090,24 +2090,40 @@ assert(response.status_code == 200)</div>
               </thead>
               <tbody>
                 <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>local_address</td>
+                  <td>Static client address if set otherwise null</td>
+                </tr>
+                <tr>
+                  <td>remote_address</td>
+                  <td>Static client remote address if set otherwise null</td>
+                </tr>
+                <tr>
                   <td>connected_since</td>
-                  <td>Epoch time connection was started</td>
+                  <td>Epoch time connection was started if connected</td>
                 </tr>
                 <tr>
                   <td>virt_address</td>
-                  <td>Virtual OpenVPN IP address</td>
+                  <td>Virtual OpenVPN IP address if connected</td>
                 </tr>
                 <tr>
                   <td>real_address</td>
-                  <td>Real OpenVPN IP address</td>
+                  <td>Real OpenVPN IP address if connected</td>
                 </tr>
                 <tr>
                   <td>bytes_sent</td>
-                  <td>Bytes sent</td>
+                  <td>Bytes sent if connected</td>
                 </tr>
                 <tr>
                   <td>bytes_received</td>
-                  <td>Bytes received</td>
+                  <td>Bytes received if connected</td>
                 </tr>
               </tbody>
             </table>
@@ -2132,7 +2148,14 @@ print response.json()
         'status': False,
         'otp_auth': True,
         'otp_secret': 'OPT4HTURJTW6JLQN',
-        'servers': {},
+        'servers': [
+          {
+            'id': '6551f49596ca42c4942cb71162916b69',
+            'name': 'server1',
+            'local_address': null,
+            'remote_address': null,
+          },
+        ],
     },
     {
         'id': 'de554a9993cb4250a995cbcca7a6af5a',
@@ -2143,15 +2166,19 @@ print response.json()
         'status': True,
         'otp_auth': True,
         'otp_secret': 'LMSRMW6NQ4WGFZ37',
-        'servers': {
-            '6551f49596ca42c4942cb71162916b69': {
-                'connected_since': 1388498640,
-                'virt_address': '10.139.82.6',
-                'real_address': '8.8.8.8:41536',
-                'bytes_sent': 194742,
-                'bytes_received': 218497,
-            },
-        },
+        'servers': [
+          {
+            'id': '6551f49596ca42c4942cb71162916b69',
+            'name': 'server1',
+            'local_address': '10.139.82.6',
+            'remote_address': '10.139.82.7',
+            'connected_since': 1388498640,
+            'virt_address': '10.139.82.6',
+            'real_address': '8.8.8.8:41536',
+            'bytes_sent': 194742,
+            'bytes_received': 218497,
+          },
+        ],
     },
 ]</div>
           </div>
@@ -2278,7 +2305,14 @@ print response.json()
     'status': False,
     'otp_auth': True,
     'otp_secret': 'OPT4HTURJTW6JLQN',
-    'servers': {},
+    'servers': [
+      {
+        'id': '6551f49596ca42c4942cb71162916b69',
+        'name': 'server1',
+        'local_address': null,
+        'remote_address': null,
+      },
+    ],
 }</div>
           </div>
         </div>
@@ -2772,8 +2806,12 @@ print response.json()
                   <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
                 </tr>
                 <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
-                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
                 <tr>
                   <td>dns_servers</td>
@@ -2825,6 +2863,7 @@ print response.json()
         'port': 12524,
         'protocol': 'udp',
         'dh_param_bits': 1536,
+        'mode': 'all_traffic',
         'local_networks': [],
         'dns_servers': [],
         'public_address': '8.8.8.8',
@@ -2845,6 +2884,7 @@ print response.json()
         'port': 18387,
         'protocol': 'udp',
         'dh_param_bits': 1536,
+        'mode': 'all_traffic',
         'local_networks': [],
         'dns_servers': [],
         'public_address': '8.8.8.8',
@@ -2919,8 +2959,12 @@ print response.json()
                   <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
                 </tr>
                 <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
-                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
                 <tr>
                   <td>dns_servers</td>
@@ -2971,6 +3015,7 @@ print response.json()
     'port': 12524,
     'protocol': 'udp',
     'dh_param_bits': 1536,
+    'mode': 'all_traffic',
     'local_networks': [],
     'dns_servers': [],
     'public_address': '8.8.8.8',
@@ -3024,8 +3069,12 @@ print response.json()
                   <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
                 </tr>
                 <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
-                  <td>List of local networks server is routing traffic to otherwise null to route all traffic</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
                 <tr>
                   <td>dns_servers</td>
@@ -3101,8 +3150,12 @@ print response.json()
                   <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
                 </tr>
                 <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
-                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
                 <tr>
                   <td>dns_servers</td>
@@ -3148,6 +3201,7 @@ print response.json()
         'port': 14823,
         'protocol': 'udp',
         'dh_param_bits': 1536,
+        'mode': 'all_traffic',
         'local_networks': [],
         'dns_servers': [],
         'public_address': '8.8.8.8',
@@ -3170,6 +3224,7 @@ print response.json()
     'port': 14823,
     'protocol': 'udp',
     'dh_param_bits': 1536,
+    'mode': 'all_traffic',
     'local_networks': [],
     'dns_servers': [],
     'public_address': '8.8.8.8',
@@ -3236,8 +3291,12 @@ print response.json()
                   <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
                 </tr>
                 <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
-                  <td>List of local networks server is routing traffic to otherwise null to route all traffic</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
                 <tr>
                   <td>dns_servers</td>
@@ -3313,8 +3372,12 @@ print response.json()
                   <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
                 </tr>
                 <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
-                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
                 <tr>
                   <td>dns_servers</td>
@@ -3371,6 +3434,7 @@ print response.json()
     'port': 14823,
     'protocol': 'udp',
     'dh_param_bits': 1536,
+    'mode': 'all_traffic',
     'local_networks': [],
     'dns_servers': [],
     'public_address': '8.8.8.8',
@@ -3493,8 +3557,12 @@ assert(response.status_code == 200)</div>
                   <td>Server protocol</td>
                 </tr>
                 <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
-                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
