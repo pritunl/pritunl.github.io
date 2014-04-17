@@ -644,10 +644,10 @@ a.anchor.api-anchor.first {
 }
 
 .ace_scrollbar {
-    display: none !important;
+  display: none !important;
 }
 
 .ace_scroller {
-    overflow-x: hidden !important;
-    overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }
