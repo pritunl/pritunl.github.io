@@ -45,7 +45,7 @@ jQuery(document).ready(function($) {
     $(editor.renderer.scroller).css('margin-left', '10px');
   });
 
-  $('.install-buttons button').click(function(evt) {
+  $('.documentation-buttons button').click(function(evt) {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
     var changeInstructions = function(group, page) {

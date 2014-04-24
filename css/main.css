@@ -664,7 +664,7 @@ a:hover {
 
 .features .features-title,
 .screenshots .screenshots-title,
-.install .install-title,
+.documentation .documentation-title,
 .faq .faq-title,
 .api .api-title {
   margin: 0 auto;
@@ -673,12 +673,12 @@ a:hover {
 }
 .features .features-title .title,
 .screenshots .screenshots-title .title,
-.install .install-title .title,
+.documentation .documentation-title .title,
 .faq .faq-title .title,
 .api .api-title .title {
   color: #fff;
 }
-.install {
+.documentation {
   padding-top: 5px;
   padding-bottom: 75px;
   background-color: #2e4153;
@@ -687,20 +687,20 @@ a:hover {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.install .install-title {
+.documentation .documentation-title {
   margin-top: 100px;
   padding-bottom: 0px;
 }
-.install .install-header {
+.documentation .documentation-header {
   color: #f0f0f0;
   text-align: center;
 }
-.install .install-header {
+.documentation .documentation-header {
   margin-top: 35px;
   margin-bottom: 15px;
   font-size: 1.9em;
 }
-.install pre,
+.documentation pre,
 .faq pre,
 .api pre {
   padding: 30px 0;
@@ -710,17 +710,17 @@ a:hover {
   border: none;
   background-color: rgba(255, 255, 255, 0.10);
 }
-.install-buttons {
+.documentation-buttons {
   margin: 0 auto;
   width: 590px;
   white-space: nowrap;
   border-radius: 10px;
   display: block;
 }
-.install-buttons button,
-.install-buttons button:hover,
-.install-buttons button.active,
-.install-buttons button.active:hover {
+.documentation-buttons button,
+.documentation-buttons button:hover,
+.documentation-buttons button.active,
+.documentation-buttons button.active:hover {
   height: 80px;
   width: 33.333333%;
   background-repeat: no-repeat;
@@ -730,45 +730,45 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.35);
   box-shadow: none;
 }
-.install-buttons button .label {
+.documentation-buttons button .label {
   position: absolute;
   top: 5px;
   right: 5px;
   background-color: #5f3496;
 }
-.install-buttons button:hover {
+.documentation-buttons button:hover {
   background-color: rgba(255, 255, 255, 0.25);
 }
-.install-buttons button.active,
-.install-buttons button.active:hover {
+.documentation-buttons button.active,
+.documentation-buttons button.active:hover {
   background-color: rgba(0, 0, 0, 0.25);
 }
-.install-buttons .digital-ocean {
+.documentation-buttons .digital-ocean {
   background-image: url('../img/digital-ocean.png');
 }
-.install-buttons .linode {
+.documentation-buttons .linode {
   background-image: url('../img/linode.png');
 }
-.install-buttons .amazon-aws {
+.documentation-buttons .amazon-aws {
   background-image: url('../img/amazon-aws.png');
 }
-.install-buttons .ubuntu,
-.install-buttons .ubuntu-client {
+.documentation-buttons .ubuntu,
+.documentation-buttons .ubuntu-client {
   background-image: url('../img/ubuntu.png');
 }
-.install-buttons .arch {
+.documentation-buttons .arch {
   background-image: url('../img/arch.png');
 }
-.install-buttons .centos {
+.documentation-buttons .centos {
   background-image: url('../img/centos.png');
 }
-.install-buttons .windows-client {
+.documentation-buttons .windows-client {
   background-image: url('../img/windows.png');
 }
-.install-buttons .android-client {
+.documentation-buttons .android-client {
   background-image: url('../img/android.png');
 }
-.install-point,
+.documentation-point,
 .faq-point,
 .api-call,
 .api-call-list-box {
@@ -785,7 +785,7 @@ a:hover {
 .api-call-list-box {
   padding-top: 0;
 }
-.install-point-label,
+.documentation-point-label,
 .faq-point-label {
   width: 50px;
   height: 50px;
@@ -806,7 +806,7 @@ a:hover {
 .faq-point.answer .faq-point-label {
   border-top-left-radius: 0;
 }
-.install-point-description,
+.documentation-point-description,
 .faq-point-description,
 .api-call-description {
   font-weight: 300;
@@ -835,7 +835,7 @@ a:hover {
 .faq-point.answer .faq-point-description {
   border-top-right-radius: 0;
 }
-.install-point-description,
+.documentation-point-description,
 .question .faq-point-description {
   height: 50px;
 }
@@ -902,7 +902,7 @@ a:hover {
 .android-client-instructions {
   display: none;
 }
-.install-point-description pre,
+.documentation-point-description pre,
 .faq-point-description pre,
 .api-call-description pre {
   position: relative;
@@ -913,11 +913,11 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
-.conf-instructions .install-point:first-child,
+.conf-instructions .documentation-point:first-child,
 .faq .faq-point:first-child,
 .api .api-call:first-child {
   padding-top: 0;
 }
-.install a {
+.documentation a {
   color: #9cc7fd;
 }
