@@ -565,6 +565,21 @@ a:hover {
 .footer .links a:hover {
   color: #1f2c38;
 }
+.twitter-logo {
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+  opacity: 0.75;
+  display: none;
+}
+.twitter-logo:hover {
+  opacity: 1;
+}
+.twitter-logo img {
+  width: 84px;
+}
 @media (max-width: 767px) {
   .promo .overview .summary li {
     font-size: 18px;
@@ -638,6 +653,9 @@ a:hover {
   .footer .copyright {
     text-align: center;
     padding-top: 0;
+  }
+  .twitter-logo {
+    display: block;
   }
 }
 @media (min-width: 992px) {
