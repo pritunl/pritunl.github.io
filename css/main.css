@@ -659,3 +659,265 @@ a:hover {
     padding-top: 23px;
   }
 }
+
+
+
+.features .features-title,
+.screenshots .screenshots-title,
+.install .install-title,
+.faq .faq-title,
+.api .api-title {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 15px;
+}
+.features .features-title .title,
+.screenshots .screenshots-title .title,
+.install .install-title .title,
+.faq .faq-title .title,
+.api .api-title .title {
+  color: #fff;
+}
+.install {
+  padding-top: 5px;
+  padding-bottom: 75px;
+  background-color: #2e4153;
+  background-image: url('../img/background4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.install .install-title {
+  margin-top: 100px;
+  padding-bottom: 0px;
+}
+.install .install-header {
+  color: #f0f0f0;
+  text-align: center;
+}
+.install .install-header {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-size: 1.9em;
+}
+.install pre,
+.faq pre,
+.api pre {
+  padding: 30px 0;
+  margin: 10px auto;
+  width: 550px;
+  color: #ffffff;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.10);
+}
+.install-buttons {
+  margin: 0 auto;
+  width: 590px;
+  white-space: nowrap;
+  border-radius: 10px;
+  display: block;
+}
+.install-buttons button,
+.install-buttons button:hover,
+.install-buttons button.active,
+.install-buttons button.active:hover {
+  height: 80px;
+  width: 33.333333%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  border: 0 none;
+  background-color: rgba(255, 255, 255, 0.35);
+  box-shadow: none;
+}
+.install-buttons button .label {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #5f3496;
+}
+.install-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.install-buttons button.active,
+.install-buttons button.active:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.install-buttons .digital-ocean {
+  background-image: url('../img/digital-ocean.png');
+}
+.install-buttons .linode {
+  background-image: url('../img/linode.png');
+}
+.install-buttons .amazon-aws {
+  background-image: url('../img/amazon-aws.png');
+}
+.install-buttons .ubuntu,
+.install-buttons .ubuntu-client {
+  background-image: url('../img/ubuntu.png');
+}
+.install-buttons .arch {
+  background-image: url('../img/arch.png');
+}
+.install-buttons .centos {
+  background-image: url('../img/centos.png');
+}
+.install-buttons .windows-client {
+  background-image: url('../img/windows.png');
+}
+.install-buttons .android-client {
+  background-image: url('../img/android.png');
+}
+.install-point,
+.faq-point,
+.api-call,
+.api-call-list-box {
+  clear: both;
+  width: 750px;
+  padding-top: 30px;
+  margin: 0 auto;
+}
+.api-call,
+.api-call-list-box {
+  width: 1207px;
+}
+.api-call.first,
+.api-call-list-box {
+  padding-top: 0;
+}
+.install-point-label,
+.faq-point-label {
+  width: 50px;
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #f0f0f0;
+  font-size: 1.8em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  vertical-align: top;
+  display: table-cell;
+}
+.faq-point.question .faq-point-label {
+  border-bottom-left-radius: 0;
+}
+.faq-point.answer .faq-point-label {
+  border-top-left-radius: 0;
+}
+.install-point-description,
+.faq-point-description,
+.api-call-description {
+  font-weight: 300;
+  width: 700px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #f0f0f0;
+  font-size: 1.2em;
+  padding: 16px;
+  display: table-cell;
+}
+.api-call.endpoint .api-call-description {
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 0;
+  float: right;
+}
+.api-call.info .api-call-description {
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  float: right;
+}
+.faq-point.question .faq-point-description {
+  border-bottom-right-radius: 0;
+}
+.faq-point.answer .faq-point-description {
+  border-top-right-radius: 0;
+}
+.install-point-description,
+.question .faq-point-description {
+  height: 50px;
+}
+.api-call-description {
+  width: 705px;
+  margin-right: 187px;
+}
+.api-call-description .text {
+  margin-bottom: 10px;
+}
+.api-call-description .table th {
+  font-weight: 400;
+}
+.faq-point.question .faq-point-description,
+.api-call.endpoint .api-call-description {
+  font-size: 1.8em;
+  padding: 8px 13px;
+  background-color: rgba(0, 0, 0, 0.35);
+  white-space: nowrap;
+}
+.faq-point.answer,
+.api-call.info {
+  padding-top: 0;
+}
+.api-call .table tbody tr td:first-child {
+  font-weight: 400;
+  width: 200px;
+}
+.api-call-list {
+  margin: 0 10px;
+  position: absolute;
+  list-style-type: none;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.35);
+  font-weight: 400;
+  font-size: 0.7em;
+  width: 295px;
+  float: left;
+}
+.api-call-list li a {
+  color: #c6c6c6;
+}
+.api-call-list li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.api-call-list .list-title {
+  color: #fff;
+  text-align: center;
+  font-size: 1.1em;
+}
+.faq-point.question .faq-point-label {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.faq-point.answer .faq-point-label {
+  background-color: rgba(94, 94, 94, 0.35);
+}
+.linode-instructions,
+.amazon-aws-instructions,
+.arch-instructions,
+.centos-instructions,
+.windows-client-instructions,
+.android-client-instructions {
+  display: none;
+}
+.install-point-description pre,
+.faq-point-description pre,
+.api-call-description pre {
+  position: relative;
+  top: -2px;
+  display: inline;
+  padding: 4px 4px 2px 4px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+.conf-instructions .install-point:first-child,
+.faq .faq-point:first-child,
+.api .api-call:first-child {
+  padding-top: 0;
+}
+.install a {
+  color: #9cc7fd;
+}
