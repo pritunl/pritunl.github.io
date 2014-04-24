@@ -759,7 +759,7 @@ a:hover {
 }
 .documentation-buttons button.active,
 .documentation-buttons button.active:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: rgba(255, 255, 255, 0.16);
 }
 .documentation-buttons .digital-ocean {
   background-image: url('../img/digital-ocean.png');
@@ -814,7 +814,7 @@ a:hover {
   color: #f0f0f0;
   font-size: 1.8em;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.16);
   vertical-align: top;
   display: table-cell;
 }
