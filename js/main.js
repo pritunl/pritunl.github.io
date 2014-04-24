@@ -1,6 +1,9 @@
 jQuery(document).ready(function($) {
-$('a.scrollto').on('click', function(e){
+  $('a.scrollto').on('click', function(e){
     var target = this.hash;
+    if (!$(target).length) {
+      return;
+    }
     e.preventDefault();
     $('body').scrollTo(target, 800, {offset: -80}, {easing: 'easeOutQuad'});
     if ($('.navbar-collapse').hasClass('in')) {

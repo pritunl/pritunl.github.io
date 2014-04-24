@@ -356,6 +356,9 @@ a:hover {
 .features .content p {
   font-weight: 300;
 }
+.terms-privacy {
+  padding: 100px 0 10px 0;
+}
 .install {
   padding: 80px 0;
 }
