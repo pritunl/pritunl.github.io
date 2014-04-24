@@ -680,6 +680,20 @@ a:hover {
 
 
 
+a.anchor {
+  position: relative;
+  top: -50px;
+  visibility: hidden;
+  display: block;
+}
+
+a.anchor.api-anchor {
+  top: -62px;
+}
+
+a.anchor.api-anchor.first {
+  top: -92px;
+}
 .features .features-title,
 .screenshots .screenshots-title,
 .documentation .documentation-title,
@@ -696,6 +710,7 @@ a:hover {
 .api .api-title .title {
   color: #fff;
 }
+.api,
 .documentation {
   padding-top: 5px;
   padding-bottom: 75px;
@@ -704,6 +719,9 @@ a:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.api {
+  padding-top: 85px;
 }
 .documentation .documentation-title {
   margin-top: 100px;
@@ -871,7 +889,7 @@ a:hover {
 .api-call.endpoint .api-call-description {
   font-size: 1.8em;
   padding: 8px 13px;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(255, 255, 255, 0.16);
   white-space: nowrap;
 }
 .faq-point.answer,
@@ -888,7 +906,7 @@ a:hover {
   list-style-type: none;
   padding: 8px;
   border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(255, 255, 255, 0.16);
   font-weight: 400;
   font-size: 0.7em;
   width: 295px;

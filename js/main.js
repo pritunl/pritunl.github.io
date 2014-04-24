@@ -10,6 +10,14 @@ jQuery(document).ready(function($) {
       $('.navbar-collapse').removeClass('in').addClass('collapse');
     }
 	});
+  $('a[href^="#"]').on('click', function(evt) {
+      evt.preventDefault();
+      $('html, body').stop().animate({
+          'scrollTop': $(this.hash).offset().top
+      }, 750, 'swing', function() {
+          window.location.hash = this.hash;
+      }.bind(this));
+  });
   $('.flexslider').flexslider({
     animation: 'fade',
     touch: true,
@@ -106,4 +114,18 @@ jQuery(document).ready(function($) {
       changeInstructions('.client-instructions', '.android-client-instructions');
     }
   });
+  var onScroll = function() {
+    var scrollTop = $(this).scrollTop();
+
+    if (scrollTop >= $('#api').offset().top + 91) {
+      $('.api-call-list').css('position', 'fixed');
+      $('.api-call-list').css('top', '91px');
+    }
+    else {
+      $('.api-call-list').css('position', 'absolute');
+      $('.api-call-list').css('top', 'auto');
+    }
+  }
+  $(window).scroll(onScroll);
+  onScroll();
 });
