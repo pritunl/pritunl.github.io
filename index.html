@@ -168,32 +168,8 @@ title: Pritunl - Enterprise Cloud Networking
         <h2 class="title text-center">Frequently Asked Questions</h2>
         <div class="faq-col col-md-6 col-sm-6 col-xs-12">
           <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Can only lan traffic be routed trough the vpn server?</h3>
-            <p class="answer">By default the servers will route all traffic trough the vpn tunnel. This can be changed in the server settings by selecting "Local Traffic Only" and entering the network address and subnet mask of the local network such as "192.168.0.0/24" or "10.0.0.0/8". This will route only traffic destined to the local network.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>What is the default username and password?</h3>
-            <p class="answer">The default username and password is "admin".</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>How can the users and servers be backed up?</h3>
-            <p class="answer">All data is stored in <span>/var/lib/pritunl</span>. A backup can be downloaded by logging into the web interface and opening <span>https://&#60;SERVER_ADDRESS&#62;:9700/export</span>. To restore stop the pritunl service and remove any existing files in <span>/var/lib/pritunl</span> then extract the backup archive to the directory. Then start the pritunl service.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Can the user keys be downloaded with wget?</h3>
-            <p class="answer">A button next to the users status can be used to generate a temporary url for the user key that can be downloaded without authenticating using an application like wget.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>When will user keys need to be redownloaded?</h3>
-            <p class="answer">User keys will need to be updated after attaching the users organization to a server or when a servers public ip or port is changed.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Is the username needed with two-step authentication?</h3>
-            <p class="answer">The username is not checked or used by the server and can be left blank, only the password is used with two-step authentication.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Why does the server connect to ip.pritunl.com?</h3>
-            <p class="answer">When the service starts an HTTP requests is sent to ip.pritunl.com to get the public IP address of the server. This is used to automatically fill in the public IP setting when creating a new server. The source code for the ip.pritunl.com server is available at <a href="//github.com/pritunl/pritunl-ip">github.com/pritunl/pritunl-ip</a>. This can be disabled by adding <span>get_public_ip=false</span> to <span>/etc/pritunl.conf</span></p>
+            <h3 class="question"><i class="fa fa-question-circle"></i>What VPN modes are available?</h3>
+            <p class="answer">Three modes are available to route all internet traffic, route only specified subnets or route only VPN traffic.</p>
           </div>
           <div class="item">
             <h3 class="question"><i class="fa fa-question-circle"></i>How can bugs be reported?</h3>
@@ -202,36 +178,12 @@ title: Pritunl - Enterprise Cloud Networking
         </div>
         <div class="faq-col col-md-6 col-sm-6 col-xs-12">
           <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Where is the pritunl log file located?</h3>
-            <p class="answer">The log file is located at <span>/var/log/pritunl.log</span></p>
+            <h3 class="question"><i class="fa fa-question-circle"></i>What does enterprise subscription include?</h3>
+            <p class="answer">The $2.50 enterprise subscription includes server bandwidth graphs, user searching, detailed user information, static user IP addresses and temporary key links.</p>
           </div>
           <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>What default ssl options are used?</h3>
-            <p class="answer">The client and server keys are 4096bit RSA, SHA1 MD. This can be changed by adding <span>key_bits=4096</span> to the conf file <span>/etc/pritunl.conf</span></p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Where are the ssl certificates located?</h3>
-            <p class="answer">All the certificates and conf files are stored in <span>/var/lib/pritunl</span></p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Do the openvpn servers autostart on reboot?</h3>
-            <p class="answer">Yes, this can be disabled by adding <span>auto_start_servers=false</span> to <span>/etc/pritunl.conf</span></p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>How can a user be removed from the server?</h3>
-            <p class="answer">Deleting a user will automatically restart any server's available to the user disconnecting the user and then disable the user's certificate.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>How is the two-step authentication code validated?</h3>
-            <p class="answer">Each time a user attempts to connect OpenVPN will pass the user and two-step authentication code to a python script. The script will validate the code and respond with an exit code indicating if the code was valid.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Can a two-step authentication code be used twice?</h3>
-            <p class="answer">After a two-step authentication code has been validated it will be stored and any further attempts to use the same code will be invalid.</p>
-          </div>
-          <div class="item">
-            <h3 class="question"><i class="fa fa-question-circle"></i>Can options be set using environment variables?</h3>
-            <p class="answer">All conf options can be set using environment variables by prefixing the conf option with <span>PRITUNL_</span> and upper casing the option name such as <span>PRITUNL_PORT=9700</span></p>
+            <h3 class="question"><i class="fa fa-question-circle"></i>What is the default username and password?</h3>
+            <p class="answer">The default username and password is "admin".</p>
           </div>
         </div>
       </div>
