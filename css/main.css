@@ -362,6 +362,10 @@ a:hover {
 .install {
   padding: 80px 0;
 }
+.install .client {
+  padding-top: 30px;
+  text-align: center;
+}
 .comparison {
   color: #fff;
   padding: 80px 0;
