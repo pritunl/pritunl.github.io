@@ -222,5 +222,2534 @@ print response.json()
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-status" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /status</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns general information about the pritunl server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users</td>
+                </tr>
+                <tr>
+                  <td>servers_online</td>
+                  <td>Number of servers online</td>
+                </tr>
+                <tr>
+                  <td>server_count</td>
+                  <td>Number of servers</td>
+                </tr>
+                <tr>
+                  <td>server_version</td>
+                  <td>Pritunl version running on server</td>
+                </tr>
+                <tr>
+                  <td>public_ip</td>
+                  <td>Public IP address of server</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks on server</td>
+                </tr>
+                <tr>
+                  <td>notification</td>
+                  <td>Notification for pritunl updates</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/status',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'org_count': 2,
+  'users_online': 2,
+  'user_count': 8,
+  'servers_online': 2,
+  'server_count': 2,
+  'server_version': '0.10.4',
+  'public_ip': '8.8.8.8',
+  'local_networks': [
+      '10.0.0.0/24',
+      '10.5.0.0/24',
+      '192.168.0.0/24',
+  ],
+  'notification': '',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-log" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /log</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns a list of server log entries sorted by time.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Log entry ID</td>
+                </tr>
+                <tr>
+                  <td>time</td>
+                  <td>Log entry epoch time</td>
+                </tr>
+                <tr>
+                  <td>message</td>
+                  <td>Log message</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/log',
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+      'id': 'ebb8af4a72d548a889c4d6ca45254a5a',
+      'time': 1388389241,
+      'message': 'Web server started.',
+  },
+  {
+      'id': 'f5ebb4ed2bc74181ad70060bfec30c81',
+      'time': 1388389217,
+      'message': 'Web server stopped.',
+  },
+]</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-auth" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /auth</h2>
+          <div class="api-description">
+            <div class="text">
+              Get authentication information.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>username</td>
+                  <td>Current username</td>
+                </tr>
+                <tr>
+                  <td>token</td>
+                  <td>Encrypted API token</td>
+                </tr>
+                <tr>
+                  <td>secret</td>
+                  <td>API secret</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/auth',
+  headers={
+      'Content-Type': 'application/json',
+  },
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'username': 'user',
+  'token': '2$kNvK4+IhmHU=$oBGfGOLHsbl+RqmngrN4M/JCgnKacQb7yNrvkOT3DC8=',
+  'secret': 'NXLmn2nn1rv0NYQ4zG94XSiAY7TQd1Ks',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="put-auth" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /auth</h2>
+          <div class="api-description">
+            <div class="text">
+              Change the server username and password.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>username</td>
+                  <td>New username</td>
+                </tr>
+                <tr>
+                  <td>password</td>
+                  <td>New password</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>username</td>
+                  <td>Current username</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('PUT',
+  '/auth',
+  headers={
+      'Content-Type': 'application/json',
+  },
+  data=json.dumps({
+      'username': 'user',
+      'password': 'pass',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'username': 'user',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-organization" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /organization</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns a list of organizations on the server sorted by name.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/organization',
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+      'id': '060e54e627904abf9402bf3f2e0e16a2',
+      'name': 'org1',
+  },
+  {
+      'id': 'c002529764334d63b7035ad1939eb7ca',
+      'name': 'org2',
+  },
+]</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-organization-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /organization/:organization_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns an organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/organization/060e54e627904abf9402bf3f2e0e16a2',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': '060e54e627904abf9402bf3f2e0e16a2',
+  'name': 'org1',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="post-organization" class="anchor api-anchor"></a>
+          <h2 class="api-header">POST /organization</h2>
+          <div class="api-description">
+            <div class="text">
+              Create a new organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>Name of organization</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('POST',
+  '/organization',
+  headers={
+      'Content-Type': 'application/json',
+  },
+  data=json.dumps({
+      'name': 'new_org',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'fb48734e859242e2800f077216401736',
+  'name': 'new_org',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="put-organization-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /organization/:organization_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Rename an existing organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>New name of organization</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('PUT',
+  '/organization/fb48734e859242e2800f077216401736',
+  headers={
+      'Content-Type': 'application/json',
+  },
+  data=json.dumps({
+      'name': 'new_name',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'fb48734e859242e2800f077216401736',
+  'name': 'new_name',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="delete-organization-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">DELETE /organization/:organization_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Delete an existing organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('DELETE',
+  '/organization/fb48734e859242e2800f077216401736',
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-user-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /user/:organization_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns a list of users in an organization sorted by name.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>User ID</td>
+                </tr>
+                <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>User name</td>
+                </tr>
+                <tr>
+                  <td>organization_name</td>
+                  <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if user uses two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>servers</td>
+                  <td>Object of client parameters listed below for each server ID that the user is connected to</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Client Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>local_address</td>
+                  <td>Static client address if set otherwise null</td>
+                </tr>
+                <tr>
+                  <td>remote_address</td>
+                  <td>Static client remote address if set otherwise null</td>
+                </tr>
+                <tr>
+                  <td>connected_since</td>
+                  <td>Epoch time connection was started if connected</td>
+                </tr>
+                <tr>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>real_address</td>
+                  <td>Real OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>bytes_sent</td>
+                  <td>Bytes sent if connected</td>
+                </tr>
+                <tr>
+                  <td>bytes_received</td>
+                  <td>Bytes received if connected</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/user/060e54e627904abf9402bf3f2e0e16a2',
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+      'id': '99a38859bcb248bdaf395a6c83305531',
+      'organization': '060e54e627904abf9402bf3f2e0e16a2',
+      'name': 'server_6551f49596ca42c4942cb71162916b69',
+      'organization_name': 'org1',
+      'type': 'server',
+      'status': False,
+      'otp_auth': True,
+      'otp_secret': 'OPT4HTURJTW6JLQN',
+      'servers': [
+        {
+          'id': '6551f49596ca42c4942cb71162916b69',
+          'name': 'server1',
+          'local_address': null,
+          'remote_address': null,
+        },
+      ],
+  },
+  {
+      'id': 'de554a9993cb4250a995cbcca7a6af5a',
+      'organization': '060e54e627904abf9402bf3f2e0e16a2',
+      'name': 'user1',
+      'organization_name': 'org1',
+      'type': 'client',
+      'status': True,
+      'otp_auth': True,
+      'otp_secret': 'LMSRMW6NQ4WGFZ37',
+      'servers': [
+        {
+          'id': '6551f49596ca42c4942cb71162916b69',
+          'name': 'server1',
+          'local_address': '10.139.82.6',
+          'remote_address': '10.139.82.7',
+          'connected_since': 1388498640,
+          'virt_address': '10.139.82.6',
+          'real_address': '8.8.8.8:41536',
+          'bytes_sent': 194742,
+          'bytes_received': 218497,
+        },
+      ],
+  },
+]</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-user-var-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /user/:organization_id/:user_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns a user from an organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>User ID</td>
+                </tr>
+                <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>User name</td>
+                </tr>
+                <tr>
+                  <td>organization_name</td>
+                  <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if user uses two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>servers</td>
+                  <td>Object of client parameters listed below for each server ID that the user is connected to</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Client Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>connected_since</td>
+                  <td>Epoch time connection was started</td>
+                </tr>
+                <tr>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address</td>
+                </tr>
+                <tr>
+                  <td>real_address</td>
+                  <td>Real OpenVPN IP address</td>
+                </tr>
+                <tr>
+                  <td>bytes_sent</td>
+                  <td>Bytes sent</td>
+                </tr>
+                <tr>
+                  <td>bytes_received</td>
+                  <td>Bytes received</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/user/060e54e627904abf9402bf3f2e0e16a2/99a38859bcb248bdaf395a6c83305531',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': '99a38859bcb248bdaf395a6c83305531',
+  'organization': '060e54e627904abf9402bf3f2e0e16a2',
+  'name': 'server_6551f49596ca42c4942cb71162916b69',
+  'organization_name': 'org1',
+  'type': 'server',
+  'status': False,
+  'otp_auth': True,
+  'otp_secret': 'OPT4HTURJTW6JLQN',
+  'servers': [
+    {
+      'id': '6551f49596ca42c4942cb71162916b69',
+      'name': 'server1',
+      'local_address': null,
+      'remote_address': null,
+    },
+  ],
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="post-user-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">POST /user/:organization_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Create a new user in an organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>User name</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>User ID</td>
+                </tr>
+                <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>User name</td>
+                </tr>
+                <tr>
+                  <td>organization_name</td>
+                  <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('POST',
+  '/user/060e54e627904abf9402bf3f2e0e16a2',
+  headers={
+      'Content-Type': 'application/json',
+  },
+  data=json.dumps({
+      'name': 'new_user',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'f53c6efed9bc490588607ee5853e651f',
+  'organization': '060e54e627904abf9402bf3f2e0e16a2',
+  'name': 'new_user',
+  'organization_name': 'org1',
+  'type': 'client',
+  'otp_secret': 'HUI3D32NI6CUTMXO',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="put-user-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /user/:organization_id/:user_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Rename an existing user in an organization.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>New user name</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>User ID</td>
+                </tr>
+                <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>User name</td>
+                </tr>
+                <tr>
+                  <td>organization_name</td>
+                  <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('PUT',
+  '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
+  headers={
+      'Content-Type': 'application/json',
+  },
+  data=json.dumps({
+      'name': 'new_name',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'f53c6efed9bc490588607ee5853e651f',
+  'organization': '060e54e627904abf9402bf3f2e0e16a2',
+  'name': 'new_name',
+  'organization_name': 'org1',
+  'type': 'client',
+  'otp_secret': 'HUI3D32NI6CUTMXO',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="delete-user-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">DELETE /user/:organization_id/:user_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Delete an existing user in an organization. This will restart any servers the user is connected to.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('DELETE',
+  '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="put-user-var-otp-secret" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /user/:organization_id/:user_id/otp_secret</h2>
+          <div class="api-description">
+            <div class="text">
+              Generate a new two-step authentication secret for an existing user.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>User ID</td>
+                </tr>
+                <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>User name</td>
+                </tr>
+                <tr>
+                  <td>organization_name</td>
+                  <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('PUT',
+  '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'f53c6efed9bc490588607ee5853e651f',
+  'organization': '060e54e627904abf9402bf3f2e0e16a2',
+  'name': 'new_name',
+  'organization_name': 'org1',
+  'type': 'server',
+  'otp_secret': 'IYW6NR774YTWQICV',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-key-var-tar" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /key/:organization_id/:user_id.tar</h2>
+          <div class="api-description">
+            <div class="text">
+              Download a users key tar archive.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-key-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /key/:organization_id/:user_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Generate a temporary url to download a users key archive and view the two-step authentication key. Both urls can be viewed without authenticating and will expire after 24 hours. The key link can also be deleted by clicking the delete link button on the page.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Key link ID</td>
+                </tr>
+                <tr>
+                  <td>key_url</td>
+                  <td>Temporary url to download user key tar archive</td>
+                </tr>
+                <tr>
+                  <td>view_url</td>
+                  <td>Temporary url to view the two-step authentication key, download key tar archive and download mobile key configurations</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'ca03ad46c20043aca6a4a571ea6c5e76',
+  'key_url': '/key/ca03ad46c20043aca6a4a571ea6c5e76.tar',
+  'view_url': '/k/y3aNc',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-server" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /server</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns a list of servers sorted by name.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/server',
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+      'id': '6551f49596ca42c4942cb71162916b69',
+      'name': 'server1',
+      'status': True,
+      'uptime': 463,
+      'users_online': 1,
+      'user_count': 6,
+      'network': '10.139.82.0/24',
+      'interface': 'tun0',
+      'port': 12524,
+      'protocol': 'udp',
+      'dh_param_bits': 1536,
+      'mode': 'all_traffic',
+      'local_networks': [],
+      'dns_servers': [],
+      'public_address': '8.8.8.8',
+      'otp_auth': True,
+      'lzo_compression': False,
+      'debug': True,
+      'org_count': 2,
+  },
+  {
+      'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+      'name': 'server2',
+      'status': False,
+      'uptime': null,
+      'users_online': 0,
+      'user_count': 2,
+      'network': '10.86.88.0/24',
+      'interface': 'tun1',
+      'port': 18387,
+      'protocol': 'udp',
+      'dh_param_bits': 1536,
+      'mode': 'all_traffic',
+      'local_networks': [],
+      'dns_servers': [],
+      'public_address': '8.8.8.8',
+      'otp_auth': False,
+      'lzo_compression': False,
+      'debug': False,
+      'org_count': 1,
+  },
+]</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-server-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /server/:server_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/server/6551f49596ca42c4942cb71162916b69',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': '6551f49596ca42c4942cb71162916b69',
+  'name': 'server1',
+  'status': True,
+  'uptime': 463,
+  'users_online': 1,
+  'user_count': 6,
+  'network': '10.139.82.0/24',
+  'interface': 'tun0',
+  'port': 12524,
+  'protocol': 'udp',
+  'dh_param_bits': 1536,
+  'mode': 'all_traffic',
+  'local_networks': [],
+  'dns_servers': [],
+  'public_address': '8.8.8.8',
+  'otp_auth': True,
+  'lzo_compression': False,
+  'debug': True,
+  'org_count': 2,
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="post-server" class="anchor api-anchor"></a>
+          <h2 class="api-header">POST /server</h2>
+          <div class="api-description">
+            <div class="text">
+              Create a new server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('POST',
+  '/server',
+  headers={
+      'Content-Type': 'application/json',
+  },
+  data=json.dumps({
+      'name': 'new_server',
+      'network': '10.32.32.0/24',
+      'interface': 'tun2',
+      'port': 14823,
+      'protocol': 'udp',
+      'dh_param_bits': 1536,
+      'mode': 'all_traffic',
+      'local_networks': [],
+      'dns_servers': [],
+      'public_address': '8.8.8.8',
+      'otp_auth': True,
+      'lzo_compression': False,
+      'debug': False,
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'c4ceb6102ed941d7b1794aead89ab20e',
+  'name': 'new_server',
+  'status': False,
+  'uptime': None,
+  'users_online': 0,
+  'user_count': 0,
+  'network': '10.32.32.0/24',
+  'interface': 'tun2',
+  'port': 14823,
+  'protocol': 'udp',
+  'dh_param_bits': 1536,
+  'mode': 'all_traffic',
+  'local_networks': [],
+  'dns_servers': [],
+  'public_address': '8.8.8.8',
+  'otp_auth': True,
+  'lzo_compression': False,
+  'debug': False,
+  'org_count': 0,
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="put-server-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /server/:server_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Update an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Servers public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('PUT',
+  '/server/c4ceb6102ed941d7b1794aead89ab20e',
+  headers={
+      'Content-Type': 'application/json',
+  },
+  data=json.dumps({
+      'name': 'new_name',
+  }),
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'c4ceb6102ed941d7b1794aead89ab20e',
+  'name': 'new_name',
+  'status': False,
+  'uptime': None,
+  'users_online': 0,
+  'user_count': 0,
+  'network': '10.32.32.0/24',
+  'interface': 'tun2',
+  'port': 14823,
+  'protocol': 'udp',
+  'dh_param_bits': 1536,
+  'mode': 'all_traffic',
+  'local_networks': [],
+  'dns_servers': [],
+  'public_address': '8.8.8.8',
+  'otp_auth': True,
+  'lzo_compression': False,
+  'debug': False,
+  'org_count': 0,
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="delete-server-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">DELETE /server/:server_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Delete an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('DELETE',
+'/server/c4ceb6102ed941d7b1794aead89ab20e',
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="put-server-var-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /server/:server_id/:operation</h2>
+          <div class="api-description">
+            <div class="text">
+              Start, stop or restart an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>operation</td>
+                  <td>Server operation</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if server is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>uptime</td>
+                  <td>Server uptime in seconds</td>
+                </tr>
+                <tr>
+                  <td>users_online</td>
+                  <td>Number of users online</td>
+                </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users attached to the server</td>
+                </tr>
+                <tr>
+                  <td>network</td>
+                  <td>Servers VPN network address</td>
+                </tr>
+                <tr>
+                  <td>interface</td>
+                  <td>Server VPN interface</td>
+                </tr>
+                <tr>
+                  <td>port</td>
+                  <td>Server port</td>
+                </tr>
+                <tr>
+                  <td>protocol</td>
+                  <td>Server protocol</td>
+                </tr>
+                <tr>
+                  <td>mode</td>
+                  <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
+                </tr>
+                <tr>
+                  <td>local_networks</td>
+                  <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public IP address</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if the server is using two-step authentication otherwise false</td>
+                </tr>
+                <tr>
+                  <td>lzo_compression</td>
+                  <td>True if lzo compression is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>debug</td>
+                  <td>True if server debug output is enabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>org_count</td>
+                  <td>Number of organizations attached to the server</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('PUT',
+  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+  'name': 'server2',
+  'status': True,
+  'uptime': 1,
+  'users_online': 0,
+  'user_count': 2,
+  'network': '10.86.88.0/24',
+  'interface': 'tun1',
+  'port': 18387,
+  'protocol': 'udp',
+  'public_address': '8.8.8.8',
+  'otp_auth': False,
+  'lzo_compression': False,
+  'debug': False,
+  'org_count': 1,
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-server-var-organization" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /server/:server_id/organization</h2>
+          <div class="api-description">
+            <div class="text">
+              Returns a list of organizations attached to a server sorted by name.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>server</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
+)
+assert(response.status_code == 200)
+print response.json()
+[
+  {
+      'id': '060e54e627904abf9402bf3f2e0e16a2',
+      'server': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+      'name': 'org1',
+  },
+]</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="put-server-var-organization-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /server/:server_id/organization/:organization_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Attach an organization to an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>server</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Organization name</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('PUT',
+  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'c002529764334d63b7035ad1939eb7ca',
+  'server': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+  'name': 'org2',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="delete-server-var-organization-var" class="anchor api-anchor"></a>
+          <h2 class="api-header">DELETE /server/:server_id/organization/:organization_id</h2>
+          <div class="api-description">
+            <div class="text">
+              Remove an organization from an existing server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('DELETE',
+  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-server-var-output" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /server/:server_id/output</h2>
+          <div class="api-description">
+            <div class="text">
+              Get the output of a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>output</td>
+                  <td>Server output</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+  'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+  'output': '',
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="delete-server-var-output" class="anchor api-anchor"></a>
+          <h2 class="api-header">DELETE /server/:server_id/output</h2>
+          <div class="api-description">
+            <div class="text">
+              Clear the output of a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('DELETE',
+  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-server-var-bandwidth" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /server/:server_id/bandwidth</h2>
+          <div class="api-description">
+            <div class="text">
+              Get the bandwidth usage history of a server.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Response</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1m</td>
+                  <td>Bandwidth data at 1 minute intervals for last 6 hours</td>
+                </tr>
+                <tr>
+                  <td>5m</td>
+                  <td>Bandwidth data at 5 minute intervals for last 24 hours</td>
+                </tr>
+                <tr>
+                  <td>30m</td>
+                  <td>Bandwidth data at 30 minute intervals for last 7 days</td>
+                </tr>
+                <tr>
+                  <td>2h</td>
+                  <td>Bandwidth data at 2 hour intervals for last 30 days</td>
+                </tr>
+                <tr>
+                  <td>1d</td>
+                  <td>Bandwidth data at 1 day intervals for last 365 days</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Bandwidth Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>received</td>
+                  <td>Array of containing the utc timestamp and bandwidth usage in bytes for data received</td>
+                </tr>
+                <tr>
+                  <td>received_total</td>
+                  <td>Total bytes received</td>
+                </tr>
+                <tr>
+                  <td>sent</td>
+                  <td>Array of containing the utc timestamp and bandwidth usage in bytes for data sent</td>
+                </tr>
+                <tr>
+                  <td>sent_total</td>
+                  <td>Total bytes sent</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/bandwidth',
+)
+assert(response.status_code == 200)
+print response.json()
+{
+'1m': {
+  'received': [
+    (1393115280, 753),
+    (1393115340, 321),
+  ],
+  'received_total': 1074,
+  'sent': [
+    (1393115280, 865),
+    (1393115340, 421),
+  ],
+  'sent_total': 1286,
+},
+'5m': {
+  'received': [
+    (1393050720, 3753),
+    (1393051020, 4784),
+  ],
+  'received_total': 8537,
+  'sent': [
+    (1393050720, 4723),
+    (1393051020, 6723),
+  ],
+  'sent_total': 11446,
+},
+'30m': {
+  'received': [
+    (1392532200, 19452),
+    (1392534000, 23921),
+  ],
+  'received_total': 43373,
+  'sent': [
+    (1392532200, 20123),
+    (1392534000, 17853),
+  ],
+  'sent_total': 37976,
+},
+'2h': {
+  'received': [
+    (1390552020, 91752),
+    (1390559220, 89316),
+  ],
+  'received_total': 181068,
+  'sent': [
+    (1390552020, 96296),
+    (1390559220, 83478),
+  ],
+  'sent_total': 179774,
+},
+'1d': {
+  'received': [
+    (1361687220, 867242),
+    (1361773620, 948342),
+  ],
+  'received_total': 1815584,
+  'sent': [
+    (1361687220, 852067),
+    (1361773620, 935672),
+  ],
+  'sent_total': 1787739,
+},
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <a id="get-export" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /export/pritunl.tar</h2>
+          <div class="api-description">
+            <div class="text">
+              Download a tar archive of all server data.
+            </div>
+            <span class="editor-title">Python Example</span>
+            <noscript>
+              <div class="text">
+                JavaScript is required to view example code
+              </div>
+            </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/export/pritunl.tar',
+)
+assert(response.status_code == 200)</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
