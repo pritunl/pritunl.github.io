@@ -117,13 +117,13 @@ jQuery(document).ready(function($) {
   var onScroll = function() {
     var scrollTop = $(this).scrollTop();
 
-    if (scrollTop >= $('#api').offset().top + 91) {
-      $('.api-call-list').css('position', 'fixed');
-      $('.api-call-list').css('top', '91px');
+    if (scrollTop >= $('#api').offset().top + 99) {
+      $('.api-call-list-box').css('position', 'fixed');
+      $('.api-call-list-box').css('top', '71px');
     }
     else {
-      $('.api-call-list').css('position', 'absolute');
-      $('.api-call-list').css('top', 'auto');
+      $('.api-call-list-box').css('position', 'absolute');
+      $('.api-call-list-box').css('top', 'auto');
     }
   }
   $(window).scroll(onScroll);
