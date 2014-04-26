@@ -366,6 +366,9 @@ a:hover {
   padding-top: 30px;
   text-align: center;
 }
+.install .client img {
+  border-radius: 4px;
+}
 .comparison {
   color: #fff;
   padding: 80px 0;
