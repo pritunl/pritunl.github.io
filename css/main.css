@@ -855,7 +855,8 @@ a.anchor.api-anchor {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: #5f3496;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
 }
 .documentation-buttons button:hover {
   background-color: rgba(255, 255, 255, 0.25);
