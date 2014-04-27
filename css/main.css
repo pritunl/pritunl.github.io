@@ -18,6 +18,9 @@ a:hover {
   text-decoration: none;
   color: #19242e;
 }
+thead tr th {
+  font-weight: normal;
+}
 .title {
   font-family: 'Ubuntu', 'sans-serif';
 }
@@ -592,6 +595,10 @@ a:hover {
 }
 .api-doc {
   color: #f0f0f0;
+}
+.api-doc .editor-title {
+  padding-left: 2px;
+  font-weight: normal;
 }
 .api-doc .api-header {
   padding: 8px 13px;
