@@ -18,6 +18,9 @@ a:hover {
   text-decoration: none;
   color: #19242e;
 }
+.title {
+  font-family: 'Ubuntu', 'sans-serif';
+}
 .btn {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -587,10 +590,6 @@ a:hover {
 .twitter-logo img {
   width: 84px;
 }
-/*.api .row {
-  margin-left: 0;
-  margin-right: 0;
-}*/
 .api-doc {
   color: #f0f0f0;
 }
