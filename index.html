@@ -189,7 +189,7 @@ title: Pritunl - Enterprise Cloud Networking
       </div>
       <div class="more text-center">
         <h4 class="title">More questions?</h4>
-        <a id="contact" class="btn btn-lg btn-theme scrollto">Get in touch<i class="fa fa-arrow-circle-o-down"></i></a>
+        <a id="contact" class="btn btn-lg btn-theme">Get in touch<i class="fa fa-arrow-circle-o-down"></i></a>
       </div>
     </div>
   </section>
@@ -315,7 +315,7 @@ title: Pritunl - Enterprise Cloud Networking
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
           <h3 class="title text-center">Ubuntu</h3>
 <div class="editor bash">apt-get install python-software-properties
-add-apt-repository ppa:pritunl/ppa
+add-apt-repository ppa:pritunl
 apt-get update; apt-get install pritunl
 open "https://localhost:9700/"</div>
         </div>
@@ -328,18 +328,25 @@ open "https://localhost:9700/"</div>
         </div>
       </div>
       <div class="row client">
-        <h2 class="title text-center">Client (Coming Soon)</h2>
-        <div class="item col-md-4 col-sm-12 col-xs-12">
+        <h2 class="title text-center">Client (Beta)</h2>
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
           <h3 class="title text-center">Ubuntu</h3>
           <img src="img/client_ubuntu.png" alt="Ubuntu Client"/>
+<div class="editor bash">sudo add-apt-repository ppa:pritunl
+sudo apt-get update
+sudo apt-get install pritunl-client</div>
         </div>
-        <div class="item col-md-4 col-sm-12 col-xs-12">
+        <div class="item col-md-5 col-sm-12 col-xs-12">
           <h3 class="title text-center">Arch Linux</h3>
           <img src="img/client_arch.png" alt="Arch Linux Client"/>
+<div class="editor bash">yaourt -S pritunl-client</div>
         </div>
-        <div class="item col-md-4 col-sm-12 col-xs-12">
+      </div>
+      <div class="row client">
+        <div class="item col-md-4 col-sm-12 col-xs-12 col-md-offset-4">
           <h3 class="title text-center">Windows</h3>
           <img src="img/client_win.png" alt="Windows Client"/>
+          <a class="btn btn-lg btn-success" href="/client/pritunl_client-latest.zip">Download Windows Client</a>
         </div>
       </div>
     </div>
