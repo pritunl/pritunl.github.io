@@ -372,6 +372,10 @@ thead tr th {
   padding-top: 30px;
   text-align: center;
 }
+.install .server-doc {
+  padding-top: 20px;
+  text-align: center;
+}
 .install .client img {
   border-radius: 4px;
   margin-bottom: 10px;
@@ -379,8 +383,8 @@ thead tr th {
 .install .client .editor {
   text-align: left;
 }
-.install .client .btn {
-  font-size: 20px;
+.install .btn {
+  font-size: 18px;
   padding: 10px 18px;
 }
 .comparison {
