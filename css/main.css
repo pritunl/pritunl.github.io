@@ -497,7 +497,9 @@ thead tr th {
 }
 .use-cases .item img {
   width: 100%;
-  max-height: 140px;
+  max-width: 440px;
+  margin: 0 auto;
+  display: block;
 }
 .editor {
   width: 100%;
