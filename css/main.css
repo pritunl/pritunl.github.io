@@ -368,6 +368,9 @@ thead tr th {
 .install {
   padding: 80px 0;
 }
+.install h2 {
+  margin-bottom: 0;
+}
 .install .client {
   padding-top: 30px;
   text-align: center;
