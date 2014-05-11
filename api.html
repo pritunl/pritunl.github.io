@@ -793,6 +793,10 @@ assert(response.status_code == 200)</div>
                   <td>Organization name</td>
                 </tr>
                 <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
+                <tr>
                   <td>type</td>
                   <td>User type</td>
                 </tr>
@@ -876,6 +880,7 @@ print response.json()
       'organization': '060e54e627904abf9402bf3f2e0e16a2',
       'name': 'server_6551f49596ca42c4942cb71162916b69',
       'organization_name': 'org1',
+      'disabled': False,
       'type': 'server',
       'status': False,
       'otp_auth': True,
@@ -894,6 +899,7 @@ print response.json()
       'organization': '060e54e627904abf9402bf3f2e0e16a2',
       'name': 'user1',
       'organization_name': 'org1',
+      'disabled': False,
       'type': 'client',
       'status': True,
       'otp_auth': True,
@@ -965,6 +971,10 @@ print response.json()
                   <td>Organization name</td>
                 </tr>
                 <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
+                <tr>
                   <td>type</td>
                   <td>User type</td>
                 </tr>
@@ -1031,6 +1041,7 @@ print response.json()
   'organization': '060e54e627904abf9402bf3f2e0e16a2',
   'name': 'server_6551f49596ca42c4942cb71162916b69',
   'organization_name': 'org1',
+  'disabled': False,
   'type': 'server',
   'status': False,
   'otp_auth': True,
@@ -1079,6 +1090,10 @@ print response.json()
                   <td>name</td>
                   <td>User name</td>
                 </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
               </tbody>
             </table>
             <table class="table">
@@ -1105,6 +1120,10 @@ print response.json()
                   <td>Organization name</td>
                 </tr>
                 <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
+                <tr>
                   <td>type</td>
                   <td>User type</td>
                 </tr>
@@ -1127,6 +1146,7 @@ print response.json()
   },
   data=json.dumps({
       'name': 'new_user',
+      'disabled': True,
   }),
 )
 assert(response.status_code == 200)
@@ -1136,6 +1156,7 @@ print response.json()
   'organization': '060e54e627904abf9402bf3f2e0e16a2',
   'name': 'new_user',
   'organization_name': 'org1',
+  'disabled': True,
   'type': 'client',
   'otp_secret': 'HUI3D32NI6CUTMXO',
 }</div>
@@ -1148,7 +1169,7 @@ print response.json()
           <h2 class="api-header">PUT /user/:organization_id/:user_id</h2>
           <div class="api-description">
             <div class="text">
-              Rename an existing user in an organization.
+              Rename or disabled an existing user in an organization.
             </div>
             <table class="table">
               <thead>
@@ -1178,6 +1199,10 @@ print response.json()
                   <td>name</td>
                   <td>New user name</td>
                 </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
               </tbody>
             </table>
             <table class="table">
@@ -1204,6 +1229,10 @@ print response.json()
                   <td>Organization name</td>
                 </tr>
                 <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
+                <tr>
                   <td>type</td>
                   <td>User type</td>
                 </tr>
@@ -1226,6 +1255,7 @@ print response.json()
   },
   data=json.dumps({
       'name': 'new_name',
+      'disabled': False,
   }),
 )
 assert(response.status_code == 200)
@@ -1235,6 +1265,7 @@ print response.json()
   'organization': '060e54e627904abf9402bf3f2e0e16a2',
   'name': 'new_name',
   'organization_name': 'org1',
+  'disabled': False,
   'type': 'client',
   'otp_secret': 'HUI3D32NI6CUTMXO',
 }</div>
