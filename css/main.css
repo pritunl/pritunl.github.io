@@ -111,7 +111,7 @@ thead tr th {
   transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
 }
 .header.header-top {
-  padding: 25px 0;
+  padding: 30px 0;
   background: transparent;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
