@@ -180,7 +180,7 @@ thead tr th {
   transition: 0.25s color ease-in-out;
 }
 .header.header-top .main-nav .nav .nav-item a {
-  color: rgba(255, 255, 255, 0.63);
+  color: rgba(255, 255, 255, 0.75);
 }
 .header .main-nav .nav .nav-item a:hover {
   color: #2e4153;
