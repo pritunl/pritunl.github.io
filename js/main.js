@@ -124,13 +124,15 @@ jQuery(document).ready(function($) {
       $('.header').removeClass('header-top');
     }
 
-    if (scrollTop >= $('#api').offset().top + 99) {
-      $('.api-call-list-box').css('position', 'fixed');
-      $('.api-call-list-box').css('top', '71px');
-    }
-    else {
-      $('.api-call-list-box').css('position', 'absolute');
-      $('.api-call-list-box').css('top', 'auto');
+    if ($('#api').length) {
+      if (scrollTop >= $('#api').offset().top + 99) {
+        $('.api-call-list-box').css('position', 'fixed');
+        $('.api-call-list-box').css('top', '71px');
+      }
+      else {
+        $('.api-call-list-box').css('position', 'absolute');
+        $('.api-call-list-box').css('top', 'auto');
+      }
     }
   }
   $(window).scroll(onScroll);
