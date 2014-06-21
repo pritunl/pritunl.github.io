@@ -102,11 +102,21 @@ thead tr th {
 }
 .header {
   padding: 15px 0;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.85);
   z-index: 9999;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  -webkit-transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
+  transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
+}
+.header.header-top {
+  padding: 25px 0;
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 .header h1.logo {
   margin-top: 0;
@@ -115,13 +125,15 @@ thead tr th {
   max-height: 50px;
   margin-top: -16px;
 }
-.header h1.logo a {
-  color: #444;
-}
 .header h1.logo .logo-title {
   font-family: 'Fredoka One', cursive;
   vertical-align: middle;
   color: #2e4153;
+  -webkit-transition: 0.25s color ease-in-out;
+  transition: 0.25s color ease-in-out;
+}
+.header.header-top h1.logo .logo-title {
+  color: #fff;
 }
 .header .main-nav button {
   background: #2e4153;
@@ -134,12 +146,22 @@ thead tr th {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  -webkit-transition: 0.25s background ease-in-out;
+  transition: 0.25s background ease-in-out;
+}
+.header.header-top .main-nav button {
+  background: #fff;
 }
 .header .main-nav button:focus {
   outline: none;
 }
 .header .main-nav button .icon-bar {
   background-color: #fff;
+}
+.header.header-top .main-nav button .icon-bar {
+  background-color: #2e4153;
+  -webkit-transition: 0.25s background ease-in-out;
+  transition: 0.25s background ease-in-out;
 }
 .header .main-nav .nav .nav-item {
   font-weight: normal;
@@ -154,6 +176,11 @@ thead tr th {
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
+  -webkit-transition: 0.25s color ease-in-out;
+  transition: 0.25s color ease-in-out;
+}
+.header.header-top .main-nav .nav .nav-item a {
+  color: rgba(255, 255, 255, 0.63);
 }
 .header .main-nav .nav .nav-item a:hover {
   color: #2e4153;

@@ -117,6 +117,13 @@ jQuery(document).ready(function($) {
   var onScroll = function() {
     var scrollTop = $(this).scrollTop();
 
+    if (scrollTop === 0) {
+      $('.header').addClass('header-top');
+    }
+    else {
+      $('.header').removeClass('header-top');
+    }
+
     if (scrollTop >= $('#api').offset().top + 99) {
       $('.api-call-list-box').css('position', 'fixed');
       $('.api-call-list-box').css('top', '71px');
