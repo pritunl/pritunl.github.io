@@ -197,6 +197,40 @@ thead tr th {
 .header .main-nav .nav .nav-item.last {
   margin-right: 0;
 }
+.header.header-top .navbar-collapse {
+  margin-right: 0 !important;
+  -webkit-transition: 0.25s margin-right ease-in-out;
+  transition: 0.25s margin-right ease-in-out;
+}
+.header .twitter-logo,
+.header .github-logo {
+  z-index: 2000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 0;
+  opacity: 0.75;
+  display: none;
+}
+.header.header-top .twitter-logo,
+.header.header-top .github-logo {
+  opacity: 0;
+}
+.header .github-logo {
+  right: 80px;
+}
+.header .twitter-logo:hover,
+.header .github-logo:hover {
+  opacity: 1;
+}
+.header.header-top .twitter-logo:hover,
+.header.header-top .github-logo:hover {
+  opacity: 0;
+}
+.header .twitter-logo img,
+.header .github-logo img {
+  width: 84px;
+}
 .flexslider {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -634,27 +668,6 @@ thead tr th {
 .footer .links a:hover {
   color: #1f2c38;
 }
-.twitter-logo,
-.github-logo {
-  z-index: 2000;
-  position: fixed;
-  top: 0;
-  right: 0;
-  border: 0;
-  opacity: 0.75;
-  display: none;
-}
-.github-logo {
-  right: 80px;
-}
-.twitter-logo:hover,
-.github-logo:hover {
-  opacity: 1;
-}
-.twitter-logo img,
-.github-logo img {
-  width: 84px;
-}
 .api-doc {
   color: #f0f0f0;
 }
@@ -838,7 +851,7 @@ a.anchor.api-anchor {
 }
 
 @media (min-width: 800px) {
-  .twitter-logo {
+  .header .twitter-logo {
     display: block;
   }
   .navbar-collapse {
@@ -856,7 +869,7 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 992px) {
-  .github-logo {
+  .header .github-logo {
     display: block;
   }
   .navbar-collapse {
