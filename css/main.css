@@ -252,6 +252,7 @@ thead tr th {
 }
 .promo .overview .btn-group li a {
   color: #1f3a53;
+  border: 2px solid #fff;
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: left top;
@@ -268,11 +269,18 @@ thead tr th {
   height: 56px;
   font-size: 34px;
   text-align: center;
-  padding-top: 4px;
+  padding-top: 2px;
   font-family: 'Fredoka One', cursive;
+}
+.promo .overview .btn-group li:first-child a {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .promo .overview .btn-group li a:hover {
   background-color: rgba(255, 255, 255, 0.6);
+}
+.promo .overview .btn-group li:first-child a:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .promo .laptop {
   padding-top: 100px;
