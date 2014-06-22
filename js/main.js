@@ -117,7 +117,7 @@ jQuery(document).ready(function($) {
   var onScroll = function() {
     var scrollTop = $(this).scrollTop();
 
-    if (scrollTop <= 0) {
+    if (scrollTop <= 0 && $('.promo').length) {
       $('.header').addClass('header-top');
     }
     else {
