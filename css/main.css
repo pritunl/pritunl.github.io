@@ -694,6 +694,9 @@ thead tr th {
   margin-bottom: 0;
   list-style-type: none;
 }
+.api-endpoints a:hover {
+  text-decoration: underline;
+}
 .api-endpoint .api-header {
   font-size: 20px;
   font-weight: bold;
