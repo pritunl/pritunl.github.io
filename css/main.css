@@ -688,6 +688,9 @@ thead tr th {
   bottom: 0;
   overflow-y: auto;
   display: none;
+  -webkit-box-shadow: inset -8px 0 8px -8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset -8px 0 8px -8px rgba(0, 0, 0, 0.3);
+  box-shadow: inset -8px 0 8px -8px rgba(0, 0, 0, 0.3);
 }
 .api-endpoints .api-endpoints-list {
   padding: 0;
