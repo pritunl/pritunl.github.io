@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
   $('a[href^="#"]').on('click', function(evt) {
       evt.preventDefault();
       $('html, body').stop().animate({
-          'scrollTop': $(this.hash).offset().top
+          'scrollTop': $(this.hash).offset().top - 10
       }, 750, 'swing', function() {
           window.location.hash = this.hash;
       }.bind(this));
