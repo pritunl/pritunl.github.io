@@ -668,6 +668,10 @@ thead tr th {
 .footer .links a:hover {
   color: #1f2c38;
 }
+.api {
+  padding-top: 85px;
+  padding-bottom: 75px;
+}
 .api-endpoints {
   background: #fff;
   padding: 2px 5px;
@@ -951,8 +955,7 @@ a.anchor.api-anchor {
 .features .features-title,
 .screenshots .screenshots-title,
 .documentation .documentation-title,
-.faq .faq-title,
-.api .api-title {
+.faq .faq-title {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 15px;
@@ -960,11 +963,9 @@ a.anchor.api-anchor {
 .features .features-title .title,
 .screenshots .screenshots-title .title,
 .documentation .documentation-title .title,
-.faq .faq-title .title,
-.api .api-title .title {
+.faq .faq-title .title {
   color: #fff;
 }
-.api,
 .documentation {
   padding-top: 5px;
   padding-bottom: 75px;
@@ -973,9 +974,6 @@ a.anchor.api-anchor {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-.api {
-  padding-top: 85px;
 }
 .documentation .documentation-title {
   margin-top: 100px;
@@ -1152,9 +1150,6 @@ a.anchor.api-anchor {
 
 
 
-.api {
-  background: #fff;
-}
 
 
 
