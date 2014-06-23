@@ -672,6 +672,9 @@ thead tr th {
   padding-top: 85px;
   padding-bottom: 75px;
 }
+.api .row {
+  border-bottom: 1px solid #dadfe5;
+}
 .api-endpoints {
   background: #fff;
   padding: 2px 5px;
