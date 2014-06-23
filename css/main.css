@@ -686,6 +686,8 @@ thead tr th {
   list-style-type: none;
 }
 .api-endpoint .api-header {
+  font-size: 20px;
+  font-weight: bold;
   margin-top: 10px;
 }
 .api-endpoint-code {
