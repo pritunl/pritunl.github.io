@@ -699,6 +699,7 @@ thead tr th {
 }
 .api-endpoint-code {
   padding-top: 15px;
+  margin-bottom: 15px;
 }
 .api-endpoint pre {
   padding: 30px 0;
