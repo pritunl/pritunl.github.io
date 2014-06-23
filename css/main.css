@@ -697,7 +697,7 @@ thead tr th {
   padding: 30px 0;
   margin: 10px auto;
   width: 550px;
-  color: #ffffff;
+  color: #fff;
   border: none;
   background-color: rgba(255, 255, 255, 0.10);
   position: relative;
@@ -995,7 +995,7 @@ a.anchor.api-anchor {
   padding: 30px 0;
   margin: 10px auto;
   width: 550px;
-  color: #ffffff;
+  color: #fff;
   border: none;
   background-color: rgba(255, 255, 255, 0.10);
 }
