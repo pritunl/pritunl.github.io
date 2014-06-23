@@ -674,6 +674,9 @@ thead tr th {
 .api .row {
   border-bottom: 1px solid #dadfe5;
 }
+.api .row:first-child {
+  border-bottom: none;
+}
 .api-endpoints {
   background: #fff;
   padding: 2px 5px;
