@@ -668,6 +668,74 @@ thead tr th {
 .footer .links a:hover {
   color: #1f2c38;
 }
+
+.api-endpoints {
+  background: #fff;
+  padding: 2px 5px;
+  border-right: 1px solid #dadfe5;
+  font-size: 9px;
+  position: fixed;
+  left: 0;
+  top: 81px;
+  bottom: 0;
+  overflow-y: auto;
+  display: none;
+}
+
+.api-endpoints .api-endpoints-list {
+  padding: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.api-endpoint {
+}
+
+.api-endpoint .api-header {
+  margin-top: 10px;
+}
+
+.api-endpoint-code {
+  padding-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .api-doc {
   color: #f0f0f0;
 }
@@ -804,6 +872,9 @@ a.anchor.api-anchor {
   .api-doc .api-header {
     font-size: 17px;
   }
+  .api-endpoint-code {
+    padding-top: 0;
+  }
 }
 @media (min-width: 768px) {
   .promo .overview {
@@ -848,6 +919,9 @@ a.anchor.api-anchor {
   .api-call-list-box {
     display: block;
   }
+  .api-endpoints {
+    display: block;
+  }
 }
 
 @media (min-width: 800px) {
@@ -880,6 +954,9 @@ a.anchor.api-anchor {
   .navbar-collapse {
     margin-right: 115px;
   }
+  .api-endpoints {
+    font-size: 10px;
+  }
 }
 @media (min-width: 1100px) {
   .navbar-collapse {
@@ -895,6 +972,9 @@ a.anchor.api-anchor {
   .navbar-collapse {
     margin-right: 135px;
   }
+  .api-endpoints {
+    font-size: 11px;
+  }
 }
 @media (min-width: 1250px) {
   .navbar-collapse {
@@ -904,6 +984,9 @@ a.anchor.api-anchor {
 @media (min-width: 1300px) {
   .navbar-collapse {
     margin-right: 95px;
+  }
+  .api-endpoints {
+    font-size: 12px;
   }
 }
 @media (min-width: 1350px) {
@@ -1129,3 +1212,14 @@ a.anchor.api-anchor {
 .documentation a {
   color: #9cc7fd;
 }
+
+
+
+
+.api {
+  background: #fff;
+}
+
+
+
+

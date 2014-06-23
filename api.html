@@ -4,12 +4,9 @@ title: Pritunl - API Documentation
 ---
   <section id="api" class="api section">
     <div class="container-fluid">
-      <div class="api-title row">
-        <h1 class="title">API Documentation</h1>
-      </div>
       <div class="row">
-        <div class="api-call-list-box col-md-3">
-          <ul class="api-call-list">
+        <div class="api-endpoints col-md-2">
+          <ul class="api-endpoints-list">
             <li class="list-title">API Endpoints</li>
             <li><a href="#authentication">Authentication</a></li>
             <li><a href="#get-event-var">GET /event/:cursor</a></li>
@@ -21,33 +18,33 @@ title: Pritunl - API Documentation
             <li><a href="#get-organization-var">GET /organization/:organization_id</a></li>
             <li><a href="#post-organization">POST /organization</a></li>
             <li><a href="#put-organization-var">PUT /organization/:organization_id</a></li>
-            <li><a href="#delete-organization-var">DELETE /organization/:organization_id</a></li>
-            <li><a href="#get-user-var">GET /user/:organization_id</a></li>
-            <li><a href="#get-user-var-var">GET /user/:organization_id/:user_id</a></li>
-            <li><a href="#post-user-var">POST /user/:organization_id</a></li>
-            <li><a href="#put-user-var">PUT /user/:organization_id/:user_id</a></li>
-            <li><a href="#delete-user-var">DELETE /user/:organization_id/:user_id</a></li>
-            <li><a href="#put-user-var-otp-secret">PUT /user/:organization_id/:user_id/otp_secret</a></li>
-            <li><a href="#get-key-var-tar">GET /key/:organization_id/:user_id.tar</a></li>
-            <li><a href="#get-key-var">GET /key/:organization_id/:user_id</a></li>
+            <li><a href="#delete-organization-var">DEL /organization/:organization_id</a></li>
+            <li><a href="#get-user-var">GET /user/:org_id</a></li>
+            <li><a href="#get-user-var-var">GET /user/:org_id/:user_id</a></li>
+            <li><a href="#post-user-var">POST /user/:org_id</a></li>
+            <li><a href="#put-user-var">PUT /user/:org_id/:user_id</a></li>
+            <li><a href="#delete-user-var">DEL /user/:org_id/:user_id</a></li>
+            <li><a href="#put-user-var-otp-secret">PUT /user/:org_id/:user_id/otp</a></li>
+            <li><a href="#get-key-var-tar">GET /key/:org_id/:user_id.tar</a></li>
+            <li><a href="#get-key-var">GET /key/:org_id/:user_id</a></li>
             <li><a href="#get-server">GET /server</a></li>
-            <li><a href="#get-server-var">GET /server/:server_id</a></li>
+            <li><a href="#get-server-var">GET /server/:srv_id</a></li>
             <li><a href="#post-server">POST /server</a></li>
-            <li><a href="#put-server-var">PUT /server/:server_id</a></li>
-            <li><a href="#delete-server-var">DELETE /server/:server_id</a></li>
-            <li><a href="#put-server-var-var">PUT /server/:server_id/:operation</a></li>
-            <li><a href="#get-server-var-organization">GET /server/:server_id/organization</a></li>
-            <li><a href="#put-server-var-organization-var">PUT /server/:server_id/organization/:organization_id</a></li>
-            <li><a href="#delete-server-var-organization-var">DELETE /server/:server_id/organization/:organization_id</a></li>
-            <li><a href="#get-server-var-output">GET /server/:server_id/output</a></li>
-            <li><a href="#delete-server-var-output">DELETE /server/:server_id/output</a></li>
-            <li><a href="#get-server-var-bandwidth">GET /server/:server_id/bandwidth</a></li>
+            <li><a href="#put-server-var">PUT /server/:srv_id</a></li>
+            <li><a href="#delete-server-var">DEL /server/:srv_id</a></li>
+            <li><a href="#put-server-var-var">PUT /server/:srv_id/:operation</a></li>
+            <li><a href="#get-server-var-organization">GET /server/:srv_id/org</a></li>
+            <li><a href="#put-server-var-organization-var">PUT /server/:srv_id/org/:org_id</a></li>
+            <li><a href="#delete-server-var-organization-var">DEL /server/:srv_id/org/:org_id</a></li>
+            <li><a href="#get-server-var-output">GET /server/:srv_id/output</a></li>
+            <li><a href="#delete-server-var-output">DEL /server/:srv_id/output</a></li>
+            <li><a href="#get-server-var-bandwidth">GET /server/:srv_id/bandwidth</a></li>
             <li><a href="#get-export">GET /export/pritunl.tar</a></li>
           </ul>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="authentication" class="anchor api-anchor"></a>
           <h2 class="api-header">Authentication</h2>
           <div class="api-description">
@@ -79,12 +76,15 @@ title: Pritunl - API Documentation
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">import requests, time, uuid, hmac, hashlib, base64
 BASE_URL = 'https://localhost:9700'
 API_TOKEN = 'iAfH2TnpB0oe2Pu6s0qHh2w2iLh27b6P'
@@ -111,11 +111,12 @@ def auth_request(method, path, headers=None, data=None):
         headers=auth_headers,
         data=data,
     )</div>
-          </div>
         </div>
       </div>
+
+
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="delete-auth-token-var" class="anchor api-anchor"></a>
           <h2 class="api-header">DELETE /auth/token/:auth_token</h2>
           <div class="api-description">
@@ -135,21 +136,23 @@ def auth_request(method, path, headers=None, data=None):
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('DELETE',
   '/auth/token/264e30e7032b467bb0174b22bdb8ce13',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-event-var" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /event/:cursor</h2>
           <div class="api-description">
@@ -194,12 +197,15 @@ assert(response.status_code == 200)</div>
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/event',
 )
@@ -219,11 +225,10 @@ print response.json()
       'resource_id': '6551f49596ca42c4942cb71162916b69',
   },
 ]</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-status" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /status</h2>
           <div class="api-description">
@@ -275,12 +280,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/status',
 )
@@ -301,11 +309,10 @@ print response.json()
   ],
   'notification': '',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-log" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /log</h2>
           <div class="api-description">
@@ -333,12 +340,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/log',
 )
@@ -356,11 +366,10 @@ print response.json()
       'message': 'Web server stopped.',
   },
 ]</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-auth" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /auth</h2>
           <div class="api-description">
@@ -388,12 +397,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/auth',
   headers={
@@ -407,11 +419,10 @@ print response.json()
   'token': '2$kNvK4+IhmHU=$oBGfGOLHsbl+RqmngrN4M/JCgnKacQb7yNrvkOT3DC8=',
   'secret': 'NXLmn2nn1rv0NYQ4zG94XSiAY7TQd1Ks',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="put-auth" class="anchor api-anchor"></a>
           <h2 class="api-header">PUT /auth</h2>
           <div class="api-description">
@@ -448,12 +459,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('PUT',
   '/auth',
   headers={
@@ -469,11 +483,10 @@ print response.json()
 {
   'username': 'user',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-organization" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /organization</h2>
           <div class="api-description">
@@ -497,12 +510,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/organization',
 )
@@ -518,11 +534,10 @@ print response.json()
       'name': 'org2',
   },
 ]</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-organization-var" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /organization/:organization_id</h2>
           <div class="api-description">
@@ -559,12 +574,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/organization/060e54e627904abf9402bf3f2e0e16a2',
 )
@@ -574,11 +592,10 @@ print response.json()
   'id': '060e54e627904abf9402bf3f2e0e16a2',
   'name': 'org1',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="post-organization" class="anchor api-anchor"></a>
           <h2 class="api-header">POST /organization</h2>
           <div class="api-description">
@@ -615,12 +632,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('POST',
   '/organization',
   headers={
@@ -636,11 +656,10 @@ print response.json()
   'id': 'fb48734e859242e2800f077216401736',
   'name': 'new_org',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="put-organization-var" class="anchor api-anchor"></a>
           <h2 class="api-header">PUT /organization/:organization_id</h2>
           <div class="api-description">
@@ -690,12 +709,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('PUT',
   '/organization/fb48734e859242e2800f077216401736',
   headers={
@@ -711,11 +733,10 @@ print response.json()
   'id': 'fb48734e859242e2800f077216401736',
   'name': 'new_name',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="delete-organization-var" class="anchor api-anchor"></a>
           <h2 class="api-header">DELETE /organization/:organization_id</h2>
           <div class="api-description">
@@ -735,21 +756,23 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('DELETE',
   '/organization/fb48734e859242e2800f077216401736',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-user-var" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /user/:organization_id</h2>
           <div class="api-description">
@@ -867,12 +890,15 @@ assert(response.status_code == 200)</div>
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/user/060e54e627904abf9402bf3f2e0e16a2',
 )
@@ -925,11 +951,10 @@ print response.json()
       ],
   },
 ]</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-user-var-var" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /user/:organization_id/:user_id</h2>
           <div class="api-description">
@@ -1035,12 +1060,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/user/060e54e627904abf9402bf3f2e0e16a2/99a38859bcb248bdaf395a6c83305531',
 )
@@ -1066,11 +1094,10 @@ print response.json()
     },
   ],
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="post-user-var" class="anchor api-anchor"></a>
           <h2 class="api-header">POST /user/:organization_id</h2>
           <div class="api-description">
@@ -1152,12 +1179,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('POST',
   '/user/060e54e627904abf9402bf3f2e0e16a2',
   headers={
@@ -1180,11 +1210,10 @@ print response.json()
   'type': 'client',
   'otp_secret': 'HUI3D32NI6CUTMXO',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="put-user-var" class="anchor api-anchor"></a>
           <h2 class="api-header">PUT /user/:organization_id/:user_id</h2>
           <div class="api-description">
@@ -1270,12 +1299,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('PUT',
   '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
   headers={
@@ -1298,11 +1330,10 @@ print response.json()
   'type': 'client',
   'otp_secret': 'HUI3D32NI6CUTMXO',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="delete-user-var" class="anchor api-anchor"></a>
           <h2 class="api-header">DELETE /user/:organization_id/:user_id</h2>
           <div class="api-description">
@@ -1326,21 +1357,23 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('DELETE',
   '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="put-user-var-otp-secret" class="anchor api-anchor"></a>
           <h2 class="api-header">PUT /user/:organization_id/:user_id/otp_secret</h2>
           <div class="api-description">
@@ -1397,12 +1430,15 @@ assert(response.status_code == 200)</div>
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('PUT',
   '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
 )
@@ -1416,11 +1452,10 @@ print response.json()
   'type': 'server',
   'otp_secret': 'IYW6NR774YTWQICV',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-key-var-tar" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /key/:organization_id/:user_id.tar</h2>
           <div class="api-description">
@@ -1444,21 +1479,23 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-key-var" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /key/:organization_id/:user_id</h2>
           <div class="api-description">
@@ -1503,12 +1540,15 @@ assert(response.status_code == 200)</div>
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a',
 )
@@ -1519,11 +1559,10 @@ print response.json()
   'key_url': '/key/ca03ad46c20043aca6a4a571ea6c5e76.tar',
   'view_url': '/k/y3aNc',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-server" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /server</h2>
           <div class="api-description">
@@ -1615,12 +1654,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/server',
 )
@@ -1670,11 +1712,10 @@ print response.json()
       'org_count': 1,
   },
 ]</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-server-var" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /server/:server_id</h2>
           <div class="api-description">
@@ -1766,12 +1807,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/server/6551f49596ca42c4942cb71162916b69',
 )
@@ -1798,11 +1842,10 @@ print response.json()
   'debug': True,
   'org_count': 2,
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="post-server" class="anchor api-anchor"></a>
           <h2 class="api-header">POST /server</h2>
           <div class="api-description">
@@ -1955,12 +1998,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('POST',
   '/server',
   headers={
@@ -2005,11 +2051,10 @@ print response.json()
   'debug': False,
   'org_count': 0,
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="put-server-var" class="anchor api-anchor"></a>
           <h2 class="api-header">PUT /server/:server_id</h2>
           <div class="api-description">
@@ -2175,12 +2220,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('PUT',
   '/server/c4ceb6102ed941d7b1794aead89ab20e',
   headers={
@@ -2213,11 +2261,10 @@ print response.json()
   'debug': False,
   'org_count': 0,
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="delete-server-var" class="anchor api-anchor"></a>
           <h2 class="api-header">DELETE /server/:server_id</h2>
           <div class="api-description">
@@ -2237,21 +2284,23 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('DELETE',
 '/server/c4ceb6102ed941d7b1794aead89ab20e',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="put-server-var-var" class="anchor api-anchor"></a>
           <h2 class="api-header">PUT /server/:server_id/:operation</h2>
           <div class="api-description">
@@ -2352,12 +2401,15 @@ assert(response.status_code == 200)</div>
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('PUT',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
 )
@@ -2380,11 +2432,10 @@ print response.json()
   'debug': False,
   'org_count': 1,
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-server-var-organization" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /server/:server_id/organization</h2>
           <div class="api-description">
@@ -2425,12 +2476,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
 )
@@ -2443,11 +2497,10 @@ print response.json()
       'name': 'org1',
   },
 ]</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="put-server-var-organization-var" class="anchor api-anchor"></a>
           <h2 class="api-header">PUT /server/:server_id/organization/:organization_id</h2>
           <div class="api-description">
@@ -2492,12 +2545,15 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('PUT',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
 )
@@ -2508,11 +2564,10 @@ print response.json()
   'server': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
   'name': 'org2',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="delete-server-var-organization-var" class="anchor api-anchor"></a>
           <h2 class="api-header">DELETE /server/:server_id/organization/:organization_id</h2>
           <div class="api-description">
@@ -2536,21 +2591,23 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('DELETE',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-server-var-output" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /server/:server_id/output</h2>
           <div class="api-description">
@@ -2587,12 +2644,15 @@ assert(response.status_code == 200)</div>
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
 )
@@ -2602,11 +2662,10 @@ print response.json()
   'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
   'output': '',
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="delete-server-var-output" class="anchor api-anchor"></a>
           <h2 class="api-header">DELETE /server/:server_id/output</h2>
           <div class="api-description">
@@ -2626,21 +2685,23 @@ print response.json()
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('DELETE',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-server-var-bandwidth" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /server/:server_id/bandwidth</h2>
           <div class="api-description">
@@ -2714,12 +2775,15 @@ assert(response.status_code == 200)</div>
                 </tr>
               </tbody>
             </table>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/bandwidth',
 )
@@ -2787,28 +2851,29 @@ print response.json()
   'sent_total': 1787739,
 },
 }</div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="api-doc col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="get-export" class="anchor api-anchor"></a>
           <h2 class="api-header">GET /export/pritunl.tar</h2>
           <div class="api-description">
             <div class="text">
               Download a tar archive of all server data.
             </div>
-            <span class="editor-title">Python Example</span>
-            <noscript>
-              <div class="text">
-                JavaScript is required to view example code
-              </div>
-            </noscript>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
 <div class="editor python">response = auth_request('GET',
   '/export/pritunl.tar',
 )
 assert(response.status_code == 200)</div>
-          </div>
         </div>
       </div>
     </div>
