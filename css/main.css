@@ -691,7 +691,21 @@ thead tr th {
 .api-endpoint-code {
   padding-top: 15px;
 }
-
+.api-endpoint pre {
+  padding: 30px 0;
+  margin: 10px auto;
+  width: 550px;
+  color: #ffffff;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.10);
+  position: relative;
+  top: -2px;
+  display: inline;
+  padding: 4px 4px 2px 4px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
 
 
 
