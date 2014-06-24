@@ -22,7 +22,9 @@ thead tr th {
   font-weight: normal;
 }
 .title {
-  font-family: 'Ubuntu', 'sans-serif';
+  font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 .btn {
   -webkit-transition: all 0.4s ease-in-out;
