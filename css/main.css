@@ -697,6 +697,10 @@ thead tr th {
   margin-bottom: 0;
   list-style-type: none;
 }
+.api-endpoints .api-endpoints-list li:first-child {
+  text-align: center;
+  font-size: 14px;
+}
 .api-endpoints a:hover {
   text-decoration: underline;
 }
