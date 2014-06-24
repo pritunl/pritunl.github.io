@@ -672,6 +672,7 @@ thead tr th {
   padding-top: 85px;
 }
 .api .row {
+  padding-top: 5px;
   border-bottom: 1px solid #dadfe5;
 }
 .api .row:first-child {
