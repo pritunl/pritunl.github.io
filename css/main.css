@@ -231,6 +231,10 @@ thead tr th {
 .header .github-logo img {
   width: 84px;
 }
+.header .container-fluid .twitter-logo,
+.header .container-fluid .github-logo {
+  display: none;
+}
 .flexslider {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -885,17 +889,17 @@ a.anchor.api-anchor {
   .header .twitter-logo {
     display: block;
   }
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 50px;
   }
 }
 @media (min-width: 850px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 25px;
   }
 }
 @media (min-width: 900px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 0;
   }
 }
@@ -903,12 +907,12 @@ a.anchor.api-anchor {
   .header .github-logo {
     display: block;
   }
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 140px;
   }
 }
 @media (min-width: 1050px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 115px;
   }
   .api-endpoints {
@@ -916,17 +920,17 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1100px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 90px;
   }
 }
 @media (min-width: 1150px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 65px;
   }
 }
 @media (min-width: 1200px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 135px;
   }
   .api-endpoints {
@@ -934,12 +938,12 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1250px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 115px;
   }
 }
 @media (min-width: 1300px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 95px;
   }
   .api-endpoints {
@@ -947,22 +951,22 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1350px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 65px;
   }
 }
 @media (min-width: 1400px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 40px;
   }
 }
 @media (min-width: 1450px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 20px;
   }
 }
 @media (min-width: 1500px) {
-  .navbar-collapse {
+  .header .container .navbar-collapse {
     margin-right: 0;
   }
 }
