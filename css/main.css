@@ -19,7 +19,7 @@ a:hover {
   color: #19242e;
 }
 thead tr th {
-  font-weight: normal;
+  font-weight: 400;
 }
 .title {
   font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', sans-serif;
@@ -166,7 +166,7 @@ thead tr th {
   transition: 0.25s background ease-in-out;
 }
 .header .main-nav .nav .nav-item {
-  font-weight: normal;
+  font-weight: 400;
   text-transform: uppercase;
   margin-right: 10px;
 }
