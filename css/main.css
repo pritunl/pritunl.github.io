@@ -490,7 +490,7 @@ thead tr th {
   border-top: 3px solid rgba(255, 255, 255, 0.49);
 }
 .comparison .row .col.name {
-  font-size: 16px;
+  font-size: 14px;
 }
 .comparison .row .col.description {
   text-align: left;
