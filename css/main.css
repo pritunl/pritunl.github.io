@@ -216,7 +216,7 @@ thead tr th {
 }
 .header.header-top .twitter-logo,
 .header.header-top .github-logo {
-  opacity: 0;
+  display: none;
 }
 .header .github-logo {
   right: 80px;
@@ -224,10 +224,6 @@ thead tr th {
 .header .twitter-logo:hover,
 .header .github-logo:hover {
   opacity: 1;
-}
-.header.header-top .twitter-logo:hover,
-.header.header-top .github-logo:hover {
-  opacity: 0;
 }
 .header .twitter-logo img,
 .header .github-logo img {
