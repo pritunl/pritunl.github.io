@@ -53,8 +53,8 @@ jQuery(document).ready(function($) {
     $(editor.renderer.scroller).css('margin-left', '10px');
   });
 
-  $('.documentation-buttons button').click(function(evt) {
-    $(this).siblings().removeClass('active');
+  $('.tutorial-button .btn').click(function(evt) {
+    $(this).parent().siblings().find('.btn').removeClass('active');
     $(this).addClass('active');
     var changeInstructions = function(group, page) {
       $(group).fadeOut(450, function() {
