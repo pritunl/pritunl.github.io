@@ -731,9 +731,78 @@ thead tr th {
   background-color: rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
-
-
-
+.tutorial {
+  padding-top: 80px;
+}
+.tutorial .tutorial-title,
+.tutorial .tutorial-header {
+  text-align: center;
+}
+.tutorial .tutorial-button {
+  height: 70px;
+  margin-bottom: 10px;
+}
+.tutorial .tutorial-button .btn {
+  background-color: #4f6479;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.tutorial .tutorial-button .btn.active {
+  background-color: #2e4153;
+  outline: 0;
+  -webkit-box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.2);
+}
+.tutorial .tutorial-button .btn .label {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+}
+.tutorial .tutorial-point {
+  margin-bottom: 10px;
+  display: table;
+}
+.tutorial .tutorial-point-container {
+  display: table-row;
+}
+.tutorial .tutorial-point-label {
+  width: 50px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #e4edff;
+  font-size: 1.8em;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+.tutorial .tutorial-point-description {
+  width: auto;
+  background-color: #b3c9df;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 1.2em;
+  padding: 16px;
+  display: table-cell;
+}
+.tutorial pre {
+  padding: 30px 0;
+  margin: 10px auto;
+  width: 550px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.10);
+  position: relative;
+  top: -2px;
+  display: inline;
+  padding: 4px 4px 2px 4px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
 
 
 
@@ -1058,29 +1127,29 @@ a.anchor.api-anchor {
 .documentation-buttons button.active:hover {
   background-color: rgba(255, 255, 255, 0.16);
 }
-.documentation-buttons .digital-ocean {
+.tutorial-button .digital-ocean {
   background-image: url('../img/digital-ocean.png');
 }
-.documentation-buttons .linode {
+.tutorial-button .linode {
   background-image: url('../img/linode.png');
 }
-.documentation-buttons .amazon-aws {
+.tutorial-button .amazon-aws {
   background-image: url('../img/amazon-aws.png');
 }
-.documentation-buttons .ubuntu,
-.documentation-buttons .ubuntu-client {
+.tutorial-button .ubuntu,
+.tutorial-button .ubuntu-client {
   background-image: url('../img/ubuntu.png');
 }
-.documentation-buttons .arch {
+.tutorial-button .arch {
   background-image: url('../img/arch.png');
 }
-.documentation-buttons .centos {
+.tutorial-button .centos {
   background-image: url('../img/centos.png');
 }
-.documentation-buttons .windows-client {
+.tutorial-button .windows-client {
   background-image: url('../img/windows.png');
 }
-.documentation-buttons .android-client {
+.tutorial-button .android-client {
   background-image: url('../img/android.png');
 }
 .documentation-point,
