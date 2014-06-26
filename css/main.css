@@ -229,10 +229,6 @@ thead tr th {
 .header .github-logo img {
   width: 84px;
 }
-.header .container-fluid .twitter-logo,
-.header .container-fluid .github-logo {
-  display: none;
-}
 .flexslider {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -967,6 +963,9 @@ a.anchor.api-anchor {
   .header .container .navbar-collapse {
     margin-right: 50px;
   }
+  .header .container-fluid .navbar-collapse {
+    margin-right: 70px;
+  }
 }
 @media (min-width: 850px) {
   .header .container .navbar-collapse {
@@ -984,6 +983,9 @@ a.anchor.api-anchor {
   }
   .header .container .navbar-collapse {
     margin-right: 140px;
+  }
+  .header .container-fluid .navbar-collapse {
+    margin-right: 152px;
   }
 }
 @media (min-width: 1050px) {
