@@ -1,15 +1,23 @@
 jQuery(document).ready(function($) {
-  $('a.scrollto').on('click', function(e){
+  $('a.scrollto').on('click', function(evt){
     var target = this.hash;
     if (!$(target).length) {
       return;
     }
-    e.preventDefault();
+    evt.preventDefault();
     $('body').scrollTo(target, 800, {offset: -80}, {easing: 'easeOutQuad'});
     if ($('.navbar-collapse').hasClass('in')) {
       $('.navbar-collapse').removeClass('in').addClass('collapse');
     }
 	});
+  $('.navbar-toggle').on('click', function(evt) {
+    if ($('.navbar-collapse').hasClass('in')) {
+      $('.header').addClass('header-top');
+    }
+    else {
+      $('.header').removeClass('header-top');
+    }
+  });
   $('a[href^="#"]').on('click', function(evt) {
       evt.preventDefault();
       $('html, body').stop().animate({
