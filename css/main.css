@@ -733,6 +733,7 @@ thead tr th {
 }
 .tutorial .tutorial-title,
 .tutorial .tutorial-header {
+  margin-top: 5px;
   text-align: center;
 }
 .tutorial .tutorial-button {
