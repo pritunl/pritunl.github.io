@@ -776,6 +776,11 @@ a.anchor {
 a.anchor.api-anchor {
   top: -71px;
 }
+@media (max-width: 414px) {
+  .promo .overview h2 {
+    font-size: 28px;
+  }
+}
 @media (max-width: 767px) {
   .promo .overview .summary li {
     font-size: 18px;
@@ -928,6 +933,9 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1200px) {
+  .promo .overview h2 {
+    font-size: 34px;
+  }
   .header .container .navbar-collapse {
     margin-right: 135px;
   }
