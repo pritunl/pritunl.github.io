@@ -11,7 +11,9 @@ jQuery(document).ready(function($) {
     }
 	});
   $('.navbar-toggle').on('click', function(evt) {
-    if ($('.navbar-collapse').hasClass('in')) {
+    var scrollTop = $(window).scrollTop();
+    if ($('.navbar-collapse').hasClass('in') &&
+        scrollTop <= 0 && $('.promo').length) {
       $('.header').addClass('header-top');
     }
     else {
@@ -125,7 +127,8 @@ jQuery(document).ready(function($) {
   var onScroll = function() {
     var scrollTop = $(this).scrollTop();
 
-    if (scrollTop <= 0 && $('.promo').length) {
+    if (scrollTop <= 0 && $('.promo').length &&
+        !$('.navbar-collapse').hasClass('in')) {
       $('.header').addClass('header-top');
     }
     else {
