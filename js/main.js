@@ -148,4 +148,5 @@ jQuery(document).ready(function($) {
   }
   $(window).scroll(onScroll);
   onScroll();
+  $('.label').tooltip();
 });
