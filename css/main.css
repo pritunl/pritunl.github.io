@@ -712,6 +712,7 @@ thead tr th {
   font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
+  word-wrap: break-word;
 }
 .api-endpoint-code {
   padding-top: 15px;
