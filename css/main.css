@@ -792,7 +792,6 @@ thead tr th {
 .tutorial pre {
   padding: 30px 0;
   margin: 10px auto;
-  width: 550px;
   border: none;
   background-color: rgba(255, 255, 255, 0.10);
   position: relative;
@@ -907,6 +906,9 @@ a.anchor.api-anchor {
   }
   .api-endpoint-code {
     padding-top: 0;
+  }
+  .tutorial pre {
+    white-space: normal;
   }
 }
 @media (min-width: 768px) {
