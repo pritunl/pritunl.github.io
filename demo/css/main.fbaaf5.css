@@ -7149,17 +7149,29 @@ fieldset[disabled] .form-control {
   margin-left: 42px;
   width: 200px;
 }
-.modal .modal-body .split .api-key-info {
+.modal .modal-body .postmark-settings {
+  display: none;
+}
+.enterprise .modal .modal-body .postmark-settings {
+  display: block;
+}
+.modal .modal-body .split .settings-right,
+.modal .modal-body .split .postmark-right {
   width: 264px;
 }
-.modal .api-token,
-.modal .api-secret {
-  width: 284px;
+.modal .modal-body .split .settings-left input,
+.modal .modal-body .split .postmark-left input {
+  width: 250px;
 }
-.modal .api-token input,
-.modal .api-secret input {
+.modal .modal-body .split .settings-right input,
+.modal .modal-body .split .postmark-right input {
+  width: 284px;
   font-family: 'Lucida Console', Monaco, monospace;
-  width: 100%;
+}
+.settings-modal .postmark-logo {
+  margin: 10px 0 10px 211px;
+  border: 1px solid #c0a700;
+  width: 135px;
 }
 .navbar .navbar-brand,
 .navbar .navbar-brand:hover,
@@ -7279,6 +7291,11 @@ header.blur {
   width: 374px;
   margin: 0 auto;
   opacity: 1;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   top: -webkit-calc(50% - 164px);
   top: -moz-calc(50% - 164px);
   top: -o-calc(50% - 164px);
@@ -7326,6 +7343,12 @@ header.blur {
 .servers-list .servers-list-buttons {
   float: right;
   display: block;
+}
+.orgs-list .orgs-email-selected {
+  display: none;
+}
+.enterprise .orgs-list .orgs-email-selected {
+  display: inline-block;
 }
 .users-list,
 .servers-list .server,
@@ -7659,7 +7682,7 @@ header.blur {
   cursor: default;
   position: relative;
   top: -4px;
-  width: 83px;
+  width: 84px;
 }
 .users-list .status-container .status-icon {
   display: inline-block;
@@ -8087,11 +8110,23 @@ header.blur {
   top: -o-calc(50% - 240px);
   top: calc(50% - 240px);
 }
-.change-password-modal .modal .modal-dialog {
+.settings-modal .modal .modal-dialog {
   top: -webkit-calc(50% - 279px);
   top: -moz-calc(50% - 279px);
   top: -o-calc(50% - 279px);
   top: calc(50% - 279px);
+}
+.settings-modal .from-addr input,
+.settings-modal .postmark-api-key input {
+  width: 255px;
+}
+.settings-modal .postmark-logo {
+  margin: 10px 0 10px 211px;
+  border: 1px solid #c0a700;
+  width: 135px;
+}
+.settings-modal .postmark-right {
+  margin-right: 18px;
 }
 .otp-auth-modal .modal .modal-dialog {
   top: -webkit-calc(50% - 325px);
