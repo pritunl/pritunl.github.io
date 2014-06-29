@@ -6955,11 +6955,10 @@ fieldset[disabled] .form-control {
 .form-control,
 .modal-content,
 .select2-drop,
-.select2-container-multi .select2-choices .select2-search-choice,
-.rickshaw_graph .detail .x_label {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
+.select2-container-multi .select2-choices .select2-search-choice {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .label-purple {
   background-color: #a722c0;
@@ -7059,6 +7058,9 @@ fieldset[disabled] .form-control {
 .select2-container-multi .select2-choices {
   padding: 2px 3px 0 0;
   background-image: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .select2-search-choice-close {
   top: 3px;
@@ -7104,6 +7106,12 @@ fieldset[disabled] .form-control {
 }
 .modal .modal-dialog .modal-footer {
   background-color: #f5f5f5;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 .modal label {
   font-weight: normal;
@@ -7170,8 +7178,11 @@ fieldset[disabled] .form-control {
 }
 .settings-modal .postmark-logo {
   margin: 10px 0 10px 211px;
-  border: 1px solid #c0a700;
+  border: 1px solid #d1b600;
   width: 135px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .navbar .navbar-brand,
 .navbar .navbar-brand:hover,
@@ -7227,6 +7238,9 @@ fieldset[disabled] .form-control {
   padding-left: 1px;
   border: 1px solid #cfcfcf;
   float: left;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
 }
 .selector .selector-inner {
   font-size: 14px;
@@ -7292,6 +7306,9 @@ header.blur {
   margin: 0 auto;
   opacity: 1;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
@@ -7308,10 +7325,22 @@ header.blur {
 .login .login-form {
   background-color: #f9f9f9;
   padding: 40px 35px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 .login .login-header {
   margin: 0;
   padding: 10px 15px 10px 15px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
 }
 .login .form-control {
   position: relative;
@@ -7324,9 +7353,21 @@ header.blur {
 }
 .login .form-control[type="text"] {
   margin-bottom: -1px;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .login .form-control[type="password"] {
   margin-bottom: 10px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+  border-top-right-radius: 0;
 }
 .login .login-button {
   margin-top: 13px;
@@ -7357,6 +7398,9 @@ header.blur {
   margin-bottom: 25px;
   border: 1px solid #cfcfcf;
   background-color: #f9f9f9;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05), 0 -1px 2px rgba(0, 0, 0, 0.05) inset;
   -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05), 0 -1px 2px rgba(0, 0, 0, 0.05) inset;
   -o-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05), 0 -1px 2px rgba(0, 0, 0, 0.05) inset;
@@ -7405,6 +7449,12 @@ header.blur {
   background-color: #ffffff;
   padding: 10px 11px 16px 14px;
   border-bottom: 1px solid #cccccc;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
 }
 .users-list .users-list-header button,
 .servers-list .server .server-header button {
@@ -7501,6 +7551,9 @@ header.blur {
   background: #ffffff;
   border: 1px solid #cfcfcf;
   margin-top: 12px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 0, 1px, 0, rgba(255, 255, 255, 0.02), 0, 1px, 3px, rgba(0, 0, 0, 0.08), inset;
   -moz-box-shadow: 0, 1px, 0, rgba(255, 255, 255, 0.02), 0, 1px, 3px, rgba(0, 0, 0, 0.08), inset;
   -o-box-shadow: 0, 1px, 0, rgba(255, 255, 255, 0.02), 0, 1px, 3px, rgba(0, 0, 0, 0.08), inset;
@@ -7723,6 +7776,12 @@ header.blur {
   margin-right: 3px;
   padding: 3px 10px;
   display: none;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   -webkit-box-shadow: inset 0px 12px 8px -14px rgba(0, 0, 0, 0.53);
   -moz-box-shadow: inset 0px 12px 8px -14px rgba(0, 0, 0, 0.53);
   -o-box-shadow: inset 0px 12px 8px -14px rgba(0, 0, 0, 0.53);
@@ -7752,6 +7811,9 @@ header.blur {
   margin-bottom: 25px;
   border: 1px solid #cfcfcf;
   background-color: #f9f9f9;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05), 0 -1px 2px rgba(0, 0, 0, 0.05) inset;
   -moz-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05), 0 -1px 2px rgba(0, 0, 0, 0.05) inset;
   -o-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.05), 0 -1px 2px rgba(0, 0, 0, 0.05) inset;
@@ -7990,7 +8052,7 @@ header.blur {
 .subscribe-modal .modal .subscribe-info,
 .enterprise-modal .modal .enterprise-info {
   margin: 0 auto;
-  width: 305px;
+  width: 353px;
   text-align: center;
 }
 .enterprise-modal .modal .enterprise-info {
@@ -8019,6 +8081,9 @@ header.blur {
 .subscribe-modal .modal .subscribe-activate-form textarea {
   resize: none;
   font-family: 'Lucida Console', Monaco, monospace;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 0px 0px 14px #b6b6b6;
   -moz-box-shadow: 0px 0px 14px #b6b6b6;
   -o-box-shadow: 0px 0px 14px #b6b6b6;
@@ -8048,6 +8113,9 @@ header.blur {
   text-align: left;
   margin-top: 5px;
   margin-bottom: 15px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   -webkit-box-shadow: 0px 0px 14px #b6b6b6;
   -moz-box-shadow: 0px 0px 14px #b6b6b6;
   -o-box-shadow: 0px 0px 14px #b6b6b6;
@@ -8111,22 +8179,10 @@ header.blur {
   top: calc(50% - 240px);
 }
 .settings-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 279px);
-  top: -moz-calc(50% - 279px);
-  top: -o-calc(50% - 279px);
-  top: calc(50% - 279px);
-}
-.settings-modal .from-addr input,
-.settings-modal .postmark-api-key input {
-  width: 255px;
-}
-.settings-modal .postmark-logo {
-  margin: 10px 0 10px 211px;
-  border: 1px solid #c0a700;
-  width: 135px;
-}
-.settings-modal .postmark-right {
-  margin-right: 18px;
+  top: -webkit-calc(50% - 300px);
+  top: -moz-calc(50% - 300px);
+  top: -o-calc(50% - 300px);
+  top: calc(50% - 300px);
 }
 .otp-auth-modal .modal .modal-dialog {
   top: -webkit-calc(50% - 325px);
