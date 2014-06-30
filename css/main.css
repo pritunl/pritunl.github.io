@@ -120,9 +120,9 @@ thead tr th {
   padding: 15px 0;
   background: #fff;
   z-index: 9999;
-  -webkit-box-shadow: 0 2px 0 0 rgba(53, 58, 61, 0.05);
-  -moz-box-shadow: 0 2px 0 0 rgba(53, 58, 61, 0.05);
-  box-shadow: 0 2px 0 0 rgba(53, 58, 61, 0.05);
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   -webkit-transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
   transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
 }
