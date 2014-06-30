@@ -6975,6 +6975,18 @@ fieldset[disabled] .form-control {
 .success-text {
   color: #3ba51a !important;
 }
+.primary-text-light {
+  color: #428bca !important;
+}
+.error-text-light {
+  color: #d9534f !important;
+}
+.warning-text-light {
+  color: #f0ad4e !important;
+}
+.success-text-light {
+  color: #5cb85c !important;
+}
 @font-face {
   font-family: 'Fredoka One';
   font-style: normal;
@@ -7097,12 +7109,8 @@ fieldset[disabled] .form-control {
 }
 .modal .modal-dialog {
   width: 600px;
-  position: fixed;
-  top: 0;
-  left: -webkit-calc(50% - 300px);
-  left: -moz-calc(50% - 300px);
-  left: -o-calc(50% - 300px);
-  left: calc(50% - 300px);
+  margin-top: 75px;
+  margin-bottom: 75px;
 }
 .modal .modal-dialog .modal-footer {
   background-color: #f5f5f5;
@@ -7633,6 +7641,10 @@ header.blur {
 .users-list .user .name-container.type-server .user-name {
   color: #b8b8b8;
 }
+.users-list .user .name-container.type-server .user-name {
+  top: 5px;
+  font-size: 10px;
+}
 .users-list .user .name-container .name-icon {
   top: 2px;
 }
@@ -8034,12 +8046,6 @@ header.blur {
 .server-settings-modal .modal .port-protocol select {
   display: inline-block;
 }
-.server-settings-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 366px);
-  top: -moz-calc(50% - 366px);
-  top: -o-calc(50% - 366px);
-  top: calc(50% - 366px);
-}
 .server-settings-modal .modal .form-group {
   margin: 0 0 15px 0;
 }
@@ -8151,69 +8157,4 @@ header.blur {
   font-weight: bold;
   font-family: 'Ubuntu', sans-serif;
   font-size: 18px;
-}
-.delete-users-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 195px);
-  top: -moz-calc(50% - 195px);
-  top: -o-calc(50% - 195px);
-  top: calc(50% - 195px);
-}
-.detach-org-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 183px);
-  top: -moz-calc(50% - 183px);
-  top: -o-calc(50% - 183px);
-  top: calc(50% - 183px);
-}
-.add-org-modal .modal .modal-dialog,
-.rename-org-modal .modal .modal-dialog,
-.rename-user-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 200px);
-  top: -moz-calc(50% - 200px);
-  top: -o-calc(50% - 200px);
-  top: calc(50% - 200px);
-}
-.delete-org-modal .modal .modal-dialog,
-.delete-server-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 225px);
-  top: -moz-calc(50% - 225px);
-  top: -o-calc(50% - 225px);
-  top: calc(50% - 225px);
-}
-.add-user-modal .modal .modal-dialog,
-.attach-org-modal .modal .modal-dialog,
-.key-link-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 240px);
-  top: -moz-calc(50% - 240px);
-  top: -o-calc(50% - 240px);
-  top: calc(50% - 240px);
-}
-.settings-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 300px);
-  top: -moz-calc(50% - 300px);
-  top: -o-calc(50% - 300px);
-  top: calc(50% - 300px);
-}
-.otp-auth-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 325px);
-  top: -moz-calc(50% - 325px);
-  top: -o-calc(50% - 325px);
-  top: calc(50% - 325px);
-}
-.notification-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 158px);
-  top: -moz-calc(50% - 158px);
-  top: -o-calc(50% - 158px);
-  top: calc(50% - 158px);
-}
-.subscribe-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 324px);
-  top: -moz-calc(50% - 324px);
-  top: -o-calc(50% - 324px);
-  top: calc(50% - 324px);
-}
-.enterprise-modal .modal .modal-dialog {
-  top: -webkit-calc(50% - 315px);
-  top: -moz-calc(50% - 315px);
-  top: -o-calc(50% - 315px);
-  top: calc(50% - 315px);
 }
