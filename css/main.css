@@ -46,6 +46,20 @@ thead tr th {
   border: 1px solid #1f2c38;
   color: #fff;
 }
+.btn,
+.promo .overview .btn-group li a,
+.install .client img,
+.use-cases .item,
+.editor,
+.faq .item,
+.api-endpoint pre,
+.tutorial pre {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
 .fa-cogs {
   padding-right: 5px;
 }
@@ -74,8 +88,8 @@ thead tr th {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   margin-right: 8px;
   float: left;
@@ -314,11 +328,6 @@ thead tr th {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: left top;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -446,7 +455,6 @@ thead tr th {
   text-align: center;
 }
 .install .client img {
-  border-radius: 4px;
   margin-bottom: 10px;
 }
 .install .client .editor {
@@ -482,6 +490,9 @@ thead tr th {
   vertical-align: middle;
   background: rgba(0, 0, 0, 0.6);
   padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.49);
+}
+.comparison .row .col.title {
   border-top: 3px solid rgba(255, 255, 255, 0.49);
 }
 .comparison .row .col.name {
@@ -541,15 +552,10 @@ thead tr th {
 .use-cases .item {
   background: rgba(11, 35, 58, 0.72);
   padding: 30px 30px 15px 30px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  border-top: 3px solid rgba(255, 255, 255, 0.56);
+  border-top: 3px solid rgba(255, 255, 255, 0.34);
   position: relative;
   margin-bottom: 30px;
 }
@@ -573,11 +579,6 @@ thead tr th {
 .editor {
   width: 100%;
   display: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
 }
 .editor.bash {
   border-top: 3px solid #6690b8;
@@ -599,15 +600,10 @@ thead tr th {
   padding: 30px;
   background: #e4edff;
   margin-bottom: 30px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  border-bottom: 3px solid #6690b8;
+  border-bottom: 3px solid rgba(102, 144, 184, 0.45);
 }
 .faq .item .question {
   margin-top: 0;
@@ -723,7 +719,6 @@ thead tr th {
   top: -2px;
   display: inline;
   padding: 4px 4px 2px 4px;
-  border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
@@ -795,7 +790,6 @@ thead tr th {
   top: -2px;
   display: inline;
   padding: 4px 4px 2px 4px;
-  border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
