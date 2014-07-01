@@ -703,6 +703,7 @@ thead tr th {
 .api-endpoints .api-endpoints-list li:first-child {
   text-align: center;
   font-size: 14px;
+  font-weight: 400;
 }
 .api-endpoints a:hover {
   text-decoration: underline;
@@ -1072,6 +1073,12 @@ a.anchor.api-anchor {
 @media (min-width: 1350px) {
   .header .container .navbar-collapse {
     margin-right: 65px;
+  }
+  .api-endpoints {
+    font-size: 13px;
+  }
+  .api-endpoints .api-endpoints-list li:first-child {
+    font-size: 16px;
   }
 }
 @media (min-width: 1400px) {
