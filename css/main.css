@@ -305,8 +305,8 @@ thead tr th {
 }
 .promo .overview .summary {
   margin-bottom: 50px;
-  margin-left: 70px;
-  padding-right: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 .promo .overview .summary li {
   margin-bottom: 15px;
@@ -434,7 +434,7 @@ thead tr th {
   margin-bottom: 50px;
 }
 .features .content {
-  padding: 30px;
+  padding: 10px;
 }
 .features .content .title {
   color: #2e4153;
@@ -910,12 +910,39 @@ a.anchor.api-anchor {
     white-space: normal;
   }
 }
+@media (min-width: 500px) {
+  .promo .overview .summary {
+    padding-left: 20px;
+  }
+}
+@media (min-width: 550px) {
+  .promo .overview .summary {
+    padding-left: 60px;
+  }
+}
+@media (min-width: 600px) {
+  .promo .overview .summary {
+    padding-left: 80px;
+  }
+}
+@media (min-width: 650px) {
+  .promo .overview .summary {
+    padding-left: 100px;
+  }
+}
+@media (min-width: 700px) {
+  .promo .overview .summary {
+    padding-left: 120px;
+  }
+}
+@media (min-width: 750px) {
+  .promo .overview .summary {
+    padding-left: 140px;
+  }
+}
 @media (min-width: 768px) {
   .promo .overview {
     text-align: center;
-  }
-  .promo .overview .summary {
-    margin-left: 60px;
   }
   .promo .overview .summary li {
     text-align: left;
@@ -937,7 +964,7 @@ a.anchor.api-anchor {
     text-align: left;
   }
   .promo .overview .summary {
-    margin-left: 0;
+    padding-left: 12px;
   }
   .promo .overview .summary li {
     text-align: left;
