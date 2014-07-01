@@ -910,6 +910,7 @@ a.anchor.api-anchor {
     white-space: normal;
   }
 }
+
 @media (min-width: 500px) {
   .promo .overview .summary {
     padding-left: 20px;
@@ -982,6 +983,15 @@ a.anchor.api-anchor {
   }
   .api-endpoints {
     display: block;
+  }
+  .api .col-md-2 {
+    width: 20%;
+  }
+  .api .col-md-offset-2 {
+    margin-left: 20%;
+  }
+  .api .col-md-5 {
+    width: 40%;
   }
 }
 
