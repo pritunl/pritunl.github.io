@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Lato', arial, sans-serif;
+  font-family: 'Whitney SSm A', 'Whitney SSm B', 'Lato', 'Arial', sans-serif;
+  font-style: normal;
   color: #444;
 }
 a {
