@@ -967,6 +967,7 @@ a.anchor.api-anchor {
   }
   .promo .overview .summary {
     padding-left: 12px;
+    padding-right: 0;
   }
   .promo .overview .summary li {
     text-align: left;
