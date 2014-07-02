@@ -1111,7 +1111,7 @@ title: Pritunl - Tutorial
                   3
                 </div>
                 <div class="tutorial-point-description title">
-                  Install openvpn <pre>sudo apt-get install openvpn</pre>
+                  Add pritunl repository <pre>sudo add-apt-repository ppa:pritunl/ppa</pre>
                 </div>
               </div>
             </div>
@@ -1123,7 +1123,7 @@ title: Pritunl - Tutorial
                   4
                 </div>
                 <div class="tutorial-point-description title">
-                  Change to the directory containing the downloaded key archive <pre>cd ~/Downloads</pre>
+                  Update package list <pre>apt-get update</pre>
                 </div>
               </div>
             </div>
@@ -1135,7 +1135,7 @@ title: Pritunl - Tutorial
                   5
                 </div>
                 <div class="tutorial-point-description title">
-                  Extract the user files <pre>sudo tar xf user*.tar -C /etc/openvpn</pre>
+                  Install pritunl-client <pre>sudo apt-get install -y pritunl-client</pre>
                 </div>
               </div>
             </div>
@@ -1147,7 +1147,7 @@ title: Pritunl - Tutorial
                   6
                 </div>
                 <div class="tutorial-point-description title">
-                  Change the ovpn file extension <pre>sudo rename 's/\.ovpn$/.conf/' /etc/openvpn/*.ovpn</pre>
+                  Open pritunl-client and click on the status icon to open the menu
                 </div>
               </div>
             </div>
@@ -1159,7 +1159,19 @@ title: Pritunl - Tutorial
                   7
                 </div>
                 <div class="tutorial-point-description title">
-                  Restart the openvpn service to connect <pre>sudo /etc/init.d/openvpn restart</pre>
+                  Click "Import Profile" and import the key archive downloaded earlier
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tutorial-point tutorial-table col-md-12 col-sm-12 col-xs-12">
+              <div class="tutorial-point-container">
+                <div class="tutorial-point-label tutorial-cell title">
+                  8
+                </div>
+                <div class="tutorial-point-description title">
+                  Select the imported profile and click "Connect"
                 </div>
               </div>
             </div>
