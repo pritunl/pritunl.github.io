@@ -8057,6 +8057,7 @@ header.blur {
   position: absolute;
   top: 34px;
   right: 47px;
+  padding: 2px 3px;
 }
 .server-settings-modal .modal .left .otp-auth-toggle {
   margin-top: 17px;
