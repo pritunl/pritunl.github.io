@@ -228,12 +228,14 @@ thead tr th {
   border: 0;
   display: none;
   opacity: 0.9;
+  visibility:visible;
   -webkit-transition: 0.25s opacity ease-in-out;
   transition: 0.25s opacity ease-in-out;
 }
 .header.header-top .twitter-logo,
 .header.header-top .github-logo {
   opacity: 0;
+  visibility: hidden;
 }
 .header .github-logo {
   right: 80px;
