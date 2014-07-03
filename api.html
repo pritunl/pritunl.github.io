@@ -397,6 +397,14 @@ print response.json()
                   <td>secret</td>
                   <td>API secret</td>
                 </tr>
+                <tr>
+                  <td>email_from</td>
+                  <td>Postmark from address</td>
+                </tr>
+                <tr>
+                  <td>email_api_key</td>
+                  <td>Postmark API secret</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -420,6 +428,8 @@ print response.json()
   'username': 'user',
   'token': '2$kNvK4+IhmHU=$oBGfGOLHsbl+RqmngrN4M/JCgnKacQb7yNrvkOT3DC8=',
   'secret': 'NXLmn2nn1rv0NYQ4zG94XSiAY7TQd1Ks',
+  'email_from': None,
+  'email_api_key': None,
 }</div>
         </div>
       </div>
@@ -429,7 +439,7 @@ print response.json()
           <h2 class="api-header">PUT /auth</h2>
           <div class="api-description">
             <div class="text">
-              Change the server username and password.
+              Change the server authentication settings.
             </div>
             <table class="table">
               <thead>
@@ -446,6 +456,14 @@ print response.json()
                   <td>password</td>
                   <td>New password</td>
                 </tr>
+                <tr>
+                  <td>email_from</td>
+                  <td>Postmark from address</td>
+                </tr>
+                <tr>
+                  <td>email_api_key</td>
+                  <td>Postmark API secret</td>
+                </tr>
               </tbody>
             </table>
             <table class="table">
@@ -458,6 +476,22 @@ print response.json()
                 <tr>
                   <td>username</td>
                   <td>Current username</td>
+                </tr>
+                <tr>
+                  <td>token</td>
+                  <td>Encrypted API token</td>
+                </tr>
+                <tr>
+                  <td>secret</td>
+                  <td>API secret</td>
+                </tr>
+                <tr>
+                  <td>email_from</td>
+                  <td>Postmark from address</td>
+                </tr>
+                <tr>
+                  <td>email_api_key</td>
+                  <td>Postmark API secret</td>
                 </tr>
               </tbody>
             </table>
@@ -484,6 +518,10 @@ assert(response.status_code == 200)
 print response.json()
 {
   'username': 'user',
+  'token': '2$kNvK4+IhmHU=$oBGfGOLHsbl+RqmngrN4M/JCgnKacQb7yNrvkOT3DC8=',
+  'secret': 'NXLmn2nn1rv0NYQ4zG94XSiAY7TQd1Ks',
+  'email_from': None,
+  'email_api_key': None,
 }</div>
         </div>
       </div>
