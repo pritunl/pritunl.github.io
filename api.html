@@ -1677,6 +1677,10 @@ print response.json()
                   <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
+                  <td>search_domain</td>
+                  <td>DNS search domain</td>
+                </tr>
+                <tr>
                   <td>public_address</td>
                   <td>Servers public IP address</td>
                 </tr>
@@ -1728,6 +1732,7 @@ print response.json()
       'mode': 'all_traffic',
       'local_networks': [],
       'dns_servers': [],
+      'search_domain': None,
       'public_address': '8.8.8.8',
       'otp_auth': True,
       'lzo_compression': False,
@@ -1749,6 +1754,7 @@ print response.json()
       'mode': 'all_traffic',
       'local_networks': [],
       'dns_servers': [],
+      'search_domain': None,
       'public_address': '8.8.8.8',
       'otp_auth': False,
       'lzo_compression': False,
@@ -1830,6 +1836,10 @@ print response.json()
                   <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
+                  <td>search_domain</td>
+                  <td>DNS search domain</td>
+                </tr>
+                <tr>
                   <td>public_address</td>
                   <td>Servers public IP address</td>
                 </tr>
@@ -1880,6 +1890,7 @@ print response.json()
   'mode': 'all_traffic',
   'local_networks': [],
   'dns_servers': [],
+  'search_domain': None,
   'public_address': '8.8.8.8',
   'otp_auth': True,
   'lzo_compression': False,
@@ -1938,6 +1949,10 @@ print response.json()
                 <tr>
                   <td>dns_servers</td>
                   <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>search_domain</td>
+                  <td>DNS search domain</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -2021,6 +2036,10 @@ print response.json()
                   <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
+                  <td>search_domain</td>
+                  <td>DNS search domain</td>
+                </tr>
+                <tr>
                   <td>public_address</td>
                   <td>Public IP address</td>
                 </tr>
@@ -2066,6 +2085,7 @@ print response.json()
       'mode': 'all_traffic',
       'local_networks': [],
       'dns_servers': [],
+      'search_domain': None,
       'public_address': '8.8.8.8',
       'otp_auth': True,
       'lzo_compression': False,
@@ -2089,6 +2109,7 @@ print response.json()
   'mode': 'all_traffic',
   'local_networks': [],
   'dns_servers': [],
+  'search_domain': None,
   'public_address': '8.8.8.8',
   'otp_auth': True,
   'lzo_compression': False,
@@ -2162,6 +2183,10 @@ print response.json()
                   <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
+                  <td>search_domain</td>
+                  <td>DNS search domain</td>
+                </tr>
+                <tr>
                   <td>public_address</td>
                   <td>Servers public IP address</td>
                 </tr>
@@ -2243,6 +2268,10 @@ print response.json()
                   <td>List of dns servers for ovpn clients</td>
                 </tr>
                 <tr>
+                  <td>search_domain</td>
+                  <td>DNS search domain</td>
+                </tr>
+                <tr>
                   <td>public_address</td>
                   <td>Public IP address</td>
                 </tr>
@@ -2299,6 +2328,7 @@ print response.json()
   'mode': 'all_traffic',
   'local_networks': [],
   'dns_servers': [],
+  'search_domain': None,
   'public_address': '8.8.8.8',
   'otp_auth': True,
   'lzo_compression': False,
@@ -2416,12 +2446,24 @@ assert(response.status_code == 200)</div>
                   <td>Server protocol</td>
                 </tr>
                 <tr>
+                  <td>dh_param_bits</td>
+                  <td>Size of dh parameters can be 1024, 1536 2048, 3072 or 4096</td>
+                </tr>
+                <tr>
                   <td>mode</td>
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
+                </tr>
+                <tr>
+                  <td>dns_servers</td>
+                  <td>List of dns servers for ovpn clients</td>
+                </tr>
+                <tr>
+                  <td>search_domain</td>
+                  <td>DNS search domain</td>
                 </tr>
                 <tr>
                   <td>public_address</td>
@@ -2470,6 +2512,11 @@ print response.json()
   'interface': 'tun1',
   'port': 18387,
   'protocol': 'udp',
+  'dh_param_bits': 1536,
+  'mode': 'all_traffic',
+  'local_networks': [],
+  'dns_servers': [],
+  'search_domain': None,
   'public_address': '8.8.8.8',
   'otp_auth': False,
   'lzo_compression': False,
