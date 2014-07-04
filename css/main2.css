@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Whitney SSm A', 'Whitney SSm B', 'Lato', 'Arial', sans-serif;
+  font-family: 'Whitney SSm A', 'Whitney SSm B';
   font-style: normal;
   color: #444;
 }
@@ -48,10 +48,7 @@ thead tr th {
   color: #fff;
 }
 .btn,
-.alert,
 .promo .overview .btn-group li a,
-.install .server-auto img,
-.install .server-auto input,
 .install .client img,
 .use-cases .item,
 .editor,
@@ -122,7 +119,7 @@ thead tr th {
 }
 .header {
   padding: 15px 0;
-  background: #fff;
+  background: #16171c;
   z-index: 9999;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
@@ -148,7 +145,7 @@ thead tr th {
 .header h1.logo .logo-title {
   font-family: 'Fredoka One', cursive;
   vertical-align: middle;
-  color: #2e4153;
+  color: #fff;
   -webkit-transition: 0.25s color ease-in-out;
   transition: 0.25s color ease-in-out;
 }
@@ -189,7 +186,7 @@ thead tr th {
   margin-right: 10px;
 }
 .header .main-nav .nav .nav-item a {
-  color: #444;
+  color: #fff;
   padding-left: 10px;
   padding-right: 10px;
   -webkit-transition: none;
@@ -231,14 +228,12 @@ thead tr th {
   border: 0;
   display: none;
   opacity: 0.9;
-  visibility:visible;
   -webkit-transition: 0.25s opacity ease-in-out;
   transition: 0.25s opacity ease-in-out;
 }
 .header.header-top .twitter-logo,
 .header.header-top .github-logo {
   opacity: 0;
-  visibility: hidden;
 }
 .header .github-logo {
   right: 80px;
@@ -310,8 +305,8 @@ thead tr th {
 }
 .promo .overview .summary {
   margin-bottom: 50px;
-  padding-left: 7px;
-  padding-right: 7px;
+  margin-left: 70px;
+  padding-right: 5px;
 }
 .promo .overview .summary li {
   margin-bottom: 15px;
@@ -336,7 +331,7 @@ thead tr th {
   margin-bottom: 20px;
 }
 .promo .overview .btn-group li a {
-  color: #162b3d;
+  color: #1f3a53;
   border: 2px solid #fff;
   background-color: #fff;
   background-repeat: no-repeat;
@@ -397,12 +392,16 @@ thead tr th {
 }
 .features {
   padding: 70px 0 40px 0;
+  background-image: url('../img/background4.png');
+  background-repeat: repeat;
+  background-position: left top;
+  color: #fff;
 }
 .features .icon {
   position: relative;
   width: 90px;
   height: 90px;
-  border: 3px solid #2e4153;
+  border: 3px solid #fff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -429,7 +428,7 @@ thead tr th {
   -o-transform: scale(0.93);
 }
 .features .icon .fa {
-  color: #2e4153;
+  color: #fff;
   font-size: 48px;
   display: table-cell;
   text-align: center;
@@ -442,7 +441,7 @@ thead tr th {
   padding: 10px;
 }
 .features .content .title {
-  color: #2e4153;
+  color: #fff;
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 10px;
@@ -458,50 +457,6 @@ thead tr th {
 }
 .install h2 {
   margin-bottom: 0;
-}
-.install .server {
-  padding-top: 30px;
-}
-.install .server-auto .item {
-  text-align: center;
-}
-.install .server-auto img {
-  max-width: 610px;
-  width: 100%;
-  margin: 15px auto;
-  display: block;
-  border: 1px solid #dbdbdb;
-}
-.install .server-auto input {
-  font-size: 14px;
-  height: 40px;
-  max-width: 610px;
-  width: 100%;
-  margin: 15px auto 10px auto;
-  display: block;
-}
-.install .server-auto input.error {
-  border-color: red;
-}
-.install .server-auto .alert {
-  max-width: 610px;
-  margin: 15px auto;
-}
-.install .server-auto .server-alert {
-  display: none;
-}
-.install .server-auto .btn {
-  max-width: 228px;
-  display: block;
-  margin: 10px auto 15px auto;
-}
-.install .server-auto .btn.server-region {
-  min-width: 145px;
-  display: inline-block;
-  margin: 5px;
-  font-size: 16px;
-  padding-left: 2px;
-  padding-right: 2px;
 }
 .install .client {
   padding-top: 30px;
@@ -752,7 +707,6 @@ thead tr th {
 .api-endpoints .api-endpoints-list li:first-child {
   text-align: center;
   font-size: 14px;
-  font-weight: 400;
 }
 .api-endpoints a:hover {
   text-decoration: underline;
@@ -960,40 +914,12 @@ a.anchor.api-anchor {
     white-space: normal;
   }
 }
-
-@media (min-width: 500px) {
-  .promo .overview .summary {
-    padding-left: 20px;
-  }
-}
-@media (min-width: 550px) {
-  .promo .overview .summary {
-    padding-left: 60px;
-  }
-}
-@media (min-width: 600px) {
-  .promo .overview .summary {
-    padding-left: 80px;
-  }
-}
-@media (min-width: 650px) {
-  .promo .overview .summary {
-    padding-left: 100px;
-  }
-}
-@media (min-width: 700px) {
-  .promo .overview .summary {
-    padding-left: 120px;
-  }
-}
-@media (min-width: 750px) {
-  .promo .overview .summary {
-    padding-left: 140px;
-  }
-}
 @media (min-width: 768px) {
   .promo .overview {
     text-align: center;
+  }
+  .promo .overview .summary {
+    margin-left: 60px;
   }
   .promo .overview .summary li {
     text-align: left;
@@ -1015,8 +941,7 @@ a.anchor.api-anchor {
     text-align: left;
   }
   .promo .overview .summary {
-    padding-left: 4px;
-    padding-right: 0;
+    margin-left: 0;
   }
   .promo .overview .summary li {
     text-align: left;
@@ -1034,15 +959,6 @@ a.anchor.api-anchor {
   }
   .api-endpoints {
     display: block;
-  }
-  .api .col-md-2 {
-    width: 20%;
-  }
-  .api .col-md-offset-2 {
-    margin-left: 20%;
-  }
-  .api .col-md-5 {
-    width: 40%;
   }
 }
 
@@ -1123,12 +1039,6 @@ a.anchor.api-anchor {
 @media (min-width: 1350px) {
   .header .container .navbar-collapse {
     margin-right: 65px;
-  }
-  .api-endpoints {
-    font-size: 13px;
-  }
-  .api-endpoints .api-endpoints-list li:first-child {
-    font-size: 16px;
   }
 }
 @media (min-width: 1400px) {
