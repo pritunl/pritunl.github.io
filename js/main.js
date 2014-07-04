@@ -124,6 +124,7 @@ jQuery(document).ready(function($) {
       changeInstructions('.client-instructions', '.android-client-instructions');
     }
   });
+
   var onScroll = function() {
     var scrollTop = $(this).scrollTop();
 
@@ -149,4 +150,10 @@ jQuery(document).ready(function($) {
   $(window).scroll(onScroll);
   onScroll();
   $('.label').tooltip();
+
+  $('.server-region').click(function(evt) {
+    $('.server-region').addClass('btn-default');
+    $('.server-region').removeClass('btn-primary');
+    $(evt.target).addClass('btn-primary');
+  });
 });
