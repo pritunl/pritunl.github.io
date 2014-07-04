@@ -49,6 +49,8 @@ thead tr th {
 }
 .btn,
 .promo .overview .btn-group li a,
+.install .server-auto img,
+.install .server-auto input,
 .install .client img,
 .use-cases .item,
 .editor,
@@ -455,6 +457,50 @@ thead tr th {
 }
 .install h2 {
   margin-bottom: 0;
+}
+.install .server {
+  padding-top: 30px;
+}
+.install .server-auto .item {
+  text-align: center;
+}
+.install .server-auto img {
+  max-width: 610px;
+  width: 100%;
+  margin: 15px auto;
+  display: block;
+  border: 1px solid #dbdbdb;
+}
+.install .server-auto input {
+  font-size: 14px;
+  height: 40px;
+  max-width: 610px;
+  width: 100%;
+  margin: 15px auto 10px auto;
+  display: block;
+}
+.install .server-auto input.error {
+  border-color: red;
+}
+.install .server-auto .alert {
+  max-width: 610px;
+  margin: 15px auto;
+}
+.install .server-auto .server-alert {
+  display: none;
+}
+.install .server-auto .btn {
+  max-width: 228px;
+  display: block;
+  margin: 10px auto 15px auto;
+}
+.install .server-auto .btn.server-region {
+  min-width: 145px;
+  display: inline-block;
+  margin: 5px;
+  font-size: 16px;
+  padding-left: 2px;
+  padding-right: 2px;
 }
 .install .client {
   padding-top: 30px;

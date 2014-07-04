@@ -337,12 +337,23 @@ header_class: header-top
   </section>
   <section id="install" class="install section">
     <div class="container">
+      <div class="row server-auto">
+        <h2 class="title text-center">DigitalOcean Automated Install</h2>
+        <div class="item col-md-12 col-sm-12 col-xs-12">
+          <div class="alert alert-info" role="alert">Automatically launch a Pritunl droplet. To use open the API settings in your DigitalOcean account and generate a token with read and write access.</div>
+          <img src="img/api_key.png" alt="Create DigitalOcean API Key"/>
+          <div class="server-alert alert alert-warning" role="alert"></div>
+          <input type="text" class="api-key form-control" placeholder="Enter DigitalOcean API Key" data-toggle="tooltip" title="DigitalOcean API Key"/>
+          <button class="server-region server-sfo1 btn btn-lg btn-primary">San Francisco</button><button class="server-region server-nyc2 btn btn-lg btn-default">New York</button><button class="server-region server-ams2 btn btn-lg btn-default">Amsterdam</button><button class="server-region server-sgp1 btn btn-lg btn-default">Singapore</button>
+          <button class="server-create btn btn-lg btn-success" disabled>Coming Soon</button>
+        </div>
+      </div>
       <div class="row server">
         <h2 class="title text-center">Install</h2>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
           <h3 class="title text-center">Ubuntu</h3>
 <div class="editor bash">apt-get install python-software-properties
-add-apt-repository ppa:pritunl
+add-apt-repository -y ppa:pritunl
 apt-get update; apt-get install pritunl
 open "https://localhost:9700/"</div>
         </div>
@@ -364,7 +375,7 @@ open "https://localhost:9700/"</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
           <h3 class="title text-center">Ubuntu</h3>
           <img src="img/client_ubuntu.png" alt="Ubuntu Client"/>
-<div class="editor bash">sudo add-apt-repository ppa:pritunl
+<div class="editor bash">sudo add-apt-repository -y ppa:pritunl
 sudo apt-get update
 sudo apt-get install pritunl-client</div>
         </div>
