@@ -156,4 +156,172 @@ jQuery(document).ready(function($) {
     $('.server-region').removeClass('btn-primary');
     $(evt.target).addClass('btn-primary');
   });
+
+  var loaderUrl = 'https://pritunl-loader.herokuapp.com';
+  var id = null;
+  var updateData = function(message, type, region, noAnimate, buttonState) {
+    if (buttonState == undefined) {
+      buttonState = true;
+    }
+
+    if (region && !$('.server-' + region).hasClass('btn-primary')) {
+      $('.server-region').addClass('btn-default');
+      $('.server-region').removeClass('btn-primary');
+      $('.server-' + region).addClass('btn-primary');
+    }
+
+    $('.server-alert').removeClass('alert-success alert-warning alert-danger');
+    $('.server-alert').addClass(type);
+    if (message) {
+      $('.server-alert').html(message);
+    }
+    if (buttonState) {
+      $('.server-region, .server-create').removeAttr('disabled');
+    }
+    else {
+      $('.server-region, .server-create').attr('disabled', 'disabled');
+    }
+    if (noAnimate) {
+      if (buttonState) {
+        $('.api-key').show();
+      }
+      else {
+        $('.api-key').hide();
+      }
+      if (message) {
+        $('.server-alert').show();
+      }
+      else {
+        $('.server-alert').hide();
+      }
+    }
+    else {
+      if (buttonState) {
+        $('.api-key').slideDown(250);
+      }
+      else {
+        $('.api-key').slideUp(250);
+      }
+      if (message) {
+        $('.server-alert').slideDown(250);
+      }
+      else {
+        $('.server-alert').slideUp(250);
+      }
+    }
+  };
+  var updateDataPending = function(region, noAnimate) {
+    updateData('Pritunl droplet is being created, please ' +
+        'allow several minutes for this to complete. You may leave or ' +
+        'reload the page while the droplet is being created.',
+        'alert-warning', region, noAnimate, false);
+  };
+  var poll = function() {
+    $.ajax(loaderUrl + '/poll' + (id ? '/' + id : ''), {
+      success: function(data) {
+        id = data.id;
+        if (data.status) {
+          poll();
+        }
+        else if (data.error) {
+          updateData(data.error, 'alert-danger', data.region);
+        }
+        else if (data.success) {
+          updateData(data.success, 'alert-success', data.region);
+        }
+      },
+      error: function(data) {
+        setTimeout(function() {
+          poll();
+        }, 3000);
+      }
+    });
+  };
+
+  $('.server-create').click(function() {
+    var region;
+    var apiKey = $('.api-key').val();
+    if (!apiKey) {
+      $('.api-key').addClass('error');
+      return;
+    }
+    $('.api-key').removeClass('error');
+    $('.server-region, .server-create').attr('disabled', 'disabled');
+    $('.api-key').slideUp(250);
+
+    if ($('.server-sfo1').hasClass('btn-primary')) {
+      region = 'sfo1';
+    }
+    else if ($('.server-nyc2').hasClass('btn-primary')) {
+      region = 'nyc2';
+    }
+    else if ($('.server-ams2').hasClass('btn-primary')) {
+      region = 'ams2';
+    }
+    else if ($('.server-sgp1').hasClass('btn-primary')) {
+      region = 'sgp1';
+    }
+
+    $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({
+        api_key: apiKey,
+        region: region
+      }),
+      xhrFields: {
+        withCredentials: true
+      },
+      crossDomain: true,
+      success: function(data) {
+        id = data.id;
+        if (data.status) {
+          updateDataPending(data.region);
+          poll();
+        }
+        else if (data.error) {
+          updateData(data.error, 'alert-danger', data.region);
+        }
+        else if (data.success) {
+          updateData(data.success, 'alert-success', data.region);
+        }
+      },
+      error: function(xhr) {
+        var data = xhr.responseJSON || {};
+        updateData('Automated install is currently unavailable, please ' +
+          'try again later.', 'alert-danger', data.region, true, false);
+      }
+    });
+  });
+
+  $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
+    type: 'GET',
+    xhrFields: {
+      withCredentials: true
+    },
+    crossDomain: true,
+    success: function(data) {
+      id = data.id;
+      if (data.status) {
+        updateDataPending(data.region, data.cookies, true);
+        poll();
+      }
+      else if (data.error) {
+        updateData(data.error, 'alert-danger', data.region, true);
+      }
+      else if (data.success) {
+        updateData(data.success, 'alert-success', data.region, true);
+      }
+    },
+    error: function(xhr) {
+      var data = xhr.responseJSON || {};
+      if (data.success) {
+        updateData(data.success, 'alert-success', data.region, true);
+      }
+      else {
+        updateData('Automated install is currently unavailable, please ' +
+          'try again later.', 'alert-danger', data.region, true, false);
+      }
+    }
+  });
 });
