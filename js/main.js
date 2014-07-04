@@ -183,10 +183,10 @@ jQuery(document).ready(function($) {
     }
     if (noAnimate) {
       if (buttonState) {
-        $('.api-key').show();
+        $('.api-key-container').show();
       }
       else {
-        $('.api-key').hide();
+        $('.api-key-container').hide();
       }
       if (message) {
         $('.server-alert').show();
@@ -197,10 +197,10 @@ jQuery(document).ready(function($) {
     }
     else {
       if (buttonState) {
-        $('.api-key').slideDown(250);
+        $('.api-key-container').slideDown(250);
       }
       else {
-        $('.api-key').slideUp(250);
+        $('.api-key-container').slideUp(250);
       }
       if (message) {
         $('.server-alert').slideDown(250);
@@ -247,7 +247,7 @@ jQuery(document).ready(function($) {
     }
     $('.api-key').removeClass('error');
     $('.server-region, .server-create').attr('disabled', 'disabled');
-    $('.api-key').slideUp(250);
+    $('.api-key-container').slideUp(250);
 
     if ($('.server-sfo1').hasClass('btn-primary')) {
       region = 'sfo1';
