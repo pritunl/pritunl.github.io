@@ -476,6 +476,12 @@ thead tr th {
   top: -3px;
   position: relative;
 }
+.install .server-auto .new-label {
+  font-size: 10px;
+  position: absolute;
+  margin-left: -30px;
+  margin-top: -8px;
+}
 .install .server-auto .api-image {
   max-width: 610px;
   width: 100%;
@@ -907,6 +913,11 @@ a.anchor.api-anchor {
 @media (max-width: 414px) {
   .promo .overview h2 {
     font-size: 28px;
+  }
+}
+@media (max-width: 625px) {
+  .install .server-auto .new-label {
+    display: none;
   }
 }
 @media (max-width: 767px) {
