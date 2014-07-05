@@ -1238,13 +1238,13 @@ a.anchor.api-anchor {
   background-color: rgba(255, 255, 255, 0.16);
 }
 .tutorial-button .digital-ocean {
-  background-image: url('../img/digital-ocean.png');
+  background-image: url('../img/digital_ocean.png');
 }
 .tutorial-button .linode {
   background-image: url('../img/linode.png');
 }
 .tutorial-button .amazon-aws {
-  background-image: url('../img/amazon-aws.png');
+  background-image: url('../img/amazon_aws.png');
 }
 .tutorial-button .ubuntu,
 .tutorial-button .ubuntu-client {
