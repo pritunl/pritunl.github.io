@@ -468,6 +468,8 @@ thead tr th {
 .install .server-auto .title a,
 .install .server-auto .title a:hover {
   color: #444;
+  outline: none;
+  text-decoration: none;
 }
 .install .server-auto .digital-ocean-logo {
   width: 70px;
