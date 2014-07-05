@@ -125,6 +125,35 @@ jQuery(document).ready(function($) {
     }
   });
 
+  (function() {
+    var element;
+    var elements = {
+      '.header': null,
+      '.header h1.logo .logo-title': null,
+      '.header .main-nav button': null,
+      '.header.header-top .main-nav button .icon-bar': null,
+      '.header .main-nav .nav .nav-item a': null,
+      '.header.header-top .navbar-collapse': null,
+      '.header .twitter-logo': null,
+      '.header .github-logo': null
+    }
+    for (element in elements) {
+      elements[element] = [
+        $(element).css('-webkit-transition'),
+        $(element).css('transition')
+      ];
+      $(element).css('-webkit-transition', 'none');
+      $(element).css('transition', 'none');
+    }
+    setTimeout(function() {
+      for (element in elements) {
+        $(element).css('-webkit-transition', elements[element][0]);
+        $(element).css('transition', elements[element][1]);
+        elements[element] = null;
+      }
+    }, 500);
+  })();
+
   var onScroll = function() {
     var scrollTop = $(this).scrollTop();
 
