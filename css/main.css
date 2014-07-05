@@ -465,7 +465,16 @@ thead tr th {
 .install .server-auto .item {
   text-align: center;
 }
-.install .server-auto img {
+.install .server-auto .title a,
+.install .server-auto .title a:hover {
+  color: #444;
+}
+.install .server-auto .digital-ocean-logo {
+  width: 70px;
+  top: -3px;
+  position: relative;
+}
+.install .server-auto .api-image {
   max-width: 610px;
   width: 100%;
   margin: 15px auto;
