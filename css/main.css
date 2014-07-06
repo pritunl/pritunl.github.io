@@ -921,12 +921,6 @@ a.anchor.api-anchor {
   }
 }
 @media (max-width: 767px) {
-  .promo .overview .summary li {
-    font-size: 18px;
-  }
-  .promo .overview .summary {
-    margin-left: 0;
-  }
   .promo .overview {
     text-align: center;
   }
@@ -934,6 +928,7 @@ a.anchor.api-anchor {
     margin-left: 0;
   }
   .promo .overview .summary li {
+    font-size: 18px;
     text-align: left;
   }
   .promo .overview .download-area {
