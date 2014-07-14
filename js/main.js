@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
     $(editor.renderer.scroller).css('margin-left', '10px');
   });
 
-  $('.tutorial-button .btn').click(function(evt) {
+  $('.tutorial-button button.btn').click(function(evt) {
     $(this).parent().siblings().find('.btn').removeClass('active');
     $(this).addClass('active');
     var changeInstructions = function(group, page) {
