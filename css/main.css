@@ -1271,14 +1271,14 @@ a.anchor.api-anchor {
 .tutorial-button .android-client {
   background-image: url('../img/android.png');
 }
-.tutorial-button .viscosity-windows {
-  background-image: url('../img/viscosity_windows.png');
+.tutorial-button .iphone-client {
+  background-image: url('../img/iphone.png');
 }
-.tutorial-button .viscosity-osx {
-  background-image: url('../img/viscosity_osx.png');
+.tutorial-button .viscosity-client {
+  background-image: url('../img/viscosity.png');
 }
-.tutorial-button .tunnelblick-osx {
-  background-image: url('../img/tunnelblick_osx.png');
+.tutorial-button .tunnelblick-client {
+  background-image: url('../img/tunnelblick.png');
 }
 .documentation-point,
 .faq-point {
