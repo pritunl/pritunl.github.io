@@ -290,6 +290,9 @@ jQuery(document).ready(function($) {
     else if ($('.server-sgp1').hasClass('btn-primary')) {
       region = 'sgp1';
     }
+    else if ($('.server-lon1').hasClass('btn-primary')) {
+      region = 'lon1';
+    }
 
     $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
       type: 'POST',
