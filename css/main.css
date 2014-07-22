@@ -513,10 +513,10 @@ thead tr th {
   margin: 10px auto 15px auto;
 }
 .install .server-auto .btn.server-region {
-  min-width: 145px;
+  min-width: 114px;
   display: inline-block;
   margin: 5px;
-  font-size: 16px;
+  font-size: 15px;
   padding-left: 2px;
   padding-right: 2px;
 }
