@@ -986,9 +986,17 @@ a.anchor.api-anchor {
     padding-right: 0;
   }
   .promo .laptop .laptop-holder-inner {
-    padding-top: 10px;
-    width: 228px;
-    height: 153px;
+    padding-top: 13px;
+    width: 290px;
+    height: 197px;
+  }
+  .promo .laptop .laptop-holder-inner .controls {
+    margin-top: -10px;
+  }
+  .promo .laptop .laptop-holder-inner .control-circle {
+    width: 6px;
+    height: 6px;
+    margin-left: 4px;
   }
   .promo .laptop .flexslider .flex-control-nav {
     padding-bottom: 4px;
