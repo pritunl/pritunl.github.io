@@ -381,7 +381,7 @@ thead tr th {
 }
 .promo .laptop {
   padding-top: 83px;
-  padding-bottom: 100px;
+  padding-bottom: 77px;
   padding-left: 0;
   padding-right: 0;
   position: relative;
@@ -389,7 +389,6 @@ thead tr th {
 .promo .laptop .laptop-holder {
   margin: 0 auto;
   position: relative;
-  height: 350px;
   margin-left: -25px;
   padding-left: 25px;
   padding-right: 25px;
@@ -421,8 +420,8 @@ thead tr th {
   border-bottom-left-radius: 2px;
   margin: 0px auto;
   padding-top: 17px;
-  width: 489px;
-  height: 328px;
+  width: 560px;
+  height: 373px;
   overflow: hidden;
 }
 .promo .laptop .laptop-holder-inner .controls {
