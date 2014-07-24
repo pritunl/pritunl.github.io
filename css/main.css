@@ -385,10 +385,6 @@ thead tr th {
 }
 .promo .laptop .laptop-holder {
   margin: 0 auto;
-  -webkit-background-size: 600px auto;
-  -moz-background-size: 600px auto;
-  -o-background-size: 600px auto;
-  background-size: 600px auto;
   position: relative;
   height: 350px;
   margin-left: -25px;
@@ -983,10 +979,6 @@ a.anchor.api-anchor {
     padding-right: 10px;
   }
   .promo .laptop .laptop-holder {
-    -webkit-background-size: 300px auto;
-    -moz-background-size: 300px auto;
-    -o-background-size: 300px auto;
-    background-size: 300px auto;
     height: 175px;
     margin-left: 0;
     padding-left: 0;
