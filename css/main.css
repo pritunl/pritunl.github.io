@@ -409,6 +409,16 @@ thead tr th {
   -ms-border-top-right-radius: 3px;
   -o-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-bottom-left-radius: 2px;
+  -ms-border-bottom-left-radius: 2px;
+  -o-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-bottom-left-radius: 2px;
+  -ms-border-bottom-left-radius: 2px;
+  -o-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
   margin: 0px auto;
   padding-top: 17px;
   width: 489px;
