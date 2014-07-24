@@ -276,6 +276,8 @@ thead tr th {
   width: 8px;
   height: 8px;
   background: #a1a1a1;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 .flexslider .flex-control-paging li a:hover {
   background: #2e4153;
