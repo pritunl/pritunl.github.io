@@ -303,12 +303,12 @@ thead tr th {
   top: 0;
   height: 638px;
   overflow: hidden;
-  min-width: 1030px;
 }
 .promo-video video {
   top: 0;
   position: absolute;
   width: 100%;
+  min-width: 1050px;
   pointer-events: none;
 }
 .promo .container {
