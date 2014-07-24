@@ -380,8 +380,8 @@ thead tr th {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .promo .laptop {
-  padding-top: 83px;
-  padding-bottom: 77px;
+  padding-top: 78px;
+  padding-bottom: 78px;
   padding-left: 0;
   padding-right: 0;
   position: relative;
@@ -419,14 +419,14 @@ thead tr th {
   -o-border-bottom-left-radius: 2px;
   border-bottom-left-radius: 2px;
   margin: 0px auto;
-  padding-top: 17px;
+  padding-top: 21px;
   width: 560px;
-  height: 373px;
+  height: 377px;
   overflow: hidden;
 }
 .promo .laptop .laptop-holder-inner .controls {
   position: absolute;
-  margin-top: -13px;
+  margin-top: -16px;
 }
 .promo .laptop .laptop-holder-inner .control-circle {
   -webkit-border-radius: 50%;
@@ -435,8 +435,8 @@ thead tr th {
   -o-border-radius: 50%;
   border-radius: 50%;
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   float: left;
   margin-left: 7px;
 }
