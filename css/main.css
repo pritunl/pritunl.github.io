@@ -400,10 +400,12 @@ thead tr th {
   -moz-border-top-left-radius: 3px;
   -ms-border-top-left-radius: 3px;
   -o-border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
   -webkit-border-top-right-radius: 3px;
   -moz-border-top-right-radius: 3px;
   -ms-border-top-right-radius: 3px;
   -o-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
   margin: 0px auto;
   padding-top: 17px;
   width: 489px;
@@ -419,6 +421,7 @@ thead tr th {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  border-radius: 50%;
   display: block;
   width: 8px;
   height: 8px;
@@ -1265,6 +1268,10 @@ a.anchor.api-anchor {
   margin: 0 auto;
   width: 590px;
   white-space: nowrap;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
   border-radius: 10px;
   display: block;
 }
@@ -1276,6 +1283,10 @@ a.anchor.api-anchor {
   width: 33.333333%;
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
   border-radius: 5px;
   border: 0 none;
   background-color: rgba(255, 255, 255, 0.35);
@@ -1408,6 +1419,10 @@ a.anchor.api-anchor {
   top: -2px;
   display: inline;
   padding: 4px 4px 2px 4px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
   background-color: rgba(0, 0, 0, 0.2);
   white-space: nowrap;
