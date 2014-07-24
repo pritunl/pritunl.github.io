@@ -287,12 +287,26 @@ thead tr th {
   position: relative;
 }
 .promo {
-  background-color: #2e4153;
   color: #fff;
   background-image: url('../img/background0.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+.promo-video {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 638px;
+  overflow: hidden;
+  min-width: 1045px;
+}
+.promo-video video {
+  top: 0;
+  position: absolute;
+  width: 100%;
 }
 .promo .container {
   padding-bottom: 15px;
@@ -363,7 +377,7 @@ thead tr th {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .promo .laptop {
-  padding-top: 100px;
+  padding-top: 83px;
   padding-bottom: 100px;
   padding-left: 0;
   padding-right: 0;
@@ -380,19 +394,48 @@ thead tr th {
   margin-left: -25px;
   padding-left: 25px;
   padding-right: 25px;
-  background-image: url('../img/laptop.png');
   background-repeat: no-repeat;
   background-position: center top;
 }
 .promo .laptop .laptop-holder-inner {
+  background-color: #d8d8d8;
+  border: 1px solid #d8d8d8;
+  -webkit-border-top-left-radius: 3px;
+  -moz-border-top-left-radius: 3px;
+  -ms-border-top-left-radius: 3px;
+  -o-border-top-left-radius: 3px;
+  -webkit-border-top-right-radius: 3px;
+  -moz-border-top-right-radius: 3px;
+  -ms-border-top-right-radius: 3px;
+  -o-border-top-right-radius: 3px;
   margin: 0px auto;
-  padding-top: 20px;
-  width: 456px;
-  height: 306px;
+  padding-top: 17px;
+  width: 489px;
+  height: 328px;
   overflow: hidden;
 }
+.promo .laptop .laptop-holder-inner .controls {
+  position: absolute;
+  margin-top: -13px;
+}
+.promo .laptop .laptop-holder-inner .control-circle {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 7px;
+  float: left;
+  margin-left: 7px;
+}
+.promo .laptop .laptop-holder-inner .control-circle.red {
+  background-color: #d9534f;
+}
+.promo .laptop .laptop-holder-inner .control-circle.yellow {
+  background-color: #f0ad4e;
+}
+.promo .laptop .laptop-holder-inner .control-circle.green {
+  background-color: #5cb85c;
+}
 .promo .laptop .flexslider .flex-control-nav {
-  padding-bottom: 15px;
   bottom: 0;
 }
 .features {
@@ -1029,6 +1072,9 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 992px) {
+  .promo-video {
+    display: block;
+  }
   .promo .overview {
     text-align: left;
   }
