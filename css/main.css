@@ -22,6 +22,9 @@ a:hover {
 thead tr th {
   font-weight: 400;
 }
+h2 {
+  font-size: 32px;
+}
 .title {
   font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', sans-serif;
   font-weight: 500;
@@ -50,6 +53,8 @@ thead tr th {
 .btn,
 .alert,
 .promo .overview .btn-group li a,
+.features .content,
+.features .content-overlay,
 .install .server-auto img,
 .install .server-auto input,
 .install .client img,
@@ -453,13 +458,13 @@ thead tr th {
   bottom: 0;
 }
 .features {
-  padding: 70px 0 40px 0;
+  padding: 50px 0;
 }
 .features .icon {
   position: relative;
   width: 90px;
   height: 90px;
-  border: 3px solid #2e4153;
+  border: 3px solid #fff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
@@ -474,19 +479,8 @@ thead tr th {
   -moz-transition: -moz-transform ease-out 0.2s, background 0.3s;
   transition: transform ease-out 0.2s, background 0.3s;
 }
-.features .icon:hover {
-  background: #2e4153;
-  color: #fff;
-}
-.features .icon:hover .fa {
-  color: #fff;
-  -webkit-transform: scale(0.93);
-  -moz-transform: scale(0.93);
-  -ms-transform: scale(0.93);
-  -o-transform: scale(0.93);
-}
 .features .icon .fa {
-  color: #2e4153;
+  color: #fff;
   font-size: 48px;
   display: table-cell;
   text-align: center;
@@ -495,23 +489,49 @@ thead tr th {
 .features .title {
   margin-bottom: 50px;
 }
-.features .content {
+.features .item {
   padding: 10px;
+  color: #fff;
 }
-.features .content .title {
-  color: #2e4153;
-  font-size: 18px;
-  margin-top: 0;
-  margin-bottom: 10px;
+.features .item .title {
+  padding: 25px 5px;
+  font-size: 28px;
+  margin: 0;
 }
-.features .content p {
+.features .item p {
   font-weight: 300;
+  font-size: 20px;
+  padding: 0 15px;
+  margin: 0;
+}
+.features .content {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.features .feature-cogs .content {
+  background-image: url('../img/cogs.jpg');
+}
+.features .feature-cloud .content {
+  background-image: url('../img/cloud.jpg');
+}
+.features .feature-safe .content {
+  background-image: url('../img/safe.jpg');
+}
+.features .feature-privacy .content {
+  background-image: url('../img/privacy.jpg');
+}
+.features .feature-code .content {
+  background-image: url('../img/code.jpg');
+}
+.features .content-overlay {
+  background-color: rgba(0, 0, 0, 0.45);
+  min-height: 290px;
 }
 .terms-privacy {
   padding: 100px 0 10px 0;
 }
 .install {
-  padding: 80px 0;
+  padding: 50px 0;
 }
 .install h2 {
   margin-bottom: 0;
@@ -597,7 +617,7 @@ thead tr th {
 }
 .comparison {
   color: #fff;
-  padding: 80px 0;
+  padding: 50px 0;
   background-color: #2e4153;
   background-image: url('../img/background2.jpg');
   background-size: cover;
@@ -670,7 +690,7 @@ thead tr th {
 }
 .use-cases {
   color: #fff;
-  padding: 80px 0;
+  padding: 50px 0 20px 0;
   background-color: #2e4153;
   background-image: url('../img/background1.jpg');
   background-size: cover;
@@ -682,7 +702,6 @@ thead tr th {
 }
 .use-cases .item {
   background: rgba(11, 35, 58, 0.72);
-  padding: 30px 30px 15px 30px;
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
@@ -694,18 +713,24 @@ thead tr th {
   margin-right: 10px;
 }
 .use-cases .item .case {
-  margin-top: 0;
-  font-size: 18px;
-  margin-bottom: 15px;
+  padding: 18px 5px;
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
 }
 .use-cases .item .use-case {
+  padding: 0 15px;
   font-weight: 300;
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
 }
 .use-cases .item img {
   width: 100%;
   max-width: 440px;
   margin: 0 auto;
   display: block;
+  padding: 15px 20px 20px 20px;
 }
 .editor {
   width: 100%;
@@ -722,13 +747,12 @@ thead tr th {
   overflow-y: hidden !important;
 }
 .faq {
-  padding: 80px 0;
+  padding: 50px 0;
 }
 .faq .title {
   margin-bottom: 50px;
 }
 .faq .item {
-  padding: 30px;
   background: #e4edff;
   margin-bottom: 30px;
   -moz-background-clip: padding;
@@ -737,30 +761,33 @@ thead tr th {
   border-bottom: 3px solid rgba(102, 144, 184, 0.45);
 }
 .faq .item .question {
-  margin-top: 0;
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-.faq .item .question .fa {
-  margin-right: 10px;
-  color: #2e4153;
+  padding: 20px 5px;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
 }
 .faq .item .answer {
+  padding: 0 20px 20px 20px;
   color: #333;
   font-weight: 300;
+  margin: 0;
+  font-size: 16px;
+  text-align: center;
 }
 .faq .more {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .faq .more h4.title {
+  margin-top: 0;
   margin-bottom: 15px;
   color: #999999;
-  font-size: 18px;
+  font-size: 22px;
 }
 .faq .more .btn {
   font-size: 18px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 0;
 }
 .faq .more .btn .fa {
   margin-left: 5px;
@@ -856,6 +883,9 @@ thead tr th {
 }
 .tutorial {
   padding-top: 95px;
+}
+.tutorial h2 {
+  font-size: 30px;
 }
 .tutorial .tutorial-title,
 .tutorial .tutorial-header {

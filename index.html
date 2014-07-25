@@ -70,70 +70,47 @@ header_class: header-top
   <section id="features" class="features section">
     <div class="container">
       <div class="row">
-        <h2 class="title text-center sr-only">Features</h2>
-        <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-          <div class="icon">
-            <i class="fa fa-cloud"></i>
-          </div>
+        <h2 class="title text-center">Features</h2>
+        <div class="item feature-cogs col-md-6 col-sm-6 col-xs-12 text-center">
           <div class="content">
-            <h3 class="title">Cloud Network</h3>
-            <p>Create a self-hosted secure cloud network for LAN-like connectivity between remote users.</p>
+            <div class="content-overlay">
+              <h3 class="title">Easy Configuration</h3>
+              <p>All user and server configuration is done from a simple web interface. Easily manage multiple organizations, users and vpn servers.</p>
+            </div>
           </div>
         </div>
-        <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-          <div class="icon">
-            <i class="fa fa-cogs"></i>
-          </div>
+        <div class="item feature-safe col-md-6 col-sm-6 col-xs-12 text-center">
           <div class="content">
-            <h3 class="title">Easy Configuration</h3>
-            <p>All user and server configuration is done from a simple web interface.</p>
-          </div>
-        </div>
-        <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-          <div class="icon">
-            <i class="fa fa-users"></i>
-          </div>
-          <div class="content">
-            <h3 class="title">User Management</h3>
-            <p>Easily manage multiple organizations, users and vpn servers.</p>
-          </div>
-        </div>
-        <div class="item col-md-3 col-sm-6 col-xs-12 text-center">
-          <div class="icon">
-            <i class="fa fa-shield"></i>
-          </div>
-          <div class="content">
-            <h3 class="title">Security</h3>
-            <p>All traffic between your computer and the pritunl server is encrypted.</p>
+            <div class="content-overlay">
+              <h3 class="title">Security</h3>
+              <p>All traffic between your computer and the pritunl server is encrypted. Optional two-step authentication is available using Google Authenticator for improved security.</p>
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="item col-md-4 col-sm-6 col-xs-12 text-center">
-          <div class="icon">
-            <i class="fa fa-eye-slash"></i>
-          </div>
+        <div class="item feature-cloud col-md-4 col-sm-12 col-xs-12 text-center">
           <div class="content">
-            <h3 class="title">Anonymity</h3>
-            <p>Improve your online anonymity, all your internet traffic will be routed through your vpn server.</p>
+            <div class="content-overlay">
+              <h3 class="title">Cloud Networking</h3>
+              <p>Create a self-hosted secure cloud network for LAN-like connectivity between remote users.</p>
+            </div>
           </div>
         </div>
-        <div class="item col-md-4 col-sm-6 col-xs-12 text-center">
-          <div class="icon">
-            <i class="fa fa-lock"></i>
-          </div>
+        <div class="item feature-privacy col-md-4 col-sm-6 col-xs-12 text-center">
           <div class="content">
-            <h3 class="title">Two-Step Authentication</h3>
-            <p>Optional two-step authentication is available using Google Authenticator for improved security.</p>
+            <div class="content-overlay">
+              <h3 class="title">Anonymity</h3>
+              <p>Improve your online anonymity, all your internet traffic will be routed through your vpn server.</p>
+            </div>
           </div>
         </div>
-        <div class="item col-md-4 col-sm-6 col-xs-12 text-center">
-          <div class="icon">
-            <i class="fa fa-code"></i>
-          </div>
+        <div class="item feature-code col-md-4 col-sm-6 col-xs-12 text-center">
           <div class="content">
-            <h3 class="title">REST API</h3>
-            <p>Easily integrate and configure Pritunl with other services using the REST API.</p>
+            <div class="content-overlay">
+              <h3 class="title">REST API</h3>
+              <p>Easily integrate and configure Pritunl with other services using the REST API.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -143,26 +120,26 @@ header_class: header-top
     <div class="container">
       <div class="row">
         <h2 class="title text-center">Use Cases</h2>
-        <div class="use-cases-col col-md-6 col-sm-6 col-xs-12">
+        <div class="use-cases-col col-md-6 col-sm-12 col-xs-12">
           <div class="item">
-            <h3 class="case title"><i class="fa fa-check-square"></i>Build a cloud network in minutes</h3>
-            <p class="use-case">Easily create a self-hosted cloud network to allow for vpn networking between users to securely share resources.</p>
+            <h3 class="case title">Build a cloud network</h3>
+            <p class="use-case">Create a self-hosted cloud network to allow for vpn networking between users to securely share resources.</p>
             <img src="img/use_cloud.svg" alt="Use case"/>
           </div>
           <div class="item">
-            <h3 class="case title"><i class="fa fa-check-square"></i>Virtualize your office</h3>
-            <p class="use-case">Provide easy and secure remote access to the local office resources to remote users.</p>
-            <img src="img/use_lan.svg" alt="Use case"/>
-          </div>
-        </div>
-        <div class="use-cases-col col-md-6 col-sm-6 col-xs-12">
-          <div class="item">
-            <h3 class="case title"><i class="fa fa-check-square"></i>Remote access to servers</h3>
+            <h3 class="case title">Remote access to servers</h3>
             <p class="use-case">Create a gateway to your AWS VPC or VPS private network to securly access your servers.</p>
             <img src="img/use_vpc.svg" alt="Use case"/>
           </div>
+        </div>
+        <div class="use-cases-col col-md-6 col-sm-12 col-xs-12">
           <div class="item">
-            <h3 class="case title"><i class="fa fa-check-square"></i>Improve security and privacy</h3>
+            <h3 class="case title">Virtualize your office</h3>
+            <p class="use-case">Provide easy and secure remote access to the resources and services on the local network to remote users.</p>
+            <img src="img/use_lan.svg" alt="Use case"/>
+          </div>
+          <div class="item">
+            <h3 class="case title">Improve security and privacy</h3>
             <p class="use-case">Protect your internet traffic when connected to WiFi or while on an untrusted network.</p>
             <img src="img/use_isp.svg" alt="Use case"/>
           </div>
@@ -174,23 +151,23 @@ header_class: header-top
     <div class="container">
       <div class="row">
         <h2 class="title text-center">Frequently Asked Questions</h2>
-        <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+        <div class="faq-col col-md-6 col-sm-12 col-xs-12">
           <div class="item">
-            <h3 class="question title"><i class="fa fa-question-circle"></i>What VPN modes are available?</h3>
+            <h3 class="question title">What VPN modes are available?</h3>
             <p class="answer">Three modes are available to route all internet traffic, route only traffic to specified subnets or route only VPN traffic.</p>
           </div>
           <div class="item">
-            <h3 class="question title"><i class="fa fa-question-circle"></i>How can bugs be reported?</h3>
+            <h3 class="question title">How can bugs be reported?</h3>
             <p class="answer">Bugs can be reported on the <a href="//github.com/zachhuff386/pritunl/issues">GitHub Issues</a> page or with the contact widget below.</p>
           </div>
         </div>
-        <div class="faq-col col-md-6 col-sm-6 col-xs-12">
+        <div class="faq-col col-md-6 col-sm-12 col-xs-12">
           <div class="item">
-            <h3 class="question title"><i class="fa fa-question-circle"></i>What does enterprise subscription include?</h3>
+            <h3 class="question title">What does the subscription include?</h3>
             <p class="answer">The $2.5 subscription includes bandwidth graphs, user searching, detailed user information, static user IP's and Postmark integration for emailing temporary key links.</p>
           </div>
           <div class="item">
-            <h3 class="question title"><i class="fa fa-question-circle"></i>What is the default username and password?</h3>
+            <h3 class="question title">What are the default credentials?</h3>
             <p class="answer">The default username and password is "admin".</p>
           </div>
         </div>
