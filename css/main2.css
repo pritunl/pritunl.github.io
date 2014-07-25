@@ -379,8 +379,8 @@ h2 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .promo .laptop {
-  padding-top: 78px;
-  padding-bottom: 78px;
+  padding-top: 83px;
+  padding-bottom: 105px;
   padding-left: 0;
   padding-right: 0;
   position: relative;
@@ -419,8 +419,8 @@ h2 {
   border-bottom-left-radius: 2px;
   margin: 0px auto;
   padding-top: 21px;
-  width: 560px;
-  height: 377px;
+  width: 510px;
+  height: 345px;
   overflow: hidden;
 }
 .promo .laptop .laptop-holder-inner .controls {
