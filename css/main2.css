@@ -326,7 +326,7 @@ h2 {
 }
 .promo .overview .summary {
   margin: 0 auto 50px auto;
-  width: 475px;
+  width: 485px;
   padding: 0;
   white-space: nowrap;
 }
@@ -990,7 +990,7 @@ a.anchor.api-anchor {
     text-align: center;
   }
   .promo .overview .summary {
-    width: 440px;
+    width: 445px;
   }
   .promo .overview .summary li {
     font-size: 18px;
@@ -1042,7 +1042,7 @@ a.anchor.api-anchor {
     white-space: normal;
   }
 }
-@media (max-width: 465px) {
+@media (max-width: 470px) {
   .promo .overview .summary {
     padding: 0 5px;
     width: auto;
