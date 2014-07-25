@@ -162,8 +162,8 @@ h2 {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
   border-radius: 4px;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-transition: 0.25s background ease-in-out;
   transition: 0.25s background ease-in-out;
@@ -260,8 +260,8 @@ h2 {
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   -webkit-box-shadow: 0 0 0;
   -moz-box-shadow: 0 0 0;
@@ -357,8 +357,8 @@ h2 {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: left top;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   display: block;
   width: 170px;
@@ -464,8 +464,8 @@ h2 {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   display: table;
   margin: 0 auto;
@@ -696,8 +696,8 @@ h2 {
 }
 .use-cases .item {
   background: rgba(11, 35, 58, 0.72);
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   border-top: 3px solid rgba(255, 255, 255, 0.34);
   position: relative;
@@ -749,8 +749,8 @@ h2 {
 .faq .item {
   background: #e4edff;
   margin-bottom: 30px;
-  -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
   background-clip: padding-box;
   border-bottom: 3px solid rgba(102, 144, 184, 0.45);
 }
