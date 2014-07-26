@@ -417,14 +417,14 @@ h2 {
   -o-border-bottom-left-radius: 2px;
   border-bottom-left-radius: 2px;
   margin: 0px auto;
-  padding-top: 21px;
+  padding-top: 18px;
   width: 485px;
-  height: 329px;
+  height: 326px;
   overflow: hidden;
 }
 .promo .laptop .laptop-holder-inner .controls {
   position: absolute;
-  margin-top: -16px;
+  margin-top: -14px;
 }
 .promo .laptop .laptop-holder-inner .control-circle {
   -webkit-border-radius: 50%;
