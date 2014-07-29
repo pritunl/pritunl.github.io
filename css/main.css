@@ -629,7 +629,7 @@ h2 {
   float: none;
   text-align: center;
   vertical-align: middle;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.3);
   padding: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.49);
 }
@@ -691,7 +691,7 @@ h2 {
   margin-bottom: 50px;
 }
 .use-cases .item {
-  background: rgba(11, 35, 58, 0.72);
+  background: rgba(11, 35, 58, 0.3);
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
