@@ -591,10 +591,6 @@ h2 {
   padding-top: 30px;
   text-align: center;
 }
-.install .server-doc {
-  padding-top: 20px;
-  text-align: center;
-}
 .install .client img {
   margin-bottom: 10px;
 }
@@ -604,6 +600,10 @@ h2 {
 .install .btn {
   font-size: 18px;
   padding: 10px 18px;
+}
+.install .install-rpm {
+  margin-top: 10px;
+  text-align: center;
 }
 .comparison {
   color: #fff;
