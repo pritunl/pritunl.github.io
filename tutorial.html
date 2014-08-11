@@ -536,7 +536,7 @@ title: Pritunl - Tutorial
                   1
                 </div>
                 <div class="tutorial-point-description title">
-                  Python 2.7 is required to run pritunl
+                  CentOS 7 is required to run pritunl
                 </div>
               </div>
             </div>
@@ -548,7 +548,7 @@ title: Pritunl - Tutorial
                   2
                 </div>
                 <div class="tutorial-point-description title">
-                  Install devel packages <pre>yum install gcc make openssl-devel lzo-devel pam-devel</pre>
+                  Download EPEL <pre>wget http://dl.fedoraproject.org/pub/epel/beta/7/x86_64/epel-release-7-0.2.noarch.rpm</pre>
                 </div>
               </div>
             </div>
@@ -560,7 +560,7 @@ title: Pritunl - Tutorial
                   3
                 </div>
                 <div class="tutorial-point-description title">
-                  Get source <pre>curl -O http://swupdate.openvpn.org/community/releases/openvpn-2.3.2.tar.gz</pre>
+                  Install EPEL <pre>yum install -y epel-release-7-0.2.noarch.rpm</pre>
                 </div>
               </div>
             </div>
@@ -572,7 +572,7 @@ title: Pritunl - Tutorial
                   4
                 </div>
                 <div class="tutorial-point-description title">
-                  Extract openvpn source <pre>tar zxf openvpn-2.3.2.tar.gz</pre>
+                  Download pritunl <pre>wget http://pritunl.com/bin/pritunl-0.10.12-1.el7.centos.x86_64.rpm</pre>
                 </div>
               </div>
             </div>
@@ -584,7 +584,7 @@ title: Pritunl - Tutorial
                   5
                 </div>
                 <div class="tutorial-point-description title">
-                  Change to source directory <pre>cd openvpn-2.3.2</pre>
+                  Install pritunl <pre>yum install -y pritunl-0.10.12-1.el7.centos.x86_64.rpm</pre>
                 </div>
               </div>
             </div>
@@ -596,7 +596,7 @@ title: Pritunl - Tutorial
                   6
                 </div>
                 <div class="tutorial-point-description title">
-                  Configure openvpn source <pre>./configure --prefix=/usr/local</pre>
+                  Start pritunl service <pre>systemctl start pritunl.service</pre>
                 </div>
               </div>
             </div>
@@ -608,55 +608,7 @@ title: Pritunl - Tutorial
                   7
                 </div>
                 <div class="tutorial-point-description title">
-                  Build openvpn <pre>make</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="tutorial-point tutorial-table col-md-12 col-sm-12 col-xs-12">
-              <div class="tutorial-point-container">
-                <div class="tutorial-point-label tutorial-cell title">
-                  8
-                </div>
-                <div class="tutorial-point-description title">
-                  Install openvpn <pre>make install</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="tutorial-point tutorial-table col-md-12 col-sm-12 col-xs-12">
-              <div class="tutorial-point-container">
-                <div class="tutorial-point-label tutorial-cell title">
-                  9
-                </div>
-                <div class="tutorial-point-description title">
-                  Install pritunl <pre>pip install pritunl</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="tutorial-point tutorial-table col-md-12 col-sm-12 col-xs-12">
-              <div class="tutorial-point-container">
-                <div class="tutorial-point-label tutorial-cell title">
-                  10
-                </div>
-                <div class="tutorial-point-description title">
-                  Start pritunl service <pre>start pritunl</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="tutorial-point tutorial-table col-md-12 col-sm-12 col-xs-12">
-              <div class="tutorial-point-container">
-                <div class="tutorial-point-label tutorial-cell title">
-                  11
-                </div>
-                <div class="tutorial-point-description title">
-                  Use <pre>pip install --upgrade pritunl</pre> to update when a new version is released. When upgrading with pip <pre>/etc/pritunl.conf</pre> will be overwritten so a backup will need to be created before upgrading
+                  Enable pritunl service to autostart <pre>systemctl enable pritunl.service</pre>
                 </div>
               </div>
             </div>
@@ -1185,7 +1137,7 @@ title: Pritunl - Tutorial
                   3
                 </div>
                 <div class="tutorial-point-description title">
-                  Download the Pritunl <a href="/client/pritunl_client-latest.exe">Windows Client</a>
+                  Download the Pritunl <a href="/bin/pritunl_client-latest.exe">Windows Client</a>
                 </div>
               </div>
             </div>
