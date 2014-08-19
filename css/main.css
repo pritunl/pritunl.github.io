@@ -993,6 +993,7 @@ a.anchor.api-anchor {
     text-align: center;
   }
   .promo .overview .summary {
+    padding: 0 10px;
     width: 445px;
   }
   .promo .overview .summary li {
@@ -1047,7 +1048,6 @@ a.anchor.api-anchor {
 }
 @media (max-width: 470px) {
   .promo .overview .summary {
-    padding: 0 5px;
     width: auto;
     white-space: normal;
   }
