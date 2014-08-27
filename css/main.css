@@ -119,6 +119,12 @@ h2 {
   background-repeat: repeat;
   background-position: left top;
 }
+.navbar-top {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 .header {
   padding: 15px 0;
   background: #fff;
@@ -989,6 +995,12 @@ a.anchor.api-anchor {
   top: -71px;
 }
 @media (max-width: 767px) {
+  .navbar-top {
+    position: absolute;
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
   .promo .overview {
     text-align: center;
   }
@@ -1055,6 +1067,16 @@ a.anchor.api-anchor {
 @media (max-width: 414px) {
   .promo .overview h2 {
     font-size: 28px;
+  }
+}
+@media (max-width: 330px) {
+  .comparison .row .col.name {
+    font-size: 12px;
+  }
+}
+@media (max-width: 310px) {
+  .comparison .row .col.name {
+    font-size: 10px;
   }
 }
 

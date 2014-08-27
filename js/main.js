@@ -161,7 +161,7 @@ jQuery(document).ready(function($) {
         !$('.navbar-collapse').hasClass('in')) {
       $('.header').addClass('header-top');
     }
-    else {
+    else if ($('.header').css('position') !== 'absolute') {
       $('.header').removeClass('header-top');
     }
 
