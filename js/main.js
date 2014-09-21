@@ -281,11 +281,11 @@ jQuery(document).ready(function($) {
     if ($('.server-sfo1').hasClass('btn-primary')) {
       region = 'sfo1';
     }
-    else if ($('.server-nyc2').hasClass('btn-primary')) {
-      region = 'nyc2';
+    else if ($('.server-nyc3').hasClass('btn-primary')) {
+      region = 'nyc3';
     }
-    else if ($('.server-ams2').hasClass('btn-primary')) {
-      region = 'ams2';
+    else if ($('.server-ams3').hasClass('btn-primary')) {
+      region = 'ams3';
     }
     else if ($('.server-sgp1').hasClass('btn-primary')) {
       region = 'sgp1';
