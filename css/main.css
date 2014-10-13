@@ -788,6 +788,13 @@ h2 {
 .faq .more .btn .fa {
   margin-left: 5px;
 }
+.faq .more .hipchat-help {
+  margin-top: 10px;
+  padding-top: 14px;
+}
+.faq .more .hipchat-help img {
+  width: 143px;
+}
 .footer {
   background-color: #2e4153;
   color: #fff;
