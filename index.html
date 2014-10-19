@@ -344,17 +344,14 @@ header_class: header-top
       </div>
     </div>
   </section>
-  <section id="install" class="install section">
+  <section class="install section">
+    <a id="install" class="anchor"></a>
     <div class="container">
       <div class="row server-auto">
         <h2 class="title text-center"><a href="https://www.digitalocean.com/?refcode=f2da095bcc37" target="_blank"><img class="digital-ocean-logo" src="img/digital_ocean2.png" alt=""/> DigitalOcean Automated Install</a></h2>
         <div class="item col-md-12 col-sm-12 col-xs-12">
-          <div class="alert alert-info" role="alert">Automatically launch a Pritunl droplet. To use open the API settings in your DigitalOcean account and generate a token with read and write access.</div>
-          <img class="api-image" src="img/api_key.png" alt="Create DigitalOcean API Key"/>
+          <div class="alert alert-info" role="alert">Automatically launch a Pritunl droplet. To use select a region to launch your Pritunl server and when prompted authorize Pritunl to create your server.</div>
           <div class="server-alert alert alert-warning" role="alert"></div>
-          <div class="api-key-container">
-            <input type="text" class="api-key form-control" placeholder="Enter DigitalOcean API Key" data-toggle="tooltip" title="DigitalOcean API Key"/>
-          </div>
           <button class="server-region server-sfo1 btn btn-lg btn-primary">San Francisco</button><button class="server-region server-nyc3 btn btn-lg btn-default">New York</button><button class="server-region server-ams3 btn btn-lg btn-default">Amsterdam</button><button class="server-region server-sgp1 btn btn-lg btn-default">Singapore</button><button class="server-region server-lon1 btn btn-lg btn-default">London</button>
           <button class="server-create btn btn-lg btn-success">Launch Pritunl Server</button>
         </div>
