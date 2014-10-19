@@ -994,7 +994,7 @@ h2 {
 
 a.anchor {
   position: relative;
-  top: -50px;
+  top: -120px;
   visibility: hidden;
   display: block;
 }
@@ -1002,6 +1002,9 @@ a.anchor.api-anchor {
   top: -71px;
 }
 @media (max-width: 767px) {
+  a.anchor {
+    top: -20px;
+  }
   .navbar-top {
     position: absolute;
     right: auto;
