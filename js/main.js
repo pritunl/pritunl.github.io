@@ -267,16 +267,18 @@ jQuery(document).ready(function($) {
     });
   };
 
+  if (document.URL.indexOf('error=oad') !== -1) {
+    updateData('Automated install was unable to get permission to ' +
+      'create server, please try again.', 'alert-danger', null, true, true);
+  }
+  else if (document.URL.indexOf('error=err') !== -1) {
+    updateData('Automated install was unable to create server, ' +
+      'please try again later.', 'alert-danger', null, true, true);
+  }
+
   $('.server-create').click(function() {
     var region;
-    var apiKey = $('.api-key').val();
-    if (!apiKey) {
-      $('.api-key').addClass('error');
-      return;
-    }
-    $('.api-key').removeClass('error');
     $('.server-region, .server-create').attr('disabled', 'disabled');
-    $('.api-key-container').slideUp(250);
 
     if ($('.server-sfo1').hasClass('btn-primary')) {
       region = 'sfo1';
@@ -298,7 +300,6 @@ jQuery(document).ready(function($) {
       type: 'POST',
       contentType: 'application/json',
       data: JSON.stringify({
-        api_key: apiKey,
         region: region
       }),
       xhrFields: {
@@ -306,17 +307,7 @@ jQuery(document).ready(function($) {
       },
       crossDomain: true,
       success: function(data) {
-        id = data.id;
-        if (data.status) {
-          updateDataPending(data.region);
-          poll();
-        }
-        else if (data.error) {
-          updateData(data.error, 'alert-danger', data.region);
-        }
-        else if (data.success) {
-          updateData(data.success, 'alert-success', data.region);
-        }
+        window.location.replace(data.oauth_url);
       },
       error: function(xhr) {
         var data = xhr.responseJSON || {};
