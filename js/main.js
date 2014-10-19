@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
       return;
     }
     evt.preventDefault();
-    $('body').scrollTo(target, 800, {offset: -80}, {easing: 'easeOutQuad'});
+    $('body').scrollTo(target, 800, {}, {easing: 'easeOutQuad'});
     if ($('.navbar-collapse').hasClass('in')) {
       $('.navbar-collapse').removeClass('in').addClass('collapse');
     }
