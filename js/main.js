@@ -399,4 +399,37 @@ jQuery(document).ready(function($) {
 
     setTimeout(diagram3GlowOn, 2500);
   }, 500);
+
+
+  var featureDisGlowOn = function() {
+    $('.feature-dis .feature-preglow').css('opacity', '1');
+    setTimeout(function() {
+      $('.feature-dis .feature-glow').css('opacity', '1');
+      setTimeout(featureDisGlowOff, 4000);
+    }, 3000);
+  };
+  var featureDisGlowOff = function() {
+    $('.feature-dis .feature-glow').addClass('fast');
+    $('.feature-dis .feature-preglow').addClass('fast');
+    setTimeout(function() {
+      $('.feature-dis .feature-preglow').css('opacity', '0');
+      $('.feature-dis .feature-glow').css('opacity', '0');
+      setTimeout(function() {
+        $('.feature-dis .feature-glow').removeClass('fast');
+        $('.feature-dis .feature-preglow').removeClass('fast');
+        setTimeout(featureDisGlowOn, 500);
+      }, 1500);
+    }, 500);
+  };
+  setTimeout(featureDisGlowOn, 500);
+
+  var featureSimpleGlowOn = function() {
+    $('.feature-simple .feature-after').css('opacity', '1');
+    setTimeout(featureSimpleGlowOff, 6000);
+  };
+  var featureSimpleGlowOff = function() {
+    $('.feature-simple .feature-after').css('opacity', '0');
+    setTimeout(featureSimpleGlowOn, 3000);
+  };
+  setTimeout(featureSimpleGlowOn, 500);
 });
