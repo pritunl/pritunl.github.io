@@ -428,12 +428,29 @@ thead tr th {
 }
 .promo {
   color: #fff;
-/*  background-image: url('../img/background0.jpg');*/
-  background-color: rgb(46, 52, 62);
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background: linear-gradient(to right, rgb(30, 74, 135) 0px, rgb(101, 21, 177) 70%, rgb(96, 32, 158) 100%);
+  background: #3d2d9e;
+  background: -webkit-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1e4a87), color-stop(70%, #6515b1), color-stop(100%, #60209e));
+  background: -moz-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
+  background: -ms-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
+  background: -o-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
+  background: linear-gradient(to right, #1e4a87 0%, #6515b1 70%, #60209e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e4a87', endColorstr='#60209e', GradientType=1);
+}
+.promo-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/pritunl_background3.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .promo-video {
   display: none;
@@ -520,47 +537,146 @@ thead tr th {
   margin-top: 40px;
   margin-left: 160px;
 }
+.img-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.img-overlay-box {
+  position: relative;
+}
 .features {
   padding: 50px 0;
 }
+.features .title {
+  color: #2a2a2a;
+}
+.features .item p {
+  color: #636363;
+}
 .features .item {
-  padding: 0 30px;
+  text-align: center;
 }
 .features .item img {
   max-width: 100%;
   max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+.features.feature-simple {
+  background-color: #eef4fe;
+  background-image: url("../img/pritunl_pattern1.svg");
+  background-size: 190px;
+}
+.features.feature-simple .feature-after {
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -ms-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }
 .features .feature-desc {
   font-size: 26px;
   text-align: center;
   padding: 0 30px;
   margin-top: 20px;
+  position: relative;
 }
-.features .content {
+.features.feature-dis {
+  overflow: hidden;
+  padding: 0;
+  background-color: #242629;
+  background-image: url("../img/pritunl_pattern0.svg");
+  background-size: 120px;
+}
+.features.feature-dis .feature-desc-content {
+  position: relative;
+}
+.features.feature-dis .feature-desc-background {
+  width: 3000px;
+  height: 3000px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+  background-color: #4e71d8;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 1500px auto;
+  background-image: url("../img/pritunl_background2.svg");
+}
+.features.feature-dis .feature-preglow {
+  opacity: 0;
+  -webkit-transition: opacity 4s ease-in-out;
+  -moz-transition: opacity 4s ease-in-out;
+  -ms-transition: opacity 4s ease-in-out;
+  -o-transition: opacity 4s ease-in-out;
+  transition: opacity 4s ease-in-out;
+}
+.features.feature-dis .feature-glow {
+  opacity: 0;
+  -webkit-transition: opacity 1.5s ease-in-out;
+  -moz-transition: opacity 1.5s ease-in-out;
+  -ms-transition: opacity 1.5s ease-in-out;
+  -o-transition: opacity 1.5s ease-in-out;
+  transition: opacity 1.5s ease-in-out;
+}
+.features.feature-dis .feature-glow.fast,
+.features.feature-dis .feature-preglow.fast {
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.features.feature-dis .title {
+  color: #fff;
+}
+.features.feature-dis h4.title {
+  font-size: 24px;
+  margin: 5px 0;
+}
+.features.feature-dis .item p {
+  padding: 0 10px;
+  font-size: 20px;
+  color: #c7eeff;
+}
+.features.feature-dis .feature-img {
+  padding: 20px;
+}
+.features.feature-list {
+/*  background: #e4f5ff;
+  background: -webkit-linear-gradient(left, #e4f5ff 0%, #e7dcff 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #e4f5ff), color-stop(100%, #e7dcff));
+  background: -moz-linear-gradient(left, #e4f5ff 0%, #e7dcff 100%);
+  background: -ms-linear-gradient(left, #e4f5ff 0%, #e7dcff 100%);
+  background: -o-linear-gradient(left, #e4f5ff 0%, #e7dcff 100%);
+  background: linear-gradient(to right, #e4f5ff 0%, #e7dcff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e4f5ff', endColorstr='#e7dcff', GradientType=1);*/
+  background: url("../img/pritunl_background0.svg");
   background-size: cover;
   background-repeat: no-repeat;
 }
-.features .feature-cogs .content {
-  background-image: url('../img/cogs.jpg');
+.features.feature-list {
+  font-size: 20px;
 }
-.features .feature-cloud .content {
-  background-image: url('../img/cloud.jpg');
+.features.feature-list .item {
+  font-size: 20px;
 }
-.features .feature-safe .content {
-  background-image: url('../img/safe.jpg');
+.features.feature-list .item .list-img {
+  position: relative;
+  display: inline-block;
+  padding: 27px 25px 13px;
+  background-color: rgba(202, 204, 206, 0.64);
+  border-radius: 50%;
 }
-.features .feature-privacy .content {
-  background-image: url('../img/privacy.jpg');
+.features.feature-list .item .title {
+  font-size: 24px;
+  margin: 8px 0;
 }
-.features .feature-code .content {
-  background-image: url('../img/code.jpg');
-}
-.features .content-overlay {
-  background-color: rgba(0, 0, 0, 0.45);
-  min-height: 290px;
-}
-.features .content-overlay:hover {
-  background-color: rgba(0, 0, 0, 0.35);
+.features.feature-list .item img {
+  width: 80%;
+  height: 80%;
 }
 .terms-privacy {
   padding: 100px 0 10px 0;
@@ -1034,7 +1150,20 @@ a.anchor {
 a.anchor.api-anchor {
   top: -71px;
 }
+@media (max-width: 991px) {
+  .features.feature-dis h4.title {
+    padding: 0 3px;
+    font-size: 16px;
+  }
+  .features.feature-dis .item p {
+    padding: 0 5px;
+    font-size: 14px;
+  }
+}
 @media (max-width: 767px) {
+  .features.feature-dis .feature-img .title {
+    display: none;
+  }
   .header.header-top {
     padding: 20px 0px;
   }
@@ -1120,6 +1249,9 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 768px) {
+  .features.feature-dis .feature-desc h2.title {
+    display: none;
+  }
   .promo .overview .diagram-box {
     padding: 0;
   }
