@@ -3,14 +3,9 @@ layout: default
 title: Pritunl - Enterprise VPN Server
 header_class: header-top
 ---
-<!--   <div class="promo-video">
-    <video loop="loop" preload="auto" autoplay>
-      <source src="video/promo.m4v" type="video/mp4">
-      <source src="video/promo.webm" type="video/webm">
-    </video>
-  </div> -->
   <section class="promo section offset-header">
     <a id="promo" class="anchor"></a>
+    <div class="promo-background"></div>
     <div class="container">
       <div class="row">
         <div class="overview col-md-12 col-sm-12 col-xs-12">
@@ -38,21 +33,101 @@ header_class: header-top
       </div>
     </div>
   </section>
-  <section class="features section">
+  <section class="features feature-simple section">
     <a id="features" class="anchor"></a>
     <div class="container">
       <div class="row">
         <h2 class="title text-center">Simple Virtual Private Networks</h2>
-        <div class="item feature-before col-md-6 col-sm-12 col-xs-12">
-          <img src="img/pritunl_diagram0_before.svg" alt=""/>
-        </div>
-        <div class="item feature-after col-md-6 col-sm-12 col-xs-12">
-          <img src="img/pritunl_diagram0_after.svg" alt=""/>
+        <div class="item col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+          <div class="img-overlay-box">
+            <img class="feature-before" src="img/pritunl_diagram0_before.svg" alt=""/>
+            <img class="feature-after img-overlay" src="img/pritunl_diagram0_after.svg" alt=""/>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="item feature-desc col-md-12 col-sm-12 col-xs-12">
           <p>Create complex site-to-site links, provide local network access to remote users and protect network traffic over public connections all from a simple web interface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="features feature-list section">
+    <div class="container">
+      <div class="row">
+        <div class="item col-md-12 col-sm-12 col-xs-12">
+          TODO Install button here
+        </div>
+        <div class="item col-md-4 col-sm-4 col-xs-12">
+          <div class="list-img">
+            <img src="img/pritunl_diagram_free.svg" alt=""/>
+          </div>
+          <h3 class="title">Free to Use</h3>
+          <p>Setup a Pritunl server for free without registration or providing a credit card, additional features are available with paid subscriptions.</p>
+        </div>
+        <div class="item col-md-4 col-sm-4 col-xs-12">
+          <div class="list-img">
+            <img src="img/pritunl_diagram_open.svg" alt=""/>
+          </div>
+          <h3 class="title">Open Source</h3>
+          <p>All source code for Pritunl is publicly available on GitHub. To allow anyone to evaluate the source code to ensure that it is secure.</p>
+        </div>
+        <div class="item col-md-4 col-sm-4 col-xs-12">
+          <div class="list-img">
+            <img src="img/pritunl_diagram_conf.svg" alt=""/>
+          </div>
+          <h3 class="title">REST API</h3>
+          <p>Easily integrate and configure Pritunl with other services using the REST API. Documentation is available in the API section.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item col-md-4 col-sm-4 col-xs-12">
+          <div class="list-img">
+            <img src="img/pritunl_diagram_api.svg" alt=""/>
+          </div>
+          <h3 class="title">Easy Configuration</h3>
+          <p>All configuration is done from a web interface allowing easy management of large organizations and complex configurations.</p>
+        </div>
+        <div class="item col-md-4 col-sm-4 col-xs-12">
+          <div class="list-img">
+            <img src="img/pritunl_diagram_secure.svg" alt=""/>
+          </div>
+          <h3 class="title">Security</h3>
+          <p>All traffic between clients and the server is encrypted. Optional two-step authentication is available using Google Authenticator.</p>
+        </div>
+        <div class="item col-md-4 col-sm-4 col-xs-12">
+          <div class="list-img">
+            <img src="img/pritunl_diagram_vpn.svg" alt=""/>
+          </div>
+          <h3 class="title">OpenVPN Protocol</h3>
+          <p>Pritunl is built with the OpenVPN protocol and any existing client that supports OpenVPN can be used to connect to a Pritunl server.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="features feature-dis section">
+    <div class="container">
+      <div class="row">
+        <div class="item feature-desc col-md-4 col-sm-6 col-xs-12">
+          <div class="feature-desc-background"></div>
+          <div class="feature-desc-content">
+            <h2 class="title text-center">Distributed and Scalable</h2>
+            <br>
+            <h4 class="title">Scale Easily</h3>
+            <p>Pritunl servers can be distributed across multiple servers and different datacenters for improved performance, high availability and automatic failover when an instance fails.</p>
+            <br>
+            <h4 class="title">Simple Distribution</h3>
+            <p>All server communication and interconnecting is done with MongoDB allowing servers to be quickly connected without having to modify firewalls for inter-server communication.</p>
+            <br>
+          </div>
+        </div>
+        <div class="item feature-img col-md-8 col-sm-6 col-xs-12">
+          <h2 class="title text-center">Distributed and Scalable</h2>
+          <div class="img-overlay-box">
+            <img src="img/pritunl_diagram1.svg" alt=""/>
+            <img class="feature-glow img-overlay" src="img/pritunl_diagram1_glow.svg" alt=""/>
+            <img class="feature-preglow img-overlay" src="img/pritunl_diagram1_preglow.svg" alt=""/>
+          </div>
         </div>
       </div>
     </div>
@@ -70,7 +145,7 @@ header_class: header-top
           </div>
           <div class="item">
             <h3 class="case title">Remote access to servers</h3>
-            <p class="use-case">Create a gateway to your AWS VPC or VPS private network to securly access your servers.</p>
+            <p class="use-case">Create a gateway to your AWS VPC or VPS private network to securely access your servers.</p>
             <img src="img/use_vpc.svg" alt="Use case"/>
           </div>
         </div>
