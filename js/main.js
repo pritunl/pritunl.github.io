@@ -317,6 +317,69 @@ jQuery(document).ready(function($) {
     });
   });
 
+  var sliderCur = 0;
+  var sliderUsed = false;
+  var sliderLeft = function(clicked) {
+    if (clicked) {
+      sliderUsed = true;
+    }
+    if (sliderCur <= 0) {
+      sliderCur = 5;
+      $('.slider').css('left', '-50%');
+      setTimeout(function() {
+        $('.slider').css('left', '-600%');
+      }, 700);
+    }
+    else {
+      sliderCur -= 1;
+      $('.slider').css('left', ((sliderCur * -100) - 100) + '%');
+    }
+  };
+  var sliderRight = function(clicked) {
+    if (clicked) {
+      sliderUsed = true;
+    }
+    if (sliderCur >= 5) {
+      sliderCur = 0;
+      $('.slider').css('left', '-650%');
+      setTimeout(function() {
+        $('.slider').css('left', '-100%');
+      }, 700);
+    }
+    else {
+      sliderCur += 1;
+      $('.slider').css('left', ((sliderCur * -100) - 100) + '%');
+    }
+  };
+  $('.slider-box .left').click(function() {
+    sliderLeft(true);
+  });
+  $('.slider-box .right').click(function() {
+    sliderRight(true);
+  });
+  $(document).on('keyup', function(evt) {
+    if (evt.which === 37) {
+      sliderLeft();
+    }
+    else if (evt.which === 39) {
+      sliderRight();
+    }
+  });
+
+  var sliderAuto = function() {
+    setTimeout(function() {
+      if (sliderUsed) {
+        sliderUsed = false;
+        setTimeout(sliderAuto, 8000);
+      }
+      else {
+        sliderRight();
+        sliderAuto();
+      }
+    }, 3000);
+  }
+  sliderAuto();
+
   $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
     type: 'GET',
     xhrFields: {
@@ -338,13 +401,8 @@ jQuery(document).ready(function($) {
     },
     error: function(xhr) {
       var data = xhr.responseJSON || {};
-      if (data.success) {
-        updateData(data.success, 'alert-success', data.region, true);
-      }
-      else {
-        updateData('Automated install is currently unavailable, please ' +
-          'try again later.', 'alert-danger', data.region, true, false);
-      }
+      updateData('Automated install is currently unavailable, please ' +
+        'try again later.', 'alert-danger', data.region, true, false);
     }
   });
 
