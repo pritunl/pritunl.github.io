@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Pritunl - Enterprise VPN Server
+title: Pritunl - Open Source Enterprise Distributed VPN Server
 header_class: header-top
 ---
   <section class="promo section offset-header">
@@ -10,9 +10,9 @@ header_class: header-top
       <div class="row">
         <div class="overview col-md-12 col-sm-12 col-xs-12">
           <h2 class="title">Enterprise Distributed VPN Server</h2>
-          <div class="summary">
+          <p class="summary">
             Virtualize your private networks across datacenters and provide simple remote access in minutes
-          </div>
+          </p>
         </div>
         <div class="diagram-box-outer col-md-12 col-sm-12 col-xs-12">
           <div class="diagram-box">
@@ -34,7 +34,6 @@ header_class: header-top
     </div>
   </section>
   <section class="features feature-simple section">
-    <a id="features" class="anchor"></a>
     <div class="container">
       <div class="row">
         <h2 class="title text-center">Simple Virtual Private Networks</h2>
@@ -110,16 +109,12 @@ header_class: header-top
           <div class="feature-desc-background"></div>
           <div class="feature-desc-content">
             <h2 class="title text-center">Distributed and Scalable</h2>
-            <br>
             <h4 class="title">Scale Easily</h4>
-            <p>Pritunl servers can be distributed across multiple servers and different datacenters for improved performance, high availability and automatic failover when an instance fails.</p>
-            <br>
+            <p>Pritunl servers can be easily distributed across multiple servers and different datacenters for improved performance, high availability and automatic failover when an instance fails.</p>
             <h4 class="title">Simple Distribution</h4>
             <p>All server communication and interconnecting is done with MongoDB allowing servers to be quickly connected without having to modify firewalls for inter-server communication.</p>
-            <br>
-            <h4 class="title">Reliability</h4>
+            <h4 class="title">High Availability</h4>
             <p>All Pritunl servers are equal in the cluster and can run independently in the event of other instances failing.</p>
-            <br>
           </div>
         </div>
         <div class="item feature-img col-md-8 col-sm-6 col-xs-12">
@@ -160,6 +155,10 @@ header_class: header-top
     <div class="container">
       <div class="row">
         <h2 class="title text-center">Subscription Plans</h2>
+        <div class="item text-center info col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+          <p>Pritunl is free to use with optional monthly subscriptions available to purchase for additional features. The enterprise license may be used on all the servers in the cluster and does not require a individual license for each server.</p>
+          <a id="contact" class="title btn btn-lg">Contact Support <i class="fa fa-comments-o"></i></a>
+        </div>
         <div class="item free col-md-3 col-md-offset-1-half col-sm-4 col-xs-12">
           <div class="item-box">
             <img src="img/pritunl_logo0.svg" alt=""/>
@@ -201,13 +200,6 @@ header_class: header-top
       </div>
     </div>
   </section>
-
-<!-- <div class="more text-center">
-  <h4 class="title">More questions?</h4>
-  <a id="contact" class="title btn btn-lg btn-theme">Get in touch<i class="fa fa-arrow-circle-o-down"></i></a><br>
-  <a class="hipchat-help title btn btn-lg btn-theme" href="http://www.hipchat.com/gUIVXOGUc" target="_blank"><img src="img/hipchat.png" alt=""/></a>
-</div> -->
-
   <section class="install section">
     <a id="install" class="anchor"></a>
     <div class="container">
@@ -223,6 +215,9 @@ header_class: header-top
       </div>
       <div class="row server">
         <h2 class="title text-center">Install</h2>
+        <div class="item feature-desc col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+          <p class="text-center">Pritunl is available on several Linux distributions and a client is available for Windows and Linux. After installing no setup is necessary simply open the web interface in your web browser and login with the default username and password "pritunl".</p>
+        </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
           <h3 class="title text-center">Ubuntu</h3>
 <div class="editor bash">apt-get install python-software-properties

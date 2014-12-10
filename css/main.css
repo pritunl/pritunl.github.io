@@ -64,11 +64,11 @@ thead tr th {
 .faq .item,
 .api-endpoint pre,
 .tutorial pre {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
 .social-icons {
   list-style: none;
@@ -168,14 +168,22 @@ thead tr th {
   font-size: 64px;
   color: #fff;
 }
+.header a,
+.header a:hover,
+.header a:focus,
+.header a:active {
+  border: 0;
+  outline: none;
+  text-decoration: none;
+}
 .header .main-nav button {
   background: #2e4153;
   color: #fff !important;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -594,6 +602,12 @@ thead tr th {
 .features.feature-dis .feature-img .title {
   transform: skewY(4deg);
 }
+.features.feature-dis .feature-desc {
+  padding: 10px 0 20px 0;
+}
+.features.feature-dis .feature-desc-content h4 {
+  margin-top: 20px;
+}
 .features.feature-dis .feature-desc-content {
   position: relative;
 }
@@ -638,11 +652,11 @@ thead tr th {
 }
 .features.feature-dis h4.title {
   font-size: 24px;
-  margin: 5px 0;
+  margin: 25px 0 5px 0;
 }
 .features.feature-dis .item p {
   padding: 0 10px;
-  font-size: 20px;
+  font-size: 18px;
   color: #c7eeff;
 }
 .features.feature-dis .feature-img {
@@ -705,7 +719,7 @@ thead tr th {
 .plans {
   position: relative;
   padding-top: 50px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   color: #fff;
   background: #2676e4;
   background: -webkit-linear-gradient(left, #2676e4 0%, #2ca18c 100%);
@@ -715,6 +729,10 @@ thead tr th {
   background: -o-linear-gradient(left, #2676e4 0%, #2ca18c 100%);
   background: linear-gradient(to right, #2676e4 0%, #2ca18c 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2676e4', endColorstr='#2ca18c', GradientType=1);
+}
+.plans p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.74);
 }
 .plans li {
   color: #eaeaea;
@@ -752,6 +770,11 @@ thead tr th {
   background-color: rgba(255, 255, 255, 0.11);
   padding: 25px 20px 20px 20px;
   text-align: center;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
 .plans .plan-list {
   list-style-type: none;
@@ -771,6 +794,31 @@ thead tr th {
 }
 .plans img {
   opacity: 0.85;
+}
+.plans .btn.title {
+  font-size: 20px;
+}
+.plans .btn {
+  margin-top: 10px;
+  color: #fff;
+  background: #3f5b9e;
+  background: -webkit-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3f5b9e), color-stop(100%, #1d5e78));
+  background: -moz-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
+  background: -ms-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
+  background: -o-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
+  background: linear-gradient(to right, #3f5b9e 0%, #1d5e78 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f5b9e', endColorstr='#1d5e78', GradientType=1);
+}
+.plans .btn:hover {
+  background: #27458c;
+  background: -webkit-linear-gradient(left, #27458c 0%, #16485c 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #27458c), color-stop(100%, #16485c));
+  background: -moz-linear-gradient(left, #27458c 0%, #16485c 100%);
+  background: -ms-linear-gradient(left, #27458c 0%, #16485c 100%);
+  background: -o-linear-gradient(left, #27458c 0%, #16485c 100%);
+  background: linear-gradient(to right, #27458c 0%, #16485c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#27458c', endColorstr='#16485c', GradientType=1);
 }
 .plans .free img {
   background: #0e831f;
@@ -840,8 +888,16 @@ thead tr th {
   padding: 50px 0;
   background-color: #eff6ff;
 }
-.install h2 {
+.install .title {
   margin-bottom: 0;
+}
+.install .item .title {
+  font-size: 26px;
+}
+.install p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #595959;
 }
 .install .server {
   padding-top: 30px;
@@ -962,32 +1018,32 @@ thead tr th {
   font-size: 26px;
 }
 .comparison .row:first-child .col:first-child {
-  -webkit-border-top-left-radius: 4px;
-  -moz-border-top-left-radius: 4px;
-  -ms-border-top-left-radius: 4px;
-  -o-border-top-left-radius: 4px;
-  border-top-left-radius: 4px;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-top-left-radius: 2px;
+  -ms-border-top-left-radius: 2px;
+  -o-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
 }
 .comparison .row:first-child .col:last-child {
-  -webkit-border-top-right-radius: 4px;
-  -moz-border-top-right-radius: 4px;
-  -ms-border-top-right-radius: 4px;
-  -o-border-top-right-radius: 4px;
-  border-top-right-radius: 4px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-top-right-radius: 2px;
+  -ms-border-top-right-radius: 2px;
+  -o-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
 }
 .comparison .row:last-child .col:first-child {
-  -webkit-border-bottom-left-radius: 4px;
-  -moz-border-bottom-left-radius: 4px;
-  -ms-border-bottom-left-radius: 4px;
-  -o-border-bottom-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-bottom-left-radius: 2px;
+  -ms-border-bottom-left-radius: 2px;
+  -o-border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 2px;
 }
 .comparison .row:last-child .col:last-child {
-  -webkit-border-bottom-right-radius: 4px;
-  -moz-border-bottom-right-radius: 4px;
-  -ms-border-bottom-right-radius: 4px;
-  -o-border-bottom-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-bottom-right-radius: 2px;
+  -ms-border-bottom-right-radius: 2px;
+  -o-border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 .use-cases {
   color: #fff;
@@ -1035,24 +1091,53 @@ thead tr th {
 }
 .btn {
   border: 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
-.btn-default {
+.btn[disabled] {
+  opacity: 0.45;
+}
+.btn-default,
+.btn-default[disabled] {
   background-color: #f1e9ff;
 }
 .btn-default:hover {
   background-color: #ddcaff;
 }
-.btn-primary {
+.btn-primary,
+.btn-primary[disabled] {
   background-color: #3caef6;
 }
 .btn-primary:hover {
   background-color: #2a8ccb;
 }
-.btn-success {
+.btn-success,
+.btn-success[disabled] {
   background-color: #2dbf44;
 }
 .btn-success:hover {
   background-color: #229634;
+}
+.alert {
+  border: 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 16px;
+}
+.alert-success {
+  background-color: #bbf9b5;
+}
+.alert-info {
+  background-color: #b3d1fe;
+}
+.alert-danger {
+  background-color: #ffc6c6;
 }
 .editor {
   width: 100%;
@@ -1394,6 +1479,15 @@ a.anchor.api-anchor {
     white-space: normal;
   }
 }
+@media (max-width: 500px) {
+  .screenshots .slider {
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
 @media (max-width: 330px) {
   .comparison .row .col.name {
     font-size: 12px;
@@ -1468,7 +1562,7 @@ a.anchor.api-anchor {
     padding-right: 20px;
   }
   .features .item {
-    padding: 0;
+    padding: 25px 0 20px 0;
   }
   .footer .copyright {
     text-align: right;
@@ -1568,6 +1662,15 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1200px) {
+  .features.feature-dis .feature-desc {
+    padding: 15px 0 20px 0;
+  }
+  .features.feature-dis .item p {
+    font-size: 20px;
+  }
+  .features.feature-dis h4.title {
+    margin: 40px 0 5px 0;
+  }
   .promo .overview {
     height: 810px;
   }
@@ -1885,11 +1988,11 @@ a.anchor.api-anchor {
   top: -2px;
   display: inline;
   padding: 4px 4px 2px 4px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
   background-color: rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
