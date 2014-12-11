@@ -47,6 +47,7 @@ header_class: header-top
       <div class="row">
         <div class="item feature-desc col-md-12 col-sm-12 col-xs-12">
           <p>Create complex site-to-site links, provide local network access to remote users and protect network traffic over public connections all from a simple web interface.</p>
+          <a class="title btn btn-lg scrollto" href="/#install">Get Started <i class="fa fa-rocket"></i></a>
         </div>
       </div>
     </div>
@@ -60,7 +61,7 @@ header_class: header-top
             <img src="img/pritunl_diagram_open.svg" alt=""/>
           </div>
           <h3 class="title">Open Source</h3>
-          <p>All source code for Pritunl is publicly available on GitHub. To allow anyone to evaluate the source code to ensure that it is secure.</p>
+          <p>All source code for Pritunl is publicly available on GitHub. To allow anyone to evaluate Pritunl to ensure that it is secure.</p>
         </div>
         <div class="item col-md-4 col-sm-4 col-xs-12">
           <div class="list-img">
@@ -98,6 +99,12 @@ header_class: header-top
           </div>
           <h3 class="title">REST API</h3>
           <p>Easily integrate and configure Pritunl with other services using the REST API. Documentation is available in the API section.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item col-md-12 col-sm-12 col-xs-12">
+          <a class="title btn btn-lg" href="https://github.com/pritunl/pritunl" target="_blank">GitHub Project <i class="fa fa-github-alt"></i></a>
+          <a class="title btn btn-lg" href="https://twitter.com/pritunl" target="_blank">Follow Us <i class="fa fa-twitter"></i></a>
         </div>
       </div>
     </div>
@@ -228,8 +235,8 @@ apt-get update; apt-get install pritunl
         <div class="item col-md-5 col-sm-12 col-xs-12">
           <h3 class="title text-center">Arch Linux</h3>
 <div class="editor bash">yaourt -S pritunl
-systemctl start pritunl.service
-systemctl enable pritunl.service
+systemctl start mongodb.service pritunl.service
+systemctl enable mongodb.service pritunl.service
 # open "https://localhost:9700/"</div>
         </div>
       </div>
@@ -237,8 +244,8 @@ systemctl enable pritunl.service
         <div class="item col-md-4 col-sm-12 col-xs-12 col-md-offset-4">
           <h3 class="title text-center">CentOS 7</h3>
 <div class="editor bash">yum install -y pritunl-*.rpm
-systemctl start pritunl.service
-systemctl enable pritunl.service
+systemctl start mongod.service pritunl.service
+systemctl enable mongod.service pritunl.service
 # open "https://localhost:9700/"</div>
           <div class="install-rpm">
             <a class="btn btn-lg btn-success" href="/bin/pritunl-0.10.12-1.el7.centos.x86_64.rpm">Download CentOS 7 RPM</a>

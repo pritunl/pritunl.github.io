@@ -577,6 +577,16 @@ thead tr th {
   background-image: url("../img/pritunl_pattern1.svg");
   background-size: 190px;
 }
+.features.feature-simple .btn,
+.features.feature-list .btn {
+  margin-top: 30px;
+  background-color: #3eb4ff;
+  color: #fff;
+}
+.features.feature-simple .btn:hover,
+.features.feature-list .btn:hover {
+  background-color: #2d93d4;
+}
 .features.feature-simple .feature-after {
   opacity: 0;
   -webkit-transition: opacity 2s ease-in-out;
@@ -889,7 +899,7 @@ thead tr th {
   background-color: #eff6ff;
 }
 .install .title {
-  margin-bottom: 0;
+  margin-bottom: 5px;
 }
 .install .item .title {
   font-size: 26px;
