@@ -441,13 +441,13 @@ thead tr th {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background: #3d2d9e;
-  background: -webkit-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1e4a87), color-stop(70%, #6515b1), color-stop(100%, #60209e));
-  background: -moz-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
-  background: -ms-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
-  background: -o-linear-gradient(left, #1e4a87 0%, #6515b1 70%, #60209e 100%);
-  background: linear-gradient(to right, #1e4a87 0%, #6515b1 70%, #60209e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e4a87', endColorstr='#60209e', GradientType=1);
+  background: -webkit-linear-gradient(left, #3076d5 0%, #1026a1 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3076d5), color-stop(100%, #1026a1));
+  background: -moz-linear-gradient(left, #3076d5 0%, #1026a1 100%);
+  background: -ms-linear-gradient(left, #3076d5 0%, #1026a1 100%);
+  background: -o-linear-gradient(left, #3076d5 0%, #1026a1 100%);
+  background: linear-gradient(to right, #3076d5 0%, #1026a1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3076d5', endColorstr='#1026a1', GradientType=1);
 }
 .promo-background {
   position: absolute;
@@ -807,28 +807,15 @@ thead tr th {
 }
 .plans .btn.title {
   font-size: 20px;
+  min-width: 245;
 }
 .plans .btn {
   margin-top: 10px;
   color: #fff;
-  background: #3f5b9e;
-  background: -webkit-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3f5b9e), color-stop(100%, #1d5e78));
-  background: -moz-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
-  background: -ms-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
-  background: -o-linear-gradient(left, #3f5b9e 0%, #1d5e78 100%);
-  background: linear-gradient(to right, #3f5b9e 0%, #1d5e78 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3f5b9e', endColorstr='#1d5e78', GradientType=1);
+  background-color: #394793;
 }
 .plans .btn:hover {
-  background: #27458c;
-  background: -webkit-linear-gradient(left, #27458c 0%, #16485c 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #27458c), color-stop(100%, #16485c));
-  background: -moz-linear-gradient(left, #27458c 0%, #16485c 100%);
-  background: -ms-linear-gradient(left, #27458c 0%, #16485c 100%);
-  background: -o-linear-gradient(left, #27458c 0%, #16485c 100%);
-  background: linear-gradient(to right, #27458c 0%, #16485c 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#27458c', endColorstr='#16485c', GradientType=1);
+  background: #29367d;
 }
 .plans .free img {
   background: #0e831f;
@@ -885,6 +872,7 @@ thead tr th {
 .features.feature-list .item .title {
   font-size: 24px;
   margin: 8px 0;
+  min-width: 260px;
 }
 .features.feature-list .item img {
   width: 80%;
