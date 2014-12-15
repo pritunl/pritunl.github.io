@@ -191,9 +191,9 @@ header_class: header-top
             <h3 class="title">Premium</h3>
             <ul class="plan-list">
               <li><span>Single server</span></li>
-              <li><span>Email user keys</span></li>
               <li><span>Configuration sync</span></li>
-              <li><span>Custom dark theme</span></li>
+              <li><span>Email user keys</span></li>
+              <li><span>Dark interface theme</span></li>
             </ul>
             <h4 class="title price">$5/month</h4>
           </div>
@@ -243,8 +243,8 @@ apt-get update; apt-get install pritunl
         <div class="item col-md-5 col-sm-12 col-xs-12">
           <h3 class="title text-center">Arch Linux</h3>
 <div class="editor bash">yaourt -S pritunl
-systemctl start mongodb.service pritunl.service
-systemctl enable mongodb.service pritunl.service
+systemctl start mongodb pritunl
+systemctl enable mongodb pritunl
 # open "https://localhost:9700/"</div>
         </div>
       </div>
@@ -252,8 +252,8 @@ systemctl enable mongodb.service pritunl.service
         <div class="item col-md-4 col-sm-12 col-xs-12 col-md-offset-4">
           <h3 class="title text-center">CentOS 7</h3>
 <div class="editor bash">yum install -y pritunl-*.rpm
-systemctl start mongod.service pritunl.service
-systemctl enable mongod.service pritunl.service
+systemctl start mongod pritunl
+systemctl enable mongod pritunl
 # open "https://localhost:9700/"</div>
           <div class="install-rpm">
             <a class="btn btn-lg btn-success" href="/bin/pritunl-0.10.12-1.el7.centos.x86_64.rpm">Download CentOS 7 RPM</a>
@@ -276,10 +276,15 @@ sudo apt-get install pritunl-client</div>
         </div>
       </div>
       <div class="row client">
-        <div class="item col-md-4 col-sm-12 col-xs-12 col-md-offset-4">
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
           <h3 class="title text-center">Windows</h3>
+          <div class="alert alert-danger" role="alert">The Windows client is still under development, use only for testing. Any client supporting OpenVPN can be used until development is complete.</div>
           <img src="img/client_win.png" alt="Windows Client"/><br>
           <a class="btn btn-lg btn-success" href="/bin/pritunl_client-latest.exe">Download Windows Client</a>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12">
+          <h3 class="title text-center">OSX</h3>
+          <div class="alert alert-info" role="alert">An OSX client is planned and will be released in the future. Any client supporting OpenVPN can be used until the Pritunl OSX client is released.</div>
         </div>
       </div>
     </div>
