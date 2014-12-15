@@ -574,8 +574,8 @@ thead tr th {
 }
 .features.feature-simple {
   background-color: #eef4fe;
-  background-image: url("../img/pritunl_pattern1.svg");
-  background-size: 190px;
+  background-image: url("../img/pritunl_pattern2.svg");
+  background-size: 80px;
 }
 .features.feature-simple .btn,
 .features.feature-list .btn {
