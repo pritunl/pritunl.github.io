@@ -48,6 +48,7 @@ container_type: -fluid
       <div class="row">
         <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="authentication" class="anchor api-anchor"></a>
+          <div class="alert alert-danger" role="alert">The API documentation has not yet been updated for Pritunl 1.0 some functionality may be missing or undocumented.</div>
           <h2 class="api-header">Authentication</h2>
           <div class="api-description">
             <div class="text">
@@ -190,7 +191,7 @@ assert(response.status_code == 200)</div>
                   <td>Event type</td>
                 </tr>
                 <tr>
-                  <td>time</td>
+                  <td>timestamp</td>
                   <td>Event epoch time</td>
                 </tr>
                 <tr>
@@ -217,13 +218,13 @@ print response.json()
   {
       'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
       'type': 'users_updated',
-      'time': 1388495793,
+      'timestamp': 1388495793,
       'resource_id': None,
   },
   {
       'id': '09b86897d4e44130b5fec95ca7101a5a',
       'type': 'server_organizations_updated',
-      'time': 1388495805,
+      'timestamp': 1388495805,
       'resource_id': '6551f49596ca42c4942cb71162916b69',
   },
 ]</div>
@@ -333,7 +334,7 @@ print response.json()
                   <td>Log entry ID</td>
                 </tr>
                 <tr>
-                  <td>time</td>
+                  <td>timestamp</td>
                   <td>Log entry epoch time</td>
                 </tr>
                 <tr>
@@ -359,12 +360,12 @@ print response.json()
 [
   {
       'id': 'ebb8af4a72d548a889c4d6ca45254a5a',
-      'time': 1388389241,
+      'timestamp': 1388389241,
       'message': 'Web server started.',
   },
   {
       'id': 'f5ebb4ed2bc74181ad70060bfec30c81',
-      'time': 1388389217,
+      'timestamp': 1388389217,
       'message': 'Web server stopped.',
   },
 ]</div>
@@ -1696,10 +1697,6 @@ print response.json()
                   <td>debug</td>
                   <td>True if server debug output is enabled otherwise false</td>
                 </tr>
-                <tr>
-                  <td>org_count</td>
-                  <td>Number of organizations attached to the server</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -1737,7 +1734,6 @@ print response.json()
       'otp_auth': True,
       'lzo_compression': False,
       'debug': True,
-      'org_count': 2,
   },
   {
       'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
@@ -1759,7 +1755,6 @@ print response.json()
       'otp_auth': False,
       'lzo_compression': False,
       'debug': False,
-      'org_count': 1,
   },
 ]</div>
         </div>
@@ -1855,10 +1850,6 @@ print response.json()
                   <td>debug</td>
                   <td>True if server debug output is enabled otherwise false</td>
                 </tr>
-                <tr>
-                  <td>org_count</td>
-                  <td>Number of organizations attached to the server</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -1895,7 +1886,6 @@ print response.json()
   'otp_auth': True,
   'lzo_compression': False,
   'debug': True,
-  'org_count': 2,
 }</div>
         </div>
       </div>
@@ -2055,10 +2045,6 @@ print response.json()
                   <td>debug</td>
                   <td>True if server debug output is enabled otherwise false</td>
                 </tr>
-                <tr>
-                  <td>org_count</td>
-                  <td>Number of organizations attached to the server</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -2114,7 +2100,6 @@ print response.json()
   'otp_auth': True,
   'lzo_compression': False,
   'debug': False,
-  'org_count': 0,
 }</div>
         </div>
       </div>
@@ -2287,10 +2272,6 @@ print response.json()
                   <td>debug</td>
                   <td>True if server debug output is enabled otherwise false</td>
                 </tr>
-                <tr>
-                  <td>org_count</td>
-                  <td>Number of organizations attached to the server</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -2333,7 +2314,6 @@ print response.json()
   'otp_auth': True,
   'lzo_compression': False,
   'debug': False,
-  'org_count': 0,
 }</div>
         </div>
       </div>
@@ -2481,10 +2461,6 @@ assert(response.status_code == 200)</div>
                   <td>debug</td>
                   <td>True if server debug output is enabled otherwise false</td>
                 </tr>
-                <tr>
-                  <td>org_count</td>
-                  <td>Number of organizations attached to the server</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -2521,7 +2497,6 @@ print response.json()
   'otp_auth': False,
   'lzo_compression': False,
   'debug': False,
-  'org_count': 1,
 }</div>
         </div>
       </div>
