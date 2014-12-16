@@ -1,4 +1,12 @@
 jQuery(document).ready(function($) {
+  var randTheme = 'theme' + Math.floor(
+    (Math.random() * ((3) - 0)) + 0).toString();
+
+  $('.promo-background-color').removeClass('theme0');
+  $('.promo-background-color').addClass(randTheme);
+  $('.promo-background-img').removeClass('theme0');
+  $('.promo-background-img').addClass(randTheme);
+
   $('a.scrollto').on('click', function(evt){
     var target = this.hash;
     if (!$(target).length) {
@@ -407,6 +415,41 @@ jQuery(document).ready(function($) {
     }
   });
 
+  var changeTheme = function() {
+    if ($('.promo-background-color').hasClass('theme0')) {
+      $('.promo-background-color').addClass('theme-trans');
+      $('.promo-background-img').addClass('theme-trans');
+      setTimeout(function() {
+        $('.promo-background-color').removeClass('theme-trans theme0');
+        $('.promo-background-color').addClass('theme1');
+        $('.promo-background-img').removeClass('theme-trans theme0');
+        $('.promo-background-img').addClass('theme1');
+      }, 1000);
+    }
+    else if ($('.promo-background-color').hasClass('theme1')) {
+      $('.promo-background-color').addClass('theme-trans');
+      $('.promo-background-img').addClass('theme-trans');
+      setTimeout(function() {
+        $('.promo-background-color').removeClass('theme-trans theme1');
+        $('.promo-background-color').addClass('theme2');
+        $('.promo-background-img').removeClass('theme-trans theme1');
+        $('.promo-background-img').addClass('theme2');
+      }, 1000);
+    }
+    else if ($('.promo-background-color').hasClass('theme2')) {
+      $('.promo-background-color').addClass('theme-trans');
+      $('.promo-background-img').addClass('theme-trans');
+      setTimeout(function() {
+        $('.promo-background-color').removeClass('theme-trans theme2');
+        $('.promo-background-color').addClass('theme0');
+        $('.promo-background-img').removeClass('theme-trans theme2');
+        $('.promo-background-img').addClass('theme0');
+      }, 1000);
+    }
+    setTimeout(changeTheme, 8000);
+  };
+  setTimeout(changeTheme, 6000);
+
   var diagram3GlowReady = false;
   var diagram3GlowEnabled = true;
   var diagram3GlowOn = function() {
@@ -472,7 +515,6 @@ jQuery(document).ready(function($) {
       diagram3GlowOn();
     }, 2500);
   }, 500);
-
 
   var featureDisGlowOn = function() {
     $('.feature-dis .feature-preglow').css('opacity', '1');
