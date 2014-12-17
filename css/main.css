@@ -920,7 +920,6 @@ thead tr th {
 .features.feature-list .item .title {
   font-size: 24px;
   margin: 8px 0;
-  min-width: 260px;
 }
 .features.feature-list .item img {
   width: 80%;
