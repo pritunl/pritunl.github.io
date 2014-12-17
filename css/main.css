@@ -306,6 +306,9 @@ thead tr th {
   width: 100%;
   padding: 5px;
 }
+.diagram-box-outer {
+  padding: 0;
+}
 .diagram {
   width: 100%;
   position: relative;
