@@ -357,26 +357,26 @@ thead tr th {
 .diagram-3 .part-2,
 .diagram-3 .part-4 {
   background-size: 28% auto;
-  background-image: url("../img/pritunl_diagram3.svg");
+  background-image: url('../img/pritunl_diagram3.svg');
 }
 
 .diagram-3 .part-1,
 .diagram-3 .part-3 {
   background-size: 37.4% auto;
-  background-image: url("../img/pritunl_diagram3_line.svg");
+  background-image: url('../img/pritunl_diagram3_line.svg');
 }
 
 .diagram-3 .part-0-glow,
 .diagram-3 .part-2-glow,
 .diagram-3 .part-4-glow {
   background-size: 28% auto;
-  background-image: url("../img/pritunl_diagram3_glow.svg");
+  background-image: url('../img/pritunl_diagram3_glow.svg');
 }
 
 .diagram-3 .part-1-glow,
 .diagram-3 .part-3-glow {
   background-size: 37.4% auto;
-  background-image: url("../img/pritunl_diagram3_line_glow.svg");
+  background-image: url('../img/pritunl_diagram3_line_glow.svg');
 }
 
 .diagram-3 .part-0,
@@ -467,7 +467,7 @@ thead tr th {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3076d5', endColorstr='#1026a1', GradientType=1);
 }
 .theme0.promo-background-img {
-  background-image: url("../img/pritunl_background3.svg");
+  background-image: url('../img/pritunl_background3.svg');
   opacity: 0.5;
 }
 .theme1.promo-background-color {
@@ -481,7 +481,7 @@ thead tr th {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#18212d', endColorstr='#030618', GradientType=1);
 }
 .theme1.promo-background-img {
-  background-image: url("../img/background9_small.png");
+  background-image: url('../img/background9_small.png');
   opacity: 0.4;
 }
 .theme2.promo-background-color {
@@ -495,7 +495,7 @@ thead tr th {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1f0b35', endColorstr='#501d0c', GradientType=1);
 }
 .theme2.promo-background-img {
-  background-image: url("../img/background10_small.png");
+  background-image: url('../img/background10_small.png');
   opacity: 0.2;
 }
 .theme-trans.promo-background-color {
@@ -617,7 +617,7 @@ thead tr th {
 }
 .features.feature-simple {
   background-color: #eef4fe;
-  background-image: url("../img/pritunl_pattern2.svg");
+  background-image: url('../img/pritunl_pattern2.svg');
   background-size: 80px;
 }
 .features.feature-simple .btn,
@@ -650,7 +650,7 @@ thead tr th {
   overflow: hidden;
   padding: 0;
   background-color: #242629;
-  background-image: url("../img/pritunl_pattern0.svg");
+  background-image: url('../img/pritunl_pattern0.svg');
   background-size: 120px;
 }
 .features.feature-dis .feature-img .title {
@@ -675,7 +675,7 @@ thead tr th {
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 1500px auto;
-  background-image: url("../img/pritunl_background2.svg");
+  background-image: url('../img/pritunl_background2.svg');
 }
 .features.feature-dis .feature-preglow {
   opacity: 0;
@@ -797,7 +797,7 @@ thead tr th {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../img/pritunl_background3.svg");
+  background-image: url('../img/pritunl_background3.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -897,7 +897,7 @@ thead tr th {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e4a87', endColorstr='#60209e', GradientType=1);
 }
 .features.feature-list {
-  background-image: url("../img/pritunl_background5.svg");
+  background-image: url('../img/pritunl_background5.svg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1468,7 +1468,7 @@ a.anchor.api-anchor {
 @media (max-width: 767px) {
   .features.feature-dis .feature-img {
     background-color: #242629;
-    background-image: url("../img/pritunl_pattern0.svg");
+    background-image: url('../img/pritunl_pattern0.svg');
     background-size: 120px;
   }
   .features.feature-dis .feature-img .title {
