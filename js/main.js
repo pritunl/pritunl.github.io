@@ -548,90 +548,90 @@ jQuery(document).ready(function($) {
   };
   setTimeout(featureSimpleGlowOn, 500);
 
-  $('.diagram-3').on('mouseenter', function(evt) {
-    diagram3GlowEnabled = false;
-  });
+  // $('.diagram-3').on('mouseenter', function(evt) {
+  //   diagram3GlowEnabled = false;
+  // });
 
-  $('.diagram-3').on('mouseleave', function(evt) {
-    diagram3GlowEnabled = true;
-  });
+  // $('.diagram-3').on('mouseleave', function(evt) {
+  //   diagram3GlowEnabled = true;
+  // });
 
-  $('.diagram-3').on('mousemove', function(evt) {
-    if (!diagram3GlowReady) {
-      return;
-    }
+  // $('.diagram-3').on('mousemove', function(evt) {
+  //   if (!diagram3GlowReady) {
+  //     return;
+  //   }
 
-    var thisElm = $(this);
-    var parentOffset = thisElm.parent().offset();
-    var x = evt.pageX - parentOffset.left;
-    var y = evt.pageY - parentOffset.top;
-    var width = thisElm.width();
-    var height = width / 2;
-    var xPer = x / width;
-    var yPer = y / height;
+  //   var thisElm = $(this);
+  //   var parentOffset = thisElm.parent().offset();
+  //   var x = evt.pageX - parentOffset.left;
+  //   var y = evt.pageY - parentOffset.top;
+  //   var width = thisElm.width();
+  //   var height = width / 2;
+  //   var xPer = x / width;
+  //   var yPer = y / height;
 
-    if (xPer < 0.29 && yPer < 0.39) {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '0');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-    else if (xPer < 0.29 && yPer < 0.84) {
-      $('.diagram-3 .part-0-glow').css('opacity', '1');
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '0');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-    else if (xPer < 0.38) {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '1');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '0');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-    else if (xPer < 0.63 && yPer < 0.34) {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '1');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '0');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-    else if (xPer < 0.63 && yPer < 0.78) {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      $('.diagram-3 .part-2-glow').css('opacity', '1');
-      $('.diagram-3 .part-3-glow').css('opacity', '0');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-    else if (xPer < 0.73) {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '1');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-    else if (yPer < 0.27) {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '1');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-    else if (yPer < 0.71) {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '0');
-      $('.diagram-3 .part-4-glow').css('opacity', '1');
-    }
-    else {
-      $('.diagram-3 .part-0-glow').css('opacity', '0');
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      $('.diagram-3 .part-2-glow').css('opacity', '0');
-      $('.diagram-3 .part-3-glow').css('opacity', '0');
-      $('.diagram-3 .part-4-glow').css('opacity', '0');
-    }
-  });
+  //   if (xPer < 0.29 && yPer < 0.39) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  //   else if (xPer < 0.29 && yPer < 0.84) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '1');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  //   else if (xPer < 0.38) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '1');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  //   else if (xPer < 0.63 && yPer < 0.34) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '1');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  //   else if (xPer < 0.63 && yPer < 0.78) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '1');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  //   else if (xPer < 0.73) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '1');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  //   else if (yPer < 0.27) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '1');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  //   else if (yPer < 0.71) {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '1');
+  //   }
+  //   else {
+  //     $('.diagram-3 .part-0-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-1-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-2-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-3-glow').css('opacity', '0');
+  //     $('.diagram-3 .part-4-glow').css('opacity', '0');
+  //   }
+  // });
 });
