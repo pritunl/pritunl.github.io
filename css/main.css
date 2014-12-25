@@ -498,6 +498,20 @@ thead tr th {
   background-image: url('../img/background10_small.png');
   opacity: 0.2;
 }
+.theme3.promo-background-color {
+  background: #900b0b;
+  background: -webkit-linear-gradient(left, #900b0b 0%, #1b711c 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #900b0b), color-stop(100%, #1b711c));
+  background: -moz-linear-gradient(left, #900b0b 0%, #1b711c 100%);
+  background: -ms-linear-gradient(left, #900b0b 0%, #1b711c 100%);
+  background: -o-linear-gradient(left, #900b0b 0%, #1b711c 100%);
+  background: linear-gradient(to right, #900b0b 0%, #1b711c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#900b0b', endColorstr='#1b711c', GradientType=1);
+}
+.theme3.promo-background-img {
+  background-image: url('../img/background10_small.png');
+  opacity: 0.6;
+}
 .theme-trans.promo-background-color {
   opacity: 0 !important;
 }
