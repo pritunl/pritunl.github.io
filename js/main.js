@@ -37,11 +37,6 @@ jQuery(document).ready(function($) {
           window.location.hash = this.hash;
       }.bind(this));
   });
-  $('.flexslider').flexslider({
-    animation: 'fade',
-    touch: true,
-    directionNav: false
-  });
   $(document).on('dblclick mousedown', '.no-select', false);
   $('.editor').show();
   $('.editor.python').each(function(index, element) {
