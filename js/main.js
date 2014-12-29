@@ -2,10 +2,10 @@ jQuery(document).ready(function($) {
   var randTheme = 'theme' + Math.floor(
     (Math.random() * ((3) - 0)) + 0).toString();
 
-  // $('.promo-background-color').removeClass('theme0');
-  // $('.promo-background-color').addClass(randTheme);
-  // $('.promo-background-img').removeClass('theme0');
-  // $('.promo-background-img').addClass(randTheme);
+  $('.promo-background-color').removeClass('theme0');
+  $('.promo-background-color').addClass(randTheme);
+  $('.promo-background-img').removeClass('theme0');
+  $('.promo-background-img').addClass(randTheme);
 
   $('a.scrollto').on('click', function(evt){
     var target = this.hash;
@@ -443,7 +443,7 @@ jQuery(document).ready(function($) {
     }
     setTimeout(changeTheme, 8000);
   };
-  //setTimeout(changeTheme, 6000);
+  setTimeout(changeTheme, 6000);
 
   var diagram3GlowReady = false;
   var diagram3GlowEnabled = true;
