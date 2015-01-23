@@ -221,18 +221,18 @@ thead tr th {
   text-transform: uppercase;
   margin-right: 10px;
 }
-.header .main-nav .nav .nav-item:first-child a {
-  padding-left:
-}
 .header .main-nav .nav .nav-item a {
   color: #444;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 9px;
+  padding-right: 9px;
   -webkit-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   -moz-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   -ms-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   -o-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
+}
+.header .main-nav .nav .nav-item:first-child a {
+  padding-left: 0;
 }
 .header.header-top .main-nav .nav .nav-item a {
   color: rgba(255, 255, 255, 0.75);
