@@ -1032,6 +1032,24 @@ thead tr th {
   margin-top: 10px;
   text-align: center;
 }
+.tutorials {
+  margin-bottom: 25px;
+}
+.tutorials .title {
+  margin-bottom: 20px;
+}
+.tutorials .item {
+  display: table;
+  min-height: 200px;
+}
+.tutorials .btn {
+  display: table-cell;
+  vertical-align: middle;
+  min-height: 200px;
+  width: 100%;
+  white-space: normal;
+  font-size: 22px;
+}
 .comparison {
   color: #fff;
   padding: 50px 0;
