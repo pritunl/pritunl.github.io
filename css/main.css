@@ -927,14 +927,13 @@ strong {
   padding-top: 10px;
 }
 .features.feature-list .item p {
+  font-weight: 300;
   padding: 0 20px 10px 20px;
 }
 .features.feature-list .item .list-img {
   position: relative;
   display: inline-block;
   padding: 27px 25px 13px;
-  background-color: #323539;
-  border-radius: 50%;
 }
 .features.feature-list .item .title {
   font-size: 24px;
