@@ -30,6 +30,9 @@ thead tr th {
   font-size: 28px;
   margin-bottom: 20px;
 }
+strong {
+  font-weight: 500;
+}
 .btn {
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
@@ -618,6 +621,7 @@ thead tr th {
   color: #2a2a2a;
 }
 .features .item p {
+  font-weight: 300;
   color: #636363;
 }
 .features .item {
@@ -853,6 +857,7 @@ thead tr th {
 .plans .plan-list li {
   padding: 6px 0;
   font-size: 16px;
+  font-weight: 300;
   max-width: 230px;
   margin: 0 auto;
   color: #eaeaea;
@@ -1049,6 +1054,7 @@ thead tr th {
   width: 100%;
   white-space: normal;
   font-size: 22px;
+  font-weight: 300;
 }
 .comparison {
   color: #fff;
