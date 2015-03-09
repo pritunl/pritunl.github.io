@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
     curY = y;
 
     promoImg$.css('transform',
-      'scale(1.05) translate(' + x + 'px,' + y + 'px)');
+      'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
   });
 
   $('a.scrollto').on('click', function(evt){
