@@ -7,6 +7,24 @@ jQuery(document).ready(function($) {
   $('.promo-background-img').removeClass('theme0');
   $('.promo-background-img').addClass(randTheme);
 
+  var curX;
+  var curY;
+  var win$ = $(window);
+  var promoImg$ = $('.promo-background-img');
+  $('body').mousemove(function(evt) {
+    var x = Math.round(20 * evt.clientX / win$.width() - 10);
+    var y = Math.round(20 * evt.clientY / win$.height() - 10);
+
+    if (curX == x && curY == y) {
+      return;
+    }
+    curX = x;
+    curY = y;
+
+    promoImg$.css('transform',
+      'scale(1.05) translate(' + x + 'px,' + y + 'px)');
+  });
+
   $('a.scrollto').on('click', function(evt){
     var target = this.hash;
     if (!$(target).length) {

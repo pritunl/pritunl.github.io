@@ -437,10 +437,8 @@ strong {
 .promo {
   color: #fff;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   background-color: #101527;
+  overflow: hidden;
 }
 .promo-background-color,
 .promo-background-img {
@@ -457,6 +455,7 @@ strong {
   -ms-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
+  transform: scale(1.05);
 }
 .theme0.promo-background-color {
   background: #3d2d9e;
