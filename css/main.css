@@ -225,8 +225,8 @@ strong {
 }
 .header .main-nav .nav .nav-item a {
   color: #444;
-  padding-left: 9px;
-  padding-right: 9px;
+  padding-left: 7px;
+  padding-right: 7px;
   -webkit-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   -moz-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   -ms-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
@@ -1631,6 +1631,10 @@ a.anchor.api-anchor {
   }
   .title {
     font-size: 38px;
+  }
+  .header .main-nav .nav .nav-item a {
+    padding-left: 9px;
+    padding-right: 9px;
   }
   .promo-video {
     display: block;
