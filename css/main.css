@@ -1301,6 +1301,7 @@ strong {
   padding-right: 0;
 }
 .footer .links {
+  font-size: 16px;
   white-space: nowrap;
 }
 .footer .links a {
