@@ -1011,7 +1011,7 @@ strong {
 .install .server-auto .btn.server-region {
   min-width: 114px;
   display: inline-block;
-  margin: 5px;
+  margin: 10px;
   font-size: 16px;
   padding-left: 2px;
   padding-right: 2px;
@@ -1037,12 +1037,10 @@ strong {
 .tutorials {
   margin-bottom: 25px;
 }
-.tutorials .title {
-  margin-bottom: 20px;
-}
 .tutorials .item {
   display: table;
   height: 200px;
+  margin-top: 30px;
 }
 .tutorials .btn {
   display: table-cell;
@@ -1581,6 +1579,9 @@ a.anchor.api-anchor {
 }
 
 @media (min-width: 650px) {
+  .install .server-auto .btn.server-region {
+    margin: 5px;
+  }
   .title {
     font-size: 32px;
   }
