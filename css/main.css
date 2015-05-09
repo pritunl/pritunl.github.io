@@ -662,6 +662,9 @@ strong {
   margin-top: 20px;
   position: relative;
 }
+.features .google-desc {
+  margin-top: 0;
+}
 .features.feature-dis {
   overflow: hidden;
   padding: 0;
