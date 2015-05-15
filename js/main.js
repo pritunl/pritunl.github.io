@@ -381,10 +381,10 @@ jQuery(document).ready(function($) {
   });
   $(document).on('keyup', function(evt) {
     if (evt.which === 37) {
-      sliderLeft();
+      sliderLeft(true);
     }
     else if (evt.which === 39) {
-      sliderRight();
+      sliderRight(true);
     }
   });
 
@@ -392,7 +392,7 @@ jQuery(document).ready(function($) {
     setTimeout(function() {
       if (sliderUsed) {
         sliderUsed = false;
-        setTimeout(sliderAuto, 8000);
+        setTimeout(sliderAuto, 15000);
       }
       else {
         sliderRight();
