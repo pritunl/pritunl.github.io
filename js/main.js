@@ -3,6 +3,8 @@ jQuery(document).ready(function($) {
   var $promoBg = $('.promo-background-color');
   var $promoImg = $('.promo-background-img');
   var $body = $('body');
+  var $api = $('#api');
+  var $apiCallList = $('.api-call-list-box');
   var $zone0 = $('.promo');
   var $zone1 = $('.feature-simple .feature-before');
   var $zone2 = $('.feature-dis .feature-glow');
@@ -237,14 +239,14 @@ jQuery(document).ready(function($) {
     zoneEnabled2 = inView($zone2);
     zoneEnabled3 = inView($zone3);
 
-    if ($('#api').length) {
-      if (scrollTop >= $('#api').offset().top + 99) {
-        $('.api-call-list-box').css('position', 'fixed');
-        $('.api-call-list-box').css('top', '71px');
+    if ($api.length) {
+      if (scrollTop >= $api.offset().top + 99) {
+        $apiCallList.css('position', 'fixed');
+        $apiCallList.css('top', '71px');
       }
       else {
-        $('.api-call-list-box').css('position', 'absolute');
-        $('.api-call-list-box').css('top', 'auto');
+        $apiCallList.css('position', 'absolute');
+        $apiCallList.css('top', 'auto');
       }
     }
   }
@@ -254,8 +256,9 @@ jQuery(document).ready(function($) {
   $('.label').tooltip();
 
   $('.server-region').click(function(evt) {
-    $('.server-region').addClass('btn-default');
-    $('.server-region').removeClass('btn-primary');
+    var $serverRegion = $('.server-region');
+    $serverRegion.addClass('btn-default');
+    $serverRegion.removeClass('btn-primary');
     $(evt.target).addClass('btn-primary');
   });
 
@@ -264,20 +267,25 @@ jQuery(document).ready(function($) {
   var loaderUrl = 'https://pritunl-loader.herokuapp.com';
   var id = null;
   var updateData = function(message, type, region, noAnimate, buttonState) {
+    var $serverAlert = $('.server-alert');
+    var $serverRegion = $('.server-region');
+    var $serverRegionSel = $('.server-' + region);
+    var $apiKey = $('.api-key-container');
+
     if (buttonState == undefined) {
       buttonState = true;
     }
 
-    if (region && !$('.server-' + region).hasClass('btn-primary')) {
-      $('.server-region').addClass('btn-default');
-      $('.server-region').removeClass('btn-primary');
-      $('.server-' + region).addClass('btn-primary');
+    if (region && !$serverRegionSel.hasClass('btn-primary')) {
+      $serverRegion.addClass('btn-default');
+      $serverRegion.removeClass('btn-primary');
+      $serverRegionSel.addClass('btn-primary');
     }
 
-    $('.server-alert').removeClass('alert-success alert-warning alert-danger');
-    $('.server-alert').addClass(type);
+    $serverAlert.removeClass('alert-success alert-warning alert-danger');
+    $serverAlert.addClass(type);
     if (message) {
-      $('.server-alert').html(message);
+      $serverAlert.html(message);
     }
     if (buttonState) {
       $('.server-region, .server-create').removeAttr('disabled');
@@ -287,30 +295,30 @@ jQuery(document).ready(function($) {
     }
     if (noAnimate) {
       if (buttonState) {
-        $('.api-key-container').show();
+        $apiKey.show();
       }
       else {
-        $('.api-key-container').hide();
+        $apiKey.hide();
       }
       if (message) {
-        $('.server-alert').show();
+        $serverAlert.show();
       }
       else {
-        $('.server-alert').hide();
+        $serverAlert.hide();
       }
     }
     else {
       if (buttonState) {
-        $('.api-key-container').slideDown(250);
+        $apiKey.slideDown(250);
       }
       else {
-        $('.api-key-container').slideUp(250);
+        $apiKey.slideUp(250);
       }
       if (message) {
-        $('.server-alert').slideDown(250);
+        $serverAlert.slideDown(250);
       }
       else {
-        $('.server-alert').slideUp(250);
+        $serverAlert.slideUp(250);
       }
     }
   };
