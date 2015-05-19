@@ -282,15 +282,21 @@ systemctl enable mongodb pritunl
         </div>
       </div>
       <div class="row server">
-        <div class="item col-md-4 col-sm-12 col-xs-12 col-md-offset-4">
-          <h3 class="title text-center">CentOS 7</h3>
-<div class="editor bash">yum install -y pritunl-*.rpm
-systemctl start mongod pritunl
-systemctl enable mongod pritunl
+        <div class="item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <h3 class="title text-center">CentOS 7 and Amazon Linux</h3>
+<div class="editor bash">nano /etc/yum.repos.d/pritunl.repo
+[pritunl]
+name=Pritunl Repository
+baseurl=http://mirror.pritunl.com/yum/pritunl/x86_64/
+gpgcheck=0
+enabled=1
+
+yum install -y pritunl
+start mongod # Amazon Linux
+start pritunl # Amazon Linux
+systemctl start mongod pritunl # CentOS
+systemctl enable mongod pritunl # CentOS
 # open "https://localhost:9700/"</div>
-          <div class="install-rpm">
-            <a class="btn btn-lg btn-success" href="https://github.com/pritunl/pritunl/releases">Download CentOS 7 RPM</a>
-          </div>
         </div>
       </div>
       <div class="row client">
