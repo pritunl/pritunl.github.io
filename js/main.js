@@ -214,7 +214,12 @@ jQuery(document).ready(function($) {
     var docViewTop = $window.scrollTop();
     var docViewBottom = docViewTop + $window.height();
 
-    var elemTop = $elem.offset().top;
+    var offset = $elem.offset();
+    if (!offset) {
+      return false;
+    }
+
+    var elemTop = offset.top;
     var elemBottom = elemTop + $elem.height();
 
     return (
