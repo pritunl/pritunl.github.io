@@ -359,26 +359,26 @@ strong {
 .diagram-3 .part-2,
 .diagram-3 .part-4 {
   background-size: 28% auto;
-  background-image: url('../img/pritunl_diagram3.svg');
+  background-image: url('../img/pritunl_diagram3.png');
 }
 
 .diagram-3 .part-1,
 .diagram-3 .part-3 {
   background-size: 37.4% auto;
-  background-image: url('../img/pritunl_diagram3_line.svg');
+  background-image: url('../img/pritunl_diagram3_line.png');
 }
 
 .diagram-3 .part-0-glow,
 .diagram-3 .part-2-glow,
 .diagram-3 .part-4-glow {
   background-size: 28% auto;
-  background-image: url('../img/pritunl_diagram3_glow.svg');
+  background-image: url('../img/pritunl_diagram3_glow.png');
 }
 
 .diagram-3 .part-1-glow,
 .diagram-3 .part-3-glow {
   background-size: 37.4% auto;
-  background-image: url('../img/pritunl_diagram3_line_glow.svg');
+  background-image: url('../img/pritunl_diagram3_line_glow.png');
 }
 
 .diagram-3 .part-0,
@@ -848,6 +848,10 @@ strong {
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
+}
+.plans .item-box img {
+  width: 169px;
+  height: 169px;
 }
 .plans .plan-list {
   list-style-type: none;
