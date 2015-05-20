@@ -225,8 +225,8 @@ strong {
 }
 .header .main-nav .nav .nav-item a {
   color: #444;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding-left: 6px;
+  padding-right: 6px;
   -webkit-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   -moz-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
   -ms-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
@@ -1683,7 +1683,7 @@ a.anchor.api-anchor {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 810px) {
   .header .twitter-logo {
     display: block;
   }
