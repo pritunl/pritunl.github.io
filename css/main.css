@@ -1683,7 +1683,12 @@ a.anchor.api-anchor {
   }
 }
 
-@media (min-width: 810px) {
+@media (min-width: 850px) {
+  .header .container .navbar-collapse {
+    margin-right: 25px;
+  }
+}
+@media (min-width: 860px) {
   .header .twitter-logo {
     display: block;
   }
@@ -1692,11 +1697,6 @@ a.anchor.api-anchor {
   }
   .header .container-fluid .navbar-collapse {
     margin-right: 70px;
-  }
-}
-@media (min-width: 850px) {
-  .header .container .navbar-collapse {
-    margin-right: 25px;
   }
 }
 @media (min-width: 900px) {
