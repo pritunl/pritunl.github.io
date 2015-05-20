@@ -1041,6 +1041,10 @@ strong {
   margin-top: 10px;
   text-align: center;
 }
+.install .launch-stack {
+  margin: 15px 0 0 0;
+  text-align: center;
+}
 .tutorials {
   margin-bottom: 25px;
 }
