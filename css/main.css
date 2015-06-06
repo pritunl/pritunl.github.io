@@ -875,7 +875,7 @@ strong {
 }
 .plans .btn.title {
   font-size: 20px;
-  min-width: 245;
+  min-width: 245px;
 }
 .plans .btn {
   margin-top: 10px;
