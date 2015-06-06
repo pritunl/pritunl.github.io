@@ -1229,6 +1229,15 @@ strong {
 .alert-danger {
   background-color: #ffc6c6;
 }
+.win-alert {
+  margin: 10px auto;
+  max-width: 300px;
+}
+.win-screenshot {
+  width: 100%;
+  max-width: 439px;
+  height: auto;
+}
 .editor {
   width: 100%;
   display: none;
