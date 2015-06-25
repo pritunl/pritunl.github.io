@@ -406,7 +406,7 @@ strong {
 .promo-background-img {
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
   transform: scale(1.05);
 }
 .theme0.promo-background-color {
