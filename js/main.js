@@ -219,9 +219,6 @@ jQuery(document).ready(function($) {
       elements[element] = $element.css('transition');
       $element.css('transition', 'none');
     }
-
-    console.log(elements);
-
     setTimeout(function() {
       for (element in elements) {
         $element = $(element);
