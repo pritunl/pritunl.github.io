@@ -402,9 +402,11 @@ strong {
   left: 0;
   width: 100%;
   height: 100%;
+}
+.promo-background-img {
   background-size: cover;
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
+  background-attachment: fixed;
   transform: scale(1.05);
 }
 .theme0.promo-background-color {
@@ -738,7 +740,7 @@ strong {
   background-image: url('../img/pritunl_background3.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
+  background-attachment: fixed;
 }
 .plans .item .title {
   font-size: 26px;
@@ -986,15 +988,6 @@ strong {
   font-size: 22px;
   font-weight: 300;
 }
-.comparison {
-  color: #fff;
-  padding: 50px 0;
-  background-color: #2e4153;
-  background-image: url('../img/background2.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
-}
 .comparison .title {
   margin-bottom: 50px;
 }
@@ -1058,15 +1051,6 @@ strong {
   -ms-border-bottom-right-radius: 2px;
   -o-border-bottom-right-radius: 2px;
   border-bottom-right-radius: 2px;
-}
-.use-cases {
-  color: #fff;
-  padding: 50px 0 20px 0;
-  background-color: #2e4153;
-  background-image: url('../img/background1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
 }
 .use-cases .title {
   margin-bottom: 50px;
@@ -1828,15 +1812,6 @@ a.anchor.api-anchor {
 .documentation .documentation-title .title,
 .faq .faq-title .title {
   color: #fff;
-}
-.documentation {
-  padding-top: 5px;
-  padding-bottom: 75px;
-  background-color: #2e4153;
-  background-image: url('../img/background4.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
 }
 .documentation .documentation-title {
   margin-top: 100px;
