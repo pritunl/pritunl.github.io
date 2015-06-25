@@ -1,27 +1,52 @@
 jQuery(document).ready(function($) {
   var $window = $(window);
+
+  var diag3 = TweenMax.staggerTo($('.diagram-3 .part'), 2, {
+    delay: 1,
+    opacity: 1
+  }, .25);
+  var diag3glow = TweenMax.staggerTo($('.diagram-3 .part-glow'), .7, {
+    delay: 3,
+    repeat: -1,
+    repeatDelay: 1,
+    yoyo: true,
+    opacity: 1
+  }, .25);
+  var featSimp = TweenMax.to($('.feature-simple .feature-after')[0], 2, {
+    delay: 3,
+    repeat: -1,
+    repeatDelay: .75,
+    yoyo: true,
+    opacity: 1
+  });
+  var featSimp = TweenMax.to($('.feature-simple .feature-after')[0], 2, {
+    delay: 3,
+    repeat: -1,
+    repeatDelay: .75,
+    yoyo: true,
+    opacity: 1
+  });
+  var feat = TweenMax.staggerTo([
+    $('.feature-dis .feature-preglow')[0],
+    $('.feature-dis .feature-glow')[0]
+  ], 2, {
+    delay:.2,
+    repeat: -1,
+    repeatDelay: 2,
+    yoyo: true,
+    opacity: 1
+  }, 1);
+
+  var randTheme = 'theme' + Math.floor((Math.random() * 3)).toString();
+  var $body = $('body');
   var $promoBg = $('.promo-background-color');
   var $promoImg = $('.promo-background-img');
-  var $body = $('body');
-  var $api = $('#api');
-  var $apiCallList = $('.api-call-list-box');
-  var $zone0 = $('.promo');
-  var $zone1 = $('.feature-simple .feature-before');
-  var $zone2 = $('.feature-dis .feature-glow');
-  var $zone3 = $('.screenshots');
-  var zoneEnabled0 = false;
-  var zoneEnabled1 = false;
-  var zoneEnabled2 = false;
-  var zoneEnabled3 = false;
-  var curX;
-  var curY;
-  var randTheme = 'theme' + Math.floor((Math.random() * 3)).toString();
-
   $promoBg.removeClass('theme0');
   $promoBg.addClass(randTheme);
   $promoImg.removeClass('theme0');
   $promoImg.addClass(randTheme);
-
+  var curX;
+  var curY;
   $body.mousemove(function(evt) {
     var x = Math.round(20 * evt.clientX / $window.width() - 10);
     var y = Math.round(20 * evt.clientY / $window.height() - 10);
@@ -191,72 +216,34 @@ jQuery(document).ready(function($) {
     for (element in elements) {
       $element = $(element);
 
-      elements[element] = [
-        $element.css('-webkit-transition'),
-        $element.css('transition')
-      ];
-      $element.css('-webkit-transition', 'none');
+      elements[element] = $element.css('transition');
       $element.css('transition', 'none');
     }
+
+    console.log(elements);
+
     setTimeout(function() {
       for (element in elements) {
         $element = $(element);
-        $element.css('-webkit-transition', elements[element][0]);
-        $element.css('transition', elements[element][1]);
+        $element.css('transition', elements[element]);
         elements[element] = null;
       }
     }, 500);
   })();
 
-  var inView = function($elem) {
-    var $window = $(window);
-
-    var docViewTop = $window.scrollTop();
-    var docViewBottom = docViewTop + $window.height();
-
-    var offset = $elem.offset();
-    if (!offset) {
-      return false;
-    }
-
-    var elemTop = offset.top;
-    var elemBottom = elemTop + $elem.height();
-
-    return (
-      ((elemBottom <= docViewBottom) && (elemBottom >= docViewTop)) ||
-      ((elemTop <= docViewBottom) && (elemTop >= docViewTop))
-    );
-  };
-
-  var onScroll = function() {
-    var scrollTop = $(this).scrollTop();
-
-    if (scrollTop <= 0 && $('.promo').length &&
-        !$('.navbar-collapse').hasClass('in')) {
-      $('.header').addClass('header-top');
-    }
-    else if ($('.header').css('position') !== 'absolute') {
-      $('.header').removeClass('header-top');
-    }
-
-    zoneEnabled0 = inView($zone0);
-    zoneEnabled1 = inView($zone1);
-    zoneEnabled2 = inView($zone2);
-    zoneEnabled3 = inView($zone3);
-
-    if ($api.length) {
-      if (scrollTop >= $api.offset().top + 99) {
-        $apiCallList.css('position', 'fixed');
-        $apiCallList.css('top', '71px');
+  var $header = $('.header');
+  var $navbarCollaspe = $('.navbar-collapse');
+  if ($('.promo').length) {
+    var onScroll = function() {
+      if ($(this).scrollTop() <= 0) {
+        $header.addClass('header-top');
+      } else if ($header.css('position') !== 'absolute') {
+        $header.removeClass('header-top');
       }
-      else {
-        $apiCallList.css('position', 'absolute');
-        $apiCallList.css('top', 'auto');
-      }
-    }
+    };
+    $(window).scroll(onScroll);
+    onScroll();
   }
-  $(window).scroll(onScroll);
-  onScroll();
 
   $('.label').tooltip();
 
@@ -266,8 +253,6 @@ jQuery(document).ready(function($) {
     $serverRegion.removeClass('btn-primary');
     $(evt.target).addClass('btn-primary');
   });
-
-
 
   var loaderUrl = 'https://pritunl-loader.herokuapp.com';
   var id = null;
@@ -455,11 +440,6 @@ jQuery(document).ready(function($) {
   });
 
   var sliderAuto = function() {
-    if (!zoneEnabled3) {
-      setTimeout(sliderAuto, 50);
-      return;
-    }
-
     setTimeout(function() {
       if (sliderUsed) {
         sliderUsed = false;
@@ -498,163 +478,4 @@ jQuery(document).ready(function($) {
         'try again later.', 'alert-danger', data.region, true, false);
     }
   });
-
-
-
-  var changeTheme = function() {
-    if (!zoneEnabled0) {
-      setTimeout(changeTheme, 50);
-      return;
-    }
-
-    if ($promoBg.hasClass('theme0')) {
-      $promoBg.addClass('theme-trans');
-      $('.promo-background-img').addClass('theme-trans');
-      setTimeout(function() {
-        $promoBg.removeClass('theme-trans theme0');
-        $promoBg.addClass('theme1');
-        $promoImg.removeClass('theme-trans theme0');
-        $promoImg.addClass('theme1');
-      }, 1000);
-    }
-    else if ($promoBg.hasClass('theme1')) {
-      $promoBg.addClass('theme-trans');
-      $promoImg.addClass('theme-trans');
-      setTimeout(function() {
-        $promoBg.removeClass('theme-trans theme1');
-        $promoBg.addClass('theme2');
-        $promoImg.removeClass('theme-trans theme1');
-        $promoImg.addClass('theme2');
-      }, 1000);
-    }
-    else if ($promoBg.hasClass('theme2')) {
-      $promoBg.addClass('theme-trans');
-      $promoImg.addClass('theme-trans');
-      setTimeout(function() {
-        $promoBg.removeClass('theme-trans theme2');
-        $promoBg.addClass('theme0');
-        $promoImg.removeClass('theme-trans theme2');
-        $promoImg.addClass('theme0');
-      }, 1000);
-    }
-    setTimeout(changeTheme, 8000);
-  };
-  setTimeout(changeTheme, 6000);
-
-  var diagram3GlowOn = function() {
-    if (!zoneEnabled0) {
-      setTimeout(diagram3GlowOn, 50);
-      return;
-    }
-
-    setTimeout(diagram3GlowOff, 750);
-
-    $('.diagram-3 .part-0-glow').css('opacity', '1');
-    setTimeout(function() {
-      $('.diagram-3 .part-1-glow').css('opacity', '1');
-      setTimeout(function() {
-        $('.diagram-3 .part-2-glow').css('opacity', '1');
-        setTimeout(function() {
-          $('.diagram-3 .part-3-glow').css('opacity', '1');
-          setTimeout(function() {
-            $('.diagram-3 .part-4-glow').css('opacity', '1');
-          }, 250);
-        }, 250);
-      }, 250);
-    }, 250);
-  };
-  var diagram3GlowOff = function() {
-    if (!zoneEnabled0) {
-      setTimeout(diagram3GlowOff, 50);
-      return;
-    }
-
-    $('.diagram-3 .part-0-glow').css('opacity', '0');
-    setTimeout(function() {
-      $('.diagram-3 .part-1-glow').css('opacity', '0');
-      setTimeout(function() {
-        $('.diagram-3 .part-2-glow').css('opacity', '0');
-        setTimeout(function() {
-          $('.diagram-3 .part-3-glow').css('opacity', '0');
-          setTimeout(function() {
-            $('.diagram-3 .part-4-glow').css('opacity', '0');
-            setTimeout(diagram3GlowOn, 1000);
-          }, 250);
-        }, 250);
-      }, 250);
-    }, 250);
-  };
-  setTimeout(function() {
-    setTimeout(function() {
-      $('.diagram-3 .part-0').css('opacity', '1');
-    }, 0);
-    setTimeout(function() {
-      $('.diagram-3 .part-1').css('opacity', '1');
-    }, 250);
-    setTimeout(function() {
-      $('.diagram-3 .part-2').css('opacity', '1');
-    }, 500);
-    setTimeout(function() {
-      $('.diagram-3 .part-3').css('opacity', '1');
-    }, 1000);
-    setTimeout(function() {
-      $('.diagram-3 .part-4').css('opacity', '1');
-    }, 1500);
-
-    setTimeout(function() {
-      diagram3GlowOn();
-    }, 2500);
-  }, 500);
-
-  var featureSimpleGlowOn = function() {
-    if (!zoneEnabled1) {
-      setTimeout(featureSimpleGlowOn, 50);
-      return;
-    }
-
-    $('.feature-simple .feature-after').css('opacity', '1');
-    setTimeout(featureSimpleGlowOff, 6000);
-  };
-  var featureSimpleGlowOff = function() {
-    if (!zoneEnabled1) {
-      setTimeout(featureSimpleGlowOff, 50);
-      return;
-    }
-
-    $('.feature-simple .feature-after').css('opacity', '0');
-    setTimeout(featureSimpleGlowOn, 3000);
-  };
-  setTimeout(featureSimpleGlowOn, 500);
-
-  var featureDisGlowOn = function() {
-    if (!zoneEnabled2) {
-      setTimeout(featureDisGlowOn, 50);
-      return;
-    }
-
-    $('.feature-dis .feature-preglow').css('opacity', '1');
-    setTimeout(function() {
-      $('.feature-dis .feature-glow').css('opacity', '1');
-      setTimeout(featureDisGlowOff, 4000);
-    }, 3000);
-  };
-  var featureDisGlowOff = function() {
-    if (!zoneEnabled2) {
-      setTimeout(featureDisGlowOff, 50);
-      return;
-    }
-
-    $('.feature-dis .feature-glow').addClass('fast');
-    $('.feature-dis .feature-preglow').addClass('fast');
-    setTimeout(function() {
-      $('.feature-dis .feature-preglow').css('opacity', '0');
-      $('.feature-dis .feature-glow').css('opacity', '0');
-      setTimeout(function() {
-        $('.feature-dis .feature-glow').removeClass('fast');
-        $('.feature-dis .feature-preglow').removeClass('fast');
-        setTimeout(featureDisGlowOn, 500);
-      }, 1500);
-    }, 500);
-  };
-  setTimeout(featureDisGlowOn, 500);
 });
