@@ -10,10 +10,6 @@ body {
 }
 a {
   color: #2e4153;
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 a:hover {
@@ -34,10 +30,6 @@ strong {
   font-weight: 500;
 }
 .btn {
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 .btn .fa {
@@ -131,11 +123,7 @@ strong {
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
-  -webkit-transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
-  -moz-transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
-  -ms-transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
-  -o-transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
-  transition: 0.25s padding ease-in-out, 0.25s background ease-in-out;
+  transition: .25s padding ease-in-out, .25s background ease-in-out;
 }
 .header.header-top {
   padding: 30px 0;
@@ -155,11 +143,7 @@ strong {
   font-family: 'Fredoka One', cursive;
   vertical-align: middle;
   color: #2e4153;
-  -webkit-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  -moz-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  -ms-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  -o-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
+  transition: .25s color ease-in-out, .25s font-size ease-in-out;
 }
 .header.header-top h1.logo .logo-title {
   font-size: 64px;
@@ -184,11 +168,7 @@ strong {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  -webkit-transition: 0.25s background ease-in-out;
-  -moz-transition: 0.25s background ease-in-out;
-  -ms-transition: 0.25s background ease-in-out;
-  -o-transition: 0.25s background ease-in-out;
-  transition: 0.25s background ease-in-out;
+  transition: .25s background ease-in-out;
 }
 .header.header-top .main-nav button {
   background: #fff;
@@ -201,11 +181,7 @@ strong {
 }
 .header.header-top .main-nav button .icon-bar {
   background-color: #2e4153;
-  -webkit-transition: 0.25s background ease-in-out;
-  -moz-transition: 0.25s background ease-in-out;
-  -ms-transition: 0.25s background ease-in-out;
-  -o-transition: 0.25s background ease-in-out;
-  transition: 0.25s background ease-in-out;
+  transition: .25s background ease-in-out;
 }
 /*.header .main-nav .nav li+li::before {
   content: '•';
@@ -227,11 +203,7 @@ strong {
   color: #444;
   padding-left: 6px;
   padding-right: 6px;
-  -webkit-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  -moz-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  -ms-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  -o-transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
-  transition: 0.25s color ease-in-out, 0.25s font-size ease-in-out;
+  transition: .25s color ease-in-out, .25s font-size ease-in-out;
 }
 .header .main-nav .nav .nav-item:first-child a {
   padding-left: 0;
@@ -261,11 +233,7 @@ strong {
 .header.header-top .navbar-collapse {
   padding-left: 0;
   margin-right: 0 !important;
-  -webkit-transition: 0.25s margin-right ease-in-out;
-  -moz-transition: 0.25s margin-right ease-in-out;
-  -ms-transition: 0.25s margin-right ease-in-out;
-  -o-transition: 0.25s margin-right ease-in-out;
-  transition: 0.25s margin-right ease-in-out;
+  transition: .25s margin-right ease-in-out;
 }
 .header .twitter-logo,
 .header .github-logo {
@@ -277,11 +245,7 @@ strong {
   display: none;
   opacity: 0.9;
   visibility:visible;
-  -webkit-transition: 0.25s opacity ease-in-out;
-  -moz-transition: 0.25s opacity ease-in-out;
-  -ms-transition: 0.25s opacity ease-in-out;
-  -o-transition: 0.25s opacity ease-in-out;
-  transition: 0.25s opacity ease-in-out;
+  transition: .25s opacity ease-in-out;
 }
 .header.header-top .twitter-logo,
 .header.header-top .github-logo {
@@ -315,7 +279,8 @@ strong {
   width: 100%;
   position: relative;
 }
-.diagram .part {
+.diagram .part,
+.diagram .part-glow {
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
@@ -337,11 +302,6 @@ strong {
 .diagram-3 .part-3,
 .diagram-3 .part-4 {
   opacity: 0;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -ms-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
 }
 .diagram-3 .part-0-glow,
 .diagram-3 .part-1-glow,
@@ -349,11 +309,6 @@ strong {
 .diagram-3 .part-3-glow,
 .diagram-3 .part-4-glow {
   opacity: 0;
-  -webkit-transition: opacity 0.70s ease-in-out;
-  -moz-transition: opacity 0.70s ease-in-out;
-  -ms-transition: opacity 0.70s ease-in-out;
-  -o-transition: opacity 0.70s ease-in-out;
-  transition: opacity 0.70s ease-in-out;
 }
 .diagram-3 .part-0,
 .diagram-3 .part-2,
@@ -449,12 +404,7 @@ strong {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -ms-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+  /*background-attachment: fixed;*/
   transform: scale(1.05);
 }
 .theme0.promo-background-color {
@@ -514,10 +464,8 @@ strong {
   opacity: 0.6;
 }
 .theme-trans.promo-background-color {
-  opacity: 0 !important;
 }
 .theme-trans.promo-background-img {
-  opacity: 0 !important;
 }
 .promo-video {
   display: none;
@@ -649,11 +597,6 @@ strong {
 }
 .features.feature-simple .feature-after {
   opacity: 0;
-  -webkit-transition: opacity 2s ease-in-out;
-  -moz-transition: opacity 2s ease-in-out;
-  -ms-transition: opacity 2s ease-in-out;
-  -o-transition: opacity 2s ease-in-out;
-  transition: opacity 2s ease-in-out;
 }
 .features .feature-desc {
   font-size: 26px;
@@ -696,29 +639,9 @@ strong {
   background-size: 1500px auto;
   background-image: url('../img/pritunl_background2.svg');
 }
-.features.feature-dis .feature-preglow {
-  opacity: 0;
-  -webkit-transition: opacity 4s ease-in-out;
-  -moz-transition: opacity 4s ease-in-out;
-  -ms-transition: opacity 4s ease-in-out;
-  -o-transition: opacity 4s ease-in-out;
-  transition: opacity 4s ease-in-out;
-}
+.features.feature-dis .feature-preglow,
 .features.feature-dis .feature-glow {
   opacity: 0;
-  -webkit-transition: opacity 1.5s ease-in-out;
-  -moz-transition: opacity 1.5s ease-in-out;
-  -ms-transition: opacity 1.5s ease-in-out;
-  -o-transition: opacity 1.5s ease-in-out;
-  transition: opacity 1.5s ease-in-out;
-}
-.features.feature-dis .feature-glow.fast,
-.features.feature-dis .feature-preglow.fast {
-  -webkit-transition: opacity 1s ease-in-out;
-  -moz-transition: opacity 1s ease-in-out;
-  -ms-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
 }
 .features.feature-dis .title {
   color: #fff;
@@ -758,10 +681,6 @@ strong {
   text-align: left;
   font-size: 0;
   left: -100%;
-  -webkit-transition: left 0.7s ease-in-out;
-  -moz-transition: left 0.7s ease-in-out;
-  -ms-transition: left 0.7s ease-in-out;
-  -o-transition: left 0.7s ease-in-out;
   transition: left 0.7s ease-in-out;
 }
 .screenshots .slider img {
@@ -819,7 +738,7 @@ strong {
   background-image: url('../img/pritunl_background3.svg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 .plans .item .title {
   font-size: 26px;
@@ -835,6 +754,11 @@ strong {
 }
 .plans .enterprise .price {
   color: #5917b3;
+}
+.plans .price-label {
+  background-color: #d30808;
+  font-size: 15px;
+  padding: 6px;
 }
 .plans .item {
   margin-bottom: 20px;
@@ -1069,7 +993,7 @@ strong {
   background-image: url('../img/background2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 .comparison .title {
   margin-bottom: 50px;
@@ -1142,7 +1066,7 @@ strong {
   background-image: url('../img/background1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 .use-cases .title {
   margin-bottom: 50px;
@@ -1581,10 +1505,6 @@ a.anchor.api-anchor {
 }
 @media (max-width: 500px) {
   .screenshots .slider {
-    -webkit-transition: none;
-    -moz-transition: none;
-    -ms-transition: none;
-    -o-transition: none;
     transition: none;
   }
 }
@@ -1916,7 +1836,7 @@ a.anchor.api-anchor {
   background-image: url('../img/background4.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*background-attachment: fixed;*/
 }
 .documentation .documentation-title {
   margin-top: 100px;
