@@ -194,6 +194,12 @@ strong {
   top: 16px;
   color: #fff;
 }*/
+.nav-item-wide {
+  display: none !important;
+}
+.nav-item-narrow {
+  display: block !important;
+}
 .header .main-nav .nav .nav-item {
   font-weight: 400;
   text-transform: uppercase;
@@ -1428,6 +1434,9 @@ a.anchor.api-anchor {
   }
 }
 @media (max-width: 767px) {
+  .header .main-nav .nav .nav-item:first-child a {
+    padding-left: 6px;
+  }
   .features.feature-dis .feature-img {
     background-color: #242629;
     background-image: url('../img/pritunl_pattern0.svg');
@@ -1618,6 +1627,12 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 992px) {
+  .nav-item-wide {
+    display: block !important;
+  }
+  .nav-item-narrow {
+    display: none !important;
+  }
   .header.header-top {
     padding: 40px 0px;
   }
