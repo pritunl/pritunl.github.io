@@ -959,6 +959,10 @@ strong {
   padding-top: 30px;
   text-align: center;
 }
+.install .client-screenshot {
+  width: 400px;
+  max-width: 100%;
+}
 .install .client img {
   margin-bottom: 10px;
 }
