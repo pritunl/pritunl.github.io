@@ -1,41 +1,57 @@
 jQuery(document).ready(function($) {
   var $window = $(window);
 
-  var diag3 = TweenMax.staggerTo($('.diagram-3 .part'), 2, {
-    delay: 1,
-    opacity: 1
-  }, .25);
-  var diag3glow = TweenMax.staggerTo($('.diagram-3 .part-glow'), .7, {
-    delay: 3,
-    repeat: -1,
-    repeatDelay: 1,
-    yoyo: true,
-    opacity: 1
-  }, .25);
-  var featSimp = TweenMax.to($('.feature-simple .feature-after')[0], 2, {
-    delay: 3,
-    repeat: -1,
-    repeatDelay: .75,
-    yoyo: true,
-    opacity: 1
-  });
-  var featSimp = TweenMax.to($('.feature-simple .feature-after')[0], 2, {
-    delay: 3,
-    repeat: -1,
-    repeatDelay: .75,
-    yoyo: true,
-    opacity: 1
-  });
-  var feat = TweenMax.staggerTo([
-    $('.feature-dis .feature-preglow')[0],
-    $('.feature-dis .feature-glow')[0]
-  ], 2, {
-    delay:.2,
-    repeat: -1,
-    repeatDelay: 2,
-    yoyo: true,
-    opacity: 1
-  }, 1);
+  var $diag3 = $('.diagram-3 .part');
+  if ($diag3.length) {
+    TweenMax.staggerTo($diag3, 2, {
+      delay: 1,
+      opacity: 1
+    }, .25);
+  }
+  var $diag3glow = $('.diagram-3 .part-glow');
+  if ($diag3glow.length) {
+    TweenMax.staggerTo($('.diagram-3 .part-glow'), .7, {
+      delay: 3,
+      repeat: -1,
+      repeatDelay: 1,
+      yoyo: true,
+      opacity: 1
+    }, .25);
+  }
+  var $featSimp = $('.feature-simple .feature-after');
+  if ($featSimp.length) {
+    TweenMax.to($featSimp, 2, {
+      delay: 3,
+      repeat: -1,
+      repeatDelay: .75,
+      yoyo: true,
+      opacity: 1
+    });
+  }
+  var $featSimp = $('.feature-simple .feature-after');
+  if ($featSimp.length) {
+    TweenMax.to($featSimp, 2, {
+      delay: 3,
+      repeat: -1,
+      repeatDelay: .75,
+      yoyo: true,
+      opacity: 1
+    });
+  }
+  var $featPreglow = $('.feature-dis .feature-preglow');
+  var $featGlow = $('.feature-dis .feature-glow');
+  if ($featPreglow.length && $featGlow.length) {
+    TweenMax.staggerTo([
+      $featPreglow,
+      $featGlow
+    ], 2, {
+      delay:.2,
+      repeat: -1,
+      repeatDelay: 2,
+      yoyo: true,
+      opacity: 1
+    }, 1);
+  }
 
   var randTheme = 'theme' + Math.floor((Math.random() * 3)).toString();
   var $body = $('body');
