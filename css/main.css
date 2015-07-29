@@ -587,6 +587,22 @@ strong {
   width: 100%;
   height: 100%;
 }
+.features .item .img-customers0 {
+  max-width: 26.452991452991453%;
+  width: 26.452991452991453%;
+}
+.features .item .img-customers1 {
+  max-width: 29.4017094017094%;
+  width: 29.4017094017094%;
+}
+.features .item .img-customers2 {
+  max-width: 25.94017094017094%;
+  width: 25.94017094017094%;
+}
+.features .item .img-customers3 {
+  max-width: 18.205128205128204%;
+  width: 18.205128205128204%;
+}
 .features.feature-simple {
   background-color: #eef4fe;
   background-image: url('../img/pritunl_pattern2.svg');
@@ -665,6 +681,12 @@ strong {
 }
 .features.feature-dis .feature-img {
   padding: 20px;
+}
+.features .customers {
+  white-space: nowrap;
+}
+.features .customers .title {
+  margin-bottom: 0;
 }
 
 .screenshots {
