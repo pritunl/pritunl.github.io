@@ -978,7 +978,14 @@ strong {
   padding-right: 2px;
 }
 .client {
+  background: #231335;
+  background: -webkit-linear-gradient(left, #231335 0%, #046B57 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #231335), color-stop(100%, #046B57));
+  background: -moz-linear-gradient(left, #231335 0%, #046B57 100%);
+  background: -ms-linear-gradient(left, #231335 0%, #046B57 100%);
+  background: -o-linear-gradient(left, #231335 0%, #046B57 100%);
   background: linear-gradient(to right, #231335 0%, #046B57 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#231335', endColorstr='#046B57', GradientType=1);
   color: #fff;
   padding: 0 0 20px 0;
 }
