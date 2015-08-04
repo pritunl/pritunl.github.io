@@ -25,6 +25,7 @@ thead tr th {
   font-style: normal;
   font-size: 28px;
   margin-bottom: 20px;
+  padding: 0 5px;
 }
 strong {
   font-weight: 500;
