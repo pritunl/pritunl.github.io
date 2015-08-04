@@ -1005,6 +1005,11 @@ strong {
 .client img {
   margin-bottom: 10px;
 }
+.client .logo {
+  font-size: 45px;
+  font-family: 'Fredoka One', cursive;
+  margin-bottom: 10px;
+}
 .client .editor {
   text-align: left;
 }
