@@ -1011,6 +1011,13 @@ strong {
   font-family: 'Fredoka One', cursive;
   margin-bottom: 10px;
 }
+.client .logo a,
+.client .logo a:hover,
+.client .logo a:active,
+.client .logo a:focus {
+  color: #fff;
+  text-decoration: none;
+}
 .client .editor {
   text-align: left;
 }
