@@ -94,7 +94,7 @@ strong {
   float: left;
 }
 .social-icons a:hover {
-  background: #1f2c38;
+  background: rgba(255, 255, 255, 0.3);
 }
 .social-icons a .fa {
   color: #fff;
