@@ -1582,6 +1582,12 @@ a.anchor.api-anchor {
   }
 }
 
+@media (min-width: 500px) {
+  .client .item .client-home {
+    font-size: 27px;
+    padding: 16px 22px;
+  }
+}
 @media (min-width: 650px) {
   .install .server-auto .btn.server-region {
     margin: 5px;
