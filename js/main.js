@@ -491,4 +491,18 @@ jQuery(document).ready(function($) {
         'try again later.', 'alert-danger', data.region, true, false);
     }
   });
+
+  if ($('#google-cache-hdr').length) {
+    $('.header').css('position', 'absolute')
+  }
+  setTimeout(function() {
+    if ($('#google-cache-hdr').length) {
+      $('.header').css('position', 'absolute')
+    }
+    setTimeout(function() {
+      if ($('#google-cache-hdr').length) {
+        $('.header').css('position', 'absolute')
+      }
+    }, 500);
+  }, 500);
 });
