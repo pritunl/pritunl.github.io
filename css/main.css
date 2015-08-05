@@ -244,7 +244,7 @@ strong {
 .header .twitter-logo,
 .header .github-logo {
   z-index: 2000;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   border: 0;
