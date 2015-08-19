@@ -405,8 +405,6 @@ jQuery(document).ready(function($) {
   });
 
 
-
-
   $('.client .client-distro').click(function(evt) {
     var type;
 
