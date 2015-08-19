@@ -357,19 +357,7 @@ $ pacman-key --lsign-key CF8E292A
 $ pacman -Sy
 $ pacman -S pritunl-client-gtk</div>
         </div>
-      </div>
-      <div class="row">
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
-          <h3 class="title text-center">Ubuntu Server</h3>
-<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
-# Replace trusty with distro version
-deb http://mirror.pritunl.com/stable/apt trusty main
-
-$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
-$ apt-get update
-$ apt-get install pritunl-client</div>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12">
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-archlinux">
           <h3 class="title text-center">Arch Linux Server</h3>
 <div class="editor bash">$ nano /etc/pacman.conf
 [pritunl]
@@ -380,20 +368,129 @@ $ pacman-key --lsign-key CF8E292A
 $ pacman -Sy
 $ pacman -S pritunl-client</div>
         </div>
-      </div>
-      <div class="row">
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-precise">
+          <h3 class="title text-center">Ubuntu</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt precise main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client-gtk</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-precise">
+          <h3 class="title text-center">Ubuntu Server</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt precise main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-trusty">
+          <h3 class="title text-center">Ubuntu</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt trusty main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client-gtk</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-trusty">
+          <h3 class="title text-center">Ubuntu Server</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt trusty main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-vivid">
+          <h3 class="title text-center">Ubuntu</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt vivid main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client-gtk</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-vivid">
+          <h3 class="title text-center">Ubuntu Server</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt vivid main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-wily">
+          <h3 class="title text-center">Ubuntu</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt wily main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client-gtk</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-wily">
+          <h3 class="title text-center">Ubuntu Server</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt wily main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-wheezy">
+          <h3 class="title text-center">Debian</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt wheezy main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client-gtk</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-wheezy">
           <h3 class="title text-center">Debian Server</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
-# Replace trusty with distro version
+deb http://mirror.pritunl.com/stable/apt wheezy main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
+          <h3 class="title text-center">Debian</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
+deb http://mirror.pritunl.com/stable/apt jessie main
+
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client-gtk</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-jessie">
+          <h3 class="title text-center">Debian Server</h3>
+<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
 deb http://mirror.pritunl.com/stable/apt jessie main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl-client</div>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12">
-          <h3 class="title text-center">CentOS Server</h3>
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
+          <h3 class="title text-center">CentOS 7</h3>
+<div class="editor bash">$ nano /etc/yum.repos.d/pacur.repo
+[pritunl]
+name=Pritunl Stable Repository
+baseurl=http://mirror.pritunl.com/stable/yum/centos/7/
+gpgcheck=1
+enabled=1
+
+$ gpg --keyserver hkp://pgp.mit.edu --recv-keys CF8E292A
+$ gpg --armor --export CF8E292A > key.tmp; rpm --import key.tmp; rm -f key.tmp
+$ yum install pritunl-client</div>
+        </div>
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-centos-7">
+          <h3 class="title text-center">Amazon Linux</h3>
 <div class="editor bash">$ nano /etc/yum.repos.d/pacur.repo
 [pritunl]
 name=Pritunl Stable Repository
