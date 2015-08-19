@@ -130,7 +130,8 @@ jQuery(document).ready(function($) {
     $(element).css('height', editor.getSession().getScreenLength() *
       editor.renderer.lineHeight + 2);
   });
-  $('.install-archlinux .editor.bash').each(function(index, element) {
+  $('.install-archlinux .editor.bash, .server .editor.bash').each(
+      function(index, element) {
     var editor = ace.edit(element);
     editor.setTheme('ace/theme/tomorrow_night');
     editor.setFontSize(16);
