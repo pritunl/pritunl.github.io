@@ -967,7 +967,14 @@ strong {
   display: block;
   margin: 10px auto 15px auto;
 }
+.client .btn.client-distro,
 .install .server-auto .btn.server-region {
+  min-width: 114px;
+  display: inline-block;
+  margin: 10px;
+  font-size: 16px;
+  padding-left: 2px;
+  padding-right: 2px;
   min-width: 114px;
   display: inline-block;
   margin: 10px;
