@@ -334,20 +334,11 @@ systemctl enable mongod pritunl # CentOS
           <img class="client-screenshot" src="img/screenshot.png" alt="Client Screenshot"/><br>
           <a class="client-home title btn btn-lg" href="//client.pritunl.com" target="_blank">Visit Client Homepage <i class="fa fa-compass"></i></a>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
-          <h3 class="title text-center">Ubuntu</h3>
-          <img src="img/client_ubuntu.png" alt="Ubuntu Client"/>
-<div class="editor bash">$ nano /etc/apt/sources.list.d/pacur.list
-# Replace vivid with distro version
-deb http://mirror.pritunl.com/stable/apt vivid main
-
-$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
-$ apt-get update
-$ apt-get install pritunl-client-gtk</div>
+        <div class="item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-wheezy btn btn-lg btn-default">Debian Wheezy</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian Jessie</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu Precise</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu Trusty</button><button class="client-distro client-ubuntu-vivid btn btn-lg btn-default">Ubuntu Vivid</button><button class="client-distro client-ubuntu-wily btn btn-lg btn-default">Ubuntu Wily</button>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12">
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
-          <img src="img/client_arch.png" alt="Arch Linux Client"/>
 <div class="editor bash">$ nano /etc/pacman.conf
 [pritunl]
 Server = http://mirror.pritunl.com/stable/arch
