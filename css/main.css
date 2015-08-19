@@ -1015,6 +1015,15 @@ strong {
   font-family: 'Fredoka One', cursive;
   margin-bottom: 10px;
 }
+.client .install-centos-7,
+.client .install-debian-wheezy,
+.client .install-debian-jessie,
+.client .install-ubuntu-precise,
+.client .install-ubuntu-trusty,
+.client .install-ubuntu-vivid,
+.client .install-ubuntu-wily {
+  display: none;
+}
 .client .logo a,
 .client .logo a:hover,
 .client .logo a:active,
