@@ -982,6 +982,9 @@ strong {
   padding-left: 2px;
   padding-right: 2px;
 }
+.client .btn.client-distro {
+  opacity: 0.8;
+}
 .client {
   background: #231335;
   background: -webkit-linear-gradient(left, #231335 0%, #046B57 100%);
