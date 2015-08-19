@@ -407,11 +407,12 @@ jQuery(document).ready(function($) {
 
   $('.client .client-distro').click(function(evt) {
     var type;
+    var $target = $(evt.target);
 
     $('.client-distro').removeClass('btn-primary');
     $('.client-distro').addClass('btn-default');
-    $(evt.target).removeClass('btn-default');
-    $(evt.target).addClass('btn-primary');
+    $target.removeClass('btn-default');
+    $target.addClass('btn-primary');
 
     $('.install-archlinux').hide();
     $('.install-centos-7').hide();
@@ -422,28 +423,28 @@ jQuery(document).ready(function($) {
     $('.install-ubuntu-vivid').hide();
     $('.install-ubuntu-wily').hide();
 
-    if ($(evt.target).hasClass('client-archlinux')) {
+    if ($target.hasClass('client-archlinux')) {
       type = 'archlinux';
       $('.install-archlinux').show();
-    } else if ($(evt.target).hasClass('client-centos-7')) {
+    } else if ($target.hasClass('client-centos-7')) {
       type = 'centos-7';
       $('.install-centos-7').show();
-    } else if ($(evt.target).hasClass('client-debian-wheezy')) {
+    } else if ($target.hasClass('client-debian-wheezy')) {
       type = 'debian-wheezy';
       $('.install-debian-wheezy').show();
-    } else if ($(evt.target).hasClass('client-debian-jessie')) {
+    } else if ($target.hasClass('client-debian-jessie')) {
       type = 'debian-jessie';
       $('.install-debian-jessie').show();
-    } else if ($(evt.target).hasClass('client-ubuntu-precise')) {
+    } else if ($target.hasClass('client-ubuntu-precise')) {
       type = 'ubuntu-precise';
       $('.install-ubuntu-precise').show();
-    } else if ($(evt.target).hasClass('client-ubuntu-trusty')) {
+    } else if ($target.hasClass('client-ubuntu-trusty')) {
       type = 'ubuntu-trusty';
       $('.install-ubuntu-trusty').show();
-    } else if ($(evt.target).hasClass('client-ubuntu-vivid')) {
+    } else if ($target.hasClass('client-ubuntu-vivid')) {
       type = 'ubuntu-vivid';
       $('.install-ubuntu-vivid').show();
-    } else if ($(evt.target).hasClass('client-ubuntu-wily')) {
+    } else if ($target.hasClass('client-ubuntu-wily')) {
       type = 'ubuntu-wily';
       $('.install-ubuntu-wily').show();
     }
