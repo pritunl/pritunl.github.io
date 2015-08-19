@@ -409,10 +409,8 @@ jQuery(document).ready(function($) {
     var type;
     var $target = $(evt.target);
 
-    $('.client-distro').removeClass('btn-primary');
-    $('.client-distro').addClass('btn-default');
-    $target.removeClass('btn-default');
-    $target.addClass('btn-primary');
+    $('.client-distro').removeClass('btn-primary').addClass('btn-default');
+    $target.removeClass('btn-default').addClass('btn-primary');
 
     $('.install-archlinux').hide();
     $('.install-centos-7').hide();
