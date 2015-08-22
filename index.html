@@ -304,7 +304,7 @@ systemctl enable mongodb pritunl
 <div class="editor bash">nano /etc/yum.repos.d/pritunl.repo
 [pritunl]
 name=Pritunl Repository
-baseurl=http://mirror.pritunl.com/yum/pritunl/x86_64/
+baseurl=http://repo.pritunl.com/yum/pritunl/x86_64/
 gpgcheck=0
 enabled=1
 
@@ -342,7 +342,7 @@ systemctl enable mongod pritunl # CentOS
           <h3 class="title text-center">Arch Linux</h3>
 <div class="editor bash">$ nano /etc/pacman.conf
 [pritunl]
-Server = http://mirror.pritunl.com/stable/arch
+Server = http://repo.pritunl.com/stable/arch
 
 $ pacman-key --keyserver hkp://pgp.mit.edu -r CF8E292A
 $ pacman-key --lsign-key CF8E292A
@@ -353,7 +353,7 @@ $ pacman -S pritunl-client-gtk</div>
           <h3 class="title text-center">Arch Linux Server</h3>
 <div class="editor bash">$ nano /etc/pacman.conf
 [pritunl]
-Server = http://mirror.pritunl.com/stable/arch
+Server = http://repo.pritunl.com/stable/arch
 
 $ pacman-key --keyserver hkp://pgp.mit.edu -r CF8E292A
 $ pacman-key --lsign-key CF8E292A
@@ -363,7 +363,7 @@ $ pacman -S pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-precise">
           <h3 class="title text-center">Ubuntu</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt precise main
+deb http://repo.pritunl.com/stable/apt precise main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -372,7 +372,7 @@ $ apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-precise">
           <h3 class="title text-center">Ubuntu Server</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt precise main
+deb http://repo.pritunl.com/stable/apt precise main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -381,7 +381,7 @@ $ apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt trusty main
+deb http://repo.pritunl.com/stable/apt trusty main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -390,7 +390,7 @@ $ apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu Server</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt trusty main
+deb http://repo.pritunl.com/stable/apt trusty main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -399,7 +399,7 @@ $ apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-vivid">
           <h3 class="title text-center">Ubuntu</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt vivid main
+deb http://repo.pritunl.com/stable/apt vivid main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -408,7 +408,7 @@ $ apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-vivid">
           <h3 class="title text-center">Ubuntu Server</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt vivid main
+deb http://repo.pritunl.com/stable/apt vivid main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -417,7 +417,7 @@ $ apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-wily">
           <h3 class="title text-center">Ubuntu</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt wily main
+deb http://repo.pritunl.com/stable/apt wily main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -426,7 +426,7 @@ $ apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-wily">
           <h3 class="title text-center">Ubuntu Server</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt wily main
+deb http://repo.pritunl.com/stable/apt wily main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -435,7 +435,7 @@ $ apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-wheezy">
           <h3 class="title text-center">Debian</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt wheezy main
+deb http://repo.pritunl.com/stable/apt wheezy main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -444,7 +444,7 @@ $ apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-wheezy">
           <h3 class="title text-center">Debian Server</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt wheezy main
+deb http://repo.pritunl.com/stable/apt wheezy main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -453,7 +453,7 @@ $ apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
           <h3 class="title text-center">Debian</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt jessie main
+deb http://repo.pritunl.com/stable/apt jessie main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -462,7 +462,7 @@ $ apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-jessie">
           <h3 class="title text-center">Debian Server</h3>
 <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://mirror.pritunl.com/stable/apt jessie main
+deb http://repo.pritunl.com/stable/apt jessie main
 
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
@@ -473,7 +473,7 @@ $ apt-get install pritunl-client</div>
 <div class="editor bash">$ nano /etc/yum.repos.d/pritunl.repo
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=http://mirror.pritunl.com/stable/yum/centos/7/
+baseurl=http://repo.pritunl.com/stable/yum/centos/7/
 gpgcheck=1
 enabled=1
 
@@ -486,7 +486,7 @@ $ yum install pritunl-client</div>
 <div class="editor bash">$ nano /etc/yum.repos.d/pritunl.repo
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=http://mirror.pritunl.com/stable/yum/centos/7/
+baseurl=http://repo.pritunl.com/stable/yum/centos/7/
 gpgcheck=1
 enabled=1
 
