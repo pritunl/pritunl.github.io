@@ -12,10 +12,11 @@ container_type: -fluid
             <li><a href="#authentication">Authentication</a></li>
             <li><a href="#delete-auth-token-var">DEL /auth/token/:auth_token</a></li>
             <li><a href="#get-event-var">GET /event/:cursor</a></li>
+            <li><a href="#get-ping">GET /ping</a></li>
             <li><a href="#get-status">GET /status</a></li>
             <li><a href="#get-log">GET /log</a></li>
-            <li><a href="#get-auth">GET /auth</a></li>
-            <li><a href="#put-auth">PUT /auth</a></li>
+            <li><a href="#get-settings">GET /settings</a></li>
+            <li><a href="#put-settings">PUT /settings</a></li>
             <li><a href="#get-organization">GET /organization</a></li>
             <li><a href="#get-organization-var">GET /organization/:organization_id</a></li>
             <li><a href="#post-organization">POST /organization</a></li>
@@ -28,6 +29,7 @@ container_type: -fluid
             <li><a href="#delete-user-var">DEL /user/:org_id/:user_id</a></li>
             <li><a href="#put-user-var-otp-secret">PUT /user/:org_id/:user_id/otp</a></li>
             <li><a href="#get-key-var-tar">GET /key/:org_id/:user_id.tar</a></li>
+            <li><a href="#get-key-onc-var-tar">GET /key_onc/:org_id/:user_id.zip</a></li>
             <li><a href="#get-key-var">GET /key/:org_id/:user_id</a></li>
             <li><a href="#get-server">GET /server</a></li>
             <li><a href="#get-server-var">GET /server/:srv_id</a></li>
@@ -40,19 +42,16 @@ container_type: -fluid
             <li><a href="#delete-server-var-organization-var">DEL /server/:srv_id/org/:org_id</a></li>
             <li><a href="#get-server-var-output">GET /server/:srv_id/output</a></li>
             <li><a href="#delete-server-var-output">DEL /server/:srv_id/output</a></li>
-            <li><a href="#get-server-var-bandwidth">GET /server/:srv_id/bandwidth</a></li>
-            <li><a href="#get-export">GET /export/pritunl.tar</a></li>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
           <a id="authentication" class="anchor api-anchor"></a>
-          <div class="alert alert-danger" role="alert">The API documentation has not yet been updated for Pritunl 1.0 some functionality may be missing or undocumented.</div>
           <h2 class="api-header">Authentication</h2>
           <div class="api-description">
             <div class="text">
-              All API requests must be signed with the API token and secret. Below is an example wrapper function to sign API requests. The API token and secret can be found by clicking Change Password in the web interface.
+              All API requests must be signed with the API token and secret. Below is an example wrapper function to sign API requests. The API token and secret can be found in the Settings dialog.
             </div>
             <table class="table">
               <thead>
@@ -90,8 +89,8 @@ container_type: -fluid
           </noscript>
 <div class="editor python">import requests, time, uuid, hmac, hashlib, base64
 BASE_URL = 'https://localhost:9700'
-API_TOKEN = 'iAfH2TnpB0oe2Pu6s0qHh2w2iLh27b6P'
-API_SECRET = 'N4coHGtsZ2VIp0KdjfzZeULsiu4Ey8Lx'
+API_TOKEN = 'p7g444S3IZ5wmFvmzWmx14qACXdzQ25b'
+API_SECRET = 'OpS9fjxkPI3DclkdKDDr6mqYVd0DJh4i'
 
 def auth_request(method, path, headers=None, data=None):
     auth_timestamp = str(int(time.time()))
@@ -114,44 +113,6 @@ def auth_request(method, path, headers=None, data=None):
         headers=auth_headers,
         data=data,
     )</div>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
-          <a id="delete-auth-token-var" class="anchor api-anchor"></a>
-          <h2 class="api-header">DELETE /auth/token/:auth_token</h2>
-          <div class="api-description">
-            <div class="text">
-              Revoke an authentication token.
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">URL Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>auth_token</td>
-                  <td>Authentication token</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
-          <span class="editor-title">Python Example</span>
-          <noscript>
-            <div class="text">
-              JavaScript is required to view example code
-            </div>
-          </noscript>
-<div class="editor python">response = auth_request('DELETE',
-  '/auth/token/264e30e7032b467bb0174b22bdb8ce13',
-)
-assert(response.status_code == 200)</div>
         </div>
       </div>
       <div class="row">
@@ -216,16 +177,16 @@ assert(response.status_code == 200)
 print response.json()
 [
   {
-      'id': 'd74a527af2ac44899b44b7b3dd9efdc7',
+      'id': '55e9f1f1b0e730245677dc31',
       'type': 'users_updated',
       'timestamp': 1388495793,
       'resource_id': None,
   },
   {
-      'id': '09b86897d4e44130b5fec95ca7101a5a',
+      'id': '55e9f1f2b0e730245677dc32',
       'type': 'server_organizations_updated',
       'timestamp': 1388495805,
-      'resource_id': '6551f49596ca42c4942cb71162916b69',
+      'resource_id': '55e9f1f8b0e730245677dc33',
   },
 ]</div>
         </div>
@@ -266,16 +227,28 @@ print response.json()
                   <td>Number of servers</td>
                 </tr>
                 <tr>
+                  <td>hosts_online</td>
+                  <td>Number of hosts online</td>
+                </tr>
+                <tr>
+                  <td>host_count</td>
+                  <td>Number of hosts</td>
+                </tr>
+                <tr>
                   <td>server_version</td>
                   <td>Pritunl version running on server</td>
                 </tr>
                 <tr>
+                  <td>current_host</td>
+                  <td>Id of the host returning response</td>
+                </tr>
+                <tr>
                   <td>public_ip</td>
-                  <td>Public IP address of server</td>
+                  <td>Public IP address of current host</td>
                 </tr>
                 <tr>
                   <td>local_networks</td>
-                  <td>List of local networks on server</td>
+                  <td>List of local networks on current host</td>
                 </tr>
                 <tr>
                   <td>notification</td>
@@ -303,7 +276,10 @@ print response.json()
   'user_count': 8,
   'servers_online': 2,
   'server_count': 2,
-  'server_version': '0.10.4',
+  'hosts_online': 4,
+  'host_count': 4,
+  'server_version': '1.4.722.21',
+  'current_host': '55e9f1ecb0e730245677dc30',
   'public_ip': '8.8.8.8',
   'local_networks': [
       '10.0.0.0/24',
@@ -312,6 +288,29 @@ print response.json()
   ],
   'notification': '',
 }</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
+          <a id="get-ping" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /ping</h2>
+          <div class="api-description">
+            <div class="text">
+              Server healthcheck.
+            </div>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/ping',
+)
+assert(response.status_code == 200)</div>
         </div>
       </div>
       <div class="row">
@@ -359,12 +358,12 @@ assert(response.status_code == 200)
 print response.json()
 [
   {
-      'id': 'ebb8af4a72d548a889c4d6ca45254a5a',
+      'id': '55e9f1e4b0e730245677dc2e',
       'timestamp': 1388389241,
       'message': 'Web server started.',
   },
   {
-      'id': 'f5ebb4ed2bc74181ad70060bfec30c81',
+      'id': '55e9f1e5b0e730245677dc2f',
       'timestamp': 1388389217,
       'message': 'Web server stopped.',
   },
@@ -373,11 +372,11 @@ print response.json()
       </div>
       <div class="row">
         <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
-          <a id="get-auth" class="anchor api-anchor"></a>
-          <h2 class="api-header">GET /auth</h2>
+          <a id="get-settings" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /settings</h2>
           <div class="api-description">
             <div class="text">
-              Get authentication information.
+              Get system settings.
             </div>
             <table class="table">
               <thead>
@@ -388,23 +387,59 @@ print response.json()
               <tbody>
                 <tr>
                   <td>username</td>
-                  <td>Current username</td>
+                  <td>Admin account username</td>
+                </tr>
+                <tr>
+                  <td>theme</td>
+                  <td>Current theme <pre>light</pre> or <pre>dark</pre></td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public address or hostname of server. Not used on Enterprise clusters</td>
                 </tr>
                 <tr>
                   <td>token</td>
-                  <td>Encrypted API token</td>
+                  <td>API token</td>
                 </tr>
                 <tr>
                   <td>secret</td>
                   <td>API secret</td>
                 </tr>
                 <tr>
-                  <td>email_from</td>
-                  <td>Postmark from address</td>
+                  <td>email_server</td>
+                  <td>SMTP server</td>
                 </tr>
                 <tr>
-                  <td>email_api_key</td>
-                  <td>Postmark API secret</td>
+                  <td>email_from</td>
+                  <td>SMTP from address</td>
+                </tr>
+                <tr>
+                  <td>email_username</td>
+                  <td>SMTP username</td>
+                </tr>
+                <tr>
+                  <td>email_password</td>
+                  <td>SMTP password</td>
+                </tr>
+                <tr>
+                  <td>sso</td>
+                  <td>True if single sign-on is enabled false otherwise</td>
+                </tr>
+                <tr>
+                  <td>sso_match</td>
+                  <td>List of domains to match for single sign-on</td>
+                </tr>
+                <tr>
+                  <td>sso_org</td>
+                  <td>Organization ID to add single sign-on users to</td>
+                </tr>
+                <tr>
+                  <td>server_cert</td>
+                  <td>Custom web console SSL certificate</td>
+                </tr>
+                <tr>
+                  <td>server_key</td>
+                  <td>Custom web console SSL key</td>
                 </tr>
               </tbody>
             </table>
@@ -419,28 +454,34 @@ print response.json()
           </noscript>
 <div class="editor python">response = auth_request('GET',
   '/auth',
-  headers={
-      'Content-Type': 'application/json',
-  },
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'username': 'user',
-  'token': '2$kNvK4+IhmHU=$oBGfGOLHsbl+RqmngrN4M/JCgnKacQb7yNrvkOT3DC8=',
-  'secret': 'NXLmn2nn1rv0NYQ4zG94XSiAY7TQd1Ks',
-  'email_from': None,
-  'email_api_key': None,
+  'username': 'pritunl',
+  'theme': 'dark',
+  'public_address': '8.8.8.8',
+  'token': 'p7g444S3IZ5wmFvmzWmx14qACXdzQ25b',
+  'secret': 'OpS9fjxkPI3DclkdKDDr6mqYVd0DJh4i',
+  'email_server': 'email-smtp.us-east-1.amazonaws.com',
+  'email_from': 'contact@pritunl.com',
+  'email_username': 'AIWXUZFERGAHKIJ3MBGA',
+  'email_password': 'AioRatBJkMKpmYg0xpimGMZPjVzbU',
+  'sso': True,
+  'sso_match': ['pritunl.com'],
+  'sso_org': '55e99499b0e7300fef77e2b1',
+  'server_cert': None,
+  'server_key': None,
 }</div>
         </div>
       </div>
       <div class="row">
         <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
-          <a id="put-auth" class="anchor api-anchor"></a>
-          <h2 class="api-header">PUT /auth</h2>
+          <a id="put-settings" class="anchor api-anchor"></a>
+          <h2 class="api-header">PUT /settings</h2>
           <div class="api-description">
             <div class="text">
-              Change the server authentication settings.
+              Change the system settings.
             </div>
             <table class="table">
               <thead>
@@ -451,19 +492,51 @@ print response.json()
               <tbody>
                 <tr>
                   <td>username</td>
-                  <td>New username</td>
+                  <td>Admin username</td>
                 </tr>
                 <tr>
                   <td>password</td>
-                  <td>New password</td>
+                  <td>Admin password</td>
+                </tr>
+                <tr>
+                  <td>theme</td>
+                  <td>Web console theme can be <pre>light</pre> or <pre>dark</pre></td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public address or hostname of server. Not used on Enterprise clusters</td>
+                </tr>
+                <tr>
+                  <td>token</td>
+                  <td>Set to true to generate a new token</td>
+                </tr>
+                <tr>
+                  <td>secret</td>
+                  <td>Set to true to generate a new secret</td>
+                </tr>
+                <tr>
+                  <td>email_server</td>
+                  <td>SMTP server</td>
                 </tr>
                 <tr>
                   <td>email_from</td>
-                  <td>Postmark from address</td>
+                  <td>SMTP from address</td>
                 </tr>
                 <tr>
-                  <td>email_api_key</td>
-                  <td>Postmark API secret</td>
+                  <td>email_username</td>
+                  <td>SMTP username</td>
+                </tr>
+                <tr>
+                  <td>email_password</td>
+                  <td>SMTP password</td>
+                </tr>
+                <tr>
+                  <td>server_cert</td>
+                  <td>Custom web console SSL certificate</td>
+                </tr>
+                <tr>
+                  <td>server_key</td>
+                  <td>Custom web console SSL key</td>
                 </tr>
               </tbody>
             </table>
@@ -476,23 +549,59 @@ print response.json()
               <tbody>
                 <tr>
                   <td>username</td>
-                  <td>Current username</td>
+                  <td>Admin account username</td>
+                </tr>
+                <tr>
+                  <td>theme</td>
+                  <td>Current theme <pre>light</pre> or <pre>dark</pre></td>
+                </tr>
+                <tr>
+                  <td>public_address</td>
+                  <td>Public address or hostname of server. Not used on Enterprise clusters</td>
                 </tr>
                 <tr>
                   <td>token</td>
-                  <td>Encrypted API token</td>
+                  <td>API token</td>
                 </tr>
                 <tr>
                   <td>secret</td>
                   <td>API secret</td>
                 </tr>
                 <tr>
-                  <td>email_from</td>
-                  <td>Postmark from address</td>
+                  <td>email_server</td>
+                  <td>SMTP server</td>
                 </tr>
                 <tr>
-                  <td>email_api_key</td>
-                  <td>Postmark API secret</td>
+                  <td>email_from</td>
+                  <td>SMTP from address</td>
+                </tr>
+                <tr>
+                  <td>email_username</td>
+                  <td>SMTP username</td>
+                </tr>
+                <tr>
+                  <td>email_password</td>
+                  <td>SMTP password</td>
+                </tr>
+                <tr>
+                  <td>sso</td>
+                  <td>True to enabled single sign-on false to disable</td>
+                </tr>
+                <tr>
+                  <td>sso_match</td>
+                  <td>List of domains to match for single sign-on</td>
+                </tr>
+                <tr>
+                  <td>sso_org</td>
+                  <td>Organization ID to add single sign-on users to</td>
+                </tr>
+                <tr>
+                  <td>server_cert</td>
+                  <td>Custom web console SSL certificate</td>
+                </tr>
+                <tr>
+                  <td>server_key</td>
+                  <td>Custom web console SSL key</td>
                 </tr>
               </tbody>
             </table>
@@ -511,18 +620,40 @@ print response.json()
       'Content-Type': 'application/json',
   },
   data=json.dumps({
-      'username': 'user',
-      'password': 'pass',
+      'username': 'pritunl',
+      'password': 'new_password',
+      'theme': 'dark',
+      'public_address': '8.8.8.8',
+      'token': True,
+      'secret': True,
+      'email_server': 'email-smtp.us-east-1.amazonaws.com',
+      'email_from': 'contact@pritunl.com',
+      'email_username': 'AIWXUZFERGAHKIJ3MBGA',
+      'email_password': 'AioRatBJkMKpmYg0xpimGMZPjVzbU',
+      'sso': True,
+      'sso_match': ['pritunl.com'],
+      'sso_org': '55e99499b0e7300fef77e2b1',
+      'server_cert': None,
+      'server_key': None,
   }),
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'username': 'user',
-  'token': '2$kNvK4+IhmHU=$oBGfGOLHsbl+RqmngrN4M/JCgnKacQb7yNrvkOT3DC8=',
-  'secret': 'NXLmn2nn1rv0NYQ4zG94XSiAY7TQd1Ks',
-  'email_from': None,
-  'email_api_key': None,
+  'username': 'pritunl',
+  'theme': 'dark',
+  'public_address': '8.8.8.8',
+  'token': 'p7g444S3IZ5wmFvmzWmx14qACXdzQ25b',
+  'secret': 'OpS9fjxkPI3DclkdKDDr6mqYVd0DJh4i',
+  'email_server': 'email-smtp.us-east-1.amazonaws.com',
+  'email_from': 'contact@pritunl.com',
+  'email_username': 'AIWXUZFERGAHKIJ3MBGA',
+  'email_password': 'AioRatBJkMKpmYg0xpimGMZPjVzbU',
+  'sso': True,
+  'sso_match': ['pritunl.com'],
+  'sso_org': '55e99499b0e7300fef77e2b1',
+  'server_cert': None,
+  'server_key': None,
 }</div>
         </div>
       </div>
@@ -549,6 +680,10 @@ print response.json()
                   <td>name</td>
                   <td>Organization name</td>
                 </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users in organization</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -567,12 +702,14 @@ assert(response.status_code == 200)
 print response.json()
 [
   {
-      'id': '060e54e627904abf9402bf3f2e0e16a2',
+      'id': '55e99499b0e7300fef77e2b1',
       'name': 'org1',
+      'user_count': 512,
   },
   {
-      'id': 'c002529764334d63b7035ad1939eb7ca',
+      'id': '55e9f1d4b0e730245677dc2d',
       'name': 'org2',
+      'user_count': 1024,
   },
 ]</div>
         </div>
@@ -613,6 +750,10 @@ print response.json()
                   <td>name</td>
                   <td>Organization name</td>
                 </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users in organization</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -625,13 +766,14 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('GET',
-  '/organization/060e54e627904abf9402bf3f2e0e16a2',
+  '/organization/55e99499b0e7300fef77e2b1',
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': '060e54e627904abf9402bf3f2e0e16a2',
+  'id': '55e99499b0e7300fef77e2b1',
   'name': 'org1',
+  'user_count': 512,
 }</div>
         </div>
       </div>
@@ -671,6 +813,10 @@ print response.json()
                   <td>name</td>
                   <td>Organization name</td>
                 </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users in organization</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -694,8 +840,9 @@ print response.json()
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'fb48734e859242e2800f077216401736',
+  'id': '55e9f24bb0e730245677dc34',
   'name': 'new_org',
+  'user_count': 0,
 }</div>
         </div>
       </div>
@@ -748,6 +895,10 @@ print response.json()
                   <td>name</td>
                   <td>Organization name</td>
                 </tr>
+                <tr>
+                  <td>user_count</td>
+                  <td>Number of users in organization</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -771,8 +922,9 @@ print response.json()
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'fb48734e859242e2800f077216401736',
+  'id': '55e9f26eb0e730245677dc35',
   'name': 'new_name',
+  'user_count': 512,
 }</div>
         </div>
       </div>
@@ -807,7 +959,7 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('DELETE',
-  '/organization/fb48734e859242e2800f077216401736',
+  '/organization/55e9f27bb0e730245677dc36',
 )
 assert(response.status_code == 200)</div>
         </div>
@@ -845,10 +997,6 @@ assert(response.status_code == 200)</div>
                   <td>User ID</td>
                 </tr>
                 <tr>
-                  <td>organization</td>
-                  <td>Organization ID</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>User name</td>
                 </tr>
@@ -857,20 +1005,12 @@ assert(response.status_code == 200)</div>
                   <td>Optional user email address</td>
                 </tr>
                 <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
                   <td>organization_name</td>
                   <td>Organization name</td>
-                </tr>
-                <tr>
-                  <td>disabled</td>
-                  <td>True if user is disabled otherwise false</td>
-                </tr>
-                <tr>
-                  <td>type</td>
-                  <td>User type</td>
-                </tr>
-                <tr>
-                  <td>status</td>
-                  <td>True if user is online otherwise false</td>
                 </tr>
                 <tr>
                   <td>otp_auth</td>
@@ -881,8 +1021,20 @@ assert(response.status_code == 200)</div>
                   <td>Secret key for two-step authentication</td>
                 </tr>
                 <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type can be <pre>client</pre>, <pre>server</pre>, <pre>client_pool</pre>, <pre>server_pool</pre>. Server users are used for server certificates and pooled users are pre-created users to reduce user creation time</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
                   <td>servers</td>
-                  <td>Object of client parameters listed below for each server ID that the user is connected to</td>
+                  <td>List of client information for each server</td>
                 </tr>
               </tbody>
             </table>
@@ -895,39 +1047,39 @@ assert(response.status_code == 200)</div>
               <tbody>
                 <tr>
                   <td>id</td>
-                  <td>Server ID</td>
+                  <td>Client ID or server ID when client is not connected</td>
                 </tr>
                 <tr>
                   <td>name</td>
                   <td>Server name</td>
                 </tr>
                 <tr>
-                  <td>local_address</td>
-                  <td>Static client address if set otherwise null</td>
+                  <td>status</td>
+                  <td>True if connected false otherwise</td>
                 </tr>
                 <tr>
-                  <td>remote_address</td>
-                  <td>Static client remote address if set otherwise null</td>
+                  <td>server_id</td>
+                  <td>Server ID for client</td>
                 </tr>
                 <tr>
-                  <td>connected_since</td>
-                  <td>Epoch time connection was started if connected</td>
+                  <td>device_name</td>
+                  <td>Device name set in client vpn conf file, default is random</td>
                 </tr>
                 <tr>
-                  <td>virt_address</td>
-                  <td>Virtual OpenVPN IP address if connected</td>
+                  <td>platform</td>
+                  <td>Client platform can be <pre>linux</pre>, <pre>mac</pre>, <pre>win</pre> or <pre>chrome</pre></td>
                 </tr>
                 <tr>
                   <td>real_address</td>
                   <td>Real OpenVPN IP address if connected</td>
                 </tr>
                 <tr>
-                  <td>bytes_sent</td>
-                  <td>Bytes sent if connected</td>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address if connected</td>
                 </tr>
                 <tr>
-                  <td>bytes_received</td>
-                  <td>Bytes received if connected</td>
+                  <td>connected_since</td>
+                  <td>Epoch time in seconds of connection start</td>
                 </tr>
               </tbody>
             </table>
@@ -941,55 +1093,33 @@ assert(response.status_code == 200)</div>
             </div>
           </noscript>
 <div class="editor python">response = auth_request('GET',
-  '/user/060e54e627904abf9402bf3f2e0e16a2',
+  '/user/55e9f7c7b0e73033d45b44d4',
 )
 assert(response.status_code == 200)
 print response.json()
 [
   {
-      'id': '99a38859bcb248bdaf395a6c83305531',
-      'organization': '060e54e627904abf9402bf3f2e0e16a2',
-      'name': 'server_6551f49596ca42c4942cb71162916b69',
-      'email': None,
-      'organization_name': 'org1',
-      'disabled': False,
-      'type': 'server',
-      'status': False,
-      'otp_auth': True,
-      'otp_secret': 'OPT4HTURJTW6JLQN',
-      'servers': [
-        {
-          'id': '6551f49596ca42c4942cb71162916b69',
-          'name': 'server1',
-          'local_address': null,
-          'remote_address': null,
-        },
-      ],
-  },
-  {
-      'id': 'de554a9993cb4250a995cbcca7a6af5a',
-      'organization': '060e54e627904abf9402bf3f2e0e16a2',
-      'name': 'user1',
-      'email': None,
-      'organization_name': 'org1',
-      'disabled': False,
-      'type': 'client',
-      'status': True,
-      'otp_auth': True,
-      'otp_secret': 'LMSRMW6NQ4WGFZ37',
-      'servers': [
-        {
-          'id': '6551f49596ca42c4942cb71162916b69',
-          'name': 'server1',
-          'local_address': '10.139.82.6',
-          'remote_address': '10.139.82.7',
-          'connected_since': 1388498640,
-          'virt_address': '10.139.82.6',
-          'real_address': '8.8.8.8:41536',
-          'bytes_sent': 194742,
-          'bytes_received': 218497,
-        },
-      ],
+    'id': '55e9f98cb0e73033d45b44d7',
+    'name': 'user0',
+    'email': 'user0@pritunl.com',
+    'organization': '55e9f7c7b0e73033d45b44d4',
+    'organization_name': 'org1',
+    'otp_auth': True,
+    'otp_secret': 'OPT4HTURJTW6JLQN',
+    'disabled': False,
+    'type': 'client',
+    'status': True,
+    'servers': [
+      {
+        'id': '55e9f995b0e73033d45b44da',
+        'name': 'server1',
+        'local_address': '10.139.82.6',
+        'remote_address': '10.139.82.7',
+        'virt_address': '10.139.82.6',
+        'real_address': '8.8.8.8:41536',
+        'connected_since': 1388498640,
+      },
+    ],
   },
 ]</div>
         </div>
@@ -1031,10 +1161,6 @@ print response.json()
                   <td>User ID</td>
                 </tr>
                 <tr>
-                  <td>organization</td>
-                  <td>Organization ID</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>User name</td>
                 </tr>
@@ -1043,20 +1169,12 @@ print response.json()
                   <td>Optional user email address</td>
                 </tr>
                 <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
                   <td>organization_name</td>
                   <td>Organization name</td>
-                </tr>
-                <tr>
-                  <td>disabled</td>
-                  <td>True if user is disabled otherwise false</td>
-                </tr>
-                <tr>
-                  <td>type</td>
-                  <td>User type</td>
-                </tr>
-                <tr>
-                  <td>status</td>
-                  <td>True if user is online otherwise false</td>
                 </tr>
                 <tr>
                   <td>otp_auth</td>
@@ -1067,8 +1185,20 @@ print response.json()
                   <td>Secret key for two-step authentication</td>
                 </tr>
                 <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type can be <pre>client</pre>, <pre>server</pre>, <pre>client_pool</pre>, <pre>server_pool</pre>. Server users are used for server certificates and pooled users are pre-created users to reduce user creation time</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
                   <td>servers</td>
-                  <td>Object of client parameters listed below for each server ID that the user is connected to</td>
+                  <td>List of client information for each server</td>
                 </tr>
               </tbody>
             </table>
@@ -1080,24 +1210,40 @@ print response.json()
               </thead>
               <tbody>
                 <tr>
-                  <td>connected_since</td>
-                  <td>Epoch time connection was started</td>
+                  <td>id</td>
+                  <td>Client ID or server ID when client is not connected</td>
                 </tr>
                 <tr>
-                  <td>virt_address</td>
-                  <td>Virtual OpenVPN IP address</td>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if connected false otherwise</td>
+                </tr>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID for client</td>
+                </tr>
+                <tr>
+                  <td>device_name</td>
+                  <td>Device name set in client vpn conf file, default is random</td>
+                </tr>
+                <tr>
+                  <td>platform</td>
+                  <td>Client platform can be <pre>linux</pre>, <pre>mac</pre>, <pre>win</pre> or <pre>chrome</pre></td>
                 </tr>
                 <tr>
                   <td>real_address</td>
-                  <td>Real OpenVPN IP address</td>
+                  <td>Real OpenVPN IP address if connected</td>
                 </tr>
                 <tr>
-                  <td>bytes_sent</td>
-                  <td>Bytes sent</td>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address if connected</td>
                 </tr>
                 <tr>
-                  <td>bytes_received</td>
-                  <td>Bytes received</td>
+                  <td>connected_since</td>
+                  <td>Epoch time in seconds of connection start</td>
                 </tr>
               </tbody>
             </table>
@@ -1111,27 +1257,30 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('GET',
-  '/user/060e54e627904abf9402bf3f2e0e16a2/99a38859bcb248bdaf395a6c83305531',
+  '/user/55e9f7c7b0e73033d45b44d4/55e9f98cb0e73033d45b44d7',
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': '99a38859bcb248bdaf395a6c83305531',
-  'organization': '060e54e627904abf9402bf3f2e0e16a2',
-  'name': 'server_6551f49596ca42c4942cb71162916b69',
-  'email': None,
+  'id': '55e9f98cb0e73033d45b44d7',
+  'name': 'user0',
+  'email': 'user0@pritunl.com',
+  'organization': '55e9f7c7b0e73033d45b44d4',
   'organization_name': 'org1',
-  'disabled': False,
-  'type': 'server',
-  'status': False,
   'otp_auth': True,
   'otp_secret': 'OPT4HTURJTW6JLQN',
+  'disabled': False,
+  'type': 'client',
+  'status': True,
   'servers': [
     {
-      'id': '6551f49596ca42c4942cb71162916b69',
+      'id': '55e9f995b0e73033d45b44da',
       'name': 'server1',
-      'local_address': null,
-      'remote_address': null,
+      'local_address': '10.139.82.6',
+      'remote_address': '10.139.82.7',
+      'virt_address': '10.139.82.6',
+      'real_address': '8.8.8.8:41536',
+      'connected_since': 1388498640,
     },
   ],
 }</div>
@@ -1161,27 +1310,6 @@ print response.json()
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>name</td>
-                  <td>User name</td>
-                </tr>
-                <tr>
-                  <td>email</td>
-                  <td>Optional user email address</td>
-                </tr>
-                <tr>
-                  <td>disabled</td>
-                  <td>True if user is disabled otherwise false</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
                   <th colspan="2">Response</th>
                 </tr>
               </thead>
@@ -1191,10 +1319,6 @@ print response.json()
                   <td>User ID</td>
                 </tr>
                 <tr>
-                  <td>organization</td>
-                  <td>Organization ID</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>User name</td>
                 </tr>
@@ -1203,8 +1327,20 @@ print response.json()
                   <td>Optional user email address</td>
                 </tr>
                 <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
                   <td>organization_name</td>
                   <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if user uses two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
                 </tr>
                 <tr>
                   <td>disabled</td>
@@ -1212,11 +1348,60 @@ print response.json()
                 </tr>
                 <tr>
                   <td>type</td>
-                  <td>User type</td>
+                  <td>User type can be <pre>client</pre>, <pre>server</pre>, <pre>client_pool</pre>, <pre>server_pool</pre>. Server users are used for server certificates and pooled users are pre-created users to reduce user creation time</td>
                 </tr>
                 <tr>
-                  <td>otp_secret</td>
-                  <td>Secret key for two-step authentication</td>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>servers</td>
+                  <td>List of client information for each server</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Client Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Client ID or server ID when client is not connected</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if connected false otherwise</td>
+                </tr>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID for client</td>
+                </tr>
+                <tr>
+                  <td>device_name</td>
+                  <td>Device name set in client vpn conf file, default is random</td>
+                </tr>
+                <tr>
+                  <td>platform</td>
+                  <td>Client platform can be <pre>linux</pre>, <pre>mac</pre>, <pre>win</pre> or <pre>chrome</pre></td>
+                </tr>
+                <tr>
+                  <td>real_address</td>
+                  <td>Real OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>connected_since</td>
+                  <td>Epoch time in seconds of connection start</td>
                 </tr>
               </tbody>
             </table>
@@ -1230,26 +1415,30 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('POST',
-  '/user/060e54e627904abf9402bf3f2e0e16a2',
+  '/user/55e9f7c7b0e73033d45b44d4',
   headers={
       'Content-Type': 'application/json',
   },
   data=json.dumps({
       'name': 'new_user',
+      'email': 'new_user@pritunl.com',
       'disabled': True,
   }),
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'f53c6efed9bc490588607ee5853e651f',
-  'organization': '060e54e627904abf9402bf3f2e0e16a2',
+  'id': '55e9f98cb0e73033d45b44d7',
   'name': 'new_user',
-  'email': None,
+  'email': 'new_user@pritunl.com',
+  'organization': '55e9f7c7b0e73033d45b44d4',
   'organization_name': 'org1',
+  'otp_auth': True,
+  'otp_secret': 'OPT4HTURJTW6JLQN',
   'disabled': True,
   'type': 'client',
-  'otp_secret': 'HUI3D32NI6CUTMXO',
+  'status': False,
+  'servers': [],
 }</div>
         </div>
       </div>
@@ -1259,7 +1448,7 @@ print response.json()
           <h2 class="api-header">PUT /user/:organization_id/:user_id</h2>
           <div class="api-description">
             <div class="text">
-              Rename or disabled an existing user in an organization. Disabling a connected user will restart the server the user is connected too.
+              Rename or disabled an existing user in an organization. Disabling will also disconnect the user.
             </div>
             <table class="table">
               <thead>
@@ -1281,31 +1470,6 @@ print response.json()
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="2">Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>name</td>
-                  <td>New user name</td>
-                </tr>
-                <tr>
-                  <td>email</td>
-                  <td>Optional user email address</td>
-                </tr>
-                <tr>
-                  <td>disabled</td>
-                  <td>True if user is disabled otherwise false</td>
-                </tr>
-                <tr>
-                  <td>send_key_email</td>
-                  <td>True to send email key link to user</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
                   <th colspan="2">Response</th>
                 </tr>
               </thead>
@@ -1313,10 +1477,6 @@ print response.json()
                 <tr>
                   <td>id</td>
                   <td>User ID</td>
-                </tr>
-                <tr>
-                  <td>organization</td>
-                  <td>Organization ID</td>
                 </tr>
                 <tr>
                   <td>name</td>
@@ -1327,8 +1487,20 @@ print response.json()
                   <td>Optional user email address</td>
                 </tr>
                 <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
                   <td>organization_name</td>
                   <td>Organization name</td>
+                </tr>
+                <tr>
+                  <td>otp_auth</td>
+                  <td>True if user uses two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>otp_secret</td>
+                  <td>Secret key for two-step authentication</td>
                 </tr>
                 <tr>
                   <td>disabled</td>
@@ -1336,11 +1508,60 @@ print response.json()
                 </tr>
                 <tr>
                   <td>type</td>
-                  <td>User type</td>
+                  <td>User type can be <pre>client</pre>, <pre>server</pre>, <pre>client_pool</pre>, <pre>server_pool</pre>. Server users are used for server certificates and pooled users are pre-created users to reduce user creation time</td>
                 </tr>
                 <tr>
-                  <td>otp_secret</td>
-                  <td>Secret key for two-step authentication</td>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>servers</td>
+                  <td>List of client information for each server</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Client Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Client ID or server ID when client is not connected</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if connected false otherwise</td>
+                </tr>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID for client</td>
+                </tr>
+                <tr>
+                  <td>device_name</td>
+                  <td>Device name set in client vpn conf file, default is random</td>
+                </tr>
+                <tr>
+                  <td>platform</td>
+                  <td>Client platform can be <pre>linux</pre>, <pre>mac</pre>, <pre>win</pre> or <pre>chrome</pre></td>
+                </tr>
+                <tr>
+                  <td>real_address</td>
+                  <td>Real OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>connected_since</td>
+                  <td>Epoch time in seconds of connection start</td>
                 </tr>
               </tbody>
             </table>
@@ -1354,26 +1575,30 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('PUT',
-  '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
+  '/user/55e9fbb0b0e73033d45b44db/55e9fbb9b0e73033d45b44dc',
   headers={
       'Content-Type': 'application/json',
   },
   data=json.dumps({
       'name': 'new_name',
+      'email': 'new_email@pritunl.com',
       'disabled': False,
   }),
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'f53c6efed9bc490588607ee5853e651f',
-  'organization': '060e54e627904abf9402bf3f2e0e16a2',
+  'id': '55e9fbb9b0e73033d45b44dc',
   'name': 'new_name',
-  'email': None,
+  'email': 'new_email@pritunl.com',
+  'organization': '55e9fbb0b0e73033d45b44db',
   'organization_name': 'org1',
+  'otp_auth': True,
+  'otp_secret': 'OPT4HTURJTW6JLQN',
   'disabled': False,
   'type': 'client',
-  'otp_secret': 'HUI3D32NI6CUTMXO',
+  'status': False,
+  'servers': [],
 }</div>
         </div>
       </div>
@@ -1383,7 +1608,7 @@ print response.json()
           <h2 class="api-header">DELETE /user/:organization_id/:user_id</h2>
           <div class="api-description">
             <div class="text">
-              Delete an existing user in an organization. This will restart any servers the user is connected to.
+              Delete an existing user in an organization, this will disconnect the user.
             </div>
             <table class="table">
               <thead>
@@ -1412,7 +1637,7 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('DELETE',
-  '/user/060e54e627904abf9402bf3f2e0e16a2/f53c6efed9bc490588607ee5853e651f',
+  '/user/55e9fd5eb0e73033d45b44dd/55e9fd62b0e73033d45b44de',
 )
 assert(response.status_code == 200)</div>
         </div>
@@ -1428,23 +1653,6 @@ assert(response.status_code == 200)</div>
             <table class="table">
               <thead>
                 <tr>
-                  <th colspan="2">URL Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>organization_id</td>
-                  <td>Organization ID</td>
-                </tr>
-                <tr>
-                  <td>user_id</td>
-                  <td>User ID</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
                   <th colspan="2">Response</th>
                 </tr>
               </thead>
@@ -1454,24 +1662,89 @@ assert(response.status_code == 200)</div>
                   <td>User ID</td>
                 </tr>
                 <tr>
-                  <td>organization</td>
-                  <td>Organization ID</td>
-                </tr>
-                <tr>
                   <td>name</td>
                   <td>User name</td>
+                </tr>
+                <tr>
+                  <td>email</td>
+                  <td>Optional user email address</td>
+                </tr>
+                <tr>
+                  <td>organization</td>
+                  <td>Organization ID</td>
                 </tr>
                 <tr>
                   <td>organization_name</td>
                   <td>Organization name</td>
                 </tr>
                 <tr>
-                  <td>type</td>
-                  <td>User type</td>
+                  <td>otp_auth</td>
+                  <td>True if user uses two-step authentication</td>
                 </tr>
                 <tr>
                   <td>otp_secret</td>
                   <td>Secret key for two-step authentication</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>True if user is disabled otherwise false</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>User type can be <pre>client</pre>, <pre>server</pre>, <pre>client_pool</pre>, <pre>server_pool</pre>. Server users are used for server certificates and pooled users are pre-created users to reduce user creation time</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if user is online otherwise false</td>
+                </tr>
+                <tr>
+                  <td>servers</td>
+                  <td>List of client information for each server</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">Client Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>Client ID or server ID when client is not connected</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>Server name</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>True if connected false otherwise</td>
+                </tr>
+                <tr>
+                  <td>server_id</td>
+                  <td>Server ID for client</td>
+                </tr>
+                <tr>
+                  <td>device_name</td>
+                  <td>Device name set in client vpn conf file, default is random</td>
+                </tr>
+                <tr>
+                  <td>platform</td>
+                  <td>Client platform can be <pre>linux</pre>, <pre>mac</pre>, <pre>win</pre> or <pre>chrome</pre></td>
+                </tr>
+                <tr>
+                  <td>real_address</td>
+                  <td>Real OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>virt_address</td>
+                  <td>Virtual OpenVPN IP address if connected</td>
+                </tr>
+                <tr>
+                  <td>connected_since</td>
+                  <td>Epoch time in seconds of connection start</td>
                 </tr>
               </tbody>
             </table>
@@ -1485,17 +1758,22 @@ assert(response.status_code == 200)</div>
             </div>
           </noscript>
 <div class="editor python">response = auth_request('PUT',
-  '/user/060e54e627904abf9402bf3f2e0e16a2/otp_secret',
+  '/user/55e9f7c7b0e73033d45b44d4/55e9f98cb0e73033d45b44d7/otp_secret',
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'f53c6efed9bc490588607ee5853e651f',
-  'organization': '060e54e627904abf9402bf3f2e0e16a2',
-  'name': 'new_name',
+  'id': '55e9f98cb0e73033d45b44d7',
+  'name': 'new_user',
+  'email': 'new_user@pritunl.com',
+  'organization': '55e9f7c7b0e73033d45b44d4',
   'organization_name': 'org1',
-  'type': 'server',
-  'otp_secret': 'IYW6NR774YTWQICV',
+  'otp_auth': True,
+  'otp_secret': 'OPT4HTURJTW6JLQN',
+  'disabled': True,
+  'type': 'client',
+  'status': False,
+  'servers': [],
 }</div>
         </div>
       </div>
@@ -1534,7 +1812,47 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('GET',
-  '/key/060e54e627904abf9402bf3f2e0e16a2/de554a9993cb4250a995cbcca7a6af5a.tar',
+  '/key/55e9feb0b0e73033d45b44e0/55e9feb3b0e73033d45b44e1.tar',
+)
+assert(response.status_code == 200)</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
+          <a id="get-key-onc-var-tar" class="anchor api-anchor"></a>
+          <h2 class="api-header">GET /key_onc/:organization_id/:user_id.zip</h2>
+          <div class="api-description">
+            <div class="text">
+              Download a users onc key zip archive.
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th colspan="2">URL Parameters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>organization_id</td>
+                  <td>Organization ID</td>
+                </tr>
+                <tr>
+                  <td>user_id</td>
+                  <td>User ID</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
+          <span class="editor-title">Python Example</span>
+          <noscript>
+            <div class="text">
+              JavaScript is required to view example code
+            </div>
+          </noscript>
+<div class="editor python">response = auth_request('GET',
+  '/key_onc/55e9feb0b0e73033d45b44e0/55e9feb3b0e73033d45b44e1.zip',
 )
 assert(response.status_code == 200)</div>
         </div>
@@ -1545,7 +1863,7 @@ assert(response.status_code == 200)</div>
           <h2 class="api-header">GET /key/:organization_id/:user_id</h2>
           <div class="api-description">
             <div class="text">
-              Generate a temporary url to download a users key archive and view the two-step authentication key. Both urls can be viewed without authenticating and will expire after 24 hours. The key link can also be deleted by clicking the delete link button on the page.
+              Generate a temporary url to download a users key archive and view the two-step authentication key. Urls can be viewed without authenticating and will expire after 24 hours. The key link can also be deleted by clicking the delete link button on the page.
             </div>
             <table class="table">
               <thead>
@@ -1580,8 +1898,16 @@ assert(response.status_code == 200)</div>
                   <td>Temporary url to download user key tar archive</td>
                 </tr>
                 <tr>
+                  <td>key_onc_url</td>
+                  <td>Temporary url to download user onc key zip archive</td>
+                </tr>
+                <tr>
                   <td>view_url</td>
-                  <td>Temporary url to view the two-step authentication key, download key tar archive and download mobile key configurations</td>
+                  <td>Temporary url to view the two-step authentication key, download key archive and download mobile key configurations</td>
+                </tr>
+                <tr>
+                  <td>uri_url</td>
+                  <td>Temporary uri for Pritunl clients to import keys</td>
                 </tr>
               </tbody>
             </table>
@@ -1600,9 +1926,11 @@ assert(response.status_code == 200)</div>
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'ca03ad46c20043aca6a4a571ea6c5e76',
-  'key_url': '/key/ca03ad46c20043aca6a4a571ea6c5e76.tar',
+  'id': '55e9ff91b0e73033d45b44e2',
+  'key_url': '/key/4f5bd04d85414e20b0a451d642dab06d.tar',
+  'key_onc_url': '/key/4f5bd04d85414e20b0a451d642dab06d.zip',
   'view_url': '/k/y3aNc',
+  'uri_url': '/ku/y3aNc',
 }</div>
         </div>
       </div>
@@ -1631,7 +1959,7 @@ print response.json()
                 </tr>
                 <tr>
                   <td>status</td>
-                  <td>True if server is online otherwise false</td>
+                  <td>Server status can be pending, offline or online. Server will be pending when generating DH params</td>
                 </tr>
                 <tr>
                   <td>uptime</td>
@@ -1646,12 +1974,16 @@ print response.json()
                   <td>Number of users attached to the server</td>
                 </tr>
                 <tr>
+                  <td>devices_online</td>
+                  <td>Number of devices online</td>
+                </tr>
+                <tr>
                   <td>network</td>
                   <td>Servers VPN network address</td>
                 </tr>
                 <tr>
-                  <td>interface</td>
-                  <td>Server VPN interface</td>
+                  <td>bind_address</td>
+                  <td>Server bind address</td>
                 </tr>
                 <tr>
                   <td>port</td>
@@ -1670,6 +2002,22 @@ print response.json()
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
+                  <td>network_mode</td>
+                  <td>Server network mode can be tunnel or bridge</td>
+                </tr>
+                <tr>
+                  <td>network_start</td>
+                  <td>Server vpn network start address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>network_end</td>
+                  <td>Server vpn network end address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>multi_device</td>
+                  <td>True is users can connect on multiple devices false otherwise</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
@@ -1682,16 +2030,40 @@ print response.json()
                   <td>DNS search domain</td>
                 </tr>
                 <tr>
-                  <td>public_address</td>
-                  <td>Servers public IP address</td>
-                </tr>
-                <tr>
                   <td>otp_auth</td>
                   <td>True if the server is using two-step authentication otherwise false</td>
                 </tr>
                 <tr>
+                  <td>cipher</td>
+                  <td>Server vpn cipher can be none, bf128, bf256, aes128, aes192 or aes256</td>
+                </tr>
+                <tr>
+                  <td>jumbo_frames</td>
+                  <td>True if jumbo frames are enabled false otherwise</td>
+                </tr>
+                <tr>
                   <td>lzo_compression</td>
-                  <td>True if lzo compression is enabled otherwise false</td>
+                  <td>True if lzo compression is enabled otherwise false. May also be adaptive for backwards compatibility with 0.10.x servers</td>
+                </tr>
+                <tr>
+                  <td>inter_client</td>
+                  <td>True to enable inter-client communication</td>
+                </tr>
+                <tr>
+                  <td>ping_interval</td>
+                  <td>Interval in seconds to send ping to vpn clients</td>
+                </tr>
+                <tr>
+                  <td>ping_timeout</td>
+                  <td>Ping timeout in seconds before considering a vpn client disconnected</td>
+                </tr>
+                <tr>
+                  <td>max_clients</td>
+                  <td>Maximum vpn clients per host</td>
+                </tr>
+                <tr>
+                  <td>replica_count</td>
+                  <td>Replica count for multiple hosts</td>
                 </tr>
                 <tr>
                   <td>debug</td>
@@ -1715,46 +2087,36 @@ assert(response.status_code == 200)
 print response.json()
 [
   {
-      'id': '6551f49596ca42c4942cb71162916b69',
-      'name': 'server1',
-      'status': True,
-      'uptime': 463,
-      'users_online': 1,
-      'user_count': 6,
-      'network': '10.139.82.0/24',
-      'interface': 'tun0',
-      'port': 12524,
-      'protocol': 'udp',
-      'dh_param_bits': 1536,
-      'mode': 'all_traffic',
-      'local_networks': [],
-      'dns_servers': [],
-      'search_domain': None,
-      'public_address': '8.8.8.8',
-      'otp_auth': True,
-      'lzo_compression': False,
-      'debug': True,
-  },
-  {
-      'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
-      'name': 'server2',
-      'status': False,
-      'uptime': null,
-      'users_online': 0,
-      'user_count': 2,
-      'network': '10.86.88.0/24',
-      'interface': 'tun1',
-      'port': 18387,
-      'protocol': 'udp',
-      'dh_param_bits': 1536,
-      'mode': 'all_traffic',
-      'local_networks': [],
-      'dns_servers': [],
-      'search_domain': None,
-      'public_address': '8.8.8.8',
-      'otp_auth': False,
-      'lzo_compression': False,
-      'debug': False,
+    'id': '55ea0588b0e73033d45b44e3',
+    'name': 'server1',
+    'status': 'online',
+    'uptime': 463,
+    'users_online': 1,
+    'devices_online': 1,
+    'user_count': 6,
+    'network': '10.139.82.0/24',
+    'bind_address': None,
+    'port': 12524,
+    'protocol': 'udp',
+    'dh_param_bits': 2048,
+    'mode': 'all_traffic',
+    'network_mode': 'tunnel',
+    'network_start': None,
+    'network_end': None,
+    'multi_device': False,
+    'local_networks': [],
+    'dns_servers': ['8.8.4.4'],
+    'search_domain': 'pritunl.com',
+    'otp_auth': True,
+    'cipher': 'aes256',
+    'jumbo_frames': False,
+    'lzo_compression': False,
+    'inter_client': True,
+    'ping_interval': 10,
+    'ping_timeout': 60,
+    'max_clients': 2048,
+    'replica_count': 1,
+    'debug': True,
   },
 ]</div>
         </div>
@@ -1784,7 +2146,7 @@ print response.json()
                 </tr>
                 <tr>
                   <td>status</td>
-                  <td>True if server is online otherwise false</td>
+                  <td>Server status can be pending, offline or online. Server will be pending when generating DH params</td>
                 </tr>
                 <tr>
                   <td>uptime</td>
@@ -1799,12 +2161,16 @@ print response.json()
                   <td>Number of users attached to the server</td>
                 </tr>
                 <tr>
+                  <td>devices_online</td>
+                  <td>Number of devices online</td>
+                </tr>
+                <tr>
                   <td>network</td>
                   <td>Servers VPN network address</td>
                 </tr>
                 <tr>
-                  <td>interface</td>
-                  <td>Server VPN interface</td>
+                  <td>bind_address</td>
+                  <td>Server bind address</td>
                 </tr>
                 <tr>
                   <td>port</td>
@@ -1823,6 +2189,22 @@ print response.json()
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
+                  <td>network_mode</td>
+                  <td>Server network mode can be tunnel or bridge</td>
+                </tr>
+                <tr>
+                  <td>network_start</td>
+                  <td>Server vpn network start address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>network_end</td>
+                  <td>Server vpn network end address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>multi_device</td>
+                  <td>True is users can connect on multiple devices false otherwise</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
@@ -1835,16 +2217,40 @@ print response.json()
                   <td>DNS search domain</td>
                 </tr>
                 <tr>
-                  <td>public_address</td>
-                  <td>Servers public IP address</td>
-                </tr>
-                <tr>
                   <td>otp_auth</td>
                   <td>True if the server is using two-step authentication otherwise false</td>
                 </tr>
                 <tr>
+                  <td>cipher</td>
+                  <td>Server vpn cipher can be none, bf128, bf256, aes128, aes192 or aes256</td>
+                </tr>
+                <tr>
+                  <td>jumbo_frames</td>
+                  <td>True if jumbo frames are enabled false otherwise</td>
+                </tr>
+                <tr>
                   <td>lzo_compression</td>
-                  <td>True if lzo compression is enabled otherwise false</td>
+                  <td>True if lzo compression is enabled otherwise false. May also be adaptive for backwards compatibility with 0.10.x servers</td>
+                </tr>
+                <tr>
+                  <td>inter_client</td>
+                  <td>True to enable inter-client communication</td>
+                </tr>
+                <tr>
+                  <td>ping_interval</td>
+                  <td>Interval in seconds to send ping to vpn clients</td>
+                </tr>
+                <tr>
+                  <td>ping_timeout</td>
+                  <td>Ping timeout in seconds before considering a vpn client disconnected</td>
+                </tr>
+                <tr>
+                  <td>max_clients</td>
+                  <td>Maximum vpn clients per host</td>
+                </tr>
+                <tr>
+                  <td>replica_count</td>
+                  <td>Replica count for multiple hosts</td>
                 </tr>
                 <tr>
                   <td>debug</td>
@@ -1862,29 +2268,40 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('GET',
-  '/server/6551f49596ca42c4942cb71162916b69',
+  '/server/55ea0588b0e73033d45b44e3',
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': '6551f49596ca42c4942cb71162916b69',
+  'id': '55ea0588b0e73033d45b44e3',
   'name': 'server1',
-  'status': True,
+  'status': 'online',
   'uptime': 463,
   'users_online': 1,
+  'devices_online': 1,
   'user_count': 6,
   'network': '10.139.82.0/24',
-  'interface': 'tun0',
+  'bind_address': None,
   'port': 12524,
   'protocol': 'udp',
-  'dh_param_bits': 1536,
+  'dh_param_bits': 2048,
   'mode': 'all_traffic',
+  'network_mode': 'tunnel',
+  'network_start': None,
+  'network_end': None,
+  'multi_device': False,
   'local_networks': [],
-  'dns_servers': [],
-  'search_domain': None,
-  'public_address': '8.8.8.8',
+  'dns_servers': ['8.8.4.4'],
+  'search_domain': 'pritunl.com',
   'otp_auth': True,
+  'cipher': 'aes256',
+  'jumbo_frames': False,
   'lzo_compression': False,
+  'inter_client': True,
+  'ping_interval': 10,
+  'ping_timeout': 60,
+  'max_clients': 2048,
+  'replica_count': 1,
   'debug': True,
 }</div>
         </div>
@@ -1913,8 +2330,8 @@ print response.json()
                   <td>Servers VPN network address</td>
                 </tr>
                 <tr>
-                  <td>interface</td>
-                  <td>Server VPN interface</td>
+                  <td>bind_address</td>
+                  <td>Server bind address</td>
                 </tr>
                 <tr>
                   <td>port</td>
@@ -1933,6 +2350,22 @@ print response.json()
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
+                  <td>network_mode</td>
+                  <td>Server network mode can be tunnel or bridge</td>
+                </tr>
+                <tr>
+                  <td>network_start</td>
+                  <td>Server vpn network start address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>network_end</td>
+                  <td>Server vpn network end address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>multi_device</td>
+                  <td>True is users can connect on multiple devices false otherwise</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
@@ -1945,16 +2378,40 @@ print response.json()
                   <td>DNS search domain</td>
                 </tr>
                 <tr>
-                  <td>public_address</td>
-                  <td>Servers public IP address</td>
-                </tr>
-                <tr>
                   <td>otp_auth</td>
                   <td>True if the server is using two-step authentication otherwise false</td>
                 </tr>
                 <tr>
+                  <td>cipher</td>
+                  <td>Server vpn cipher can be none, bf128, bf256, aes128, aes192 or aes256</td>
+                </tr>
+                <tr>
+                  <td>jumbo_frames</td>
+                  <td>True if jumbo frames are enabled false otherwise</td>
+                </tr>
+                <tr>
                   <td>lzo_compression</td>
-                  <td>True if lzo compression is enabled otherwise false</td>
+                  <td>True if lzo compression is enabled otherwise false. May also be adaptive for backwards compatibility with 0.10.x servers</td>
+                </tr>
+                <tr>
+                  <td>inter_client</td>
+                  <td>True to enable inter-client communication</td>
+                </tr>
+                <tr>
+                  <td>ping_interval</td>
+                  <td>Interval in seconds to send ping to vpn clients</td>
+                </tr>
+                <tr>
+                  <td>ping_timeout</td>
+                  <td>Ping timeout in seconds before considering a vpn client disconnected</td>
+                </tr>
+                <tr>
+                  <td>max_clients</td>
+                  <td>Maximum vpn clients per host</td>
+                </tr>
+                <tr>
+                  <td>replica_count</td>
+                  <td>Replica count for multiple hosts</td>
                 </tr>
                 <tr>
                   <td>debug</td>
@@ -1979,7 +2436,7 @@ print response.json()
                 </tr>
                 <tr>
                   <td>status</td>
-                  <td>True if server is online otherwise false</td>
+                  <td>Server status can be pending, offline or online. Server will be pending when generating DH params</td>
                 </tr>
                 <tr>
                   <td>uptime</td>
@@ -1994,12 +2451,16 @@ print response.json()
                   <td>Number of users attached to the server</td>
                 </tr>
                 <tr>
+                  <td>devices_online</td>
+                  <td>Number of devices online</td>
+                </tr>
+                <tr>
                   <td>network</td>
                   <td>Servers VPN network address</td>
                 </tr>
                 <tr>
-                  <td>interface</td>
-                  <td>Server VPN interface</td>
+                  <td>bind_address</td>
+                  <td>Server bind address</td>
                 </tr>
                 <tr>
                   <td>port</td>
@@ -2018,6 +2479,22 @@ print response.json()
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
+                  <td>network_mode</td>
+                  <td>Server network mode can be tunnel or bridge</td>
+                </tr>
+                <tr>
+                  <td>network_start</td>
+                  <td>Server vpn network start address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>network_end</td>
+                  <td>Server vpn network end address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>multi_device</td>
+                  <td>True is users can connect on multiple devices false otherwise</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
@@ -2030,16 +2507,40 @@ print response.json()
                   <td>DNS search domain</td>
                 </tr>
                 <tr>
-                  <td>public_address</td>
-                  <td>Public IP address</td>
-                </tr>
-                <tr>
                   <td>otp_auth</td>
                   <td>True if the server is using two-step authentication otherwise false</td>
                 </tr>
                 <tr>
+                  <td>cipher</td>
+                  <td>Server vpn cipher can be none, bf128, bf256, aes128, aes192 or aes256</td>
+                </tr>
+                <tr>
+                  <td>jumbo_frames</td>
+                  <td>True if jumbo frames are enabled false otherwise</td>
+                </tr>
+                <tr>
                   <td>lzo_compression</td>
-                  <td>True if lzo compression is enabled otherwise false</td>
+                  <td>True if lzo compression is enabled otherwise false. May also be adaptive for backwards compatibility with 0.10.x servers</td>
+                </tr>
+                <tr>
+                  <td>inter_client</td>
+                  <td>True to enable inter-client communication</td>
+                </tr>
+                <tr>
+                  <td>ping_interval</td>
+                  <td>Interval in seconds to send ping to vpn clients</td>
+                </tr>
+                <tr>
+                  <td>ping_timeout</td>
+                  <td>Ping timeout in seconds before considering a vpn client disconnected</td>
+                </tr>
+                <tr>
+                  <td>max_clients</td>
+                  <td>Maximum vpn clients per host</td>
+                </tr>
+                <tr>
+                  <td>replica_count</td>
+                  <td>Replica count for multiple hosts</td>
                 </tr>
                 <tr>
                   <td>debug</td>
@@ -2062,44 +2563,65 @@ print response.json()
       'Content-Type': 'application/json',
   },
   data=json.dumps({
-      'name': 'new_server',
-      'network': '10.32.32.0/24',
-      'interface': 'tun2',
-      'port': 14823,
-      'protocol': 'udp',
-      'dh_param_bits': 1536,
-      'mode': 'all_traffic',
-      'local_networks': [],
-      'dns_servers': [],
-      'search_domain': None,
-      'public_address': '8.8.8.8',
-      'otp_auth': True,
-      'lzo_compression': False,
-      'debug': False,
+    'name': 'server1',
+    'network': '10.139.82.0/24',
+    'bind_address': None,
+    'port': 12524,
+    'protocol': 'udp',
+    'dh_param_bits': 2048,
+    'mode': 'all_traffic',
+    'network_mode': 'tunnel',
+    'network_start': None,
+    'network_end': None,
+    'multi_device': False,
+    'local_networks': [],
+    'dns_servers': ['8.8.4.4'],
+    'search_domain': 'pritunl.com',
+    'otp_auth': True,
+    'cipher': 'aes256',
+    'jumbo_frames': False,
+    'lzo_compression': False,
+    'inter_client': True,
+    'ping_interval': 10,
+    'ping_timeout': 60,
+    'max_clients': 2048,
+    'replica_count': 1,
+    'debug': True,
   }),
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'c4ceb6102ed941d7b1794aead89ab20e',
-  'name': 'new_server',
-  'status': False,
-  'uptime': None,
-  'users_online': 0,
-  'user_count': 0,
-  'network': '10.32.32.0/24',
-  'interface': 'tun2',
-  'port': 14823,
+  'id': '55ea0588b0e73033d45b44e3',
+  'name': 'server1',
+  'status': 'online',
+  'uptime': 463,
+  'users_online': 1,
+  'devices_online': 1,
+  'user_count': 6,
+  'network': '10.139.82.0/24',
+  'bind_address': None,
+  'port': 12524,
   'protocol': 'udp',
-  'dh_param_bits': 1536,
+  'dh_param_bits': 2048,
   'mode': 'all_traffic',
+  'network_mode': 'tunnel',
+  'network_start': None,
+  'network_end': None,
+  'multi_device': False,
   'local_networks': [],
-  'dns_servers': [],
-  'search_domain': None,
-  'public_address': '8.8.8.8',
+  'dns_servers': ['8.8.4.4'],
+  'search_domain': 'pritunl.com',
   'otp_auth': True,
+  'cipher': 'aes256',
+  'jumbo_frames': False,
   'lzo_compression': False,
-  'debug': False,
+  'inter_client': True,
+  'ping_interval': 10,
+  'ping_timeout': 60,
+  'max_clients': 2048,
+  'replica_count': 1,
+  'debug': True,
 }</div>
         </div>
       </div>
@@ -2140,8 +2662,8 @@ print response.json()
                   <td>Servers VPN network address</td>
                 </tr>
                 <tr>
-                  <td>interface</td>
-                  <td>Server VPN interface</td>
+                  <td>bind_address</td>
+                  <td>Server bind address</td>
                 </tr>
                 <tr>
                   <td>port</td>
@@ -2160,6 +2682,22 @@ print response.json()
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
+                  <td>network_mode</td>
+                  <td>Server network mode can be tunnel or bridge</td>
+                </tr>
+                <tr>
+                  <td>network_start</td>
+                  <td>Server vpn network start address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>network_end</td>
+                  <td>Server vpn network end address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>multi_device</td>
+                  <td>True is users can connect on multiple devices false otherwise</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
@@ -2172,16 +2710,40 @@ print response.json()
                   <td>DNS search domain</td>
                 </tr>
                 <tr>
-                  <td>public_address</td>
-                  <td>Servers public IP address</td>
-                </tr>
-                <tr>
                   <td>otp_auth</td>
                   <td>True if the server is using two-step authentication otherwise false</td>
                 </tr>
                 <tr>
+                  <td>cipher</td>
+                  <td>Server vpn cipher can be none, bf128, bf256, aes128, aes192 or aes256</td>
+                </tr>
+                <tr>
+                  <td>jumbo_frames</td>
+                  <td>True if jumbo frames are enabled false otherwise</td>
+                </tr>
+                <tr>
                   <td>lzo_compression</td>
-                  <td>True if lzo compression is enabled otherwise false</td>
+                  <td>True if lzo compression is enabled otherwise false. May also be adaptive for backwards compatibility with 0.10.x servers</td>
+                </tr>
+                <tr>
+                  <td>inter_client</td>
+                  <td>True to enable inter-client communication</td>
+                </tr>
+                <tr>
+                  <td>ping_interval</td>
+                  <td>Interval in seconds to send ping to vpn clients</td>
+                </tr>
+                <tr>
+                  <td>ping_timeout</td>
+                  <td>Ping timeout in seconds before considering a vpn client disconnected</td>
+                </tr>
+                <tr>
+                  <td>max_clients</td>
+                  <td>Maximum vpn clients per host</td>
+                </tr>
+                <tr>
+                  <td>replica_count</td>
+                  <td>Replica count for multiple hosts</td>
                 </tr>
                 <tr>
                   <td>debug</td>
@@ -2206,7 +2768,7 @@ print response.json()
                 </tr>
                 <tr>
                   <td>status</td>
-                  <td>True if server is online otherwise false</td>
+                  <td>Server status can be pending, offline or online. Server will be pending when generating DH params</td>
                 </tr>
                 <tr>
                   <td>uptime</td>
@@ -2221,12 +2783,16 @@ print response.json()
                   <td>Number of users attached to the server</td>
                 </tr>
                 <tr>
+                  <td>devices_online</td>
+                  <td>Number of devices online</td>
+                </tr>
+                <tr>
                   <td>network</td>
                   <td>Servers VPN network address</td>
                 </tr>
                 <tr>
-                  <td>interface</td>
-                  <td>Server VPN interface</td>
+                  <td>bind_address</td>
+                  <td>Server bind address</td>
                 </tr>
                 <tr>
                   <td>port</td>
@@ -2245,6 +2811,22 @@ print response.json()
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
+                  <td>network_mode</td>
+                  <td>Server network mode can be tunnel or bridge</td>
+                </tr>
+                <tr>
+                  <td>network_start</td>
+                  <td>Server vpn network start address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>network_end</td>
+                  <td>Server vpn network end address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>multi_device</td>
+                  <td>True is users can connect on multiple devices false otherwise</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
@@ -2257,16 +2839,40 @@ print response.json()
                   <td>DNS search domain</td>
                 </tr>
                 <tr>
-                  <td>public_address</td>
-                  <td>Public IP address</td>
-                </tr>
-                <tr>
                   <td>otp_auth</td>
                   <td>True if the server is using two-step authentication otherwise false</td>
                 </tr>
                 <tr>
+                  <td>cipher</td>
+                  <td>Server vpn cipher can be none, bf128, bf256, aes128, aes192 or aes256</td>
+                </tr>
+                <tr>
+                  <td>jumbo_frames</td>
+                  <td>True if jumbo frames are enabled false otherwise</td>
+                </tr>
+                <tr>
                   <td>lzo_compression</td>
-                  <td>True if lzo compression is enabled otherwise false</td>
+                  <td>True if lzo compression is enabled otherwise false. May also be adaptive for backwards compatibility with 0.10.x servers</td>
+                </tr>
+                <tr>
+                  <td>inter_client</td>
+                  <td>True to enable inter-client communication</td>
+                </tr>
+                <tr>
+                  <td>ping_interval</td>
+                  <td>Interval in seconds to send ping to vpn clients</td>
+                </tr>
+                <tr>
+                  <td>ping_timeout</td>
+                  <td>Ping timeout in seconds before considering a vpn client disconnected</td>
+                </tr>
+                <tr>
+                  <td>max_clients</td>
+                  <td>Maximum vpn clients per host</td>
+                </tr>
+                <tr>
+                  <td>replica_count</td>
+                  <td>Replica count for multiple hosts</td>
                 </tr>
                 <tr>
                   <td>debug</td>
@@ -2284,7 +2890,7 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('PUT',
-  '/server/c4ceb6102ed941d7b1794aead89ab20e',
+  '/server/55ea0588b0e73033d45b44e3',
   headers={
       'Content-Type': 'application/json',
   },
@@ -2295,25 +2901,36 @@ print response.json()
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'c4ceb6102ed941d7b1794aead89ab20e',
+  'id': '55ea0588b0e73033d45b44e3',
   'name': 'new_name',
-  'status': False,
-  'uptime': None,
-  'users_online': 0,
-  'user_count': 0,
-  'network': '10.32.32.0/24',
-  'interface': 'tun2',
-  'port': 14823,
+  'status': 'online',
+  'uptime': 463,
+  'users_online': 1,
+  'devices_online': 1,
+  'user_count': 6,
+  'network': '10.139.82.0/24',
+  'bind_address': None,
+  'port': 12524,
   'protocol': 'udp',
-  'dh_param_bits': 1536,
+  'dh_param_bits': 2048,
   'mode': 'all_traffic',
+  'network_mode': 'tunnel',
+  'network_start': None,
+  'network_end': None,
+  'multi_device': False,
   'local_networks': [],
-  'dns_servers': [],
-  'search_domain': None,
-  'public_address': '8.8.8.8',
+  'dns_servers': ['8.8.4.4'],
+  'search_domain': 'pritunl.com',
   'otp_auth': True,
+  'cipher': 'aes256',
+  'jumbo_frames': False,
   'lzo_compression': False,
-  'debug': False,
+  'inter_client': True,
+  'ping_interval': 10,
+  'ping_timeout': 60,
+  'max_clients': 2048,
+  'replica_count': 1,
+  'debug': True,
 }</div>
         </div>
       </div>
@@ -2348,7 +2965,7 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('DELETE',
-'/server/c4ceb6102ed941d7b1794aead89ab20e',
+'/server/55ea0588b0e73033d45b44e3',
 )
 assert(response.status_code == 200)</div>
         </div>
@@ -2395,7 +3012,7 @@ assert(response.status_code == 200)</div>
                 </tr>
                 <tr>
                   <td>status</td>
-                  <td>True if server is online otherwise false</td>
+                  <td>Server status can be pending, offline or online. Server will be pending when generating DH params</td>
                 </tr>
                 <tr>
                   <td>uptime</td>
@@ -2410,12 +3027,16 @@ assert(response.status_code == 200)</div>
                   <td>Number of users attached to the server</td>
                 </tr>
                 <tr>
+                  <td>devices_online</td>
+                  <td>Number of devices online</td>
+                </tr>
+                <tr>
                   <td>network</td>
                   <td>Servers VPN network address</td>
                 </tr>
                 <tr>
-                  <td>interface</td>
-                  <td>Server VPN interface</td>
+                  <td>bind_address</td>
+                  <td>Server bind address</td>
                 </tr>
                 <tr>
                   <td>port</td>
@@ -2434,6 +3055,22 @@ assert(response.status_code == 200)</div>
                   <td>Server mode can be all_traffic, local_traffic or vpn_traffic</td>
                 </tr>
                 <tr>
+                  <td>network_mode</td>
+                  <td>Server network mode can be tunnel or bridge</td>
+                </tr>
+                <tr>
+                  <td>network_start</td>
+                  <td>Server vpn network start address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>network_end</td>
+                  <td>Server vpn network end address for clients if using bridged mode</td>
+                </tr>
+                <tr>
+                  <td>multi_device</td>
+                  <td>True is users can connect on multiple devices false otherwise</td>
+                </tr>
+                <tr>
                   <td>local_networks</td>
                   <td>List of local networks server is routing traffic to otherwise empty list if all traffic is routed. Mode must be set to local_traffic when set</td>
                 </tr>
@@ -2446,16 +3083,40 @@ assert(response.status_code == 200)</div>
                   <td>DNS search domain</td>
                 </tr>
                 <tr>
-                  <td>public_address</td>
-                  <td>Public IP address</td>
-                </tr>
-                <tr>
                   <td>otp_auth</td>
                   <td>True if the server is using two-step authentication otherwise false</td>
                 </tr>
                 <tr>
+                  <td>cipher</td>
+                  <td>Server vpn cipher can be none, bf128, bf256, aes128, aes192 or aes256</td>
+                </tr>
+                <tr>
+                  <td>jumbo_frames</td>
+                  <td>True if jumbo frames are enabled false otherwise</td>
+                </tr>
+                <tr>
                   <td>lzo_compression</td>
-                  <td>True if lzo compression is enabled otherwise false</td>
+                  <td>True if lzo compression is enabled otherwise false. May also be adaptive for backwards compatibility with 0.10.x servers</td>
+                </tr>
+                <tr>
+                  <td>inter_client</td>
+                  <td>True to enable inter-client communication</td>
+                </tr>
+                <tr>
+                  <td>ping_interval</td>
+                  <td>Interval in seconds to send ping to vpn clients</td>
+                </tr>
+                <tr>
+                  <td>ping_timeout</td>
+                  <td>Ping timeout in seconds before considering a vpn client disconnected</td>
+                </tr>
+                <tr>
+                  <td>max_clients</td>
+                  <td>Maximum vpn clients per host</td>
+                </tr>
+                <tr>
+                  <td>replica_count</td>
+                  <td>Replica count for multiple hosts</td>
                 </tr>
                 <tr>
                   <td>debug</td>
@@ -2473,30 +3134,41 @@ assert(response.status_code == 200)</div>
             </div>
           </noscript>
 <div class="editor python">response = auth_request('PUT',
-  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/start',
+  '/server/55ea0588b0e73033d45b44e3/start',
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
-  'name': 'server2',
-  'status': True,
-  'uptime': 1,
-  'users_online': 0,
-  'user_count': 2,
-  'network': '10.86.88.0/24',
-  'interface': 'tun1',
-  'port': 18387,
+  'id': '55ea0588b0e73033d45b44e3',
+  'name': 'server1',
+  'status': 'online',
+  'uptime': 463,
+  'users_online': 1,
+  'devices_online': 1,
+  'user_count': 6,
+  'network': '10.139.82.0/24',
+  'bind_address': None,
+  'port': 12524,
   'protocol': 'udp',
-  'dh_param_bits': 1536,
+  'dh_param_bits': 2048,
   'mode': 'all_traffic',
+  'network_mode': 'tunnel',
+  'network_start': None,
+  'network_end': None,
+  'multi_device': False,
   'local_networks': [],
-  'dns_servers': [],
-  'search_domain': None,
-  'public_address': '8.8.8.8',
-  'otp_auth': False,
+  'dns_servers': ['8.8.4.4'],
+  'search_domain': 'pritunl.com',
+  'otp_auth': True,
+  'cipher': 'aes256',
+  'jumbo_frames': False,
   'lzo_compression': False,
-  'debug': False,
+  'inter_client': True,
+  'ping_interval': 10,
+  'ping_timeout': 60,
+  'max_clients': 2048,
+  'replica_count': 1,
+  'debug': True,
 }</div>
         </div>
       </div>
@@ -2552,15 +3224,15 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('GET',
-  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization',
+  '/server/55ea06f2b0e73033d45b44e4/organization',
 )
 assert(response.status_code == 200)
 print response.json()
 [
   {
-      'id': '060e54e627904abf9402bf3f2e0e16a2',
-      'server': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
-      'name': 'org1',
+    'id': '55ea06f8b0e73033d45b44e5',
+    'server': '55ea06f2b0e73033d45b44e4',
+    'name': 'org1',
   },
 ]</div>
         </div>
@@ -2621,13 +3293,13 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('PUT',
-  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
+  '/server/55ea089ab0e73033d45b44e6/organization/55ea089fb0e73033d45b44e7',
 )
 assert(response.status_code == 200)
 print response.json()
 {
-  'id': 'c002529764334d63b7035ad1939eb7ca',
-  'server': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
+  'id': '55ea089fb0e73033d45b44e7',
+  'server': '55ea089ab0e73033d45b44e6',
   'name': 'org2',
 }</div>
         </div>
@@ -2667,7 +3339,7 @@ print response.json()
             </div>
           </noscript>
 <div class="editor python">response = auth_request('DELETE',
-  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/organization/c002529764334d63b7035ad1939eb7ca',
+  '/server/55ea089ab0e73033d45b44e6/organization/55ea089fb0e73033d45b44e7',
 )
 assert(response.status_code == 200)</div>
         </div>
@@ -2706,7 +3378,7 @@ assert(response.status_code == 200)</div>
                 </tr>
                 <tr>
                   <td>output</td>
-                  <td>Server output</td>
+                  <td>List of server output lines</td>
                 </tr>
               </tbody>
             </table>
@@ -2726,7 +3398,9 @@ assert(response.status_code == 200)
 print response.json()
 {
   'id': 'e9f1ba1f55194eb1843d4fcf39a44d7b',
-  'output': '',
+  'output': [
+    '[evening-fields-8187] Fri Sep 4 16:35:13 2015 Initialization Completed',
+  ],
 }</div>
         </div>
       </div>
@@ -2762,182 +3436,6 @@ print response.json()
           </noscript>
 <div class="editor python">response = auth_request('DELETE',
   '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/output',
-)
-assert(response.status_code == 200)</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
-          <a id="get-server-var-bandwidth" class="anchor api-anchor"></a>
-          <h2 class="api-header">GET /server/:server_id/bandwidth</h2>
-          <div class="api-description">
-            <div class="text">
-              Get the bandwidth usage history of a server.
-            </div>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">URL Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>server_id</td>
-                  <td>Server ID</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Response</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1m</td>
-                  <td>Bandwidth data at 1 minute intervals for last 6 hours</td>
-                </tr>
-                <tr>
-                  <td>5m</td>
-                  <td>Bandwidth data at 5 minute intervals for last 24 hours</td>
-                </tr>
-                <tr>
-                  <td>30m</td>
-                  <td>Bandwidth data at 30 minute intervals for last 7 days</td>
-                </tr>
-                <tr>
-                  <td>2h</td>
-                  <td>Bandwidth data at 2 hour intervals for last 30 days</td>
-                </tr>
-                <tr>
-                  <td>1d</td>
-                  <td>Bandwidth data at 1 day intervals for last 365 days</td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="table">
-              <thead>
-                <tr>
-                  <th colspan="2">Bandwidth Parameters</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>received</td>
-                  <td>Array of containing the utc timestamp and bandwidth usage in bytes for data received</td>
-                </tr>
-                <tr>
-                  <td>received_total</td>
-                  <td>Total bytes received</td>
-                </tr>
-                <tr>
-                  <td>sent</td>
-                  <td>Array of containing the utc timestamp and bandwidth usage in bytes for data sent</td>
-                </tr>
-                <tr>
-                  <td>sent_total</td>
-                  <td>Total bytes sent</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
-          <span class="editor-title">Python Example</span>
-          <noscript>
-            <div class="text">
-              JavaScript is required to view example code
-            </div>
-          </noscript>
-<div class="editor python">response = auth_request('GET',
-  '/server/e9f1ba1f55194eb1843d4fcf39a44d7b/bandwidth',
-)
-assert(response.status_code == 200)
-print response.json()
-{
-'1m': {
-  'received': [
-    (1393115280, 753),
-    (1393115340, 321),
-  ],
-  'received_total': 1074,
-  'sent': [
-    (1393115280, 865),
-    (1393115340, 421),
-  ],
-  'sent_total': 1286,
-},
-'5m': {
-  'received': [
-    (1393050720, 3753),
-    (1393051020, 4784),
-  ],
-  'received_total': 8537,
-  'sent': [
-    (1393050720, 4723),
-    (1393051020, 6723),
-  ],
-  'sent_total': 11446,
-},
-'30m': {
-  'received': [
-    (1392532200, 19452),
-    (1392534000, 23921),
-  ],
-  'received_total': 43373,
-  'sent': [
-    (1392532200, 20123),
-    (1392534000, 17853),
-  ],
-  'sent_total': 37976,
-},
-'2h': {
-  'received': [
-    (1390552020, 91752),
-    (1390559220, 89316),
-  ],
-  'received_total': 181068,
-  'sent': [
-    (1390552020, 96296),
-    (1390559220, 83478),
-  ],
-  'sent_total': 179774,
-},
-'1d': {
-  'received': [
-    (1361687220, 867242),
-    (1361773620, 948342),
-  ],
-  'received_total': 1815584,
-  'sent': [
-    (1361687220, 852067),
-    (1361773620, 935672),
-  ],
-  'sent_total': 1787739,
-},
-}</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="api-endpoint col-md-5 col-md-offset-2 col-sm-6 col-xs-12">
-          <a id="get-export" class="anchor api-anchor"></a>
-          <h2 class="api-header">GET /export/pritunl.tar</h2>
-          <div class="api-description">
-            <div class="text">
-              Download a tar archive of all server data.
-            </div>
-          </div>
-        </div>
-        <div class="api-endpoint-code col-md-5 col-sm-6 col-xs-12">
-          <span class="editor-title">Python Example</span>
-          <noscript>
-            <div class="text">
-              JavaScript is required to view example code
-            </div>
-          </noscript>
-<div class="editor python">response = auth_request('GET',
-  '/export/pritunl.tar',
 )
 assert(response.status_code == 200)</div>
         </div>
