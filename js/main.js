@@ -130,8 +130,7 @@ jQuery(document).ready(function($) {
     $(element).css('height', editor.getSession().getScreenLength() *
       editor.renderer.lineHeight + 2);
   });
-  $('.install-archlinux .editor.bash, .server .editor.bash').each(
-      function(index, element) {
+  $('.install-archlinux .editor.bash').each(function(index, element) {
     var editor = ace.edit(element);
     editor.setTheme('ace/theme/tomorrow_night');
     editor.setFontSize(16);
@@ -146,6 +145,25 @@ jQuery(document).ready(function($) {
     $(editor.renderer.scroller).css('margin-top', '10px');
     $(editor.renderer.scroller).css('margin-left', '10px');
   });
+  $('.server-auto .editor.bash').each(function(index, element) {
+    var editor = ace.edit(element);
+    editor.setTheme('ace/theme/tomorrow_night');
+    editor.setFontSize(16);
+    editor.setReadOnly(true);
+    editor.setShowPrintMargin(false);
+    editor.setHighlightActiveLine(false);
+    editor.setShowFoldWidgets(false);
+    editor.renderer.setShowGutter(false);
+    editor.getSession().setMode('ace/mode/sh');
+    $(element).css('height', editor.getSession().getScreenLength() *
+      editor.renderer.lineHeight + 24);
+    $(editor.renderer.scroller).css('margin-top', '10px');
+    $(editor.renderer.scroller).css('margin-left', '10px');
+    $(element).click(function() {
+      editor.selectAll();
+    });
+  });
+
 
   $('.tutorial-button button.btn').click(function(evt) {
     $(this).parent().siblings().find('.btn').removeClass('active');
@@ -444,6 +462,77 @@ jQuery(document).ready(function($) {
       type = 'ubuntu-vivid';
       $('.install-ubuntu-vivid').show();
     } else if ($target.hasClass('client-ubuntu-wily')) {
+      type = 'ubuntu-wily';
+      $('.install-ubuntu-wily').show();
+    }
+
+    if (loaded.indexOf(type) === -1) {
+      loaded.push(type);
+      $('.install-' + type + ' .editor.bash').each(function(index, element) {
+        var editor = ace.edit(element);
+        editor.setTheme('ace/theme/tomorrow_night');
+        editor.setFontSize(16);
+        editor.setReadOnly(true);
+        editor.setShowPrintMargin(false);
+        editor.setHighlightActiveLine(false);
+        editor.setShowFoldWidgets(false);
+        editor.renderer.setShowGutter(false);
+        editor.getSession().setMode('ace/mode/sh');
+        $(element).css('height', editor.getSession().getScreenLength() *
+          editor.renderer.lineHeight + 24);
+        $(editor.renderer.scroller).css('margin-top', '10px');
+        $(editor.renderer.scroller).css('margin-left', '10px');
+      });
+    }
+  });
+
+
+  $('.server .server-distro').click(function(evt) {
+    var type;
+    var $target = $(evt.target);
+
+    $('.server-distro').removeClass('btn-primary').addClass('btn-default');
+    $target.removeClass('btn-default').addClass('btn-primary');
+
+    $('.install-archlinux').hide();
+    $('.install-amazon-linux').hide();
+    $('.install-centos-7').hide();
+    $('.install-fedora-22').hide();
+    $('.install-debian-wheezy').hide();
+    $('.install-debian-jessie').hide();
+    $('.install-ubuntu-precise').hide();
+    $('.install-ubuntu-trusty').hide();
+    $('.install-ubuntu-vivid').hide();
+    $('.install-ubuntu-wily').hide();
+
+    if ($target.hasClass('server-archlinux')) {
+      type = 'archlinux';
+      $('.install-archlinux').show();
+    } else if ($target.hasClass('server-amazon-linux')) {
+      type = 'amazon-linux';
+      $('.install-amazon-linux').show();
+    } else if ($target.hasClass('server-centos-7')) {
+      type = 'centos-7';
+      $('.install-centos-7').show();
+    } else if ($target.hasClass('server-fedora-22')) {
+      type = 'fedora-22';
+      $('.install-fedora-22').show();
+    } else if ($target.hasClass('server-debian-wheezy')) {
+      type = 'debian-wheezy';
+      $('.install-debian-wheezy').show();
+    } else if ($target.hasClass('server-debian-jessie')) {
+      type = 'debian-jessie';
+      $('.install-debian-jessie').show();
+    } else if ($target.hasClass('server-ubuntu-precise')) {
+      type = 'ubuntu-precise';
+      $('.install-ubuntu-precise').show();
+    } else if ($target.hasClass('server-ubuntu-trusty')) {
+      type = 'ubuntu-trusty';
+      $('.install-ubuntu-trusty').show();
+    } else if ($target.hasClass('server-ubuntu-vivid')) {
+      type = 'ubuntu-vivid';
+      $('.install-ubuntu-vivid').show();
+    } else if ($target.hasClass('server-ubuntu-wily')) {
       type = 'ubuntu-wily';
       $('.install-ubuntu-wily').show();
     }

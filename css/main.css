@@ -926,6 +926,16 @@ strong {
 .install .server-auto .item {
   text-align: center;
 }
+.install .server-auto .img-digital-ocean {
+  opacity: 0.85;
+  max-width: 756px;
+  max-height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.install .server-auto .editor {
+  text-align: left;
+}
 .install .server-auto .title a,
 .install .server-auto .title a:hover {
   color: #444;
@@ -968,6 +978,7 @@ strong {
   margin: 10px auto 15px auto;
 }
 .client .btn.client-distro,
+.server .btn.server-distro,
 .install .server-auto .btn.server-region {
   min-width: 114px;
   display: inline-block;
@@ -982,7 +993,8 @@ strong {
   padding-left: 2px;
   padding-right: 2px;
 }
-.client .btn.client-distro {
+.client .btn.client-distro,
+.server .btn.server-distro {
   opacity: 0.8;
 }
 .client {
@@ -1018,13 +1030,27 @@ strong {
   font-family: 'Fredoka One', cursive;
   margin-bottom: 10px;
 }
+.client .distro-btn,
+.server .distro-btns {
+  text-align: center;
+  padding: 0 10px;
+}
 .client .install-centos-7,
 .client .install-debian-wheezy,
 .client .install-debian-jessie,
 .client .install-ubuntu-precise,
 .client .install-ubuntu-trusty,
 .client .install-ubuntu-vivid,
-.client .install-ubuntu-wily {
+.client .install-ubuntu-wily,
+.server .install-amazon-linux,
+.server .install-fedora-22,
+.server .install-centos-7,
+.server .install-debian-wheezy,
+.server .install-debian-jessie,
+.server .install-ubuntu-precise,
+.server .install-ubuntu-trusty,
+.server .install-ubuntu-vivid,
+.server .install-ubuntu-wily {
   display: none;
 }
 .client .logo a,

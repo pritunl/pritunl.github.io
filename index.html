@@ -62,6 +62,17 @@ header_class: header-top
         </div>
       </div>
       <div class="row">
+        <h2 class="title text-center">Chromebook Support</h2>
+        <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+          <img class="img-google" src="img/chromebook.png" alt=""/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item feature-desc google-desc col-md-12 col-sm-12 col-xs-12">
+          <p>The easiest vpn for Chrome OS. In combination with Google single sign-on users can sign in with their Google business account and download a Chromebook compatible vpn profile in just two steps.</p>
+        </div>
+      </div>
+      <div class="row">
         <h2 class="title text-center">Open Source Alternative</h2>
         <div class="item col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <img class="img-google" src="img/alt.png" alt=""/>
@@ -226,6 +237,7 @@ header_class: header-top
               <li><span>Unlimited devices</span></li>
               <li><span>Configuration sync</span></li>
               <li><span>Email user keys</span></li>
+              <li><span>Additional themes</span></li>
             </ul>
             <h4 class="title price">$5/month</h4>
           </div>
@@ -238,10 +250,13 @@ header_class: header-top
               <li><span>Multiple servers</span></li>
               <li><span>Unlimited users</span></li>
               <li><span>Unlimited devices</span></li>
+              <li><span>Live chat support</span></li>
               <li><span>Single sign-on</span></li>
               <li><span>Automatic failover</span></li>
               <li><span>Replicated servers</span></li>
               <li><span>Site-to-site VPN</span></li>
+              <li><span>Bridged VPN mode</span></li>
+              <li><span>Chromebook support</span></li>
             </ul>
             <h4 class="title price">$50/month</h4>
           </div>
@@ -271,52 +286,180 @@ header_class: header-top
       <div class="row server-auto">
         <h2 class="title text-center"><a href="https://www.digitalocean.com/?refcode=f2da095bcc37" target="_blank"><img class="digital-ocean-logo" src="img/digital_ocean2.png" alt=""/> DigitalOcean Automated Install</a></h2>
         <div class="item col-md-12 col-sm-12 col-xs-12">
-          <div class="alert alert-success" role="alert">Use the <a href="https://www.digitalocean.com/?refcode=f2da095bcc37" target="_blank"><strong>DigitalOcean referral link</strong></a> to receive $10 in credits.</div>
-          <div class="alert alert-info" role="alert">Automatically launch a Pritunl droplet. To use select a region to launch your Pritunl server and when prompted authorize Pritunl to create your server.</div>
-          <div class="server-alert alert alert-warning" role="alert"></div>
-          <button class="server-region server-sfo1 btn btn-lg btn-primary">San Francisco</button><button class="server-region server-nyc3 btn btn-lg btn-default">New York</button><button class="server-region server-ams3 btn btn-lg btn-default">Amsterdam</button><button class="server-region server-sgp1 btn btn-lg btn-default">Singapore</button><button class="server-region server-lon1 btn btn-lg btn-default">London</button>
-          <button class="server-create btn btn-lg btn-success">Launch Pritunl Server</button>
+          <img class="img-digital-ocean" src="img/digitalocean.png" alt=""/>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 ">
+          <div class="editor bash">#!/bin/bash
+echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.0.list
+echo "deb http://repo.pritunl.com/stable/apt trusty main" > /etc/apt/sources.list.d/pritunl.list
+apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+apt-get --assume-yes update
+apt-get --assume-yes upgrade
+apt-get --assume-yes install pritunl
+service pritunl start</div>
         </div>
       </div>
       <div class="row server">
         <h2 class="title text-center">Install</h2>
         <div class="item feature-desc col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
-          <p class="text-center">Pritunl is available on several Linux distributions and a client is available for Linux, OSX and Windows. After installing no setup is necessary simply open the web interface in your web browser and login with the default username and password "pritunl".</p>
+          <p class="text-center">Select a Linux distribution below and run the commands to install Pritunl. After installing no setup is necessary simply open the web interface at https://SERVER_IP:9700/ in your web browser and login with the default username and password "pritunl".</p>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1">
-          <h3 class="title text-center">Ubuntu</h3>
-<div class="editor bash">apt-get install python-software-properties
-add-apt-repository -y ppa:pritunl
-apt-get update; apt-get install pritunl
-# open "https://localhost:9700/"</div>
+        <div
+          class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-fedora-22 btn btn-lg btn-default">Fedora 22</button><button class="server-distro server-debian-wheezy btn btn-lg btn-default">Debian Wheezy</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian Jessie</button><button class="server-distro server-ubuntu-precise btn btn-lg btn-default">Ubuntu Precise</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu Trusty</button><button class="server-distro server-ubuntu-vivid btn btn-lg btn-default">Ubuntu Vivid</button><button class="server-distro server-ubuntu-wily btn btn-lg btn-default">Ubuntu Wily</button>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12">
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
-<div class="editor bash">yaourt -S pritunl
-systemctl start mongodb pritunl
-systemctl enable mongodb pritunl
-# open "https://localhost:9700/"</div>
+          <div class="editor bash">$ nano /etc/pacman.conf
+[pritunl]
+Server = http://repo.pritunl.com/stable/pacman
+
+$ pacman-key --keyserver hkp://pgp.mit.edu -r CF8E292A
+$ pacman-key --lsign-key CF8E292A
+$ pacman -Sy
+$ pacman -S pritunl
+$ systemctl start mongodb pritunl
+$ systemctl enable mongodb pritunl</div>
         </div>
-      </div>
-      <div class="row server">
-        <div class="item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <h3 class="title text-center">CentOS 7 and Amazon Linux</h3>
-<div class="editor bash">nano /etc/yum.repos.d/pritunl.repo
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-precise">
+          <h3 class="title text-center">Ubuntu Precise</h3>
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
+deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.0 multiverse
+
+$ nano /etc/apt/sources.list.d/pritunl.list
+deb http://repo.pritunl.com/stable/apt precise main
+
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl
+$ service pritunl start</div>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-trusty">
+          <h3 class="title text-center">Ubuntu Trusty</h3>
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
+deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse
+
+$ nano /etc/apt/sources.list.d/pritunl.list
+deb http://repo.pritunl.com/stable/apt trusty main
+
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl
+$ service pritunl start</div>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-vivid">
+          <h3 class="title text-center">Ubuntu Vivid</h3>
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
+deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse
+
+$ nano /etc/apt/sources.list.d/pritunl.list
+deb http://repo.pritunl.com/stable/apt vivid main
+
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl
+$ service pritunl start</div>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-wily">
+          <h3 class="title text-center">Ubuntu Wily</h3>
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
+deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse
+
+$ nano /etc/apt/sources.list.d/pritunl.list
+deb http://repo.pritunl.com/stable/apt wily main
+
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl
+$ service pritunl start</div>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
+          <h3 class="title text-center">Debian Wheezy</h3>
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
+deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main
+
+$ nano /etc/apt/sources.list.d/pritunl.list
+deb http://repo.pritunl.com/stable/apt wheezy main
+
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl
+$ systemctl start mongod pritunl
+$ systemctl enable mongod pritunl</div>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-jessie">
+          <h3 class="title text-center">Debian Jessie</h3>
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
+deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main
+
+$ nano /etc/apt/sources.list.d/pritunl.list
+deb http://repo.pritunl.com/stable/apt jessie main
+
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl
+$ systemctl start mongod pritunl
+$ systemctl enable mongod pritunl</div>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-centos-7">
+          <h3 class="title text-center">CentOS 7</h3>
+          <div class="editor bash">$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ rpm -i epel-release-latest-7.noarch.rpm
+
+$ nano /etc/yum.repos.d/pritunl.repo
 [pritunl]
 name=Pritunl Repository
-baseurl=http://repo.pritunl.com/yum/pritunl/x86_64/
-gpgcheck=0
+baseurl=http://repo.pritunl.com/stable/yum/centos/7/
+gpgcheck=1
 enabled=1
 
-yum install -y pritunl
-start mongod # Amazon Linux
-start pritunl # Amazon Linux
-systemctl start mongod pritunl # CentOS
-systemctl enable mongod pritunl # CentOS
-# open "https://localhost:9700/"</div>
-          <div class="launch-stack">
-            <a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=Pritunl&templateURL=https://s3.amazonaws.com/pritunl-cf/pritunl-db.template" target="_blank"><img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png" alt="CloudFormation"></a>
-          </div>
+$ gpg --keyserver hkp://pgp.mit.edu --recv-keys CF8E292A
+$ gpg --armor --export CF8E292A > key.tmp; rpm --import key.tmp; rm -f key.tmp
+$ yum install pritunl mongodb-server
+$ systemctl start mongod pritunl
+$ systemctl enable mongod pritunl</div>
+        </div>
+        <div
+          class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-fedora-22">
+          <h3 class="title text-center">Fedora 22</h3>
+          <div class="editor bash">$ nano /etc/yum.repos.d/pritunl.repo
+[pritunl]
+name=Pritunl Repository
+baseurl=http://repo.pritunl.com/stable/yum/fedora/22/
+gpgcheck=1
+enabled=1
+
+$ gpg --keyserver hkp://pgp.mit.edu --recv-keys CF8E292A
+$ gpg --armor --export CF8E292A > key.tmp; rpm --import key.tmp; rm -f key.tmp
+$ yum install pritunl mongodb-server
+$ systemctl start mongod pritunl
+$ systemctl enable mongod pritunl</div>
+        </div>
+        <div
+          class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-amazon-linux">
+          <h3 class="title text-center">Amazon Linux</h3>
+          <div class="editor bash">$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+$ rpm -i epel-release-latest-7.noarch.rpm
+
+$ nano /etc/yum.repos.d/pritunl.repo
+[pritunl]
+name=Pritunl Repository
+baseurl=http://repo.pritunl.com/stable/yum/centos/7/
+gpgcheck=1
+enabled=1
+
+$ gpg --keyserver hkp://pgp.mit.edu --recv-keys CF8E292A
+$ gpg --armor --export CF8E292A > key.tmp; rpm --import key.tmp; rm -f key.tmp
+$ yum install pritunl mongodb-server
+$ start mongod
+$ start pritunl</div>
         </div>
       </div>
     </div>
@@ -334,7 +477,7 @@ systemctl enable mongod pritunl # CentOS
           <img class="client-screenshot" src="img/screenshot.png" alt="Client Screenshot"/><br>
           <a class="client-home title btn btn-lg" href="//client.pritunl.com" target="_blank">Visit Client Homepage <i class="fa fa-compass"></i></a>
         </div>
-        <div class="item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+        <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
           <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-wheezy btn btn-lg btn-default">Debian Wheezy</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian Jessie</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu Precise</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu Trusty</button><button class="client-distro client-ubuntu-vivid btn btn-lg btn-default">Ubuntu Vivid</button><button class="client-distro client-ubuntu-wily btn btn-lg btn-default">Ubuntu Wily</button>
         </div>
