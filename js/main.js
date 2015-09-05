@@ -423,6 +423,31 @@ jQuery(document).ready(function($) {
   //   });
   // });
 
+  // $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
+  //   type: 'GET',
+  //   xhrFields: {
+  //     withCredentials: true
+  //   },
+  //   crossDomain: true,
+  //   success: function(data) {
+  //     id = data.id;
+  //     if (data.status) {
+  //       updateDataPending(data.region, data.cookies, true);
+  //       poll();
+  //     }
+  //     else if (data.error) {
+  //       updateData(data.error, 'alert-danger', data.region, true);
+  //     }
+  //     else if (data.success) {
+  //       updateData(data.success, 'alert-success', data.region, true);
+  //     }
+  //   },
+  //   error: function(xhr) {
+  //     var data = xhr.responseJSON || {};
+  //     updateData('Automated install is currently unavailable, please ' +
+  //       'try again later.', 'alert-danger', data.region, true, false);
+  //   }
+  // });
 
   $('.client .client-distro').click(function(evt) {
     var type;
@@ -620,32 +645,6 @@ jQuery(document).ready(function($) {
     }, 3000);
   };
   sliderAuto();
-
-  $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
-    type: 'GET',
-    xhrFields: {
-      withCredentials: true
-    },
-    crossDomain: true,
-    success: function(data) {
-      id = data.id;
-      if (data.status) {
-        updateDataPending(data.region, data.cookies, true);
-        poll();
-      }
-      else if (data.error) {
-        updateData(data.error, 'alert-danger', data.region, true);
-      }
-      else if (data.success) {
-        updateData(data.success, 'alert-success', data.region, true);
-      }
-    },
-    error: function(xhr) {
-      var data = xhr.responseJSON || {};
-      updateData('Automated install is currently unavailable, please ' +
-        'try again later.', 'alert-danger', data.region, true, false);
-    }
-  });
 
   if ($('#google-cache-hdr').length) {
     $('.header').css('position', 'absolute')
