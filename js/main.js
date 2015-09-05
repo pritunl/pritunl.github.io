@@ -280,148 +280,148 @@ jQuery(document).ready(function($) {
 
   $('.label').tooltip();
 
-  $('.server-region').click(function(evt) {
-    var $serverRegion = $('.server-region');
-    $serverRegion.addClass('btn-default');
-    $serverRegion.removeClass('btn-primary');
-    $(evt.target).addClass('btn-primary');
-  });
+  // $('.server-region').click(function(evt) {
+  //   var $serverRegion = $('.server-region');
+  //   $serverRegion.addClass('btn-default');
+  //   $serverRegion.removeClass('btn-primary');
+  //   $(evt.target).addClass('btn-primary');
+  // });
 
-  var loaderUrl = 'https://pritunl-loader.herokuapp.com';
-  var id = null;
-  var updateData = function(message, type, region, noAnimate, buttonState) {
-    var $serverAlert = $('.server-alert');
-    var $serverRegion = $('.server-region');
-    var $serverRegionSel = $('.server-' + region);
-    var $apiKey = $('.api-key-container');
+  // var loaderUrl = 'https://pritunl-loader.herokuapp.com';
+  // var id = null;
+  // var updateData = function(message, type, region, noAnimate, buttonState) {
+  //   var $serverAlert = $('.server-alert');
+  //   var $serverRegion = $('.server-region');
+  //   var $serverRegionSel = $('.server-' + region);
+  //   var $apiKey = $('.api-key-container');
 
-    if (buttonState == undefined) {
-      buttonState = true;
-    }
+  //   if (buttonState == undefined) {
+  //     buttonState = true;
+  //   }
 
-    if (region && !$serverRegionSel.hasClass('btn-primary')) {
-      $serverRegion.addClass('btn-default');
-      $serverRegion.removeClass('btn-primary');
-      $serverRegionSel.addClass('btn-primary');
-    }
+  //   if (region && !$serverRegionSel.hasClass('btn-primary')) {
+  //     $serverRegion.addClass('btn-default');
+  //     $serverRegion.removeClass('btn-primary');
+  //     $serverRegionSel.addClass('btn-primary');
+  //   }
 
-    $serverAlert.removeClass('alert-success alert-warning alert-danger');
-    $serverAlert.addClass(type);
-    if (message) {
-      $serverAlert.html(message);
-    }
-    if (buttonState) {
-      $('.server-region, .server-create').removeAttr('disabled');
-    }
-    else {
-      $('.server-region, .server-create').attr('disabled', 'disabled');
-    }
-    if (noAnimate) {
-      if (buttonState) {
-        $apiKey.show();
-      }
-      else {
-        $apiKey.hide();
-      }
-      if (message) {
-        $serverAlert.show();
-      }
-      else {
-        $serverAlert.hide();
-      }
-    }
-    else {
-      if (buttonState) {
-        $apiKey.slideDown(250);
-      }
-      else {
-        $apiKey.slideUp(250);
-      }
-      if (message) {
-        $serverAlert.slideDown(250);
-      }
-      else {
-        $serverAlert.slideUp(250);
-      }
-    }
-  };
-  var updateDataPending = function(region, noAnimate) {
-    updateData('Pritunl droplet is being created, please ' +
-        'allow several minutes for this to complete. You may leave or ' +
-        'reload the page while the droplet is being created.',
-        'alert-warning', region, noAnimate, false);
-  };
-  var poll = function() {
-    $.ajax(loaderUrl + '/poll' + (id ? '/' + id : ''), {
-      success: function(data) {
-        id = data.id;
-        if (data.status) {
-          poll();
-        }
-        else if (data.error) {
-          updateData(data.error, 'alert-danger', data.region);
-        }
-        else if (data.success) {
-          updateData(data.success, 'alert-success', data.region);
-        }
-      },
-      error: function(data) {
-        setTimeout(function() {
-          poll();
-        }, 3000);
-      }
-    });
-  };
+  //   $serverAlert.removeClass('alert-success alert-warning alert-danger');
+  //   $serverAlert.addClass(type);
+  //   if (message) {
+  //     $serverAlert.html(message);
+  //   }
+  //   if (buttonState) {
+  //     $('.server-region, .server-create').removeAttr('disabled');
+  //   }
+  //   else {
+  //     $('.server-region, .server-create').attr('disabled', 'disabled');
+  //   }
+  //   if (noAnimate) {
+  //     if (buttonState) {
+  //       $apiKey.show();
+  //     }
+  //     else {
+  //       $apiKey.hide();
+  //     }
+  //     if (message) {
+  //       $serverAlert.show();
+  //     }
+  //     else {
+  //       $serverAlert.hide();
+  //     }
+  //   }
+  //   else {
+  //     if (buttonState) {
+  //       $apiKey.slideDown(250);
+  //     }
+  //     else {
+  //       $apiKey.slideUp(250);
+  //     }
+  //     if (message) {
+  //       $serverAlert.slideDown(250);
+  //     }
+  //     else {
+  //       $serverAlert.slideUp(250);
+  //     }
+  //   }
+  // };
+  // var updateDataPending = function(region, noAnimate) {
+  //   updateData('Pritunl droplet is being created, please ' +
+  //       'allow several minutes for this to complete. You may leave or ' +
+  //       'reload the page while the droplet is being created.',
+  //       'alert-warning', region, noAnimate, false);
+  // };
+  // var poll = function() {
+  //   $.ajax(loaderUrl + '/poll' + (id ? '/' + id : ''), {
+  //     success: function(data) {
+  //       id = data.id;
+  //       if (data.status) {
+  //         poll();
+  //       }
+  //       else if (data.error) {
+  //         updateData(data.error, 'alert-danger', data.region);
+  //       }
+  //       else if (data.success) {
+  //         updateData(data.success, 'alert-success', data.region);
+  //       }
+  //     },
+  //     error: function(data) {
+  //       setTimeout(function() {
+  //         poll();
+  //       }, 3000);
+  //     }
+  //   });
+  // };
 
-  if (document.URL.indexOf('error=oad') !== -1) {
-    updateData('Automated install was unable to get permission to ' +
-      'create server, please try again.', 'alert-danger', null, true, true);
-  }
-  else if (document.URL.indexOf('error=err') !== -1) {
-    updateData('Automated install was unable to create server, ' +
-      'please try again later.', 'alert-danger', null, true, true);
-  }
+  // if (document.URL.indexOf('error=oad') !== -1) {
+  //   updateData('Automated install was unable to get permission to ' +
+  //     'create server, please try again.', 'alert-danger', null, true, true);
+  // }
+  // else if (document.URL.indexOf('error=err') !== -1) {
+  //   updateData('Automated install was unable to create server, ' +
+  //     'please try again later.', 'alert-danger', null, true, true);
+  // }
 
-  $('.server-create').click(function() {
-    var region;
-    $('.server-region, .server-create').attr('disabled', 'disabled');
+  // $('.server-create').click(function() {
+  //   var region;
+  //   $('.server-region, .server-create').attr('disabled', 'disabled');
 
-    if ($('.server-sfo1').hasClass('btn-primary')) {
-      region = 'sfo1';
-    }
-    else if ($('.server-nyc3').hasClass('btn-primary')) {
-      region = 'nyc3';
-    }
-    else if ($('.server-ams3').hasClass('btn-primary')) {
-      region = 'ams3';
-    }
-    else if ($('.server-sgp1').hasClass('btn-primary')) {
-      region = 'sgp1';
-    }
-    else if ($('.server-lon1').hasClass('btn-primary')) {
-      region = 'lon1';
-    }
+  //   if ($('.server-sfo1').hasClass('btn-primary')) {
+  //     region = 'sfo1';
+  //   }
+  //   else if ($('.server-nyc3').hasClass('btn-primary')) {
+  //     region = 'nyc3';
+  //   }
+  //   else if ($('.server-ams3').hasClass('btn-primary')) {
+  //     region = 'ams3';
+  //   }
+  //   else if ($('.server-sgp1').hasClass('btn-primary')) {
+  //     region = 'sgp1';
+  //   }
+  //   else if ($('.server-lon1').hasClass('btn-primary')) {
+  //     region = 'lon1';
+  //   }
 
-    $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
-      type: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify({
-        region: region
-      }),
-      xhrFields: {
-        withCredentials: true
-      },
-      crossDomain: true,
-      success: function(data) {
-        window.location.replace(data.oauth_url);
-      },
-      error: function(xhr) {
-        var data = xhr.responseJSON || {};
-        updateData('Automated install is currently unavailable, please ' +
-          'try again later.', 'alert-danger', data.region, true, false);
-      }
-    });
-  });
+  //   $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
+  //     type: 'POST',
+  //     contentType: 'application/json',
+  //     data: JSON.stringify({
+  //       region: region
+  //     }),
+  //     xhrFields: {
+  //       withCredentials: true
+  //     },
+  //     crossDomain: true,
+  //     success: function(data) {
+  //       window.location.replace(data.oauth_url);
+  //     },
+  //     error: function(xhr) {
+  //       var data = xhr.responseJSON || {};
+  //       updateData('Automated install is currently unavailable, please ' +
+  //         'try again later.', 'alert-danger', data.region, true, false);
+  //     }
+  //   });
+  // });
 
 
   $('.client .client-distro').click(function(evt) {
