@@ -297,7 +297,7 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
 apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 apt-get --assume-yes update
 apt-get --assume-yes upgrade
-apt-get --assume-yes install pritunl
+apt-get --assume-yes install pritunl mongodb-org
 service pritunl start</div>
         </div>
       </div>
@@ -319,7 +319,7 @@ Server = http://repo.pritunl.com/stable/pacman
 $ pacman-key --keyserver hkp://pgp.mit.edu -r CF8E292A
 $ pacman-key --lsign-key CF8E292A
 $ pacman -Sy
-$ pacman -S pritunl
+$ pacman -S pritunl mongodb
 $ systemctl start mongodb pritunl
 $ systemctl enable mongodb pritunl</div>
         </div>
@@ -334,7 +334,7 @@ deb http://repo.pritunl.com/stable/apt precise main
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
-$ apt-get install pritunl
+$ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-trusty">
@@ -348,7 +348,7 @@ deb http://repo.pritunl.com/stable/apt trusty main
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
-$ apt-get install pritunl
+$ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-vivid">
@@ -362,7 +362,7 @@ deb http://repo.pritunl.com/stable/apt vivid main
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
-$ apt-get install pritunl
+$ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-wily">
@@ -376,7 +376,7 @@ deb http://repo.pritunl.com/stable/apt wily main
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
-$ apt-get install pritunl
+$ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
@@ -390,7 +390,7 @@ deb http://repo.pritunl.com/stable/apt wheezy main
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
-$ apt-get install pritunl
+$ apt-get install pritunl mongodb-org
 $ systemctl start mongod pritunl
 $ systemctl enable mongod pritunl</div>
         </div>
@@ -405,7 +405,7 @@ deb http://repo.pritunl.com/stable/apt jessie main
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
 $ apt-key adv --keyserver hkp://pgp.mit.edu --recv CF8E292A
 $ apt-get update
-$ apt-get install pritunl
+$ apt-get install pritunl mongodb-org
 $ systemctl start mongod pritunl
 $ systemctl enable mongod pritunl</div>
         </div>
