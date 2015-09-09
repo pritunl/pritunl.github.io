@@ -595,21 +595,11 @@ strong {
   max-height: 100%;
   width: 100%;
 }
-.features .item .img-customers0 {
-  max-width: 26.452991452991453%;
-  width: 26.452991452991453%;
-}
-.features .item .img-customers1 {
-  max-width: 29.4017094017094%;
-  width: 29.4017094017094%;
-}
-.features .item .img-customers2 {
-  max-width: 25.94017094017094%;
-  width: 25.94017094017094%;
-}
-.features .item .img-customers3 {
-  max-width: 18.205128205128204%;
-  width: 18.205128205128204%;
+.features .item .img-sponsor {
+  margin-top: 20px;
+  max-width: 100%;
+  width: 440px;
+  opacity: 0.6;
 }
 .features.feature-simple {
   background-color: rgba(249, 241, 251, .36);
