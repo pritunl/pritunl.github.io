@@ -882,6 +882,7 @@ strong {
   background-image: url('../img/pritunl_background5.svg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .features.feature-list {
   font-size: 20px;
