@@ -64,8 +64,8 @@ jQuery(document).ready(function($) {
   var curX;
   var curY;
   $body.mousemove(function(evt) {
-    var x = Math.round(20 * evt.clientX / $window.width() - 10);
-    var y = Math.round(20 * evt.clientY / $window.height() - 10);
+    var x = Math.round(50 * evt.clientX / $window.width() - 10);
+    var y = Math.round(50 * evt.clientY / $window.height() - 10);
 
     if (curX == x && curY == y) {
       return;
