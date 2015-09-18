@@ -605,13 +605,19 @@ strong {
   background-image: url('../img/pritunl_pattern2.svg');
   background-size: 80px;
 }
+.wiki {
+  text-align: center;
+  padding-bottom: 20px;
+}
 .features.feature-simple .btn,
+.wiki .btn,
 .features.feature-list .btn {
   margin-top: 30px;
   background-color: #3eb4ff;
   color: #fff;
   min-width: 260px;
 }
+.wiki .btn:hover,
 .features.feature-simple .btn:hover {
   background-color: #2d93d4;
 }
