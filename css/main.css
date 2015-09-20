@@ -611,9 +611,12 @@ strong {
 }
 .features.feature-simple .btn {
   margin-top: 15px;
-  background-color: #3eb4ff;
+  background-color: #ca3336;
   color: #fff;
   font-size: 20px;
+}
+.features.feature-simple .btn:hover {
+  background-color: #a52628;
 }
 .features.feature-simple .btn.get-started,
 .wiki .btn,
@@ -627,7 +630,7 @@ strong {
   font-size: 38px;
 }
 .wiki .btn:hover,
-.features.feature-simple .btn:hover {
+.features.feature-simple .btn.get-started:hover {
   background-color: #2d93d4;
 }
 .features.feature-list .btn {
