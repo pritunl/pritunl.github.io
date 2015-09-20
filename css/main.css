@@ -609,13 +609,22 @@ strong {
   text-align: center;
   padding-bottom: 20px;
 }
-.features.feature-simple .btn,
+.features.feature-simple .btn {
+  margin-top: 15px;
+  background-color: #3eb4ff;
+  color: #fff;
+  font-size: 20px;
+}
+.features.feature-simple .btn.get-started,
 .wiki .btn,
 .features.feature-list .btn {
   margin-top: 30px;
   background-color: #3eb4ff;
   color: #fff;
   min-width: 260px;
+}
+.features.feature-simple .btn.get-started {
+  font-size: 38px;
 }
 .wiki .btn:hover,
 .features.feature-simple .btn:hover {
