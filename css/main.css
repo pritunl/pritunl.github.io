@@ -1638,6 +1638,9 @@ a.anchor.api-anchor {
   }
 }
 @media (max-width: 352px) {
+  .title {
+    font-size: 24px;
+  }
   .client .logo .a {
     font-size: 46px;
   }
