@@ -1638,6 +1638,9 @@ a.anchor.api-anchor {
   }
 }
 @media (max-width: 352px) {
+  .client .logo .a {
+    font-size: 46px;
+  }
   .features.feature-simple .btn {
     font-size: 16px;
   }
