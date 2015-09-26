@@ -1637,6 +1637,14 @@ a.anchor.api-anchor {
     transition: none;
   }
 }
+@media (max-width: 352px) {
+  .features.feature-simple .btn {
+    font-size: 16px;
+  }
+  .features.feature-simple .btn.get-started {
+    font-size: 26px;
+  }
+}
 @media (max-width: 330px) {
   .comparison .row .col.name {
     font-size: 12px;
