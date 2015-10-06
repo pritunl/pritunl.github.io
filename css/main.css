@@ -718,6 +718,10 @@ strong {
   /*padding-bottom: 180px;*/
   background-color: #f1f4ff;
   text-align: center;
+  background-image: url('../img/pritunl_background1.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .explore img {
   width: 100%;
