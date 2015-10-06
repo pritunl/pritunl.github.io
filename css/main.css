@@ -609,13 +609,15 @@ strong {
   text-align: center;
   padding-bottom: 20px;
 }
-.features.feature-simple .btn {
+.features.feature-simple .btn,
+.explore .btn {
   margin-top: 15px;
   background-color: #ca3336;
   color: #fff;
   font-size: 20px;
 }
-.features.feature-simple .btn:hover {
+.features.feature-simple .btn:hover,
+.explore .btn:hover {
   background-color: #a52628;
 }
 .features.feature-simple .btn.get-started,
@@ -709,6 +711,87 @@ strong {
 }
 .features .customers .title {
   margin-bottom: 0;
+}
+
+.explore {
+  padding-top: 50px;
+  /*padding-bottom: 180px;*/
+  background-color: #f1f4ff;
+  text-align: center;
+}
+.explore img {
+  width: 100%;
+}
+.explore h3.title {
+  margin-top: 40px;
+  font-size: 28px;
+}
+.explore .btn {
+  margin-top: 3px;
+  font-size: 16px;
+  opacity: .5;
+  background-color: #434343;
+}
+.explore .btn:hover {
+  background-color: #000;
+}
+
+/* H/(W/100) = P */
+.youtube {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.youtube iframe,
+.youtube object,
+.youtube embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.google-youtube {
+  padding-bottom: 83.65758754863813%;
+}
+.duo-youtube {
+  padding-bottom: 75.87548638132296%;
+}
+.google-youtube iframe {
+  border: 1px solid #000;
+}
+
+.explore-vid {
+  padding-top: 0;
+  padding-bottom: 70px;
+  background-color: #f1f4ff;
+  /*color: #fff;*/
+  /*background-color: #000;*/
+  position: relative;
+}
+/*.explore-vid:before {*/
+  /*content: '';*/
+  /*position: absolute;*/
+  /*left: 0;*/
+  /*top: -130px;*/
+  /*width: 100%;*/
+  /*height: 260px;*/
+  /*background-color: #0e1013;*/
+  /*-webkit-transform: skewY(5deg);*/
+  /*-moz-transform: skewY(5deg);*/
+  /*-ms-transform: skewY(5deg);*/
+  /*-o-transform: skewY(5deg);*/
+  /*transform: skewY(5deg);*/
+  /*-webkit-backface-visibility: hidden;*/
+  /*z-index: -1;*/
+/*}*/
+/*.explore-vid .container .row:first-child {*/
+  /*margin-top: -70px;*/
+/*}*/
+.explore .vid {
+  width: 100%;
+  height: auto;
 }
 
 .screenshots {
