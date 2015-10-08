@@ -721,7 +721,7 @@ strong {
   padding-top: 50px;
   padding-bottom: 70px;
   /*padding-bottom: 180px;*/
-  background-color: #f1ebfd;
+  background-color: #f7faff;
   text-align: center;
   background-image: url('../img/pritunl_background1.svg');
   background-size: cover;
@@ -752,7 +752,7 @@ strong {
 .explore h3.title {
   color: #fff;
   font-size: 28px;
-  background-color: rgba(31, 26, 70, .68);
+  background-color: rgba(173, 12, 12, 0.84);
   padding: 20px 0;
   margin: 0 0 10px 0;
   -webkit-border-top-left-radius: 2px;
@@ -777,10 +777,11 @@ strong {
   margin-top: 10px;
   font-size: 16px;
   opacity: .8;
-  background-color: rgba(31, 26, 70, .58);
+  background-color: rgba(173, 12, 12, 0.84);
 }
 .explore .btn:hover {
-  background-color: rgba(31, 26, 70, .85);
+  opacity: .9;
+  background-color: rgba(173, 12, 12, 0.98);
 }
 
 /* H/(W/100) = P */
