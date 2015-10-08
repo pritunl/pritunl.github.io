@@ -749,6 +749,9 @@ strong {
   width: 100%;
   padding: 0 8px;
 }
+.explore h2.title {
+  margin-bottom: 0;
+}
 .explore h3.title {
   color: #fff;
   font-size: 28px;
