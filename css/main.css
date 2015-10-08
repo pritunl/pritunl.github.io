@@ -19,6 +19,9 @@ a:hover {
 thead tr th {
   font-weight: 400;
 }
+video {
+  outline: none;
+}
 .title {
   font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', sans-serif;
   font-weight: 500;
