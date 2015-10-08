@@ -659,4 +659,20 @@ jQuery(document).ready(function($) {
       }
     }, 500);
   }, 500);
+
+  $('.enterprise-vid').bind('play', function(evt) {
+    var $vid = $(evt.currentTarget);
+
+    $vid.animate({
+      duration: 400,
+      width: '100%'
+    });
+  }).bind('ended', function(evt) {
+    var $vid = $(evt.currentTarget);
+
+    $vid.animate({
+      duration: 400,
+      width: '50%'
+    });
+  });
 });
