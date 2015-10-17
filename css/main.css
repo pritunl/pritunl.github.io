@@ -29,6 +29,9 @@ video {
   font-size: 28px;
   margin-bottom: 20px;
 }
+h3.title {
+  font-size: 23px;
+}
 strong {
   font-weight: 500;
 }
@@ -753,7 +756,6 @@ strong {
 }
 .explore h3.title {
   color: #fff;
-  font-size: 28px;
   background-color: rgba(173, 12, 12, 0.84);
   padding: 20px 0;
   margin: 0 0 10px 0;
@@ -773,7 +775,6 @@ strong {
 }
 .enterprise-explore h3.title {
   margin-top: 40px;
-  font-size: 28px;
 }
 .explore .btn {
   margin-top: 10px;
@@ -1778,6 +1779,9 @@ a.anchor.api-anchor {
   .title {
     font-size: 24px;
   }
+  h3.title {
+    font-size: 20px;
+  }
   .client .logo .a {
     font-size: 46px;
   }
@@ -1812,6 +1816,9 @@ a.anchor.api-anchor {
   .title {
     font-size: 32px;
   }
+  h3.title {
+    font-size: 22px;
+  }
   .promo .overview h2 {
     font-size: 32px;
   }
@@ -1822,6 +1829,9 @@ a.anchor.api-anchor {
 @media (min-width: 720px) {
   .title {
     font-size: 34px;
+  }
+  h3.title {
+    font-size: 24px;
   }
   .promo .overview h2 {
     font-size: 35px;
@@ -1859,6 +1869,9 @@ a.anchor.api-anchor {
   }
   .title {
     font-size: 38px;
+  }
+  h3.title {
+    font-size: 26px;
   }
   .header .main-nav .nav .nav-item a {
     padding-left: 9px;
