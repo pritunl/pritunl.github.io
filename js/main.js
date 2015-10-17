@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
     TweenMax.to(bgObj, 6, {
       delay: 2,
       repeat: -1,
-      repeatDelay:.5,
+      repeatDelay: .5,
       yoyo: true,
       colorProps: bgProps,
       onUpdate: function() {
