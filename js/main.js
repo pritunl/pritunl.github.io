@@ -14,6 +14,7 @@ jQuery(document).ready(function($) {
 
     var bgObj;
     var bgProps;
+    var repeatDelay = .5;
     if (randTheme === 'theme0') {
       bgObj = {
         left: '#3076d5',
@@ -33,13 +34,14 @@ jQuery(document).ready(function($) {
         right: '#180303'
       };
     } else if (randTheme === 'theme2') {
+      repeatDelay = 2;
       bgObj = {
         left: '#1f0b35',
         right: '#501d0c'
       };
       bgProps = {
-        left: '#0b0c35',
-        right: '#500909'
+        left: '#501d0c',
+        right: '#1f0b35'
       };
     } else if (randTheme === 'theme3') {
       bgObj = {
@@ -55,7 +57,7 @@ jQuery(document).ready(function($) {
     TweenMax.to(bgObj, 6, {
       delay: 2,
       repeat: -1,
-      repeatDelay: .5,
+      repeatDelay: repeatDelay,
       yoyo: true,
       colorProps: bgProps,
       onUpdate: function() {
