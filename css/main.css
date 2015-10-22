@@ -658,9 +658,16 @@ strong {
   position: relative;
 }
 .features .google-desc,
+.features .edgemax-desc,
 .features .ipv6-desc,
 .features .duo-desc {
   margin-top: 0;
+}
+.features .google-title,
+.features .edgemax-title,
+.features .ipv6-title,
+.features .duo-title {
+  padding: 0 0 5px 0 !important;
 }
 .features.feature-dis {
   overflow: hidden;
