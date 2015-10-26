@@ -1146,6 +1146,24 @@ strong {
   display: block;
   margin: 10px auto 15px auto;
 }
+
+.edgemax-item {
+  position: relative;
+}
+
+.edgemax-item a img {
+  padding-top: 5px;
+}
+
+.edgemax-item .edgemax-logo {
+  position: absolute;
+  bottom: 10px;
+  right: 2px;
+  width: 25%;
+  opacity: 0.75;
+  z-index: 10;
+}
+
 .client .btn.client-distro,
 .server .btn.server-distro,
 .install .server-auto .btn.server-region {
