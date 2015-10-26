@@ -5,6 +5,10 @@ jQuery(document).ready(function($) {
   var $promoBg = $('.promo-background-color');
   var $promoImg = $('.promo-background-img');
 
+  $('.contact-btn').click(function() {
+    $zopim.livechat.window.show();
+  });
+
   if ($promoBg.length) {
     $promoBg.removeClass('theme0');
     $promoBg.addClass(randTheme);
