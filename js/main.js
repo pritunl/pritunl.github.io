@@ -736,4 +736,21 @@ jQuery(document).ready(function($) {
       width: '50%'
     });
   });
+
+
+  $('.plans .plan-list li').click(function(evt) {
+    var $tar = $(evt.currentTarget);
+
+    if ($tar.hasClass('expanded')) {
+      $tar.removeClass('expanded');
+      $tar.find('.fa-angle-up').removeClass(
+        'fa-angle-up').addClass('fa-angle-down');
+      $tar.find('.info').slideUp(200);
+    } else {
+      $tar.addClass('expanded');
+      $tar.find('.fa-angle-down').removeClass(
+        'fa-angle-down').addClass('fa-angle-up');
+      $tar.find('.info').slideDown(200);
+    }
+  });
 });

@@ -387,9 +387,28 @@ header_class: header-top
             <img src="img/pritunl_logo0.png" alt=""/>
             <h3 class="title">Free</h3>
             <ul class="plan-list">
-              <li><span>Single server</span></li>
-              <li><span>Unlimited users</span></li>
-              <li><span>Unlimited devices</span></li>
+              <li>
+                <span>Single server</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Run a single instance of Pritunl
+                </div>
+              </li>
+              <li>
+                <span>Unlimited users</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  No limit on the number of users created or users connected
+                </div>
+              </li>
+              <li>
+                <span>Unlimited devices</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  No limit on the number of devices that each user has
+                  connected
+                </div>
+              </li>
             </ul>
             <h4 class="title price">$0/month</h4>
           </div>
@@ -399,12 +418,53 @@ header_class: header-top
             <img src="img/pritunl_logo0.png" alt=""/>
             <h3 class="title">Premium</h3>
             <ul class="plan-list">
-              <li><span>Single server</span></li>
-              <li><span>Unlimited users</span></li>
-              <li><span>Unlimited devices</span></li>
-              <li><span>Configuration sync</span></li>
-              <li><span>Email user keys</span></li>
-              <li><span>Additional themes</span></li>
+              <li>
+                <span>Single server</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Run a single instance of Pritunl
+                </div>
+              </li>
+              <li>
+                <span>Unlimited users</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  No limit on the number of users created or users connected
+                </div>
+              </li>
+              <li>
+                <span>Unlimited devices</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  No limit on the number of devices that each user has
+                  connected
+                </div>
+              </li>
+              <li>
+                <span>Configuration sync</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  When clients connect with a Pritunl client, vpn setting
+                  changes such as port/protocol will be updated to allow the
+                  client to connect without needing to download a new
+                  configuration
+                </div>
+              </li>
+              <li>
+                <span>Email user keys</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Email users a link to download vpn profiles using a
+                  configured SMTP server
+                </div>
+              </li>
+              <li>
+                <span>Additional themes</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Change the interface to light or dark theme
+                </div>
+              </li>
             </ul>
             <h4 class="title price">$5/month</h4>
           </div>
@@ -414,17 +474,96 @@ header_class: header-top
             <img src="img/pritunl_logo0.png" alt=""/>
             <h3 class="title">Enterprise</h3>
             <ul class="plan-list">
-              <li><span>Unlimited servers</span></li>
-              <li><span>Unlimited users</span></li>
-              <li><span>Unlimited devices</span></li>
-              <li><span>Live chat support</span></li>
-              <li><span>Single sign-on</span></li>
-              <li><span>Automatic failover</span></li>
-              <li><span>Replicated servers</span></li>
-              <li><span>Site-to-site VPN</span></li>
-              <li><span>Gateway Links</span></li>
-              <li><span>Bridged VPN mode</span></li>
-              <li><span>Chromebook support</span></li>
+              <li>
+                <span>All Premium features</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  All of the features included with a Premium subscription
+                </div>
+              </li>
+              <li>
+                <span>Unlimited servers</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  No limit on the number of Pritunl instances in a single
+                  Pritunl cluster
+                </div>
+              </li>
+              <li>
+                <span>Single sign-on</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Single sign-on with Google and Duo Security
+                </div>
+              </li>
+              <li>
+                <span>Automatic failover</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  When a Pritunl instance fails the vpn servers running on the
+                  instance will automatically failover to another available
+                  Pritunl instance
+                </div>
+              </li>
+              <li>
+                <span>Replicated servers</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Replicate a vpn server accross multiple Pritunl instances to
+                  easily scale horizontally to handle more user connections
+                </div>
+              </li>
+              <li>
+                <span>Site-to-site VPN</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Easily create a site-to-site link between two Pritunl
+                  instances without any complicated configuration
+                </div>
+              </li>
+              <li>
+                <span>Gateway links</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Create a gateway link to route traffic for a local network
+                  to a vpn client. Allowing the vpn clients to access the
+                  remote network that is available to the linked vpn client
+                </div>
+              </li>
+              <li>
+                <span>DNS mapping</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Map connected vpn clients to dns domains such as
+                  example_user.example_org.vpn using a custom dns server
+                  that runs along with the Pritunl server
+                  (Only available in 1.8 beta)
+                </div>
+              </li>
+              <li>
+                <span>Bridged VPN mode</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Create tap servers that bridge the vpn clients to the servers
+                  local network interface. Allowing vpn clients to get an ip
+                  address on the servers local network
+                </div>
+              </li>
+              <li>
+                <span>Chromebook support</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Easily connect Chromebook users with ChromeOS compatible
+                  vpn profiles
+                </div>
+              </li>
+              <li>
+                <span>Live chat support</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Live support with Slack
+                </div>
+              </li>
             </ul>
             <h4 class="title price">$50/month</h4>
           </div>
