@@ -111,6 +111,18 @@ header_class: header-top
         </div>
       </div>
       <div class="row">
+        <h2 class="title text-center">DNS Mapping</h2>
+        <div class="item dns-mapping-title col-md-12 col-sm-12 col-xs-12">
+          user0.organization0.vpn
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="item dns-mapping-item feature-desc col-md-12 col-sm-12 col-xs-12">
+          <p>All connected users and devices are mapped to a dns domain with their username and organization name.</p>
+        </div>
+      </div>
+      <div class="row">
         <h2 class="title text-center">Open Source Alternative</h2>
         <div class="item col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
           <img class="img-google" src="img/alt.png" alt=""/>
@@ -531,13 +543,21 @@ header_class: header-top
                 </div>
               </li>
               <li>
+                <span>Failover gateway links</span>
+                <i class="fa fa-angle-down"></i>
+                <div class="info">
+                  Connect multiple gateway links to a Pritunl server and when
+                  a link goes down another available link will automatically
+                  be used
+                </div>
+              </li>
+              <li>
                 <span>DNS mapping</span>
                 <i class="fa fa-angle-down"></i>
                 <div class="info">
                   Map connected vpn clients to dns domains such as
                   user0.org0.vpn using a custom dns server
                   that runs along with the Pritunl server
-                  (Only available in 1.8 beta)
                 </div>
               </li>
               <li>
