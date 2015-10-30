@@ -1184,6 +1184,30 @@ strong {
   padding-top: 0;
 }
 
+.tutorials .tutorial-1 .btn {
+  background-color: #4ba23c;
+}
+
+.tutorials .tutorial-2 .btn {
+  background-color: #dc6a3e;
+}
+
+.tutorials .tutorial-3 .btn {
+  background-color: #407cb9;
+}
+
+.tutorials .tutorial-4 .btn {
+  background-color: #88694a;
+}
+
+.tutorials .tutorial-5 .btn {
+  background-color: #8b5ec5;
+}
+
+.tutorials .tutorial-6 .btn {
+  background-color: #bf4646;
+}
+
 .client .btn.client-distro,
 .server .btn.server-distro,
 .install .server-auto .btn.server-region {
