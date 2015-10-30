@@ -7,7 +7,6 @@ jQuery(document).ready(function($) {
 
 
   $zopim(function() {
-    $zopim.livechat.button.show();
     $('.contact-btn').click(function() {
       $zopim.livechat.window.show();
     });
