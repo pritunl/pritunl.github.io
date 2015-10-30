@@ -5,8 +5,12 @@ jQuery(document).ready(function($) {
   var $promoBg = $('.promo-background-color');
   var $promoImg = $('.promo-background-img');
 
-  $('.contact-btn').click(function() {
-    $zopim.livechat.window.show();
+
+  $zopim(function() {
+    $zopim.livechat.button.show();
+    $('.contact-btn').click(function() {
+      $zopim.livechat.window.show();
+    });
   });
 
   if ($promoBg.length) {
