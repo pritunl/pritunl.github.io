@@ -1184,28 +1184,47 @@ strong {
   padding-top: 0;
 }
 
+
 .tutorials .tutorial-1 .btn {
   background-color: #4ba23c;
+}
+.tutorials .tutorial-1 .btn:hover {
+  background-color: #36792a;
 }
 
 .tutorials .tutorial-2 .btn {
   background-color: #dc6a3e;
 }
+.tutorials .tutorial-2 .btn:hover {
+  background-color: #af4f29;
+}
 
 .tutorials .tutorial-3 .btn {
   background-color: #407cb9;
+}
+.tutorials .tutorial-3 .btn:hover {
+  background-color: #2f6194;
 }
 
 .tutorials .tutorial-4 .btn {
   background-color: #88694a;
 }
+.tutorials .tutorial-4 .btn:hover {
+  background-color: #634a32;
+}
 
 .tutorials .tutorial-5 .btn {
   background-color: #8b5ec5;
 }
+.tutorials .tutorial-5 .btn:hover {
+  background-color: #5f3990;
+}
 
 .tutorials .tutorial-6 .btn {
   background-color: #bf4646;
+}
+.tutorials .tutorial-6 .btn:hover {
+  background-color: #902e2e;
 }
 
 .client .btn.client-distro,
