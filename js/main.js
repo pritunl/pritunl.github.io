@@ -343,6 +343,7 @@ jQuery(document).ready(function($) {
   }
 
   $('.label').tooltip();
+  $('.price').tooltip();
 
   // $('.server-region').click(function(evt) {
   //   var $serverRegion = $('.server-region');
