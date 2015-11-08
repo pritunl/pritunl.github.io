@@ -1340,17 +1340,17 @@ strong {
   text-align: center;
 }
 .tutorials {
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 .tutorials .item {
   display: table;
-  height: 200px;
+  height: 130px;
   margin-top: 30px;
 }
 .tutorials .btn {
   display: table-cell;
   vertical-align: middle;
-  height: 200px;
+  height: 130px;
   width: 100%;
   white-space: normal;
   font-size: 22px;
