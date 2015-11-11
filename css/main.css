@@ -1991,6 +1991,9 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 992px) {
+  .features .img-saml {
+    padding: 0 20px;
+  }
   .col-md-offset-1-half {
     margin-left: 12.49999%;
   }
