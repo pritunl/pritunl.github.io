@@ -1592,6 +1592,10 @@ strong {
 .footer .social-icons .mail {
   padding-top: 10px;
 }
+.footer .rights {
+  padding: 20px 0 0 0;
+  font-size: 10px;
+}
 .footer .copyright {
   padding-left: 0;
   padding-right: 0;
@@ -1849,6 +1853,10 @@ a.anchor.api-anchor {
   }
   .comparison .row .col i {
     padding: 10px;
+  }
+  .footer .rights {
+    text-align: center;
+    padding-top: 10px;
   }
   .footer .copyright {
     text-align: center;
