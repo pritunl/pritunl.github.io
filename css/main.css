@@ -1227,6 +1227,27 @@ strong {
   background-color: #902e2e;
 }
 
+.tutorials .tutorial-7 .btn {
+  background-color: #3f926c;
+}
+.tutorials .tutorial-7 .btn:hover {
+  background-color: #25694a;
+}
+
+.tutorials .tutorial-8 .btn {
+  background-color: #bb4375;
+}
+.tutorials .tutorial-8 .btn:hover {
+  background-color: #882a51;
+}
+
+.tutorials .tutorial-9 .btn {
+  background-color: #5251b9;
+}
+.tutorials .tutorial-9 .btn:hover {
+  background-color: #313080;
+}
+
 .client .btn.client-distro,
 .server .btn.server-distro,
 .install .server-auto .btn.server-region {
