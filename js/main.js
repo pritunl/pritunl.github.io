@@ -1,6 +1,7 @@
 jQuery(document).ready(function($) {
   var $window = $(window);
   var randTheme = 'theme' + Math.floor((Math.random() * 3)).toString();
+  randTheme = 'theme0';
   var $body = $('body');
   var $promoBg = $('.promo-background-color');
   var $promoImg = $('.promo-background-img');
