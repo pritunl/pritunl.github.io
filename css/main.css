@@ -1109,6 +1109,14 @@ strong {
   width: 100%;
   margin-bottom: 10px;
 }
+.install .server-auto .img-ec2 {
+  padding-top: 20px;
+  opacity: 0.85;
+  max-width: 756px;
+  max-height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+}
 .install .server-auto .editor {
   text-align: left;
 }
@@ -1363,12 +1371,17 @@ strong {
 .tutorials {
   margin-bottom: 5px;
 }
-.tutorials .item {
+.tutorials .item,
+.server-aws-auto .item {
   display: table;
   height: 130px;
   margin-top: 30px;
 }
-.tutorials .btn {
+.server-aws-auto .item {
+  height: 100px;
+}
+.tutorials .btn,
+.server-aws-auto .btn {
   display: table-cell;
   vertical-align: middle;
   height: 130px;
@@ -1376,6 +1389,12 @@ strong {
   white-space: normal;
   font-size: 22px;
   font-weight: 300;
+}
+.server-aws-auto .btn {
+  height: 100px;
+}
+.server-aws-auto .img-ec2 {
+  width: 50px;
 }
 .comparison .title {
   margin-bottom: 50px;

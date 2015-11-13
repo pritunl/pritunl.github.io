@@ -693,11 +693,30 @@ header_class: header-top
         </div>
       </div>
       <div class="row server-auto">
+        <h2 class="title text-center">Amazon AWS Automated Install</h2>
+        <div class="item col-md-10 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
+          <img class="img-ec2" src="img/ec2_conf.png" alt=""/>
+        </div>
+      </div>
+      <div class="row server-aws-auto">
+        <div class="tutorial-7 item col-md-3 col-md-offset-1-half col-sm-4 col-xs-12">
+          <a class="btn btn-lg btn-info" href="https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-f5d3ab9f" target="_blank"><img class="img-ec2" src="img/ec2.png" alt="ec2"/> Virginia</a>
+        </div>
+        <div class="tutorial-8 item col-md-3 col-sm-4 col-xs-12">
+          <a class="btn btn-lg btn-danger" href="https://console.aws.amazon.com/ec2/home?region=us-west-2#launchAmi=ami-8f6879ee" target="_blank"><img class="img-ec2" src="img/ec2.png" alt="ec2"/> Oregon</a>
+        </div>
+        <div class="tutorial-9 item col-md-3 col-sm-4 col-xs-12">
+          <a class="btn btn-lg btn-success" href="https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-9a1977fa" target="_blank"><img class="img-ec2" src="img/ec2.png" alt="ec2"/> California</a>
+        </div>
+      </div>
+      <div class="row server-auto">
         <h2 class="title text-center"><a href="https://www.digitalocean.com/?refcode=f2da095bcc37" target="_blank"><img class="digital-ocean-logo" src="img/digital_ocean2.png" alt=""/> DigitalOcean Automated Install</a></h2>
-        <div class="item col-md-12 col-sm-12 col-xs-12">
+        <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
           <img class="img-digital-ocean" src="img/digitalocean.png" alt=""/>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 ">
+      </div>
+      <div class="row server-auto">
+        <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 ">
           <div class="editor bash">#!/bin/bash
 echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.0.list
 echo "deb http://repo.pritunl.com/stable/apt trusty main" > /etc/apt/sources.list.d/pritunl.list
