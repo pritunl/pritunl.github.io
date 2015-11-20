@@ -989,8 +989,11 @@ strong {
   margin: 0 auto;
   color: #eaeaea;
 }
+.plans .plan-list li:hover span {
+  font-weight: 500;
+}
 .plans .plan-list li.expanded span {
-  font-weight: bold;
+  font-weight: 700;
 }
 .plans .plan-list li .info {
   display: none;
