@@ -302,7 +302,7 @@ strong {
 }
 
 .diagram-3 {
-  margin-top: 15px;
+  margin-top: 2px;
   margin-bottom: 30px;
   padding-left: 0;
   padding-right: 0;
@@ -512,6 +512,21 @@ strong {
   font-size: 25px;
   font-weight: 300;
   text-align: center;
+  margin-bottom: 0;
+}
+.promo .overview .summary a {
+  background-color: rgba(0, 0, 0, 0.23);
+  color: #fff;
+  padding: 7px 10px;
+  margin-top: 6px;
+  margin-bottom: 0;
+  font-size: 26px;
+}
+.promo .overview .summary a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.promo .overview .summary a:active {
+  background-color: rgba(255, 255, 255, 0.32);
 }
 .promo .overview .download-area {
   text-align: center;
@@ -2107,6 +2122,10 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 992px) {
+  .promo .overview .summary a {
+    margin-top: 4px;
+    font-size: 21px;
+  }
   .features .dns-mapping-title {
     font-size: 40px;
   }
@@ -2171,6 +2190,10 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1200px) {
+  .promo .overview .summary a {
+    margin-top: 16px;
+    font-size: 40px;
+  }
   .features .dns-mapping-title {
     font-size: 48px;
   }
