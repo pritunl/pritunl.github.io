@@ -1197,13 +1197,18 @@ strong {
   z-index: 10;
 }
 
-.features .dns-mapping-title {
+.features .dns-mapping-title,
+.features .dns-forwarding-title {
   text-shadow: 0 0 1px #2c98fd;
   color: #185996;
   font-weight: 500;
   font-size: 28px;
   padding-top: 4px !important;
   margin: 0;
+}
+
+.features .dns-forwarding-title {
+  font-size: 20px;
 }
 
 .features .feature-desc.dns-mapping-item {
@@ -1935,6 +1940,9 @@ a.anchor.api-anchor {
   .features .dns-mapping-title {
     font-size: 26px;
   }
+  .features .dns-forwarding-title {
+    font-size: 18px;
+  }
   .screenshots .slider {
     transition: none;
   }
@@ -1943,10 +1951,16 @@ a.anchor.api-anchor {
   .features .dns-mapping-title {
     font-size: 24px;
   }
+  .features .dns-forwarding-title {
+    font-size: 16px;
+  }
 }
 @media (max-width: 400px) {
   .features .dns-mapping-title {
     font-size: 22px;
+  }
+  .features .dns-forwarding-title {
+    font-size: 14px;
   }
 }
 @media (max-width: 352px) {
@@ -1970,6 +1984,9 @@ a.anchor.api-anchor {
   .features .dns-mapping-title {
     font-size: 16px;
   }
+  .features .dns-forwarding-title {
+    font-size: 12px;
+  }
   .comparison .row .col.name {
     font-size: 12px;
   }
@@ -1984,6 +2001,9 @@ a.anchor.api-anchor {
   .features .dns-mapping-title {
     font-size: 30px;
   }
+  .features .dns-forwarding-title {
+    font-size: 20px;
+  }
   .client .item .client-home {
     font-size: 27px;
     padding: 16px 22px;
@@ -1992,6 +2012,9 @@ a.anchor.api-anchor {
 @media (min-width: 650px) {
   .features .dns-mapping-title {
     font-size: 32px;
+  }
+  .features .dns-forwarding-title {
+    font-size: 24px;
   }
   .install .server-auto .btn.server-region {
     margin: 5px;
@@ -2012,6 +2035,9 @@ a.anchor.api-anchor {
 @media (min-width: 720px) {
   .features .dns-mapping-title {
     font-size: 34px;
+  }
+  .features .dns-forwarding-title {
+    font-size: 26px;
   }
   .title {
     font-size: 34px;
@@ -2129,6 +2155,9 @@ a.anchor.api-anchor {
   .features .dns-mapping-title {
     font-size: 40px;
   }
+  .features .dns-forwarding-title {
+    font-size: 32px;
+  }
   .nav-item-wide {
     display: block !important;
   }
@@ -2196,6 +2225,9 @@ a.anchor.api-anchor {
   }
   .features .dns-mapping-title {
     font-size: 48px;
+  }
+  .features .dns-forwarding-title {
+    font-size: 40px;
   }
   .features.feature-dis .feature-desc {
     padding: 15px 0 20px 0;
