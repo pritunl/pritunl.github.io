@@ -1405,6 +1405,26 @@ strong {
   height: 100px;
   margin-top: 10px;
 }
+
+.server-aws-nomongo .btn-info {
+  background-color: #33778c;
+}
+.server-aws-nomongo .btn-info:hover {
+  background-color: #1e5667;
+}
+.server-aws-nomongo .btn-danger {
+  background-color: #b12723;
+}
+.server-aws-nomongo .btn-danger:hover {
+  background-color: #7b1c19;
+}
+.server-aws-nomongo .btn-success {
+  background-color: #239435;
+}
+.server-aws-nomongo .btn-success:hover {
+  background-color: #146321;
+}
+
 .tutorials .btn,
 .server-aws-auto .btn {
   display: table-cell;
