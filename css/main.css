@@ -1403,6 +1403,7 @@ strong {
 }
 .server-aws-auto .item {
   height: 100px;
+  margin-top: 10px;
 }
 .tutorials .btn,
 .server-aws-auto .btn {
