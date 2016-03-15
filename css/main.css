@@ -1033,6 +1033,10 @@ strong {
 .plans .btn img {
   height: 22px;
 }
+.plans .item-box .btn {
+  min-width: 0;
+  width: 100%;
+}
 .plans .btn:hover {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -1589,6 +1593,10 @@ strong {
 }
 .alert-danger {
   background-color: #ffc6c6;
+}
+.premium-sub-alert,
+.enterprise-sub-alert {
+  display: none;
 }
 .win-alert {
   margin: 10px auto;

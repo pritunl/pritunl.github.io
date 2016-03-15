@@ -758,4 +758,94 @@ jQuery(document).ready(function($) {
       $tar.find('.info').slideDown(200);
     }
   });
+
+  var checkoutPlan;
+  var checkout = window.StripeCheckout.configure({
+    allowRememberMe: false,
+    image: '//s3.amazonaws.com/pritunl-static/logo_stripe.png',
+    key: 'pk_live_plmoOl3lS3k5dMNQViZWGfVR',
+    zipCode: true,
+    closed: function() {
+      unlockCheckout();
+    }.bind(this),
+    token: function(token) {
+      lockCheckout();
+      setCheckoutAlert('success', 'Order processing, please wait...');
+
+      $.ajax({
+        type: 'POST',
+        url: 'https://app.pritunl.com/subscription',
+        contentType: 'application/json',
+        dataType: 'json',
+        data: JSON.stringify({
+          'plan': checkoutPlan,
+          'card': token.id,
+          'email': token.email
+        }),
+        success: function(response) {
+          setCheckoutAlert('success', response.msg);
+          unlockCheckout();
+        }.bind(this),
+        error: function(response) {
+          if (response.responseJSON) {
+            setCheckoutAlert('danger', response.responseJSON.error_msg);
+          }
+          else {
+            setCheckoutAlert('danger',
+              'Server error occured, please try again later.');
+          }
+          unlockCheckout();
+        }.bind(this)
+      });
+    }.bind(this)
+  });
+  var setCheckoutAlert = function(alertType, alertMsg) {
+    var $alert = $('.' + checkoutPlan + '-sub-alert');
+
+    $alert.removeClass('alert-success alert-info alert-danger');
+    $alert.addClass('alert-' + alertType);
+    $alert.text(alertMsg);
+    $alert.slideDown(250);
+  };
+  var clearCheckoutAlert = function() {
+    var $alert = $('.' + checkoutPlan + '-sub-alert');
+
+    $alert.removeClass('alert-success alert-info alert-danger');
+    $alert.addClass('alert-' + alertType);
+    $alert.text('');
+    $alert.slideUp(250);
+  };
+  var lockCheckout = function() {
+    $('.plans .premium-sub-btn').attr('disabled', 'disabled');
+    $('.plans .enterprise-sub-btn').attr('disabled', 'disabled');
+  };
+  var unlockCheckout = function() {
+    $('.plans .premium-sub-btn').removeAttr('disabled');
+    $('.plans .enterprise-sub-btn').removeAttr('disabled');
+  };
+  var openCheckout = function(plan) {
+    checkoutPlan = plan;
+
+    if (plan === 'premium') {
+      checkout.open({
+        amount: 1000,
+        name: 'Pritunl Premium',
+        description: 'Subscribe to Premium ($10/month)',
+        panelLabel: 'Subscribe'
+      });
+    } else {
+      checkout.open({
+        amount: 5000,
+        name: 'Pritunl Enterprise',
+        description: 'Subscribe to Enterprise ($50/month)',
+        panelLabel: 'Subscribe'
+      });
+    }
+  };
+  $('.plans .premium-sub-btn').click(function() {
+    openCheckout('premium');
+  });
+  $('.plans .enterprise-sub-btn').click(function() {
+    openCheckout('enterprise');
+  });
 });
