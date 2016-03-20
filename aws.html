@@ -1,0 +1,83 @@
+---
+layout: default
+title: Pritunl - AWS VPC Peering
+header_class: header-top
+---
+  <section class="promo promo-short section offset-header abstract0">
+    <div class="promo-short-background-img"></div>
+    <div class="container">
+      <div class="row">
+        <div class="overview col-md-12 col-sm-12 col-xs-12">
+          <h2 class="title">Amazon VPC Peering</h2>
+          <p class="summary">
+            Interconnect AWS VPC networks across AWS regions and provide reliable remote access with automatic failover that can scale horizontally
+          </p>
+          <img class="promo-short-img" src="img/aws_dark.png" alt="Amazon AWS"/>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="features feature-simple section">
+    <div class="container">
+      <div class="row">
+        <h2 class="title text-center">Reliable VPC Networking</h2>
+        <div class="item col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+          <div class="img-overlay-box">
+            <img class="feature" src="img/vpc_peering.png" alt=""/>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item feature-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <p>Interconnect your VPC networks and provide remote access in minutes. Pritunl can handle both small and large use cases on AWS without any complicated configuration.</p>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="title text-center">AWS Integration</h2>
+        <div class="item col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+          <img class="img-saml" src="img/aws_settings.png" alt=""/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item feature-desc google-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <p>Pritunl integrates with the AWS API to provide automated and dynamic configuration of the VPC. This allows complex and redundant VPN configurations without the need for manual management.</p>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="title text-center">Dynamic VPC Routing</h2>
+        <div class="item col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+          <img class="img-saml" src="img/aws_route.png" alt=""/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item feature-desc google-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <p>Pritunl will dynamically adjust the VPC routing table to handle instance failures. When an instance fails over to a backup instance the routing table will be automatically updated.</p>
+          <a class="title btn btn-lg scrollto" href="http://docs.pritunl.com/docs/aws-route-advertisement" target="_blank">AWS Tutorial <i class="fa fa-star"></i></a>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="title text-center">DNS Mapping</h2>
+        <div class="item title dns-mapping-title col-md-12 col-sm-12 col-xs-12">
+          user0.organization0.vpn
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="item dns-mapping-item feature-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <p>All connected users and devices are mapped to a dns domain with their username and organization name.</p>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="title text-center">DNS Forwarding</h2>
+        <div class="item title dns-forwarding-title col-md-12 col-sm-12 col-xs-12">
+          search.user.org.vpn -> search.node.consul
+        </div>
+      </div>
+      <div class="row">
+        <div
+          class="item dns-mapping-item feature-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <p>Forward dns queries to a dns server on a remote network such as a consul server on an AWS VPC.</p>
+        </div>
+      </div>
+    </div>
+  </section>
