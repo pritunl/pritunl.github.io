@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
   var $body = $('body');
   var $promoBg = $('.promo-background-color');
   var $promoImg = $('.promo-background-img');
+  var $promoshortImg = $('.promo-short-background-img');
 
 
   $zopim(function() {
@@ -14,10 +15,10 @@ jQuery(document).ready(function($) {
   });
 
   if ($promoBg.length) {
-    $promoBg.removeClass('theme0');
-    $promoBg.addClass(randTheme);
-    $promoImg.removeClass('theme0');
-    $promoImg.addClass(randTheme);
+    //$promoBg.removeClass('theme0');
+    //$promoBg.addClass(randTheme);
+    //$promoImg.removeClass('theme0');
+    //$promoImg.addClass(randTheme);
     var promoBg = $promoBg[0];
 
     var bgObj;
@@ -111,8 +112,8 @@ jQuery(document).ready(function($) {
       opacity: 1
     });
   }
-  var $featPreglow = $('.feature-dis .feature-preglow');
-  var $featGlow = $('.feature-dis .feature-glow');
+  var $featPreglow = $('.feature-preglow');
+  var $featGlow = $('.feature-glow');
   if ($featPreglow.length && $featGlow.length) {
     TweenMax.staggerTo([
       $featPreglow,
@@ -128,19 +129,35 @@ jQuery(document).ready(function($) {
 
   var curX;
   var curY;
-  $body.mousemove(function(evt) {
-    var x = Math.round(50 * evt.clientX / $window.width() - 10);
-    var y = Math.round(50 * evt.clientY / $window.height() - 10);
+  if ($promoImg.length) {
+    $body.mousemove(function (evt) {
+      var x = Math.round(50 * evt.clientX / $window.width() - 10);
+      var y = Math.round(50 * evt.clientY / $window.height() - 10);
 
-    if (curX == x && curY == y) {
-      return;
-    }
-    curX = x;
-    curY = y;
+      if (curX == x && curY == y) {
+        return;
+      }
+      curX = x;
+      curY = y;
 
-    $promoImg.css('transform',
-      'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
-  });
+      $promoImg.css('transform',
+        'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
+    });
+  } else if ($promoshortImg.length) {
+    $body.mousemove(function (evt) {
+      var x = Math.round(25 * evt.clientX / $window.width() - 10);
+      var y = Math.round(25 * evt.clientY / $window.height() - 10);
+
+      if (curX == x && curY == y) {
+        return;
+      }
+      curX = x;
+      curY = y;
+
+      $promoshortImg.css('transform',
+        'matrix(1.1, 0, 0, 1.1, ' + x + ', ' + y + ')');
+    });
+  }
 
   $('a.scrollto').on('click', function(evt){
     var target = this.hash;
