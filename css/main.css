@@ -77,6 +77,13 @@ strong {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
+.label-title {
+  position: relative;
+}
+.new-label {
+  padding-bottom: 5px;
+  background-color: #820fea;
+}
 .social-icons {
   list-style: none;
   margin-bottom: 0;
