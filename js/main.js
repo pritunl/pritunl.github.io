@@ -850,11 +850,18 @@ jQuery(document).ready(function($) {
         description: 'Subscribe to Premium ($10/month)',
         panelLabel: 'Subscribe'
       });
-    } else {
+    } else if (plan === 'enterprise') {
       checkout.open({
         amount: 5000,
         name: 'Pritunl Enterprise',
         description: 'Subscribe to Enterprise ($50/month)',
+        panelLabel: 'Subscribe'
+      });
+    } else {
+      checkout.open({
+        amount: 50000,
+        name: 'Pritunl Support',
+        description: 'Subscribe to Support ($500/month)',
         panelLabel: 'Subscribe'
       });
     }
@@ -863,6 +870,9 @@ jQuery(document).ready(function($) {
     openCheckout('premium');
   });
   $('.plans .enterprise-sub-btn').click(function() {
-    openCheckout('enterprise');
+    openCheckout('support');
+  });
+  $('.plans .support-sub-btn').click(function() {
+    openCheckout('support');
   });
 });

@@ -1689,7 +1689,8 @@ strong {
   background-color: #ffc6c6;
 }
 .premium-sub-alert,
-.enterprise-sub-alert {
+.enterprise-sub-alert,
+.support-sub-alert {
   display: none;
 }
 .win-alert {
