@@ -870,7 +870,7 @@ jQuery(document).ready(function($) {
     openCheckout('premium');
   });
   $('.plans .enterprise-sub-btn').click(function() {
-    openCheckout('support');
+    openCheckout('enterprise');
   });
   $('.plans .support-sub-btn').click(function() {
     openCheckout('support');
