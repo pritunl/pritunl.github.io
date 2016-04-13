@@ -144,8 +144,8 @@ jQuery(document).ready(function($) {
         'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
     });
     window.ondevicemotion = function (evt) {
-      var x = Math.round(event.accelerationIncludingGravity.x * 4);
-      var y = Math.round(event.accelerationIncludingGravity.y * 4);
+      var x = Math.round(evt.accelerationIncludingGravity.x * 3);
+      var y = Math.round(evt.accelerationIncludingGravity.y * 3);
 
       if (curX == x && curY == y) {
         return;
