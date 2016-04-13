@@ -143,6 +143,25 @@ jQuery(document).ready(function($) {
       $promoImg.css('transform',
         'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
     });
+    window.ondevicemotion = function (evt) {
+      var x = Math.round(event.accelerationIncludingGravity.x * 4);
+      var y = Math.round(event.accelerationIncludingGravity.y * 4);
+
+      if (curX == x && curY == y) {
+        return;
+      }
+      curX = x;
+      curY = y;
+
+      if (window.innerWidth / window.innerHeight > 1) {
+        var xx = x;
+        x = y;
+        y = xx;
+      }
+
+      $promoImg.css('transform',
+        'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
+    };
   } else if ($promoshortImg.length) {
     $body.mousemove(function (evt) {
       var x = Math.round(25 * evt.clientX / $window.width() - 10);
