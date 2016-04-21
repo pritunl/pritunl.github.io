@@ -8,6 +8,30 @@ body {
   font-style: normal;
   color: #444;
 }
+body.index {
+  background-color: #2d39ae;
+}
+body.api {
+  background-color: #fff;
+}
+body.aws {
+  background-color: #1b073f;
+}
+body.infrastructure {
+  background-color: #3b0011;
+}
+body.platforms {
+  background-color: #251a4c;
+}
+body.terms {
+  background-color: #fff;
+}
+body.security {
+  background-color: #4e0010;
+}
+body.sso {
+  background-color: #660d25;
+}
 a {
   color: #2e4153;
   transition: all 0.4s ease-in-out;
@@ -231,17 +255,12 @@ strong {
 .header .main-nav .nav .nav-item {
   font-weight: 400;
   text-transform: uppercase;
-  margin-right: 5px;
 }
 .header .main-nav .nav .nav-item a {
   color: #444;
   padding-left: 3px;
   padding-right: 3px;
   transition: .25s color ease-in-out, .25s font-size ease-in-out;
-  display: inline-block;
-}
-.header .main-nav .nav .nav-item:after{
-  content: '\00B7';
   display: inline-block;
 }
 .header .main-nav .nav .nav-item.last:after{
@@ -277,6 +296,9 @@ strong {
   padding-left: 0;
   margin-right: 0 !important;
   transition: .25s margin-right ease-in-out;
+}
+.navbar-collapse.in {
+  overflow-x: hidden;
 }
 .header .twitter-logo,
 .header .github-logo {
@@ -716,7 +738,7 @@ strong {
   width: 440px;
 }
 .features.feature-simple {
-  background-color: rgba(249, 241, 251, .36);
+  background-color: #fdfafe;
   background-image: url('../img/pritunl_pattern2.svg');
   background-size: 80px;
 }
@@ -1195,6 +1217,7 @@ strong {
   opacity: 0.8;
 }
 .terms-privacy {
+  background-color: #fff;
   padding: 100px 0 10px 0;
 }
 .install {
@@ -1800,6 +1823,7 @@ strong {
 }
 .api {
   padding-top: 80px;
+  background-color: #fff;
 }
 .api .row {
   padding-top: 5px;
@@ -1978,6 +2002,12 @@ a.anchor.api-anchor {
   top: -71px;
 }
 @media (max-width: 1099px) {
+  .navbar-top {
+    position: absolute;
+    right: auto;
+    left: auto;
+    width: 100%;
+  }
   .navbar-header {
     float: none;
   }
@@ -2052,12 +2082,6 @@ a.anchor.api-anchor {
   }
   a.anchor {
     top: -20px;
-  }
-  .navbar-top {
-    position: absolute;
-    right: auto;
-    left: auto;
-    width: 100%;
   }
   .promo .overview {
     text-align: center;
@@ -2288,9 +2312,6 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 860px) {
-  .header .twitter-logo {
-    display: block;
-  }
   .header .container .navbar-collapse {
     margin-right: 50px;
   }
@@ -2304,9 +2325,6 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 992px) {
-  .header .container {
-    padding-right: 150px;
-  }
   .promo .overview .summary a {
     margin-top: 4px;
     font-size: 21px;
@@ -2343,9 +2361,6 @@ a.anchor.api-anchor {
     margin-top: -516px;
     margin-bottom: 0;
   }
-  .header .github-logo {
-    display: block;
-  }
   .header .container .navbar-collapse {
     margin-right: 140px;
   }
@@ -2354,9 +2369,6 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1000px) {
-  .header .container {
-    padding-right: 145px;
-  }
   .header .container .navbar-collapse {
     margin-right: 115px;
   }
@@ -2365,9 +2377,6 @@ a.anchor.api-anchor {
   }
 }
 @media (min-width: 1050px) {
-  .header .container {
-    padding-right: 120px;
-  }
   .header .container .navbar-collapse {
     margin-right: 115px;
   }
@@ -2381,6 +2390,19 @@ a.anchor.api-anchor {
   }
   .header .container .navbar-collapse {
     margin-right: 90px;
+  }
+  .header .twitter-logo {
+    display: block;
+  }
+  .header .github-logo {
+    display: block;
+  }
+  .header .main-nav .nav .nav-item:after{
+    content: '\00B7';
+    display: inline-block;
+  }
+  .header .main-nav .nav .nav-item {
+    margin-right: 5px;
   }
 }
 @media (min-width: 1150px) {
