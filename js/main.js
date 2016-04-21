@@ -369,7 +369,7 @@ jQuery(document).ready(function($) {
   var $navbarCollaspe = $('.navbar-collapse');
   if ($('.promo').length) {
     var onScroll = function() {
-      if ($(this).scrollTop() <= 0) {
+      if ($(this).scrollTop() <= 0 && !$navbarCollaspe.hasClass('in')) {
         $header.addClass('header-top');
       } else if ($header.css('position') !== 'absolute') {
         $header.removeClass('header-top');
