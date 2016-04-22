@@ -824,20 +824,6 @@ $ apt-get update
 $ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-vivid">
-          <h3 class="title text-center">Ubuntu Vivid</h3>
-          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
-deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse
-
-$ nano /etc/apt/sources.list.d/pritunl.list
-deb http://repo.pritunl.com/stable/apt vivid main
-
-$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
-$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
-$ apt-get update
-$ apt-get install pritunl mongodb-org
-$ service pritunl start</div>
-        </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-wily">
           <h3 class="title text-center">Ubuntu Wily</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
@@ -851,6 +837,20 @@ $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
+        </div>
+        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-xenial">
+          <h3 class="title text-center">Ubuntu Xenial</h3>
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
+            deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0 multiverse
+
+            $ nano /etc/apt/sources.list.d/pritunl.list
+            deb http://repo.pritunl.com/stable/apt xenial main
+
+            $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+            $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
+            $ apt-get update
+            $ apt-get install pritunl mongodb-org
+            $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
           <h3 class="title text-center">Debian Wheezy</h3>
