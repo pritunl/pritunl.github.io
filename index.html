@@ -781,7 +781,7 @@ service pritunl start</div>
         </div>
         <div
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-fedora-22 btn btn-lg btn-default">Fedora 22</button><button class="server-distro server-debian-wheezy btn btn-lg btn-default">Debian 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="server-distro server-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button>
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-wheezy btn btn-lg btn-default">Debian 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="server-distro server-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="server-distro server-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -841,16 +841,16 @@ $ service pritunl start</div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-xenial">
           <h3 class="title text-center">Ubuntu Xenial</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
-            deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0 multiverse
+deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.0 multiverse
 
-            $ nano /etc/apt/sources.list.d/pritunl.list
-            deb http://repo.pritunl.com/stable/apt xenial main
+$ nano /etc/apt/sources.list.d/pritunl.list
+deb http://repo.pritunl.com/stable/apt xenial main
 
-            $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
-            $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
-            $ apt-get update
-            $ apt-get install pritunl mongodb-org
-            $ service pritunl start</div>
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl mongodb-org
+$ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
           <h3 class="title text-center">Debian Wheezy</h3>
@@ -956,7 +956,7 @@ $ sudo start pritunl</div>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-wheezy btn btn-lg btn-default">Debian 7</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-vivid btn btn-lg btn-default">Ubuntu 15.04</button><button class="client-distro client-ubuntu-wily btn btn-lg btn-default">Ubuntu 15.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-wheezy btn btn-lg btn-default">Debian 7</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-wily btn btn-lg btn-default">Ubuntu 15.10</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1037,20 +1037,20 @@ $ apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-xenial">
           <h3 class="title text-center">Ubuntu</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-            deb http://repo.pritunl.com/stable/apt xenial main
+deb http://repo.pritunl.com/stable/apt xenial main
 
-            $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
-            $ apt-get update
-            $ apt-get install pritunl-client-gtk</div>
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client-gtk</div>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-xenial">
           <h3 class="title text-center">Ubuntu Server</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
-            deb http://repo.pritunl.com/stable/apt xenial main
+deb http://repo.pritunl.com/stable/apt xenial main
 
-            $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
-            $ apt-get update
-            $ apt-get install pritunl-client</div>
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
+$ apt-get update
+$ apt-get install pritunl-client</div>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-wheezy">
           <h3 class="title text-center">Debian</h3>

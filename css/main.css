@@ -1464,8 +1464,8 @@ strong {
 .client .install-debian-jessie,
 .client .install-ubuntu-precise,
 .client .install-ubuntu-trusty,
-.client .install-ubuntu-vivid,
 .client .install-ubuntu-wily,
+.client .install-ubuntu-xenial,
 .server .install-amazon-linux,
 .server .install-fedora-22,
 .server .install-centos-7,
@@ -1473,8 +1473,8 @@ strong {
 .server .install-debian-jessie,
 .server .install-ubuntu-precise,
 .server .install-ubuntu-trusty,
-.server .install-ubuntu-vivid,
-.server .install-ubuntu-wily {
+.server .install-ubuntu-wily,
+.server .install-ubuntu-xenial {
   display: none;
 }
 .client .logo a,
