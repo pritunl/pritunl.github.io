@@ -1083,6 +1083,9 @@ strong {
 .plans .enterprise .price {
   color: #7323ff;
 }
+.plans .support .price {
+  color: #a4030c;
+}
 .plans .price-label {
   background-color: #d30808;
   font-size: 15px;
@@ -1185,6 +1188,16 @@ strong {
   background: -o-linear-gradient(left, #1e4a87 0%, #60209e 100%);
   background: linear-gradient(to right, #1e4a87 0%, #60209e 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e4a87', endColorstr='#60209e', GradientType=1);
+}
+.plans .support img {
+  background: #60209e;
+  background: -webkit-linear-gradient(left, #cd0000 0%, #840000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #cd0000), color-stop(100%, #840000));
+  background: -moz-linear-gradient(left, #cd0000 0%, #840000 100%);
+  background: -ms-linear-gradient(left, #cd0000 0%, #840000 100%);
+  background: -o-linear-gradient(left, #cd0000 0%, #840000 100%);
+  background: linear-gradient(to right, #cd0000 0%, #840000 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cd0000', endColorstr='#840000', GradientType=1);
 }
 .features.feature-list {
   background-image: url('../img/pritunl_background5.svg');
@@ -2265,6 +2278,9 @@ a.anchor.api-anchor {
   }
   .col-md-offset-1-half {
     margin-left: 12.49999%;
+  }
+  .col-md-offset-4-half {
+    margin-left: 37.499999985%;
   }
   .title {
     font-size: 38px;
