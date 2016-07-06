@@ -1816,13 +1816,38 @@ strong {
 .footer .social-icons .mail {
   padding-top: 10px;
 }
+.footer .about {
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+.footer .about h3 {
+  padding: 0 5px;
+  font-family: 'Whitney SSm A', 'Whitney SSm B', 'Arial', sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+}
+.footer .about div {
+  font-size: 16px;
+  font-weight: 300;
+  margin: 5px;
+  opacity: 0.8;
+}
 .footer .rights {
-  padding: 20px 0 0 0;
+  text-align: right;
+  padding: 20px 0;
   font-size: 10px;
 }
+.footer .rights div {
+  padding: 0 5px;
+}
 .footer .copyright {
+  text-align: right;
+  padding-top: 30px;
   padding-left: 0;
   padding-right: 0;
+}
+.footer .social {
+  padding-top: 96px;
 }
 .footer .links {
   font-size: 16px;
@@ -2071,6 +2096,21 @@ a.anchor.api-anchor {
     padding: 0 5px;
     font-size: 16px;
   }
+  .footer .about {
+    text-align: center;
+    padding-bottom: 0;
+  }
+  .footer .rights {
+    text-align: center;
+    padding-top: 10px;
+  }
+  .footer .copyright {
+    text-align: center;
+    padding-top: 20px;
+  }
+  .footer .social {
+    padding-top: 8px;
+  }
 }
 @media (max-width: 767px) {
   .header .main-nav .nav .nav-item:first-child a {
@@ -2114,14 +2154,6 @@ a.anchor.api-anchor {
   }
   .comparison .row .col i {
     padding: 10px;
-  }
-  .footer .rights {
-    text-align: center;
-    padding-top: 10px;
-  }
-  .footer .copyright {
-    text-align: center;
-    padding-top: 0;
   }
   .api-doc .api-header {
     font-size: 17px;
@@ -2267,10 +2299,6 @@ a.anchor.api-anchor {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .footer .copyright {
-    text-align: center;
-    padding-top: 0;
-  }
 }
 @media (min-width: 992px) {
   .features .img-saml {
@@ -2300,10 +2328,6 @@ a.anchor.api-anchor {
   }
   .features .item {
     padding: 25px 0 20px 0;
-  }
-  .footer .copyright {
-    text-align: right;
-    padding-top: 23px;
   }
   .api-call-list-box {
     display: block;
