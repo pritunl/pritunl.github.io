@@ -923,7 +923,8 @@ deb http://repo.pritunl.com/stable/apt xenial main
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-server
-$ service pritunl start</div>
+$ systemctl start pritunl
+$ systemctl enable pritunl</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
           <h3 class="title text-center">Debian Wheezy</h3>
