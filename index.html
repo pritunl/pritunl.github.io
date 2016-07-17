@@ -875,13 +875,13 @@ $ systemctl enable mongodb pritunl</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-precise">
           <h3 class="title text-center">Ubuntu Precise</h3>
-          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
-deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.0 multiverse
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse
 
 $ nano /etc/apt/sources.list.d/pritunl.list
 deb http://repo.pritunl.com/stable/apt precise main
 
-$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv EA312927
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-org
@@ -889,13 +889,13 @@ $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu Trusty</h3>
-          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
-deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse
 
 $ nano /etc/apt/sources.list.d/pritunl.list
 deb http://repo.pritunl.com/stable/apt trusty main
 
-$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv EA312927
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-org
@@ -903,13 +903,13 @@ $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-wily">
           <h3 class="title text-center">Ubuntu Wily</h3>
-          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
-deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse
 
 $ nano /etc/apt/sources.list.d/pritunl.list
 deb http://repo.pritunl.com/stable/apt wily main
 
-$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv EA312927
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-org
@@ -917,24 +917,28 @@ $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-xenial">
           <h3 class="title text-center">Ubuntu Xenial</h3>
-          <div class="editor bash">$ nano /etc/apt/sources.list.d/pritunl.list
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+
+$ nano /etc/apt/sources.list.d/pritunl.list
 deb http://repo.pritunl.com/stable/apt xenial main
 
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv EA312927
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
-$ apt-get install pritunl mongodb-server
+$ apt-get install pritunl mongodb-org
 $ systemctl start pritunl
 $ systemctl enable pritunl</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
           <h3 class="title text-center">Debian Wheezy</h3>
-          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
-deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main
 
 $ nano /etc/apt/sources.list.d/pritunl.list
 deb http://repo.pritunl.com/stable/apt wheezy main
 
-$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv EA312927
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-org
@@ -942,13 +946,13 @@ $ service pritunl start</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-jessie">
           <h3 class="title text-center">Debian Jessie</h3>
-          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.0.list
-deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.0 main
+          <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
+deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main
 
 $ nano /etc/apt/sources.list.d/pritunl.list
 deb http://repo.pritunl.com/stable/apt jessie main
 
-$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7F0CEB10
+$ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv EA312927
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-org
@@ -957,8 +961,13 @@ $ systemctl enable mongod pritunl</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <div class="editor bash">$ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-$ rpm -i epel-release-latest-7.noarch.rpm
+          <div class="editor bash">$ sudo nano /etc/yum.repos.d/mongodb-org-3.2.repo
+[mongodb-org-3.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/3.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc
 
 $ nano /etc/yum.repos.d/pritunl.repo
 [pritunl]
@@ -969,35 +978,20 @@ enabled=1
 
 $ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys CF8E292A
 $ gpg --armor --export CF8E292A > key.tmp; rpm --import key.tmp; rm -f key.tmp
-$ yum install pritunl mongodb-server
-$ systemctl start mongod pritunl
-$ systemctl enable mongod pritunl</div>
-        </div>
-        <div
-          class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-fedora-22">
-          <h3 class="title text-center">Fedora 22</h3>
-          <div class="editor bash">$ nano /etc/yum.repos.d/pritunl.repo
-[pritunl]
-name=Pritunl Repository
-baseurl=http://repo.pritunl.com/stable/yum/fedora/22/
-gpgcheck=1
-enabled=1
-
-$ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys CF8E292A
-$ gpg --armor --export CF8E292A > key.tmp; rpm --import key.tmp; rm -f key.tmp
-$ yum install pritunl mongodb-server
+$ yum install epel-release pritunl mongodb-org
 $ systemctl start mongod pritunl
 $ systemctl enable mongod pritunl</div>
         </div>
         <div
           class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-amazon-linux">
           <h3 class="title text-center">Amazon Linux</h3>
-          <div class="editor bash">$ sudo nano /etc/yum.repos.d/mongodb-org-3.0.repo
-[mongodb-org-3.0]
+          <div class="editor bash">$ sudo nano /etc/yum.repos.d/mongodb-org-3.2.repo
+[mongodb-org-3.2]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.0/x86_64/
-gpgcheck=0
+baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.2/x86_64/
+gpgcheck=1
 enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc
 
 $ sudo nano /etc/yum.repos.d/pritunl.repo
 [pritunl]
