@@ -923,12 +923,24 @@ deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
 $ nano /etc/apt/sources.list.d/pritunl.list
 deb http://repo.pritunl.com/stable/apt xenial main
 
+$ nano /lib/systemd/system/mongod.service
+[Unit]
+Description=High-performance, schema-free document-oriented database
+After=network.target
+
+[Service]
+User=mongodb
+ExecStart=/usr/bin/mongod --config /etc/mongod.conf
+
+[Install]
+WantedBy=multi-user.target
+
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv EA312927
 $ apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv CF8E292A
 $ apt-get update
 $ apt-get install pritunl mongodb-org
-$ systemctl start pritunl
-$ systemctl enable pritunl</div>
+$ systemctl start pritunl mongod
+$ systemctl enable pritunl mongod</div>
         </div>
         <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
           <h3 class="title text-center">Debian Wheezy</h3>
