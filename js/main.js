@@ -8,12 +8,6 @@ jQuery(document).ready(function($) {
   var $promoshortImg = $('.promo-short-background-img');
 
 
-  $zopim(function() {
-    $('.contact-btn').click(function() {
-      $zopim.livechat.window.show();
-    });
-  });
-
   if ($promoBg.length) {
     //$promoBg.removeClass('theme0');
     //$promoBg.addClass(randTheme);
