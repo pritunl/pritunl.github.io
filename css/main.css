@@ -471,13 +471,13 @@ strong {
   overflow: hidden;
   position: fixed;
   z-index: 1000;
+  display: block;
   color: #fff;
+  background-color: #445680;
   font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 14px;
-  background-color: #445680;
-  display: block;
   -webkit-border-top-left-radius: 2px;
   -moz-border-top-left-radius: 2px;
   -ms-border-top-left-radius: 2px;
