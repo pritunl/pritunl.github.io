@@ -464,6 +464,40 @@ strong {
   background-repeat: no-repeat;
   transform: scale(1.1);
 }
+.contact-us {
+  bottom: 0;
+  right: 10px;
+  padding: 5px 8px;
+  overflow: hidden;
+  position: fixed;
+  z-index: 1000;
+  color: #fff;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  background-color: #445680;
+  display: block;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-top-left-radius: 2px;
+  -ms-border-top-left-radius: 2px;
+  -o-border-top-left-radius: 2px;
+  border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-top-right-radius: 2px;
+  -ms-border-top-right-radius: 2px;
+  -o-border-top-right-radius: 2px;
+  border-top-right-radius: 2px;
+}
+.contact-us:hover,
+.contact-us:active,
+.contact-us:focus {
+  color: #fff;
+  text-decoration: none;
+}
+.contact-us:active {
+  color: #ceddff;
+}
 .promo-short.abstract0 {
   background-color: #120b7b;
 }
