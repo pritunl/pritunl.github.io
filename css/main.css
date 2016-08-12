@@ -464,7 +464,8 @@ strong {
   background-repeat: no-repeat;
   transform: scale(1.1);
 }
-.contact-us {
+.contact-us,
+.discussion-board {
   bottom: 0;
   right: 10px;
   padding: 5px 8px;
@@ -489,9 +490,16 @@ strong {
   -o-border-top-right-radius: 2px;
   border-top-right-radius: 2px;
 }
+.discussion-board {
+  background-color: #6138b1;
+  right: 172px;
+}
 .contact-us:hover,
 .contact-us:active,
-.contact-us:focus {
+.contact-us:focus,
+.discussion-board:hover,
+.discussion-board:active,
+.discussion-board:focus {
   color: #fff;
   text-decoration: none;
 }
@@ -2227,6 +2235,14 @@ a.anchor.api-anchor {
   }
 }
 @media (max-width: 352px) {
+  .contact-us,
+  .discussion-board {
+    font-size: 12px;
+    padding: 5px 6px;
+  }
+  .discussion-board {
+    right: 148px;
+  }
   .title {
     font-size: 24px;
   }
@@ -2257,6 +2273,11 @@ a.anchor.api-anchor {
 @media (max-width: 310px) {
   .comparison .row .col.name {
     font-size: 10px;
+  }
+}
+@media (max-width: 300px) {
+  .discussion-board {
+    display: none;
   }
 }
 
