@@ -1902,8 +1902,10 @@ strong {
   color: #b69cf7;
 }
 .api {
-  padding-top: 80px;
   background-color: #fff;
+}
+.api.section {
+  padding-top: 80px;
 }
 .api .row {
   padding-top: 5px;
