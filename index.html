@@ -867,7 +867,7 @@ systemctl enable pritunl mongod</div>
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-wheezy btn btn-lg btn-default">Debian 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="server-distro server-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="server-distro server-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-archlinux">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
           <div class="editor bash">$ nano /etc/pacman.conf
 [pritunl]
@@ -880,7 +880,7 @@ $ pacman -S pritunl mongodb
 $ systemctl start mongodb pritunl
 $ systemctl enable mongodb pritunl</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-precise">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-precise">
           <h3 class="title text-center">Ubuntu Precise</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
 deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse
@@ -894,7 +894,7 @@ $ apt-get update
 $ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-trusty">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu Trusty</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
 deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse
@@ -908,7 +908,7 @@ $ apt-get update
 $ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-wily">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-wily">
           <h3 class="title text-center">Ubuntu Wily</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
 deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse
@@ -922,7 +922,7 @@ $ apt-get update
 $ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-ubuntu-xenial">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-xenial">
           <h3 class="title text-center">Ubuntu Xenial</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
 deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
@@ -949,7 +949,7 @@ $ apt-get install pritunl mongodb-org
 $ systemctl start pritunl mongod
 $ systemctl enable pritunl mongod</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-wheezy">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-wheezy">
           <h3 class="title text-center">Debian Wheezy</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
 deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main
@@ -963,7 +963,7 @@ $ apt-get update
 $ apt-get install pritunl mongodb-org
 $ service pritunl start</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-debian-jessie">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
           <h3 class="title text-center">Debian Jessie</h3>
           <div class="editor bash">$ nano /etc/apt/sources.list.d/mongodb-org-3.2.list
 deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main
@@ -978,7 +978,7 @@ $ apt-get install pritunl mongodb-org
 $ systemctl start mongod pritunl
 $ systemctl enable mongod pritunl</div>
         </div>
-        <div class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-centos-7">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
           <div class="editor bash"># SELinux must be disabled
 
@@ -1005,7 +1005,7 @@ $ systemctl start mongod pritunl
 $ systemctl enable mongod pritunl</div>
         </div>
         <div
-          class="item col-md-8 col-sm-12 col-xs-12 col-md-offset-2 install-amazon-linux">
+          class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux">
           <h3 class="title text-center">Amazon Linux</h3>
           <div class="editor bash">$ sudo nano /etc/yum.repos.d/mongodb-org-3.2.repo
 [mongodb-org-3.2]
