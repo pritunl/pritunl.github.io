@@ -829,12 +829,6 @@ strong {
   padding: 0 30px;
   position: relative;
 }
-.features .google-desc,
-.features .edgemax-desc,
-.features .ipv6-desc,
-.features .duo-desc {
-  margin-top: 0;
-}
 .features .google-title,
 .features .edgemax-title,
 .features .ipv6-title,
