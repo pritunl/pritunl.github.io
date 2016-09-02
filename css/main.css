@@ -829,12 +829,6 @@ strong {
   padding: 0 30px;
   position: relative;
 }
-.features .google-title,
-.features .edgemax-title,
-.features .ipv6-title,
-.features .duo-title {
-  padding: 0 0 5px 0 !important;
-}
 .features.feature-dis {
   overflow: hidden;
   padding: 0;
