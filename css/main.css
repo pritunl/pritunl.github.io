@@ -1287,6 +1287,9 @@ strong {
 .install .server-auto .item {
   text-align: center;
 }
+.install .server-aws-nomongo {
+  margin-bottom: 15px;
+}
 .install .server-auto .img-digital-ocean {
   opacity: 0.85;
   max-width: 756px;
