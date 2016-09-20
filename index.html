@@ -795,7 +795,7 @@ header_class: header-top
           <div class="editor bash">#!/bin/bash
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list
 echo "deb http://repo.pritunl.com/stable/apt xenial main" > /etc/apt/sources.list.d/pritunl.list
-tee -a /lib/systemd/system/mongod.service > /dev/null &lt;&lt; EOF
+tee -a /etc/yum.repos.d/mongodb-org-3.2.repo &lt;&lt; EOF
 [Unit]
 Description=High-performance, schema-free document-oriented database
 After=network.target
