@@ -843,7 +843,7 @@ systemctl enable mongodb pritunl</div>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux">
           <h3 class="title text-center">Amazon Linux</h3>
-          <div class="editor bash">tee -a /etc/yum.repos.d/mongodb-org-3.2.repo << EOF
+          <div class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.2.repo << EOF
 [mongodb-org-3.2]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.2/x86_64/
@@ -852,7 +852,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.2.asc
 EOF
 
-tee -a /etc/yum.repos.d/pritunl.repo << EOF
+sudo tee -a /etc/yum.repos.d/pritunl.repo << EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=http://repo.pritunl.com/stable/yum/centos/7/
