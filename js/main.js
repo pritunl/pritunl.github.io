@@ -560,6 +560,7 @@ jQuery(document).ready(function($) {
     $('.install-ubuntu-trusty').hide();
     $('.install-ubuntu-wily').hide();
     $('.install-ubuntu-xenial').hide();
+    $('.install-ubuntu-yakkety').hide();
 
     if ($target.hasClass('client-archlinux')) {
       type = 'archlinux';
@@ -585,6 +586,9 @@ jQuery(document).ready(function($) {
     } else if ($target.hasClass('client-ubuntu-xenial')) {
       type = 'ubuntu-xenial';
       $('.install-ubuntu-xenial').show();
+    } else if ($target.hasClass('client-ubuntu-yakkety')) {
+      type = 'ubuntu-yakketyl';
+      $('.install-ubuntu-yakkety').show();
     }
 
     if (loaded.indexOf(type) === -1) {
