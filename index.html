@@ -1011,7 +1011,7 @@ systemctl enable pritunl mongod</div>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-wheezy btn btn-lg btn-default">Debian 7</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="client-distro client-elementary btn btn-lg btn-default">Elementary</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1085,7 +1085,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get install pritunl-client</div>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-elementary-freya">
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-elementary">
           <h3 class="title text-center">Elementary Freya</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt trusty main
@@ -1095,7 +1095,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get install pritunl-client-gtk</div>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-elementary-loki">
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-elementary">
           <h3 class="title text-center">Elementary Loki</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt xenial main
@@ -1168,22 +1168,22 @@ sudo apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-yakkety">
           <h3 class="title text-center">Ubuntu</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
-            deb http://repo.pritunl.com/stable/apt yakkety main
-            EOF
+deb http://repo.pritunl.com/stable/apt yakkety main
+EOF
 
-            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-            sudo apt-get update
-            sudo apt-get install pritunl-client-gtk</div>
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+sudo apt-get update
+sudo apt-get install pritunl-client-gtk</div>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-yakkety">
           <h3 class="title text-center">Ubuntu Server</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
-            deb http://repo.pritunl.com/stable/apt yakkety main
-            EOF
+deb http://repo.pritunl.com/stable/apt yakkety main
+EOF
 
-            sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-            sudo apt-get update
-            sudo apt-get install pritunl-client</div>
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+sudo apt-get update
+sudo apt-get install pritunl-client</div>
         </div>
       </div>
       <div class="row">
