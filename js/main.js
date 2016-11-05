@@ -552,47 +552,47 @@ jQuery(document).ready(function($) {
     $('.client-distro').removeClass('btn-primary').addClass('btn-default');
     $target.removeClass('btn-default').addClass('btn-primary');
 
-    $('.install-archlinux').hide();
-    $('.install-centos-7').hide();
-    $('.install-debian-wheezy').hide();
-    $('.install-debian-jessie').hide();
-    $('.install-ubuntu-precise').hide();
-    $('.install-ubuntu-trusty').hide();
-    $('.install-ubuntu-wily').hide();
-    $('.install-ubuntu-xenial').hide();
-    $('.install-ubuntu-yakkety').hide();
-    $('.install-elementary').hide();
+    $('.client .install-archlinux').hide();
+    $('.client .install-centos-7').hide();
+    $('.client .install-debian-wheezy').hide();
+    $('.client .install-debian-jessie').hide();
+    $('.client .install-ubuntu-precise').hide();
+    $('.client .install-ubuntu-trusty').hide();
+    $('.client .install-ubuntu-wily').hide();
+    $('.client .install-ubuntu-xenial').hide();
+    $('.client .install-ubuntu-yakkety').hide();
+    $('.client .install-elementary').hide();
 
     if ($target.hasClass('client-archlinux')) {
       type = 'archlinux';
-      $('.install-archlinux').show();
+      $('.client .install-archlinux').show();
     } else if ($target.hasClass('client-centos-7')) {
       type = 'centos-7';
-      $('.install-centos-7').show();
+      $('.client .install-centos-7').show();
     } else if ($target.hasClass('client-debian-wheezy')) {
       type = 'debian-wheezy';
-      $('.install-debian-wheezy').show();
+      $('.client .install-debian-wheezy').show();
     } else if ($target.hasClass('client-debian-jessie')) {
       type = 'debian-jessie';
-      $('.install-debian-jessie').show();
+      $('.client .install-debian-jessie').show();
     } else if ($target.hasClass('client-ubuntu-precise')) {
       type = 'ubuntu-precise';
-      $('.install-ubuntu-precise').show();
+      $('.client .install-ubuntu-precise').show();
     } else if ($target.hasClass('client-ubuntu-trusty')) {
       type = 'ubuntu-trusty';
-      $('.install-ubuntu-trusty').show();
+      $('.client .install-ubuntu-trusty').show();
     } else if ($target.hasClass('client-ubuntu-wily')) {
       type = 'ubuntu-wily';
-      $('.install-ubuntu-wily').show();
+      $('.client .install-ubuntu-wily').show();
     } else if ($target.hasClass('client-ubuntu-xenial')) {
       type = 'ubuntu-xenial';
-      $('.install-ubuntu-xenial').show();
+      $('.client .install-ubuntu-xenial').show();
     } else if ($target.hasClass('client-ubuntu-yakkety')) {
       type = 'ubuntu-yakkety';
-      $('.install-ubuntu-yakkety').show();
+      $('.client .install-ubuntu-yakkety').show();
     } else if ($target.hasClass('client-elementary')) {
       type = 'elementary';
-      $('.install-elementary').show();
+      $('.client .install-elementary').show();
     }
 
     if (loaded.indexOf(type) === -1) {
@@ -623,47 +623,47 @@ jQuery(document).ready(function($) {
     $('.server-distro').removeClass('btn-primary').addClass('btn-default');
     $target.removeClass('btn-default').addClass('btn-primary');
 
-    $('.install-archlinux').hide();
-    $('.install-amazon-linux').hide();
-    $('.install-centos-7').hide();
-    $('.install-fedora-22').hide();
-    $('.install-debian-wheezy').hide();
-    $('.install-debian-jessie').hide();
-    $('.install-ubuntu-precise').hide();
-    $('.install-ubuntu-trusty').hide();
-    $('.install-ubuntu-wily').hide();
-    $('.install-ubuntu-xenial').hide();
+    $('.server .install-archlinux').hide();
+    $('.server .install-amazon-linux').hide();
+    $('.server .install-centos-7').hide();
+    $('.server .install-fedora-22').hide();
+    $('.server .install-debian-wheezy').hide();
+    $('.server .install-debian-jessie').hide();
+    $('.server .install-ubuntu-precise').hide();
+    $('.server .install-ubuntu-trusty').hide();
+    $('.server .install-ubuntu-wily').hide();
+    $('.server .install-ubuntu-xenial').hide();
 
     if ($target.hasClass('server-archlinux')) {
       type = 'archlinux';
-      $('.install-archlinux').show();
+      $('.server .install-archlinux').show();
     } else if ($target.hasClass('server-amazon-linux')) {
       type = 'amazon-linux';
-      $('.install-amazon-linux').show();
+      $('.server .install-amazon-linux').show();
     } else if ($target.hasClass('server-centos-7')) {
       type = 'centos-7';
-      $('.install-centos-7').show();
+      $('.server .install-centos-7').show();
     } else if ($target.hasClass('server-fedora-22')) {
       type = 'fedora-22';
-      $('.install-fedora-22').show();
+      $('.server .install-fedora-22').show();
     } else if ($target.hasClass('server-debian-wheezy')) {
       type = 'debian-wheezy';
-      $('.install-debian-wheezy').show();
+      $('.server .install-debian-wheezy').show();
     } else if ($target.hasClass('server-debian-jessie')) {
       type = 'debian-jessie';
-      $('.install-debian-jessie').show();
+      $('.server .install-debian-jessie').show();
     } else if ($target.hasClass('server-ubuntu-precise')) {
       type = 'ubuntu-precise';
-      $('.install-ubuntu-precise').show();
+      $('.server .install-ubuntu-precise').show();
     } else if ($target.hasClass('server-ubuntu-trusty')) {
       type = 'ubuntu-trusty';
-      $('.install-ubuntu-trusty').show();
+      $('.server .install-ubuntu-trusty').show();
     } else if ($target.hasClass('server-ubuntu-wily')) {
       type = 'ubuntu-wily';
-      $('.install-ubuntu-wily').show();
+      $('.server .install-ubuntu-wily').show();
     } else if ($target.hasClass('server-ubuntu-xenial')) {
       type = 'ubuntu-xenial';
-      $('.install-ubuntu-xenial').show();
+      $('.server .install-ubuntu-xenial').show();
     }
 
     if (loaded.indexOf(type) === -1) {
