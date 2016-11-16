@@ -1009,9 +1009,13 @@ systemctl enable pritunl mongod</div>
           <img class="client-screenshot" src="img/screenshot.png" alt="Client Screenshot"/><br>
           <a class="client-home title btn btn-lg" href="//client.pritunl.com" target="_blank">Visit Client Homepage <i class="fa fa-compass"></i></a>
         </div>
+        <div class="item col-md-6 col-sm-8 col-xs-10 col-md-offset-3 col-sm-offset-2 col-xs-offset-1">
+          <h3 class="title text-center">Recommended OS</h3>
+          <a href="https://antergos.com" target="_blank"><img class="antergos-img" src="img/antergos.png" alt="Antergos Linux"/></a>
+        </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="client-distro client-other btn btn-lg btn-default">Other</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="client-distro client-other btn btn-lg btn-default">Antergos</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1085,7 +1089,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get install pritunl-client</div>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-other">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
           <h3 class="title text-center">Antergos</h3>
           <div class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
@@ -1098,16 +1102,6 @@ sudo pacman -Sy
 sudo pacman -S pritunl-client-gtk
 
 # tray icon is shown in bottom left</div>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-other">
-          <h3 class="title text-center">Elementary Loki</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt xenial main
-EOF
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-gtk</div>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-precise">
           <h3 class="title text-center">Ubuntu</h3>

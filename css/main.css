@@ -1498,6 +1498,11 @@ strong {
 .client img {
   margin-bottom: 10px;
 }
+.client .antergos-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+}
 .client .logo {
   font-size: 50px;
   font-family: 'Fredoka One', cursive;
