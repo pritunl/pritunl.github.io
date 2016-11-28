@@ -915,7 +915,7 @@ jQuery(document).ready(function($) {
         currencyCode: 'USD',
         requiredShippingContactFields: ['email'],
         total: {
-          label: 'Premium Subscription ($10/month)',
+          label: 'Premium ($10/month)',
           amount: '10.00'
         }
       };
@@ -925,7 +925,7 @@ jQuery(document).ready(function($) {
         currencyCode: 'USD',
         requiredShippingContactFields: ['email'],
         total: {
-          label: 'Enterprise Subscription ($50/month)',
+          label: 'Enterprise ($50/month)',
           amount: '50.00'
         }
       };
@@ -935,8 +935,8 @@ jQuery(document).ready(function($) {
         currencyCode: 'USD',
         requiredShippingContactFields: ['email'],
         total: {
-          label: 'Support Subscription ($750/quarterly)',
-          amount: '10.00'
+          label: 'Support ($750/quarterly)',
+          amount: '750.00'
         }
       };
     }
