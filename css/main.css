@@ -886,6 +886,18 @@ strong {
   margin-bottom: 0;
 }
 
+.plans .btn.premium-apple-pay,
+.plans .btn.enterprise-apple-pay,
+.plans .btn.support-apple-pay {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.24);
+  background-image: -webkit-named-image(apple-pay-logo-white) !important;
+  background-size: 100% 100%;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  height: 46px;
+}
+
 .explore,
 .enterprise-explore {
   padding-top: 50px;
@@ -1190,7 +1202,7 @@ strong {
   width: 100%;
 }
 .plans .btn:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .plans .free img {
   background: #0e831f;

@@ -856,10 +856,18 @@ jQuery(document).ready(function($) {
   var lockCheckout = function() {
     $('.plans .premium-sub-btn').attr('disabled', 'disabled');
     $('.plans .enterprise-sub-btn').attr('disabled', 'disabled');
+    $('.plans .support-sub-btn').attr('disabled', 'disabled');
+    $('.plans .premium-apply-pay').attr('disabled', 'disabled');
+    $('.plans .enterprise-apply-pay').attr('disabled', 'disabled');
+    $('.plans .support-apply-pay').attr('disabled', 'disabled');
   };
   var unlockCheckout = function() {
     $('.plans .premium-sub-btn').removeAttr('disabled');
     $('.plans .enterprise-sub-btn').removeAttr('disabled');
+    $('.plans .support-sub-btn').removeAttr('disabled');
+    $('.plans .premium-apply-pay').removeAttr('disabled');
+    $('.plans .enterprise-apply-pay').removeAttr('disabled');
+    $('.plans .support-apply-pay').removeAttr('disabled');
   };
   var openCheckout = function(plan) {
     checkoutPlan = plan;
@@ -896,4 +904,102 @@ jQuery(document).ready(function($) {
   $('.plans .support-sub-btn').click(function() {
     openCheckout('support');
   });
+
+  var openApplyPay = function(plan) {
+    checkoutPlan = plan;
+
+    var paymentRequest;
+    if (plan === 'premium') {
+      paymentRequest = {
+        countryCode: 'US',
+        currencyCode: 'USD',
+        requiredShippingContactFields: ['email'],
+        total: {
+          label: 'Premium Subscription ($10/month)',
+          amount: '10.00'
+        }
+      };
+    } else if (plan === 'enterprise') {
+      paymentRequest = {
+        countryCode: 'US',
+        currencyCode: 'USD',
+        requiredShippingContactFields: ['email'],
+        total: {
+          label: 'Enterprise Subscription ($50/month)',
+          amount: '50.00'
+        }
+      };
+    } else {
+      paymentRequest = {
+        countryCode: 'US',
+        currencyCode: 'USD',
+        requiredShippingContactFields: ['email'],
+        total: {
+          label: 'Support Subscription ($750/quarterly)',
+          amount: '10.00'
+        }
+      };
+    }
+
+    lockCheckout();
+
+    var session = Stripe.applePay.buildSession(paymentRequest,
+      function(result, completion) {
+        $.ajax({
+          type: 'POST',
+          url: 'https://app.pritunl.com/subscription',
+          contentType: 'application/json',
+          dataType: 'json',
+          data: JSON.stringify({
+            'plan': checkoutPlan,
+            'card': result.token.id,
+            'email': result.shippingContact.emailAddress
+          }),
+          success: function(response) {
+            completion(ApplePaySession.STATUS_SUCCESS);
+            setCheckoutAlert('success', response.msg);
+            unlockCheckout();
+          }.bind(this),
+          error: function(response) {
+            completion(ApplePaySession.STATUS_FAILURE);
+            if (response.responseJSON) {
+              setCheckoutAlert('danger', response.responseJSON.error_msg);
+            }
+            else {
+              setCheckoutAlert('danger',
+                'Server error occured, please try again later.');
+            }
+            unlockCheckout();
+          }.bind(this)
+        });
+      }, function(error) {
+        setCheckoutAlert('danger', error.message);
+        unlockCheckout();
+      });
+
+    session.begin();
+  };
+  $('.plans .premium-apple-pay').click(function() {
+    openApplyPay('premium');
+  });
+  $('.plans .enterprise-apple-pay').click(function() {
+    openApplyPay('enterprise');
+  });
+  $('.plans .support-apple-pay').click(function() {
+    openApplyPay('support');
+  });
+
+  Stripe.setPublishableKey('pk_live_plmoOl3lS3k5dMNQViZWGfVR');
+  Stripe.applePay.checkAvailability(function(available) {
+    if (available) {
+      $('.premium-apple-pay').show('block');
+      $('.enterprise-apple-pay').show('block');
+      $('.support-apple-pay').show('block');
+    }
+  });
+
+  var videos = $('video');
+  for (var i = 0; i < videos.legnth; i++) {
+    videos[i].play();
+  }
 });
