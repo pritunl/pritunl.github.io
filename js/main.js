@@ -941,8 +941,6 @@ jQuery(document).ready(function($) {
       };
     }
 
-    lockCheckout();
-
     var session = Stripe.applePay.buildSession(paymentRequest,
       function(result, completion) {
         $.ajax({
@@ -958,7 +956,6 @@ jQuery(document).ready(function($) {
           success: function(response) {
             completion(ApplePaySession.STATUS_SUCCESS);
             setCheckoutAlert('success', response.msg);
-            unlockCheckout();
           }.bind(this),
           error: function(response) {
             completion(ApplePaySession.STATUS_FAILURE);
@@ -969,12 +966,10 @@ jQuery(document).ready(function($) {
               setCheckoutAlert('danger',
                 'Server error occured, please try again later.');
             }
-            unlockCheckout();
           }.bind(this)
         });
       }, function(error) {
         setCheckoutAlert('danger', error.message);
-        unlockCheckout();
       });
 
     session.begin();
