@@ -857,17 +857,17 @@ jQuery(document).ready(function($) {
     $('.plans .premium-sub-btn').attr('disabled', 'disabled');
     $('.plans .enterprise-sub-btn').attr('disabled', 'disabled');
     $('.plans .support-sub-btn').attr('disabled', 'disabled');
-    $('.plans .premium-apply-pay').attr('disabled', 'disabled');
-    $('.plans .enterprise-apply-pay').attr('disabled', 'disabled');
-    $('.plans .support-apply-pay').attr('disabled', 'disabled');
+    $('.plans .premium-apple-pay').attr('disabled', 'disabled');
+    $('.plans .enterprise-apple-pay').attr('disabled', 'disabled');
+    $('.plans .support-apple-pay').attr('disabled', 'disabled');
   };
   var unlockCheckout = function() {
     $('.plans .premium-sub-btn').removeAttr('disabled');
     $('.plans .enterprise-sub-btn').removeAttr('disabled');
     $('.plans .support-sub-btn').removeAttr('disabled');
-    $('.plans .premium-apply-pay').removeAttr('disabled');
-    $('.plans .enterprise-apply-pay').removeAttr('disabled');
-    $('.plans .support-apply-pay').removeAttr('disabled');
+    $('.plans .premium-apple-pay').removeAttr('disabled');
+    $('.plans .enterprise-apple-pay').removeAttr('disabled');
+    $('.plans .support-apple-pay').removeAttr('disabled');
   };
   var openCheckout = function(plan) {
     checkoutPlan = plan;
@@ -905,7 +905,7 @@ jQuery(document).ready(function($) {
     openCheckout('support');
   });
 
-  var openApplyPay = function(plan) {
+  var openApplePay = function(plan) {
     checkoutPlan = plan;
 
     var paymentRequest;
@@ -980,13 +980,13 @@ jQuery(document).ready(function($) {
     session.begin();
   };
   $('.plans .premium-apple-pay').click(function() {
-    openApplyPay('premium');
+    openApplePay('premium');
   });
   $('.plans .enterprise-apple-pay').click(function() {
-    openApplyPay('enterprise');
+    openApplePay('enterprise');
   });
   $('.plans .support-apple-pay').click(function() {
-    openApplyPay('support');
+    openApplePay('support');
   });
 
   Stripe.setPublishableKey('pk_live_plmoOl3lS3k5dMNQViZWGfVR');
