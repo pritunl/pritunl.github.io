@@ -1,5 +1,5 @@
 name: Pritunl
-markdown: redcarpet
+markdown: kramdown
 highlighting: rouge
 include:
   - .well-known
