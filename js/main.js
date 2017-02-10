@@ -7,7 +7,6 @@ jQuery(document).ready(function($) {
   var $promoImg = $('.promo-background-img');
   var $promoshortImg = $('.promo-short-background-img');
 
-
   if ($promoBg.length) {
     //$promoBg.removeClass('theme0');
     //$promoBg.addClass(randTheme);
