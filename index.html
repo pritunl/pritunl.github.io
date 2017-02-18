@@ -806,7 +806,7 @@ header_class: header-top
         <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 ">
           <div class="editor bash">#!/bin/bash
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.2.list
-echo "deb https://repo.pritunl.com/stable/apt xenial main" > /etc/apt/sources.list.d/pritunl.list
+echo "deb http://repo.pritunl.com/stable/apt xenial main" > /etc/apt/sources.list.d/pritunl.list
 tee -a /etc/yum.repos.d/mongodb-org-3.2.repo &lt;&lt; EOF
 [Unit]
 Description=High-performance, schema-free document-oriented database
@@ -913,7 +913,7 @@ deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main
 EOF
 
 sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
-deb https://repo.pritunl.com/stable/apt wheezy main
+deb http://repo.pritunl.com/stable/apt wheezy main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 42F3E95A2C4F08279C4960ADD68FA50FEA312927
@@ -929,7 +929,7 @@ deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main
 EOF
 
 sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
-deb https://repo.pritunl.com/stable/apt jessie main
+deb http://repo.pritunl.com/stable/apt jessie main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 42F3E95A2C4F08279C4960ADD68FA50FEA312927
@@ -946,7 +946,7 @@ deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.2 multiverse
 EOF
 
 sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
-deb https://repo.pritunl.com/stable/apt precise main
+deb http://repo.pritunl.com/stable/apt precise main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 42F3E95A2C4F08279C4960ADD68FA50FEA312927
@@ -963,7 +963,7 @@ deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse
 EOF
 
 sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
-deb https://repo.pritunl.com/stable/apt trusty main
+deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 42F3E95A2C4F08279C4960ADD68FA50FEA312927
@@ -980,7 +980,7 @@ deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
 EOF
 
 sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
-deb https://repo.pritunl.com/stable/apt xenial main
+deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
 sudo tee -a /lib/systemd/system/mongod.service << EOF
@@ -1084,7 +1084,7 @@ sudo yum install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
           <h3 class="title text-center">Debian</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt jessie main
+deb http://repo.pritunl.com/stable/apt jessie main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1094,7 +1094,7 @@ sudo apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-jessie">
           <h3 class="title text-center">Debian Server</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt jessie main
+deb http://repo.pritunl.com/stable/apt jessie main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1118,7 +1118,7 @@ sudo pacman -S pritunl-client-gtk
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-precise">
           <h3 class="title text-center">Ubuntu</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt precise main
+deb http://repo.pritunl.com/stable/apt precise main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1128,7 +1128,7 @@ sudo apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-precise">
           <h3 class="title text-center">Ubuntu Server</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt precise main
+deb http://repo.pritunl.com/stable/apt precise main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1138,7 +1138,7 @@ sudo apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt trusty main
+deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1148,7 +1148,7 @@ sudo apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu Server</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt trusty main
+deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1158,7 +1158,7 @@ sudo apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-xenial">
           <h3 class="title text-center">Ubuntu</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt xenial main
+deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1168,7 +1168,7 @@ sudo apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-xenial">
           <h3 class="title text-center">Ubuntu Server</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt xenial main
+deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1178,7 +1178,7 @@ sudo apt-get install pritunl-client</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-yakkety">
           <h3 class="title text-center">Ubuntu</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt yakkety main
+deb http://repo.pritunl.com/stable/apt yakkety main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1188,7 +1188,7 @@ sudo apt-get install pritunl-client-gtk</div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-yakkety">
           <h3 class="title text-center">Ubuntu Server</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt yakkety main
+deb http://repo.pritunl.com/stable/apt yakkety main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
