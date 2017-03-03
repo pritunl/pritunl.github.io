@@ -1076,9 +1076,16 @@ strong {
 .screenshots .glyphicon.right {
   right: 20px;
 }
-.client-sum {
+.client-ver {
   margin: 0 0 7px 0;
   color: rgba(255, 255, 255, 0.5);
+}
+.client-sum {
+  margin-bottom: 5px;
+}
+.client-sum,
+.client-download {
+  width: 206px;
 }
 .plans {
   position: relative;
