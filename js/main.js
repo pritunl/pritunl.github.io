@@ -887,9 +887,9 @@ jQuery(document).ready(function($) {
       });
     } else {
       checkout.open({
-        amount: 75000,
+        amount: 25000,
         name: 'Pritunl Support',
-        description: 'Subscribe to Support ($750/quarterly)',
+        description: 'Subscribe to Support ($250/month)',
         panelLabel: 'Subscribe'
       });
     }
