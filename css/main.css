@@ -658,7 +658,7 @@ strong {
 }
 .promo .overview h2 {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 .promo .overview .summary {
@@ -888,6 +888,7 @@ strong {
 
 .plans .btn.premium-apple-pay,
 .plans .btn.enterprise-apple-pay,
+.plans .btn.enterprise-plus-apple-pay,
 .plans .btn.support-apple-pay {
   display: none;
   background-color: rgba(0, 0, 0, 0.24);
@@ -1135,6 +1136,9 @@ strong {
 .plans .enterprise .price {
   color: #7323ff;
 }
+.plans .enterprise-plus .price {
+  color: #903ae8;
+}
 .plans .support .price {
   color: #a4030c;
 }
@@ -1240,6 +1244,16 @@ strong {
   background: -o-linear-gradient(left, #1e4a87 0%, #60209e 100%);
   background: linear-gradient(to right, #1e4a87 0%, #60209e 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e4a87', endColorstr='#60209e', GradientType=1);
+}
+.plans .enterprise-plus img {
+  background: #3c0467;
+  background: -webkit-linear-gradient(left, #3c0467 0%, #400707 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3c0467), color-stop(100%, #400707));
+  background: -moz-linear-gradient(left, #3c0467 0%, #400707 100%);
+  background: -ms-linear-gradient(left, #3c0467 0%, #400707 100%);
+  background: -o-linear-gradient(left, #3c0467 0%, #400707 100%);
+  background: linear-gradient(to right, #3c0467 0%, #400707 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c0467', endColorstr='#400707', GradientType=1);
 }
 .plans .support img {
   background: #60209e;
@@ -1788,6 +1802,7 @@ strong {
 }
 .premium-sub-alert,
 .enterprise-sub-alert,
+.enterprise-plus-sub-alert,
 .support-sub-alert {
   display: none;
 }
@@ -2331,9 +2346,6 @@ a.anchor.api-anchor {
   h3.title {
     font-size: 22px;
   }
-  .promo .overview h2 {
-    font-size: 32px;
-  }
   .promo .overview .summary {
     font-size: 27px;
   }
@@ -2350,9 +2362,6 @@ a.anchor.api-anchor {
   }
   h3.title {
     font-size: 24px;
-  }
-  .promo .overview h2 {
-    font-size: 35px;
   }
   .promo .overview .summary {
     font-size: 27px;
@@ -2466,7 +2475,8 @@ a.anchor.api-anchor {
     z-index: 10;
   }
   .promo .overview h2 {
-    font-size: 42px;
+    font-size: 34px;
+    margin-left: 10px;
   }
   .promo .overview .summary {
     margin: 0 0 0 10px;
@@ -2561,7 +2571,8 @@ a.anchor.api-anchor {
     margin-top: -630px;
   }
   .promo .overview h2 {
-    font-size: 52px;
+    font-size: 40px;
+    margin-bottom: 20px;
   }
   .header .container .navbar-collapse {
     margin-right: 135px;

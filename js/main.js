@@ -855,6 +855,7 @@ jQuery(document).ready(function($) {
   var lockCheckout = function() {
     $('.plans .premium-sub-btn').attr('disabled', 'disabled');
     $('.plans .enterprise-sub-btn').attr('disabled', 'disabled');
+    $('.plans .enterprise-plus-sub-btn').attr('disabled', 'disabled');
     $('.plans .support-sub-btn').attr('disabled', 'disabled');
     $('.plans .premium-apple-pay').attr('disabled', 'disabled');
     $('.plans .enterprise-apple-pay').attr('disabled', 'disabled');
@@ -863,6 +864,7 @@ jQuery(document).ready(function($) {
   var unlockCheckout = function() {
     $('.plans .premium-sub-btn').removeAttr('disabled');
     $('.plans .enterprise-sub-btn').removeAttr('disabled');
+    $('.plans .enterprise-plus-sub-btn').removeAttr('disabled');
     $('.plans .support-sub-btn').removeAttr('disabled');
     $('.plans .premium-apple-pay').removeAttr('disabled');
     $('.plans .enterprise-apple-pay').removeAttr('disabled');
@@ -885,6 +887,13 @@ jQuery(document).ready(function($) {
         description: 'Subscribe to Enterprise ($50/month)',
         panelLabel: 'Subscribe'
       });
+    } else if (plan === 'enterprise_plus') {
+      checkout.open({
+        amount: 10000,
+        name: 'Pritunl Enterprise+',
+        description: 'Subscribe to Enterprise+ ($100/month)',
+        panelLabel: 'Subscribe'
+      });
     } else {
       checkout.open({
         amount: 25000,
@@ -899,6 +908,9 @@ jQuery(document).ready(function($) {
   });
   $('.plans .enterprise-sub-btn').click(function() {
     openCheckout('enterprise');
+  });
+  $('.plans .enterprise-plus-sub-btn').click(function() {
+    openCheckout('enterprise_plus');
   });
   $('.plans .support-sub-btn').click(function() {
     openCheckout('support');
@@ -928,14 +940,24 @@ jQuery(document).ready(function($) {
           amount: '50.00'
         }
       };
+    } else if (plan === 'enterprise_plus') {
+      paymentRequest = {
+        countryCode: 'US',
+        currencyCode: 'USD',
+        requiredShippingContactFields: ['email'],
+        total: {
+          label: 'Enterprise+ ($100/month)',
+          amount: '100.00'
+        }
+      };
     } else {
       paymentRequest = {
         countryCode: 'US',
         currencyCode: 'USD',
         requiredShippingContactFields: ['email'],
         total: {
-          label: 'Support ($750/quarterly)',
-          amount: '750.00'
+          label: 'Support ($250/month)',
+          amount: '250.00'
         }
       };
     }
@@ -979,6 +1001,9 @@ jQuery(document).ready(function($) {
   $('.plans .enterprise-apple-pay').click(function() {
     openApplePay('enterprise');
   });
+  $('.plans .enterprise-plus-apple-pay').click(function() {
+    openApplePay('enterprise_plus');
+  });
   $('.plans .support-apple-pay').click(function() {
     openApplePay('support');
   });
@@ -988,6 +1013,7 @@ jQuery(document).ready(function($) {
     if (available) {
       $('.premium-apple-pay').show('block');
       $('.enterprise-apple-pay').show('block');
+      $('.enterprise-plus-apple-pay').show('block');
       $('.support-apple-pay').show('block');
     }
   });
