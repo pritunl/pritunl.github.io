@@ -2890,3 +2890,8 @@ a.anchor.api-anchor {
 .documentation a {
   color: #9cc7fd;
 }
+
+
+.enterprise-plus {
+  display: none !important;
+}
