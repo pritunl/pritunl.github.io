@@ -902,7 +902,7 @@ systemctl enable pritunl mongod</div>
         </div>
         <div
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-wheezy btn btn-lg btn-default">Debian 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="server-distro server-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="server-distro server-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button>
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="server-distro server-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="server-distro server-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1078,7 +1078,7 @@ sudo systemctl enable pritunl mongod</div>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="client-distro client-other btn btn-lg btn-default">Antergos</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="client-distro client-other btn btn-lg btn-default">Antergos</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1132,20 +1132,20 @@ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
 sudo yum install pritunl-client</div>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
+        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt jessie main
+deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
 sudo apt-get install pritunl-client-gtk</div>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-jessie">
+        <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-stretch">
           <h3 class="title text-center">Debian Server</h3>
           <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt jessie main
+deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
