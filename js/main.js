@@ -553,8 +553,8 @@ jQuery(document).ready(function($) {
 
     $('.client .install-archlinux').hide();
     $('.client .install-centos-7').hide();
-    $('.client .install-debian-wheezy').hide();
     $('.client .install-debian-jessie').hide();
+    $('.client .install-debian-stretch').hide();
     $('.client .install-ubuntu-precise').hide();
     $('.client .install-ubuntu-trusty').hide();
     $('.client .install-ubuntu-wily').hide();
@@ -568,12 +568,12 @@ jQuery(document).ready(function($) {
     } else if ($target.hasClass('client-centos-7')) {
       type = 'centos-7';
       $('.client .install-centos-7').show();
-    } else if ($target.hasClass('client-debian-wheezy')) {
-      type = 'debian-wheezy';
-      $('.client .install-debian-wheezy').show();
     } else if ($target.hasClass('client-debian-jessie')) {
       type = 'debian-jessie';
       $('.client .install-debian-jessie').show();
+    } else if ($target.hasClass('client-debian-stretch')) {
+      type = 'debian-stretch';
+      $('.client .install-debian-stretch').show();
     } else if ($target.hasClass('client-ubuntu-precise')) {
       type = 'ubuntu-precise';
       $('.client .install-ubuntu-precise').show();
@@ -626,8 +626,8 @@ jQuery(document).ready(function($) {
     $('.server .install-amazon-linux').hide();
     $('.server .install-centos-7').hide();
     $('.server .install-fedora-22').hide();
-    $('.server .install-debian-wheezy').hide();
     $('.server .install-debian-jessie').hide();
+    $('.server .install-debian-stretch').hide();
     $('.server .install-ubuntu-precise').hide();
     $('.server .install-ubuntu-trusty').hide();
     $('.server .install-ubuntu-wily').hide();
@@ -645,12 +645,12 @@ jQuery(document).ready(function($) {
     } else if ($target.hasClass('server-fedora-22')) {
       type = 'fedora-22';
       $('.server .install-fedora-22').show();
-    } else if ($target.hasClass('server-debian-wheezy')) {
-      type = 'debian-wheezy';
-      $('.server .install-debian-wheezy').show();
     } else if ($target.hasClass('server-debian-jessie')) {
       type = 'debian-jessie';
       $('.server .install-debian-jessie').show();
+    } else if ($target.hasClass('server-debian-stretch')) {
+      type = 'debian-stretch';
+      $('.server .install-debian-stretch').show();
     } else if ($target.hasClass('server-ubuntu-precise')) {
       type = 'ubuntu-precise';
       $('.server .install-ubuntu-precise').show();
