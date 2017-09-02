@@ -106,7 +106,10 @@ strong {
 }
 .new-label {
   padding-bottom: 5px;
-  background-color: #820fea;
+  background-color: #d81010;
+  position: absolute;
+  margin: -5px 0 0 2px;
+  font-size: 18px;
 }
 .social-icons {
   list-style: none;
