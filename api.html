@@ -79,7 +79,6 @@ def auth_request(method, path, headers=None, data=None):
         auth_headers.update(headers)
     return getattr(requests, method.lower())(
         BASE_URL + path,
-        verify=False,
         headers=auth_headers,
         data=data,
     )</div>
