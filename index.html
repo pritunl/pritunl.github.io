@@ -854,7 +854,7 @@ systemctl enable pritunl mongod</div>
         </div>
         <div
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="server-distro server-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="server-distro server-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button>
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux btn btn-lg btn-default">Amazon Linux</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="server-distro server-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="server-distro server-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -954,22 +954,6 @@ sudo apt-get --assume-yes install pritunl mongodb-server
 sudo systemctl start mongodb pritunl
 sudo systemctl enable mongodb pritunl</div>
         </div>
-        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-precise">
-          <h3 class="title text-center">Ubuntu Precise</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.4.list &lt;&lt; EOF
-deb http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse
-EOF
-
-sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt precise main
-EOF
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 0C49F3730359A14518585931BC711F9BA15703C6
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get --assume-yes install pritunl mongodb-org
-sudo service pritunl start</div>
-        </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu Trusty</h3>
@@ -1023,7 +1007,7 @@ sudo systemctl enable pritunl mongod</div>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="client-distro client-other btn btn-lg btn-default">Antergos</button><button class="client-distro client-ubuntu-precise btn btn-lg btn-default">Ubuntu 12.04</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="client-distro client-other btn btn-lg btn-default">Antergos</button><button class="client-distro client-ubuntu-trusty btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-xenial btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-yakkety btn btn-lg btn-default">Ubuntu 16.10</button>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1112,26 +1096,6 @@ sudo pacman -Sy
 sudo pacman -S pritunl-client-gtk
 
 # tray icon is shown in bottom left</div>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-precise">
-          <h3 class="title text-center">Ubuntu</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt precise main
-EOF
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-gtk</div>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-precise">
-          <h3 class="title text-center">Ubuntu Server</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt precise main
-EOF
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client</div>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-trusty">
           <h3 class="title text-center">Ubuntu</h3>
