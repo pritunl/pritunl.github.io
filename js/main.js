@@ -555,10 +555,9 @@ jQuery(document).ready(function($) {
     $('.client .install-centos-7').hide();
     $('.client .install-debian-jessie').hide();
     $('.client .install-debian-stretch').hide();
-    $('.client .install-ubuntu-trusty').hide();
-    $('.client .install-ubuntu-wily').hide();
-    $('.client .install-ubuntu-xenial').hide();
-    $('.client .install-ubuntu-yakkety').hide();
+    $('.client .install-ubuntu-one').hide();
+    $('.client .install-ubuntu-two').hide();
+    $('.client .install-ubuntu-three').hide();
     $('.client .install-other').hide();
 
     if ($target.hasClass('client-archlinux')) {
@@ -573,26 +572,23 @@ jQuery(document).ready(function($) {
     } else if ($target.hasClass('client-debian-stretch')) {
       type = 'debian-stretch';
       $('.client .install-debian-stretch').show();
-    } else if ($target.hasClass('client-ubuntu-trusty')) {
-      type = 'ubuntu-trusty';
-      $('.client .install-ubuntu-trusty').show();
-    } else if ($target.hasClass('client-ubuntu-wily')) {
-      type = 'ubuntu-wily';
-      $('.client .install-ubuntu-wily').show();
-    } else if ($target.hasClass('client-ubuntu-xenial')) {
-      type = 'ubuntu-xenial';
-      $('.client .install-ubuntu-xenial').show();
-    } else if ($target.hasClass('client-ubuntu-yakkety')) {
-      type = 'ubuntu-yakkety';
-      $('.client .install-ubuntu-yakkety').show();
+    } else if ($target.hasClass('client-ubuntu-one')) {
+      type = 'ubuntu-one';
+      $('.client .install-ubuntu-one').show();
+    } else if ($target.hasClass('client-ubuntu-two')) {
+      type = 'ubuntu-two';
+      $('.client .install-ubuntu-two').show();
+    } else if ($target.hasClass('client-ubuntu-three')) {
+      type = 'ubuntu-three';
+      $('.client .install-ubuntu-three').show();
     } else if ($target.hasClass('client-other')) {
       type = 'other';
       $('.client .install-other').show();
     }
 
-    if (loaded.indexOf(type) === -1) {
-      loaded.push(type);
-      $('.install-' + type + ' .editor.bash').each(function(index, element) {
+    if (loaded.indexOf('client-' + type) === -1) {
+      loaded.push('client-' + type);
+      $('.client .install-' + type + ' .editor.bash').each(function(index, element) {
         var editor = ace.edit(element);
         editor.setTheme('ace/theme/tomorrow_night');
         editor.setFontSize(16);
@@ -624,9 +620,9 @@ jQuery(document).ready(function($) {
     $('.server .install-fedora-22').hide();
     $('.server .install-debian-jessie').hide();
     $('.server .install-debian-stretch').hide();
-    $('.server .install-ubuntu-trusty').hide();
-    $('.server .install-ubuntu-wily').hide();
-    $('.server .install-ubuntu-xenial').hide();
+    $('.server .install-ubuntu-one').hide();
+    $('.server .install-ubuntu-two').hide();
+    $('.server .install-ubuntu-three').hide();
 
     if ($target.hasClass('server-archlinux')) {
       type = 'archlinux';
@@ -646,20 +642,20 @@ jQuery(document).ready(function($) {
     } else if ($target.hasClass('server-debian-stretch')) {
       type = 'debian-stretch';
       $('.server .install-debian-stretch').show();
-    } else if ($target.hasClass('server-ubuntu-trusty')) {
-      type = 'ubuntu-trusty';
-      $('.server .install-ubuntu-trusty').show();
-    } else if ($target.hasClass('server-ubuntu-wily')) {
-      type = 'ubuntu-wily';
-      $('.server .install-ubuntu-wily').show();
-    } else if ($target.hasClass('server-ubuntu-xenial')) {
-      type = 'ubuntu-xenial';
-      $('.server .install-ubuntu-xenial').show();
+    } else if ($target.hasClass('server-ubuntu-one')) {
+      type = 'ubuntu-one';
+      $('.server .install-ubuntu-one').show();
+    } else if ($target.hasClass('server-ubuntu-two')) {
+      type = 'ubuntu-two';
+      $('.server .install-ubuntu-two').show();
+    } else if ($target.hasClass('server-ubuntu-three')) {
+      type = 'ubuntu-three';
+      $('.server .install-ubuntu-three').show();
     }
 
-    if (loaded.indexOf(type) === -1) {
-      loaded.push(type);
-      $('.install-' + type + ' .editor.bash').each(function(index, element) {
+    if (loaded.indexOf('server-' + type) === -1) {
+      loaded.push('server-' + type);
+      $('.server .install-' + type + ' .editor.bash').each(function(index, element) {
         var editor = ace.edit(element);
         editor.setTheme('ace/theme/tomorrow_night');
         editor.setFontSize(16);

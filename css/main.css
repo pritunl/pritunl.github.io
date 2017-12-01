@@ -1553,11 +1553,9 @@ strong {
 .client .install-debian-wheezy,
 .client .install-debian-jessie,
 .client .install-debian-stretch,
-.client .install-ubuntu-precise,
-.client .install-ubuntu-trusty,
-.client .install-ubuntu-wily,
-.client .install-ubuntu-xenial,
-.client .install-ubuntu-yakkety,
+.client .install-ubuntu-one,
+.client .install-ubuntu-two,
+.client .install-ubuntu-three,
 .client .install-other,
 .server .install-amazon-linux,
 .server .install-fedora-22,
@@ -1565,10 +1563,9 @@ strong {
 .server .install-debian-wheezy,
 .server .install-debian-jessie,
 .server .install-debian-stretch,
-.server .install-ubuntu-precise,
-.server .install-ubuntu-trusty,
-.server .install-ubuntu-wily,
-.server .install-ubuntu-xenial {
+.server .install-ubuntu-one,
+.server .install-ubuntu-two,
+.server .install-ubuntu-three {
   display: none;
 }
 .client .logo a,
