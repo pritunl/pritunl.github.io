@@ -549,6 +549,9 @@ strong {
   width: 50%;
   margin: 10px auto;
 }
+.promo-short .promo-short-img.promo-unifi {
+  width: 40%;
+}
 .promo-short .img-overlay-box img {
   width: 100%;
 }
