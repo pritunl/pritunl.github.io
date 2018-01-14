@@ -615,9 +615,9 @@ jQuery(document).ready(function($) {
     $target.removeClass('btn-default').addClass('btn-primary');
 
     $('.server .install-archlinux').hide();
-    $('.server .install-amazon-linux').hide();
+    $('.server .install-amazon-linux-one').hide();
+    $('.server .install-amazon-linux-two').hide();
     $('.server .install-centos-7').hide();
-    $('.server .install-fedora-22').hide();
     $('.server .install-debian-jessie').hide();
     $('.server .install-debian-stretch').hide();
     $('.server .install-ubuntu-one').hide();
@@ -627,15 +627,15 @@ jQuery(document).ready(function($) {
     if ($target.hasClass('server-archlinux')) {
       type = 'archlinux';
       $('.server .install-archlinux').show();
-    } else if ($target.hasClass('server-amazon-linux')) {
-      type = 'amazon-linux';
-      $('.server .install-amazon-linux').show();
+    } else if ($target.hasClass('server-amazon-linux-one')) {
+      type = 'amazon-linux-one';
+      $('.server .install-amazon-linux-one').show();
+    } else if ($target.hasClass('server-amazon-linux-two')) {
+      type = 'amazon-linux-two';
+      $('.server .install-amazon-linux-two').show();
     } else if ($target.hasClass('server-centos-7')) {
       type = 'centos-7';
       $('.server .install-centos-7').show();
-    } else if ($target.hasClass('server-fedora-22')) {
-      type = 'fedora-22';
-      $('.server .install-fedora-22').show();
     } else if ($target.hasClass('server-debian-jessie')) {
       type = 'debian-jessie';
       $('.server .install-debian-jessie').show();

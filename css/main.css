@@ -1492,13 +1492,7 @@ strong {
 .client .btn.client-distro,
 .server .btn.server-distro,
 .install .server-auto .btn.server-region {
-  min-width: 114px;
-  display: inline-block;
-  margin: 10px;
-  font-size: 16px;
-  padding-left: 2px;
-  padding-right: 2px;
-  min-width: 114px;
+  min-width: 135px;
   display: inline-block;
   margin: 10px;
   font-size: 16px;
@@ -1560,8 +1554,8 @@ strong {
 .client .install-ubuntu-two,
 .client .install-ubuntu-three,
 .client .install-other,
-.server .install-amazon-linux,
-.server .install-fedora-22,
+.server .install-amazon-linux-one,
+.server .install-amazon-linux-two,
 .server .install-centos-7,
 .server .install-debian-wheezy,
 .server .install-debian-jessie,
