@@ -335,6 +335,17 @@ strong {
 .header .github-logo img {
   width: 84px;
 }
+.header .twitter-logo i {
+  margin-top: 10px;
+  margin-right: 13px;
+  font-size: 60px;
+  opacity: 0.6;
+}
+.header .github-logo i {
+  margin-top: 10px;
+  font-size: 60px;
+  opacity: 0.6;
+}
 
 .diagram-box {
   width: 100%;
@@ -2520,19 +2531,8 @@ a.anchor.api-anchor {
   .header .twitter-logo {
     display: block;
   }
-  .header .twitter-logo i {
-    margin-top: 9px;
-    margin-right: 13px;
-    font-size: 60px;
-    opacity: 0.6;
-  }
   .header .github-logo {
     display: block;
-  }
-  .header .github-logo i {
-    margin-top: 9px;
-    font-size: 60px;
-    opacity: 0.6;
   }
   .header .main-nav .nav .nav-item:after{
     content: '\00B7';
