@@ -1836,6 +1836,13 @@ textarea.editor {
   text-align: left;
   height: auto;
 }
+.api-endpoint-code .CodeMirror {
+  font-size: 12px;
+  width: 100%;
+  margin: 2px auto;
+  text-align: left;
+  height: auto;
+}
 .ace_scrollbar {
   display: none !important;
 }
