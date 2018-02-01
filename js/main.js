@@ -1,175 +1,75 @@
 jQuery(document).ready(function($) {
   var $window = $(window);
-  var randTheme = 'theme' + Math.floor((Math.random() * 3)).toString();
-  randTheme = 'theme0';
   var $body = $('body');
   var $promoBg = $('.promo-background-color');
   var $promoImg = $('.promo-background-img');
   var $promoshortImg = $('.promo-short-background-img');
 
-  if ($promoBg.length) {
-    //$promoBg.removeClass('theme0');
-    //$promoBg.addClass(randTheme);
-    //$promoImg.removeClass('theme0');
-    //$promoImg.addClass(randTheme);
-    var promoBg = $promoBg[0];
-
-    var bgObj;
-    var bgProps;
-    var repeatDelay = .5;
-    if (randTheme === 'theme0') {
-      bgObj = {
-        left: '#3076d5',
-        right: '#1026a1'
-      };
-      bgProps = {
-        left: '#582cc3',
-        right: '#36107f'
-      };
-    } else if (randTheme === 'theme1') {
-      bgObj = {
-        left: '#18212d',
-        right: '#030618'
-      };
-      bgProps = {
-        left: '#2d181b',
-        right: '#180303'
-      };
-    } else if (randTheme === 'theme2') {
-      repeatDelay = 2;
-      bgObj = {
-        left: '#1f0b35',
-        right: '#501d0c'
-      };
-      bgProps = {
-        left: '#501d0c',
-        right: '#1f0b35'
-      };
-    } else if (randTheme === 'theme3') {
-      bgObj = {
-        left: '#900b0b',
-        right: '#1b711c'
-      };
-      bgProps = {
-        left: '#1b711c',
-        right: '#900b0b'
-      };
-    }
-
-    TweenMax.to(bgObj, 6, {
-      delay: 2,
-      repeat: -1,
-      repeatDelay: repeatDelay,
-      yoyo: true,
-      colorProps: bgProps,
-      onUpdate: function() {
-        promoBg.style.background = 'linear-gradient(to right, ' +
-          bgObj.left + ' 0%, ' + bgObj.right + '100%)'
-      }
-    }, .25);
-  }
-  var $diag3 = $('.diagram-3 .part');
-  if ($diag3.length) {
-    TweenMax.staggerTo($diag3, 2, {
-      delay: 1,
-      opacity: 1
-    }, .25);
-  }
-  var $diag3glow = $('.diagram-3 .part-glow');
-  if ($diag3glow.length) {
-    TweenMax.staggerTo($('.diagram-3 .part-glow'), .7, {
-      delay: 3,
-      repeat: -1,
-      repeatDelay: 1,
-      yoyo: true,
-      opacity: 1
-    }, .25);
-  }
-  var $featSimp = $('.feature-simple .feature-after');
-  if ($featSimp.length) {
-    TweenMax.to($featSimp, 2, {
-      delay: 3,
-      repeat: -1,
-      repeatDelay: .75,
-      yoyo: true,
-      opacity: 1
-    });
-  }
-  var $featSimp = $('.feature-simple .feature-after');
-  if ($featSimp.length) {
-    TweenMax.to($featSimp, 2, {
-      delay: 3,
-      repeat: -1,
-      repeatDelay: .75,
-      yoyo: true,
-      opacity: 1
-    });
-  }
-  var $featPreglow = $('.feature-preglow');
-  var $featGlow = $('.feature-glow');
-  if ($featPreglow.length && $featGlow.length) {
-    TweenMax.staggerTo([
-      $featPreglow,
-      $featGlow
-    ], 2, {
-      delay:.2,
-      repeat: -1,
-      repeatDelay: 2,
-      yoyo: true,
-      opacity: 1
-    }, 1);
-  }
-
-  var curX;
-  var curY;
-  if ($promoImg.length) {
-    $body.mousemove(function (evt) {
-      var x = Math.round(50 * evt.clientX / $window.width() - 10);
-      var y = Math.round(50 * evt.clientY / $window.height() - 10);
-
-      if (curX == x && curY == y) {
-        return;
-      }
-      curX = x;
-      curY = y;
-
-      $promoImg.css('transform',
-        'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
-    });
-    window.ondevicemotion = function (evt) {
-      var x = Math.round(evt.accelerationIncludingGravity.x * 3);
-      var y = Math.round(evt.accelerationIncludingGravity.y * 3);
-
-      if (curX == x && curY == y) {
-        return;
-      }
-      curX = x;
-      curY = y;
-
-      if (window.innerWidth / window.innerHeight > 1) {
-        var xx = x;
-        x = y;
-        y = xx;
-      }
-
-      $promoImg.css('transform',
-        'matrix(1.05, 0, 0, 1.05, ' + x + ', ' + y + ')');
-    };
-  } else if ($promoshortImg.length) {
-    $body.mousemove(function (evt) {
-      var x = Math.round(25 * evt.clientX / $window.width() - 10);
-      var y = Math.round(25 * evt.clientY / $window.height() - 10);
-
-      if (curX == x && curY == y) {
-        return;
-      }
-      curX = x;
-      curY = y;
-
-      $promoshortImg.css('transform',
-        'matrix(1.1, 0, 0, 1.1, ' + x + ', ' + y + ')');
-    });
-  }
+  // if ($promoBg.length) {
+  //   var promoBg = $promoBg[0];
+  //
+  //   var bgObj = {
+  //     left: '#3076d5',
+  //     right: '#1026a1'
+  //   };
+  //   var bgProps = {
+  //     left: '#582cc3',
+  //     right: '#36107f'
+  //   };
+  //
+  //   TweenMax.to(bgObj, 6, {
+  //     delay: 2,
+  //     repeat: -1,
+  //     repeatDelay: .5,
+  //     yoyo: true,
+  //     colorProps: bgProps,
+  //     onUpdate: function() {
+  //       promoBg.style.background = 'linear-gradient(to right, ' +
+  //         bgObj.left + ' 0%, ' + bgObj.right + '100%)'
+  //     }
+  //   }, .25);
+  // }
+  // var $diag3 = $('.diagram-3 .part');
+  // if ($diag3.length) {
+  //   TweenMax.staggerTo($diag3, 2, {
+  //     delay: 1,
+  //     opacity: 1
+  //   }, .25);
+  // }
+  // var $diag3glow = $('.diagram-3 .part-glow');
+  // if ($diag3glow.length) {
+  //   TweenMax.staggerTo($('.diagram-3 .part-glow'), .7, {
+  //     delay: 3,
+  //     repeat: -1,
+  //     repeatDelay: 1,
+  //     yoyo: true,
+  //     opacity: 1
+  //   }, .25);
+  // }
+  // var $featSimp = $('.feature-simple .feature-after');
+  // if ($featSimp.length) {
+  //   TweenMax.to($featSimp, 2, {
+  //     delay: 3,
+  //     repeat: -1,
+  //     repeatDelay: .75,
+  //     yoyo: true,
+  //     opacity: 1
+  //   });
+  // }
+  // var $featPreglow = $('.feature-preglow');
+  // var $featGlow = $('.feature-glow');
+  // if ($featPreglow.length && $featGlow.length) {
+  //   TweenMax.staggerTo([
+  //     $featPreglow,
+  //     $featGlow
+  //   ], 2, {
+  //     delay:.2,
+  //     repeat: -1,
+  //     repeatDelay: 2,
+  //     yoyo: true,
+  //     opacity: 1
+  //   }, 1);
+  // }
 
   $('a.scrollto').on('click', function(evt){
     var target = this.hash;
@@ -189,13 +89,16 @@ jQuery(document).ready(function($) {
 	});
 
   $('.navbar-toggle').on('click', function(evt) {
+    var $navbarCollapse = $('.navbar-collapse');
     var scrollTop = $(window).scrollTop();
-    if ($('.navbar-collapse').hasClass('in') &&
+    if ($navbarCollapse.hasClass('in') &&
         scrollTop <= 0 && $('.promo').length) {
       $('.header').addClass('header-top');
+      $navbarCollapse.removeClass('in');
     }
     else {
       $('.header').removeClass('header-top');
+      $navbarCollapse.addClass('in');
     }
   });
 
@@ -210,124 +113,33 @@ jQuery(document).ready(function($) {
 
   $(document).on('dblclick mousedown', '.no-select', false);
 
-  var loaded = ['archlinux'];
-  $('.editor').show();
+  var loaded = ['server-archlinux', 'client-archlinux'];
   $('.editor.python').each(function(index, element) {
-    var editor = ace.edit(element);
-    editor.setTheme('ace/theme/tomorrow_night');
-    editor.setReadOnly(true);
-    editor.setShowPrintMargin(false);
-    editor.setHighlightActiveLine(false);
-    editor.setHighlightGutterLine(false);
-    editor.setShowFoldWidgets(false);
-    editor.getSession().setMode('ace/mode/python');
-    $(element).css('height', editor.getSession().getScreenLength() *
-      editor.renderer.lineHeight + 2);
-  });
-  $('.install-archlinux .editor.bash').each(function(index, element) {
-    var editor = ace.edit(element);
-    editor.setTheme('ace/theme/tomorrow_night');
-    editor.setFontSize(16);
-    editor.setReadOnly(true);
-    editor.setShowPrintMargin(false);
-    editor.setHighlightActiveLine(false);
-    editor.setShowFoldWidgets(false);
-    editor.renderer.setShowGutter(false);
-    editor.getSession().setMode('ace/mode/sh');
-    $(element).css('height', editor.getSession().getScreenLength() *
-      editor.renderer.lineHeight + 24);
-    $(editor.renderer.scroller).css('margin-top', '10px');
-    $(editor.renderer.scroller).css('margin-left', '10px');
-  });
-  $('.server-auto .editor.bash').each(function(index, element) {
-    var editor = ace.edit(element);
-    editor.setTheme('ace/theme/tomorrow_night');
-    editor.setFontSize(16);
-    editor.setReadOnly(true);
-    editor.setShowPrintMargin(false);
-    editor.setHighlightActiveLine(false);
-    editor.setShowFoldWidgets(false);
-    editor.renderer.setShowGutter(false);
-    editor.getSession().setMode('ace/mode/sh');
-    $(element).css('height', editor.getSession().getScreenLength() *
-      editor.renderer.lineHeight + 24);
-    $(editor.renderer.scroller).css('margin-top', '10px');
-    $(editor.renderer.scroller).css('margin-left', '10px');
-    $(element).click(function() {
-      editor.selectAll();
+    CodeMirror.fromTextArea(element, {
+      mode: 'shell',
+      theme: 'material',
+      lineNumbers: true,
+      lineWrapping: true,
+      readOnly: true
     });
   });
-
-
-  $('.tutorial-button button.btn').click(function(evt) {
-    $(this).parent().siblings().find('.btn').removeClass('active');
-    $(this).addClass('active');
-    var changeInstructions = function(group, page) {
-      $(group).fadeOut(450, function() {
-        var pages;
-        if (group === '.vps-instructions') {
-          pages = [
-            '.digital-ocean-instructions',
-            '.linode-instructions',
-            '.amazon-aws-instructions'
-          ];
-        }
-        else if (group === '.distro-instructions') {
-          pages = [
-            '.ubuntu-instructions',
-            '.arch-instructions',
-            '.centos-instructions'
-          ];
-        }
-        else {
-          pages = [
-            '.ubuntu-client-instructions',
-            '.windows-client-instructions',
-            '.android-client-instructions'
-          ];
-        }
-        pages.splice(pages.indexOf(page), 1);
-        $(pages.join(', ')).hide();
-        $(page).show();
-        $(group).fadeIn(450);
-      });
-    };
-    if ($(this).hasClass('digital-ocean')) {
-      changeInstructions('.vps-instructions',
-        '.digital-ocean-instructions');
-    }
-    else if ($(this).hasClass('linode')) {
-      changeInstructions('.vps-instructions',
-        '.linode-instructions');
-    }
-    else if ($(this).hasClass('amazon-aws')) {
-      changeInstructions('.vps-instructions',
-        '.amazon-aws-instructions');
-    }
-    else if ($(this).hasClass('ubuntu')) {
-      changeInstructions('.distro-instructions',
-        '.ubuntu-instructions');
-    }
-    else if ($(this).hasClass('arch')) {
-      changeInstructions('.distro-instructions',
-        '.arch-instructions');
-    }
-    else if ($(this).hasClass('centos')) {
-      changeInstructions('.distro-instructions',
-        '.centos-instructions');
-    }
-    else if ($(this).hasClass('ubuntu-client')) {
-      changeInstructions('.client-instructions',
-        '.ubuntu-client-instructions');
-    }
-    else if ($(this).hasClass('windows-client')) {
-      changeInstructions('.client-instructions',
-        '.windows-client-instructions');
-    }
-    else if ($(this).hasClass('android-client')) {
-      changeInstructions('.client-instructions',
-        '.android-client-instructions');
-    }
+  $('.install-archlinux .editor.bash').each(function(index, element) {
+    CodeMirror.fromTextArea(element, {
+      mode: 'shell',
+      theme: 'material',
+      lineNumbers: true,
+      lineWrapping: true,
+      readOnly: true
+    });
+  });
+  $('.server-auto .editor.bash').each(function(index, element) {
+    CodeMirror.fromTextArea(element, {
+      mode: 'shell',
+      theme: 'material',
+      lineNumbers: true,
+      lineWrapping: true,
+      readOnly: true
+    });
   });
 
   (function() {
@@ -371,178 +183,6 @@ jQuery(document).ready(function($) {
     $(window).scroll(onScroll);
     onScroll();
   }
-
-  $('.label').tooltip();
-  $('.price').tooltip();
-
-  // $('.server-region').click(function(evt) {
-  //   var $serverRegion = $('.server-region');
-  //   $serverRegion.addClass('btn-default');
-  //   $serverRegion.removeClass('btn-primary');
-  //   $(evt.target).addClass('btn-primary');
-  // });
-
-  // var loaderUrl = 'https://pritunl-loader.herokuapp.com';
-  // var id = null;
-  // var updateData = function(message, type, region, noAnimate, buttonState) {
-  //   var $serverAlert = $('.server-alert');
-  //   var $serverRegion = $('.server-region');
-  //   var $serverRegionSel = $('.server-' + region);
-  //   var $apiKey = $('.api-key-container');
-
-  //   if (buttonState == undefined) {
-  //     buttonState = true;
-  //   }
-
-  //   if (region && !$serverRegionSel.hasClass('btn-primary')) {
-  //     $serverRegion.addClass('btn-default');
-  //     $serverRegion.removeClass('btn-primary');
-  //     $serverRegionSel.addClass('btn-primary');
-  //   }
-
-  //   $serverAlert.removeClass('alert-success alert-warning alert-danger');
-  //   $serverAlert.addClass(type);
-  //   if (message) {
-  //     $serverAlert.html(message);
-  //   }
-  //   if (buttonState) {
-  //     $('.server-region, .server-create').removeAttr('disabled');
-  //   }
-  //   else {
-  //     $('.server-region, .server-create').attr('disabled', 'disabled');
-  //   }
-  //   if (noAnimate) {
-  //     if (buttonState) {
-  //       $apiKey.show();
-  //     }
-  //     else {
-  //       $apiKey.hide();
-  //     }
-  //     if (message) {
-  //       $serverAlert.show();
-  //     }
-  //     else {
-  //       $serverAlert.hide();
-  //     }
-  //   }
-  //   else {
-  //     if (buttonState) {
-  //       $apiKey.slideDown(250);
-  //     }
-  //     else {
-  //       $apiKey.slideUp(250);
-  //     }
-  //     if (message) {
-  //       $serverAlert.slideDown(250);
-  //     }
-  //     else {
-  //       $serverAlert.slideUp(250);
-  //     }
-  //   }
-  // };
-  // var updateDataPending = function(region, noAnimate) {
-  //   updateData('Pritunl droplet is being created, please ' +
-  //       'allow several minutes for this to complete. You may leave or ' +
-  //       'reload the page while the droplet is being created.',
-  //       'alert-warning', region, noAnimate, false);
-  // };
-  // var poll = function() {
-  //   $.ajax(loaderUrl + '/poll' + (id ? '/' + id : ''), {
-  //     success: function(data) {
-  //       id = data.id;
-  //       if (data.status) {
-  //         poll();
-  //       }
-  //       else if (data.error) {
-  //         updateData(data.error, 'alert-danger', data.region);
-  //       }
-  //       else if (data.success) {
-  //         updateData(data.success, 'alert-success', data.region);
-  //       }
-  //     },
-  //     error: function(data) {
-  //       setTimeout(function() {
-  //         poll();
-  //       }, 3000);
-  //     }
-  //   });
-  // };
-
-  // if (document.URL.indexOf('error=oad') !== -1) {
-  //   updateData('Automated install was unable to get permission to ' +
-  //     'create server, please try again.', 'alert-danger', null, true, true);
-  // }
-  // else if (document.URL.indexOf('error=err') !== -1) {
-  //   updateData('Automated install was unable to create server, ' +
-  //     'please try again later.', 'alert-danger', null, true, true);
-  // }
-
-  // $('.server-create').click(function() {
-  //   var region;
-  //   $('.server-region, .server-create').attr('disabled', 'disabled');
-
-  //   if ($('.server-sfo1').hasClass('btn-primary')) {
-  //     region = 'sfo1';
-  //   }
-  //   else if ($('.server-nyc3').hasClass('btn-primary')) {
-  //     region = 'nyc3';
-  //   }
-  //   else if ($('.server-ams3').hasClass('btn-primary')) {
-  //     region = 'ams3';
-  //   }
-  //   else if ($('.server-sgp1').hasClass('btn-primary')) {
-  //     region = 'sgp1';
-  //   }
-  //   else if ($('.server-lon1').hasClass('btn-primary')) {
-  //     region = 'lon1';
-  //   }
-
-  //   $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
-  //     type: 'POST',
-  //     contentType: 'application/json',
-  //     data: JSON.stringify({
-  //       region: region
-  //     }),
-  //     xhrFields: {
-  //       withCredentials: true
-  //     },
-  //     crossDomain: true,
-  //     success: function(data) {
-  //       window.location.replace(data.oauth_url);
-  //     },
-  //     error: function(xhr) {
-  //       var data = xhr.responseJSON || {};
-  //       updateData('Automated install is currently unavailable, please ' +
-  //         'try again later.', 'alert-danger', data.region, true, false);
-  //     }
-  //   });
-  // });
-
-  // $.ajax(loaderUrl + '/loader' + (id ? '/' + id : ''), {
-  //   type: 'GET',
-  //   xhrFields: {
-  //     withCredentials: true
-  //   },
-  //   crossDomain: true,
-  //   success: function(data) {
-  //     id = data.id;
-  //     if (data.status) {
-  //       updateDataPending(data.region, data.cookies, true);
-  //       poll();
-  //     }
-  //     else if (data.error) {
-  //       updateData(data.error, 'alert-danger', data.region, true);
-  //     }
-  //     else if (data.success) {
-  //       updateData(data.success, 'alert-success', data.region, true);
-  //     }
-  //   },
-  //   error: function(xhr) {
-  //     var data = xhr.responseJSON || {};
-  //     updateData('Automated install is currently unavailable, please ' +
-  //       'try again later.', 'alert-danger', data.region, true, false);
-  //   }
-  // });
 
   $('.client .client-distro').click(function(evt) {
     var type;
@@ -589,19 +229,13 @@ jQuery(document).ready(function($) {
     if (loaded.indexOf('client-' + type) === -1) {
       loaded.push('client-' + type);
       $('.client .install-' + type + ' .editor.bash').each(function(index, element) {
-        var editor = ace.edit(element);
-        editor.setTheme('ace/theme/tomorrow_night');
-        editor.setFontSize(16);
-        editor.setReadOnly(true);
-        editor.setShowPrintMargin(false);
-        editor.setHighlightActiveLine(false);
-        editor.setShowFoldWidgets(false);
-        editor.renderer.setShowGutter(false);
-        editor.getSession().setMode('ace/mode/sh');
-        $(element).css('height', editor.getSession().getScreenLength() *
-          editor.renderer.lineHeight + 24);
-        $(editor.renderer.scroller).css('margin-top', '10px');
-        $(editor.renderer.scroller).css('margin-left', '10px');
+        CodeMirror.fromTextArea(element, {
+          mode: 'shell',
+          theme: 'material',
+          lineNumbers: true,
+          lineWrapping: true,
+          readOnly: true
+        });
       });
     }
   });
@@ -656,19 +290,13 @@ jQuery(document).ready(function($) {
     if (loaded.indexOf('server-' + type) === -1) {
       loaded.push('server-' + type);
       $('.server .install-' + type + ' .editor.bash').each(function(index, element) {
-        var editor = ace.edit(element);
-        editor.setTheme('ace/theme/tomorrow_night');
-        editor.setFontSize(16);
-        editor.setReadOnly(true);
-        editor.setShowPrintMargin(false);
-        editor.setHighlightActiveLine(false);
-        editor.setShowFoldWidgets(false);
-        editor.renderer.setShowGutter(false);
-        editor.getSession().setMode('ace/mode/sh');
-        $(element).css('height', editor.getSession().getScreenLength() *
-          editor.renderer.lineHeight + 24);
-        $(editor.renderer.scroller).css('margin-top', '10px');
-        $(editor.renderer.scroller).css('margin-left', '10px');
+        CodeMirror.fromTextArea(element, {
+          mode: 'shell',
+          theme: 'material',
+          lineNumbers: true,
+          lineWrapping: true,
+          readOnly: true
+        });
       });
     }
   });
@@ -1005,9 +633,4 @@ jQuery(document).ready(function($) {
       $('.support-apple-pay').show('block');
     }
   });
-
-  var videos = $('video');
-  for (var i = 0; i < videos.legnth; i++) {
-    videos[i].play();
-  }
 });
