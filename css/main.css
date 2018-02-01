@@ -380,14 +380,14 @@ strong {
 .diagram-3 .part-2,
 .diagram-3 .part-3,
 .diagram-3 .part-4 {
-  opacity: 0;
+  opacity: 1;
 }
 .diagram-3 .part-0-glow,
 .diagram-3 .part-1-glow,
 .diagram-3 .part-2-glow,
 .diagram-3 .part-3-glow,
 .diagram-3 .part-4-glow {
-  opacity: 0;
+  opacity: 1;
 }
 .diagram-3 .part-0,
 .diagram-3 .part-2,
@@ -1825,9 +1825,16 @@ strong {
   max-width: 439px;
   height: auto;
 }
-.editor {
-  width: 100%;
+textarea.editor {
   display: none;
+}
+.item .CodeMirror {
+  font-size: 12px;
+  width: 100%;
+  max-width: 570px;
+  margin: 5px auto;
+  text-align: left;
+  height: auto;
 }
 .ace_scrollbar {
   display: none !important;
