@@ -49,8 +49,7 @@ header_class: header-top
         <h2 class="title text-center">Simple Virtual Private Networks</h2>
         <div class="item col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
           <div class="img-overlay-box">
-            <img class="feature-before" src="img/pritunl_diagram0_before.png" alt=""/>
-            <img class="feature-after img-overlay" src="img/pritunl_diagram0_after.png" alt=""/>
+            <img class="feature-before" src="img/pritunl_diagram0_after.png" alt=""/>
           </div>
         </div>
       </div>
@@ -257,28 +256,6 @@ header_class: header-top
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="item col-md-6 col-sm-6 col-xs-12">
-          <div class="item-box">
-            <h3 class="title vid-title text-center">Google Authentication</h3>
-            <a href="https://medium.com/pritunl-tutorials/pritunl-tutorial-41d4f67d491a" target="_blank"><video class="vid" autoplay loop muted>
-              <source src="video/google.mp4" type="video/mp4">
-              <!--<div class="youtube google-youtube"><iframe class="youtube google-youtube" src="https://www.youtube.com/embed/D6KqK6OSsTk?autoplay=1&autohide=1&showinfo=0&controls=0&loop=1&playlist=D6KqK6OSsTk&modestbranding=1" frameborder="0"></iframe></div>-->
-            </video></a>
-            <a class="title btn btn-lg" href="https://docs.pritunl.com/docs/google" target="_blank">View Tutorial</a>
-          </div>
-        </div>
-        <div class="item col-md-6 col-sm-6 col-xs-12">
-          <div class="item-box">
-            <h3 class="title vid-title text-center">Duo Authentication</h3>
-            <a href="https://medium.com/pritunl-tutorials/pritunl-tutorial-2f24e4723204" target="_blank"><video class="vid" autoplay loop muted>
-              <source src="video/duo.mp4" type="video/mp4">
-              <!--<div class="youtube duo-youtube"><iframe src="https://www.youtube.com/embed/VNHItBWW5-g?autoplay=1&autohide=1&showinfo=0&controls=0&loop=1&playlist=VNHItBWW5-g&modestbranding=1" frameborder="0"></iframe></div>-->
-            </video></a>
-            <a class="title btn btn-lg" href="https://docs.pritunl.com/docs/duo" target="_blank">View Tutorial</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
   <section class="features feature-dis section">
@@ -299,30 +276,7 @@ header_class: header-top
         <div class="item feature-img col-md-8 col-sm-6 col-xs-12">
           <h2 class="title text-center">Distributed and Scalable</h2>
           <div class="img-overlay-box">
-            <img src="img/pritunl_diagram1.png" alt=""/>
-            <img class="feature-glow img-overlay" src="img/pritunl_diagram1_glow.png" alt=""/>
-            <img class="feature-preglow img-overlay" src="img/pritunl_diagram1_preglow.png" alt=""/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="screenshots section">
-    <a id="screenshots" class="anchor"></a>
-    <div class="container">
-      <div class="row">
-        <div class="item slider-box">
-          <span class="left glyphicon glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="right glyphicon glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <div class="item slider">
-            <img src="img/screenshot5.png" alt=""/>
-            <img src="img/screenshot0.png" alt=""/>
-            <img src="img/screenshot1.png" alt=""/>
-            <img src="img/screenshot2.png" alt=""/>
-            <img src="img/screenshot3.png" alt=""/>
-            <img src="img/screenshot4.png" alt=""/>
-            <img src="img/screenshot5.png" alt=""/>
-            <img src="img/screenshot0.png" alt=""/>
+            <img src="img/pritunl_diagram1_glow.png" alt=""/>
           </div>
         </div>
       </div>
@@ -649,13 +603,6 @@ header_class: header-top
                 </div>
               </li>
               <li class="no-select">
-                <span>Long term subscriptions</span>
-                <i class="fa fa-angle-down"></i>
-                <div class="info">
-                  Contact support for long term subscriptions
-                </div>
-              </li>
-              <li class="no-select">
                 <span>Free for education</span>
                 <i class="fa fa-angle-down"></i>
                 <div class="info">
@@ -835,7 +782,7 @@ header_class: header-top
       </div>
       <div class="row server-auto">
         <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 ">
-          <div class="editor bash">#!/bin/bash
+          <textarea class="editor bash">#!/bin/bash
 echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.6.list
 echo "deb http://repo.pritunl.com/stable/apt xenial main" > /etc/apt/sources.list.d/pritunl.list
 apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
@@ -844,7 +791,7 @@ apt-get --assume-yes update
 apt-get --assume-yes upgrade
 apt-get --assume-yes install pritunl mongodb-org
 systemctl start pritunl mongod
-systemctl enable pritunl mongod</div>
+systemctl enable pritunl mongod</textarea>
         </div>
       </div>
       <div class="row server">
@@ -858,7 +805,7 @@ systemctl enable pritunl mongod</div>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
-          <div class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
@@ -868,11 +815,11 @@ sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman -Sy
 sudo pacman -S --noconfirm pritunl mongodb
 sudo systemctl start mongodb pritunl
-sudo systemctl enable mongodb pritunl</div>
+sudo systemctl enable mongodb pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-one">
           <h3 class="title text-center">AmazonLinux 1</h3>
-          <div class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
+          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.6/x86_64/
@@ -894,11 +841,11 @@ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
 sudo yum -y install pritunl mongodb-org
 sudo service mongod start
-sudo start pritunl</div>
+sudo start pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-two">
           <h3 class="title text-center">AmazonLinux 2</h3>
-          <div class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
+          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
@@ -920,11 +867,11 @@ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
 sudo yum -y install pritunl mongodb-org
 sudo systemctl start mongod pritunl
-sudo systemctl enable mongod pritunl</div>
+sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <div class="editor bash"># SELinux must be disabled
+          <textarea class="editor bash"># SELinux must be disabled
 
 sudo tee -a /etc/yum.repos.d/mongodb-org-3.4.repo << EOF
 [mongodb-org-3.6]
@@ -948,11 +895,11 @@ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
 sudo yum -y install pritunl mongodb-org
 sudo systemctl start mongod pritunl
-sudo systemctl enable mongod pritunl</div>
+sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
           <h3 class="title text-center">Debian Jessie</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
 deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.6 main
 EOF
 
@@ -965,11 +912,11 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-org
 sudo systemctl start mongod pritunl
-sudo systemctl enable mongod pritunl</div>
+sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian Stretch</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
@@ -978,12 +925,12 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-server
 sudo systemctl start mongodb pritunl
-sudo systemctl enable mongodb pritunl</div>
+sudo systemctl enable mongodb pritunl</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu Trusty</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
 deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse
 EOF
 
@@ -995,12 +942,12 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 2930ADAE8CAF5059E
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-org
-sudo service pritunl start</div>
+sudo service pritunl start</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Xenial</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
 deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse
 EOF
 
@@ -1013,12 +960,12 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-org
 sudo systemctl start pritunl mongod
-sudo systemctl enable pritunl mongod</div>
+sudo systemctl enable pritunl mongod</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu Bionic</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt bionic main
 EOF
 
@@ -1026,7 +973,7 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-server
 sudo systemctl start pritunl mongodb
-sudo systemctl enable pritunl mongodb</div>
+sudo systemctl enable pritunl mongodb</textarea>
         </div>
       </div>
     </div>
@@ -1050,7 +997,7 @@ sudo systemctl enable pritunl mongodb</div>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
-          <div class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
@@ -1058,11 +1005,11 @@ EOF
 sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman -Sy
-sudo pacman -S pritunl-client-gtk</div>
+sudo pacman -S pritunl-client-gtk</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-archlinux">
           <h3 class="title text-center">Arch Linux Server</h3>
-          <div class="editor bash">tee -a /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
@@ -1070,11 +1017,11 @@ EOF
 pacman-key --keyserver hkp://keyserver.ubuntu.com -r 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 pacman -Sy
-pacman -S pritunl-client</div>
+pacman -S pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <div class="editor bash">sudo tee -a /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -1084,11 +1031,11 @@ EOF
 
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
-sudo yum install pritunl-client</div>
+sudo yum install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-centos-7">
           <h3 class="title text-center">Amazon Linux</h3>
-          <div class="editor bash">sudo tee -a /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -1098,33 +1045,33 @@ EOF
 
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
-sudo yum install pritunl-client</div>
+sudo yum install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
 sudo apt-get install dirmngr
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client-gtk</div>
+sudo apt-get install pritunl-client-gtk</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-stretch">
           <h3 class="title text-center">Debian Server</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
 sudo apt-get install dirmngr
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client</div>
+sudo apt-get install pritunl-client</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
           <h3 class="title text-center">Antergos</h3>
-          <div class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
@@ -1134,67 +1081,67 @@ sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman -Sy
 sudo pacman -S pritunl-client-gtk
 
-# tray icon is shown in bottom left</div>
+# tray icon is shown in bottom left</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client-gtk</div>
+sudo apt-get install pritunl-client-gtk</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu Server</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client</div>
+sudo apt-get install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client-gtk</div>
+sudo apt-get install pritunl-client-gtk</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Server</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client</div>
+sudo apt-get install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt artful main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client-gtk</div>
+sudo apt-get install pritunl-client-gtk</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu Server</h3>
-          <div class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt artful main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client</div>
+sudo apt-get install pritunl-client</textarea>
         </div>
       </div>
       <div class="row">
