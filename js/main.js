@@ -116,7 +116,7 @@ jQuery(document).ready(function($) {
   var loaded = ['server-archlinux', 'client-archlinux'];
   $('.editor.python').each(function(index, element) {
     CodeMirror.fromTextArea(element, {
-      mode: 'shell',
+      mode: 'python',
       theme: 'material',
       lineNumbers: true,
       lineWrapping: true,
