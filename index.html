@@ -871,9 +871,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <textarea class="editor bash"># SELinux must be disabled
-
-sudo tee -a /etc/yum.repos.d/mongodb-org-3.4.repo << EOF
+          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.4.repo << EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
