@@ -983,9 +983,9 @@ sudo systemctl enable pritunl mongodb</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="client-distro client-other btn btn-lg btn-default">Antergos</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 14.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 18.04</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 9</button><button class="client-distro client-other btn btn-lg btn-default">Antergos</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 28</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 17.10</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 18.04</button>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
           <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
@@ -996,18 +996,6 @@ sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 7568D9BB55FF9E5287D586
 sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman -Sy
 sudo pacman -S pritunl-client-electron</textarea>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-archlinux">
-          <h3 class="title text-center">Arch Linux Server</h3>
-          <textarea class="editor bash">tee -a /etc/pacman.conf &lt;&lt; EOF
-[pritunl]
-Server = https://repo.pritunl.com/stable/pacman
-EOF
-
-pacman-key --keyserver hkp://keyserver.ubuntu.com -r 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-pacman -Sy
-pacman -S pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
@@ -1021,24 +1009,24 @@ EOF
 
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
-sudo yum install pritunl-client</textarea>
+sudo yum install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-centos-7">
-          <h3 class="title text-center">Amazon Linux</h3>
+          <h3 class="title text-center">Amazon Linux 2</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=https://repo.pritunl.com/stable/yum/centos/7/
+baseurl=https://repo.pritunl.com/stable/yum/amazonlinux/2/
 gpgcheck=1
 enabled=1
 EOF
 
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
-sudo yum install pritunl-client</textarea>
+sudo yum install pritunl-client-electron</textarea>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
-          <h3 class="title text-center">Debian</h3>
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
+          <h3 class="title text-center">Debian Strech</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
@@ -1047,17 +1035,6 @@ sudo apt-get install dirmngr
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
 sudo apt-get install pritunl-client-electron</textarea>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-stretch">
-          <h3 class="title text-center">Debian Server</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt stretch main
-EOF
-
-sudo apt-get install dirmngr
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
           <h3 class="title text-center">Antergos</h3>
@@ -1071,28 +1048,22 @@ sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman -Sy
 sudo pacman -S pritunl-client-electron</textarea>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
-          <h3 class="title text-center">Ubuntu</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt trusty main
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-fedora">
+          <h3 class="title text-center">Fedora 28</h3>
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+[pritunl]
+name=Pritunl Stable Repository
+baseurl=https://repo.pritunl.com/stable/yum/fedora/28/
+gpgcheck=1
+enabled=1
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-electron</textarea>
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
+sudo dnf install pritunl-client-electron</textarea>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-one">
-          <h3 class="title text-center">Ubuntu Server</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt trusty main
-EOF
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client</textarea>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
-          <h3 class="title text-center">Ubuntu</h3>
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
+          <h3 class="title text-center">Ubuntu Xenial</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt xenial main
 EOF
@@ -1101,18 +1072,18 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get install pritunl-client-electron</textarea>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-two">
-          <h3 class="title text-center">Ubuntu Server</h3>
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
+          <h3 class="title text-center">Ubuntu Artful</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt xenial main
+deb http://repo.pritunl.com/stable/apt artful main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get install pritunl-client</textarea>
+sudo apt-get install pritunl-client-electron</textarea>
         </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
-          <h3 class="title text-center">Ubuntu</h3>
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
+          <h3 class="title text-center">Ubuntu Bionic</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt bionic main
 EOF
@@ -1120,16 +1091,6 @@ EOF
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
 sudo apt-get install pritunl-client-electron</textarea>
-        </div>
-        <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-three">
-          <h3 class="title text-center">Ubuntu Server</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt bionic main
-EOF
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client</textarea>
         </div>
       </div>
       <div class="row">
