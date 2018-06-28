@@ -797,7 +797,7 @@ systemctl enable pritunl mongod</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
-          <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
@@ -811,7 +811,7 @@ sudo systemctl enable mongodb pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-one">
           <h3 class="title text-center">AmazonLinux 1</h3>
-          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.6/x86_64/
@@ -820,7 +820,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 EOF
 
-sudo tee -a /etc/yum.repos.d/pritunl.repo << EOF
+sudo tee /etc/yum.repos.d/pritunl.repo << EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -837,7 +837,7 @@ sudo start pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-two">
           <h3 class="title text-center">AmazonLinux 2</h3>
-          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
@@ -846,7 +846,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 EOF
 
-sudo tee -a /etc/yum.repos.d/pritunl.repo << EOF
+sudo tee /etc/yum.repos.d/pritunl.repo << EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=https://repo.pritunl.com/stable/yum/amazonlinux/2/
@@ -863,7 +863,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/mongodb-org-3.4.repo << EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.4.repo << EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
@@ -872,7 +872,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 EOF
 
-sudo tee -a /etc/yum.repos.d/pritunl.repo << EOF
+sudo tee /etc/yum.repos.d/pritunl.repo << EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -889,11 +889,11 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
           <h3 class="title text-center">Debian Jessie</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
 deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.6 main
 EOF
 
-sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
+sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt jessie main
 EOF
 
@@ -906,7 +906,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian Stretch</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
@@ -920,11 +920,11 @@ sudo systemctl enable mongodb pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu Trusty</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
 deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse
 EOF
 
-sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
+sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
@@ -937,11 +937,11 @@ sudo service pritunl start</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Xenial</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
 deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse
 EOF
 
-sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
+sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
@@ -955,7 +955,7 @@ sudo systemctl enable pritunl mongod</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu Bionic</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
 deb http://repo.pritunl.com/stable/apt bionic main
 EOF
 
@@ -1011,7 +1011,7 @@ pacman -S pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -1025,7 +1025,7 @@ sudo yum install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-centos-7">
           <h3 class="title text-center">Amazon Linux</h3>
-          <textarea class="editor bash">sudo tee -a /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -1039,7 +1039,7 @@ sudo yum install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
@@ -1050,7 +1050,7 @@ sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-debian-stretch">
           <h3 class="title text-center">Debian Server</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
@@ -1061,7 +1061,7 @@ sudo apt-get install pritunl-client</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
           <h3 class="title text-center">Antergos</h3>
-          <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
@@ -1069,13 +1069,11 @@ EOF
 sudo pacman-key --keyserver hkp://keyserver.ubuntu.com -r 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman-key --lsign-key 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo pacman -Sy
-sudo pacman -S pritunl-client-electron
-
-# tray icon is shown in bottom left</textarea>
+sudo pacman -S pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
@@ -1085,7 +1083,7 @@ sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu Server</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
@@ -1095,7 +1093,7 @@ sudo apt-get install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
@@ -1105,7 +1103,7 @@ sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Server</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
@@ -1115,7 +1113,7 @@ sudo apt-get install pritunl-client</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt bionic main
 EOF
 
@@ -1125,7 +1123,7 @@ sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu Server</h3>
-          <textarea class="editor bash">sudo tee -a /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt bionic main
 EOF
 
