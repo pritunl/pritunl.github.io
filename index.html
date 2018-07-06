@@ -775,15 +775,36 @@ header_class: header-top
       <div class="row server-auto">
         <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 ">
           <textarea class="editor bash">#!/bin/bash
-echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" > /etc/apt/sources.list.d/mongodb-org-3.6.list
-echo "deb http://repo.pritunl.com/stable/apt xenial main" > /etc/apt/sources.list.d/pritunl.list
-apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
-apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-apt-get --assume-yes update
-apt-get --assume-yes upgrade
-apt-get --assume-yes install pritunl mongodb-org
-systemctl start pritunl mongod
-systemctl enable pritunl mongod</textarea>
+tee /etc/yum.repos.d/mongodb-org-3.4.repo &lt;&lt; EOF
+[mongodb-org-3.6]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+EOF
+tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+[pritunl]
+name=Pritunl Repository
+baseurl=https://repo.pritunl.com/stable/yum/centos/7/
+gpgcheck=1
+enabled=1
+EOF
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp
+rpm --import key.tmp; rm -f key.tmp
+yum -y install pritunl mongodb-org
+systemctl stop firewalld || true
+systemctl disable firewalld || true
+systemctl start mongod
+systemctl enable mongod
+pritunl set-mongodb "mongodb://localhost:27017/pritunl"
+pritunl reset-password `hostname`
+systemctl start pritunl
+systemctl enable pritunl
+yum -y update</textarea>
+          <p class="text-center">Login with username "pritunl" and enter the droplet hostname for the password</p>
         </div>
       </div>
       <div class="row server">
@@ -811,7 +832,7 @@ sudo systemctl enable mongodb pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-one">
           <h3 class="title text-center">AmazonLinux 1</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.6.repo &lt;&lt; EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/3.6/x86_64/
@@ -820,7 +841,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 EOF
 
-sudo tee /etc/yum.repos.d/pritunl.repo << EOF
+sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -837,7 +858,7 @@ sudo start pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-two">
           <h3 class="title text-center">AmazonLinux 2</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.6.repo << EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.6.repo &lt;&lt; EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
@@ -846,7 +867,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 EOF
 
-sudo tee /etc/yum.repos.d/pritunl.repo << EOF
+sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=https://repo.pritunl.com/stable/yum/amazonlinux/2/
@@ -863,7 +884,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.4.repo << EOF
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-3.4.repo &lt;&lt; EOF
 [mongodb-org-3.6]
 name=MongoDB Repository
 baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
@@ -872,7 +893,7 @@ enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
 EOF
 
-sudo tee /etc/yum.repos.d/pritunl.repo << EOF
+sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Repository
 baseurl=https://repo.pritunl.com/stable/yum/centos/7/
@@ -889,11 +910,11 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
           <h3 class="title text-center">Debian Jessie</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list &lt;&lt; EOF
 deb http://repo.mongodb.org/apt/debian jessie/mongodb-org/3.6 main
 EOF
 
-sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt jessie main
 EOF
 
@@ -906,7 +927,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian Stretch</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt stretch main
 EOF
 
@@ -920,11 +941,11 @@ sudo systemctl enable mongodb pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu Trusty</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list &lt;&lt; EOF
 deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.6 multiverse
 EOF
 
-sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt trusty main
 EOF
 
@@ -937,11 +958,11 @@ sudo service pritunl start</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Xenial</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list &lt;&lt; EOF
 deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse
 EOF
 
-sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt xenial main
 EOF
 
@@ -955,7 +976,7 @@ sudo systemctl enable pritunl mongod</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu Bionic</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list << EOF
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt bionic main
 EOF
 
