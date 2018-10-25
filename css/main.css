@@ -1574,7 +1574,7 @@ strong {
 .server .install-debian-stretch,
 .server .install-ubuntu-one,
 .server .install-ubuntu-two,
-.server .install-ubuntu-three {
+.server .install-oracle-linux {
   display: none;
 }
 .client .logo a,
