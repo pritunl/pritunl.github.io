@@ -1405,6 +1405,9 @@ strong {
   display: block;
   margin: 10px auto 15px auto;
 }
+.install .server-auto .btn.do-btn {
+  max-width: 280px;
+}
 
 .edgemax-item {
   position: relative;
