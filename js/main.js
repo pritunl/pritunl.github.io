@@ -260,7 +260,7 @@ jQuery(document).ready(function($) {
     $('.server .install-debian-stretch').hide();
     $('.server .install-ubuntu-one').hide();
     $('.server .install-ubuntu-two').hide();
-    $('.server .install-ubuntu-three').hide();
+    $('.server .install-oracle-linux').hide();
 
     if ($target.hasClass('server-archlinux')) {
       type = 'archlinux';
@@ -286,9 +286,9 @@ jQuery(document).ready(function($) {
     } else if ($target.hasClass('server-ubuntu-two')) {
       type = 'ubuntu-two';
       $('.server .install-ubuntu-two').show();
-    } else if ($target.hasClass('server-ubuntu-three')) {
-      type = 'ubuntu-three';
-      $('.server .install-ubuntu-three').show();
+    } else if ($target.hasClass('server-oracle-linux')) {
+      type = 'oracle-linux';
+      $('.server .install-oracle-linux').show();
     }
 
     if (loaded.indexOf('server-' + type) === -1) {
