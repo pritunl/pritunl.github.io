@@ -775,13 +775,13 @@ header_class: header-top
       <div class="row server-auto">
         <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 ">
           <textarea class="editor bash">#!/bin/bash
-tee /etc/yum.repos.d/mongodb-org-3.6.repo &lt;&lt; EOF
-[mongodb-org-3.6]
+tee /etc/yum.repos.d/mongodb-org-4.0.repo &lt;&lt; EOF
+[mongodb-org-4.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.6/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.0/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-3.6.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
 EOF
 tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
