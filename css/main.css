@@ -1355,6 +1355,12 @@ strong {
   width: 100%;
   margin-bottom: 10px;
 }
+.install .server-auto .img-do {
+  padding-top: 9px;
+  margin-right: 5px;
+  width: 70px;
+  margin-bottom: 10px;
+}
 .install .server-auto .editor {
   text-align: left;
 }
