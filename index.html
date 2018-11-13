@@ -823,7 +823,7 @@ yum -y update</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
-          <textarea class="editor bash">sudo tee /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
@@ -1084,7 +1084,7 @@ sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
           <h3 class="title text-center">Antergos</h3>
-          <textarea class="editor bash">sudo tee /etc/pacman.conf &lt;&lt; EOF
+          <textarea class="editor bash">sudo tee -a /etc/pacman.conf &lt;&lt; EOF
 [pritunl]
 Server = https://repo.pritunl.com/stable/pacman
 EOF
