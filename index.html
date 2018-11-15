@@ -1110,16 +1110,6 @@ gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rp
 sudo dnf install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
-          <h3 class="title text-center">Ubuntu Xenial</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt xenial main
-EOF
-
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-electron</textarea>
-        </div>
-        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Artful</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt artful main
@@ -1129,10 +1119,20 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E528
 sudo apt-get update
 sudo apt-get install pritunl-client-electron</textarea>
         </div>
-        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Bionic</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb http://repo.pritunl.com/stable/apt bionic main
+EOF
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+sudo apt-get update
+sudo apt-get install pritunl-client-electron</textarea>
+        </div>
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
+          <h3 class="title text-center">Ubuntu Cosmic</h3>
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
+deb http://repo.pritunl.com/stable/apt cosmic main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
