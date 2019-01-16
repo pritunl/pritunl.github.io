@@ -1140,6 +1140,11 @@ strong {
 }
 .plans .item .title {
   font-size: 26px;
+  margin-bottom: 8px;
+}
+.plans .item .label {
+  font-size: 14px;
+  padding: 4px 8px 3px 6px;
 }
 .plans .price {
   font-size: 22px;
@@ -1182,6 +1187,7 @@ strong {
   height: 169px;
 }
 .plans .plan-list {
+  margin-top: 3px;
   list-style-type: none;
 }
 .plans .plan-list {
