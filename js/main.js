@@ -419,7 +419,7 @@ jQuery(document).ready(function($) {
   var checkoutPlan;
   var checkout = window.StripeCheckout.configure({
     allowRememberMe: false,
-    image: '//s3.amazonaws.com/pritunl-static/logo_stripe.png',
+    image: 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/pritunl8472/b/pritunl-static/o/logo_stripe.png',
     key: 'pk_live_plmoOl3lS3k5dMNQViZWGfVR',
     zipCode: true,
     closed: function() {
