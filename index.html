@@ -773,52 +773,6 @@ header_class: header-top
           <a class="title btn btn-lg scrollto" href="https://docs.pritunl.com" target="_blank">Documentation <i class="fa fa-book"></i></a>
         </div>
       </div>
-      <div class="row server-auto">
-        <h2 class="title text-center"><a href="https://www.digitalocean.com/?refcode=f2da095bcc37" target="_blank"><img class="digital-ocean-logo" src="img/digital_ocean2.png" alt=""/> DigitalOcean Automated Install</a></h2>
-        <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-          <img class="img-digital-ocean" src="img/digitalocean.png" alt=""/>
-        </div>
-      </div>
-      <div class="row server-auto">
-        <div class="item col-md-12 col-sm-12 col-xs-12">
-          <a class="btn btn-lg btn-info do-btn" href="https://www.digitalocean.com/?refcode=f2da095bcc37" target="_blank"><img class="img-do" src="img/digital_ocean2.png" alt="Digital Ocean"/> Signup with Credits</a>
-        </div>
-      </div>
-      <div class="row server-auto">
-        <div class="item col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12 ">
-          <textarea class="editor bash">#!/bin/bash
-tee /etc/yum.repos.d/mongodb-org-4.0.repo &lt;&lt; EOF
-[mongodb-org-4.0]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.0/x86_64/
-gpgcheck=1
-enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.0.asc
-EOF
-tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
-[pritunl]
-name=Pritunl Repository
-baseurl=https://repo.pritunl.com/stable/yum/centos/7/
-gpgcheck=1
-enabled=1
-EOF
-rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp
-rpm --import key.tmp; rm -f key.tmp
-yum -y install pritunl mongodb-org
-systemctl stop firewalld || true
-systemctl disable firewalld || true
-systemctl start mongod
-systemctl enable mongod
-pritunl set-mongodb "mongodb://localhost:27017/pritunl"
-pritunl reset-password `hostname`
-systemctl start pritunl
-systemctl enable pritunl
-yum -y update</textarea>
-          <p class="text-center">Login with username "pritunl" and enter the droplet hostname for the password</p>
-        </div>
-      </div>
       <div class="row server">
         <h2 class="title text-center">Install</h2>
         <div class="item feature-desc col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
