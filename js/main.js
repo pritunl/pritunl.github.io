@@ -627,14 +627,13 @@ jQuery(document).ready(function($) {
   $('.plans .support-apple-pay').click(function() {
     openApplePay('support');
   });
-
   Stripe.setPublishableKey('pk_live_plmoOl3lS3k5dMNQViZWGfVR');
   Stripe.applePay.checkAvailability(function(available) {
     if (available) {
-      $('.premium-apple-pay').show('block');
-      $('.enterprise-apple-pay').show('block');
-      $('.enterprise-plus-apple-pay').show('block');
-      $('.support-apple-pay').show('block');
+      $('.premium-apple-pay').css('display', 'block');
+      $('.enterprise-apple-pay').css('display', 'block');
+      $('.enterprise-plus-apple-pay').css('display', 'block');
+      $('.support-apple-pay').css('display', 'block');
     }
   });
 });
