@@ -990,7 +990,7 @@ sudo systemctl enable pritunl mongod</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 7</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 30</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 18.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 19.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 8</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 8</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 31</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 18.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 19.10</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1006,11 +1006,11 @@ sudo pacman -S pritunl-client-electron
 sudo pacman -S pritunl-client-electron-numix-theme</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
-          <h3 class="title text-center">CentOS 7</h3>
+          <h3 class="title text-center">CentOS 8</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=https://repo.pritunl.com/stable/yum/centos/7/
+baseurl=https://repo.pritunl.com/stable/yum/centos/8/
 gpgcheck=1
 enabled=1
 EOF
@@ -1045,11 +1045,11 @@ sudo apt-get update
 sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
-          <h3 class="title text-center">Oracle Linux 7</h3>
+          <h3 class="title text-center">Oracle Linux 8</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/7/
+baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/8/
 gpgcheck=1
 enabled=1
 EOF
@@ -1059,11 +1059,11 @@ gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rp
 sudo yum install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-fedora">
-          <h3 class="title text-center">Fedora 30</h3>
+          <h3 class="title text-center">Fedora 31</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=https://repo.pritunl.com/stable/yum/fedora/30/
+baseurl=https://repo.pritunl.com/stable/yum/fedora/31/
 gpgcheck=1
 enabled=1
 EOF
