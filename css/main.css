@@ -2515,8 +2515,8 @@ a.anchor.api-anchor {
     z-index: 10;
   }
   .promo .overview h2 {
-    font-size: 34px;
-    margin-left: 10px;
+    font-size: 29px;
+    margin-left: 8px;
   }
   .promo .overview .summary {
     margin: 0 0 0 10px;
@@ -2611,8 +2611,9 @@ a.anchor.api-anchor {
     margin-top: -630px;
   }
   .promo .overview h2 {
-    font-size: 40px;
+    font-size: 35px;
     margin-bottom: 20px;
+    margin-left: 8px;
   }
   .header .container .navbar-collapse {
     margin-right: 135px;

@@ -1,7 +1,7 @@
 ---
 layout: default
 class: index
-title: Pritunl - Open Source Enterprise Distributed OpenVPN and IPsec Server
+title: Pritunl - Open Source Enterprise Distributed OpenVPN, IPsec and WireGuard Server
 header_class: header-top
 ---
   <section class="promo section offset-header">
@@ -11,7 +11,7 @@ header_class: header-top
     <div class="container">
       <div class="row">
         <div class="overview col-md-12 col-sm-12 col-xs-12">
-          <h2 class="title">Enterprise Distributed OpenVPN and IPsec Server</h2>
+          <h2 class="title">Enterprise Distributed OpenVPN, IPsec and WireGuard Server</h2>
           <p class="summary">
             Virtualize your private networks across datacenters and provide simple remote access in minutes<br>
             <a class="title btn btn-lg scrollto get-started" href="https://demo.pritunl.com/">Demo <i class="fa fa-rocket"></i></a>
@@ -143,6 +143,13 @@ header_class: header-top
       </div>
       <div class="row">
         <div class="item feature-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <h2 class="title text-center">WireGuard Support</h2>
+          <p>Clients can choose between connecting with OpenVPN and WireGuard. All networking features are available with the WireGuard protocol</p>
+          <a class="title btn btn-lg scrollto" href="https://docs.pritunl.com/docs/wireguard" target="_blank">WireGuard documentation <i class="fa fa-book"></i></a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item feature-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
           <h2 class="title text-center">Advanced Security</h2>
           <p>Pritunl is the most secure VPN server available and the only VPN server to offer up to five layers of authentication</p>
           <a class="title btn btn-lg scrollto" href="/security">See all security features <i class="fa fa-compass"></i></a>
@@ -175,6 +182,17 @@ header_class: header-top
       <div class="row">
         <div class="item feature-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
           <p>Lower cost and more customizable alternative to Pulse Secure with transparent pricing</p>
+        </div>
+      </div>
+      <div class="row">
+        <h2 class="title text-center">Tailscale Alternative</h2>
+        <div class="item col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+          <img src="img/alt5.png" alt=""/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item feature-desc col-md-10 col-md-offset-1 col-sm-12 col-xs-12">
+          <p>Lower cost and more customizable WireGuard server alternative to Tailscale</p>
         </div>
       </div>
       <div class="row">
@@ -226,8 +244,8 @@ header_class: header-top
           <div class="list-img">
             <img src="img/pritunl_diagram_vpn.png" alt=""/>
           </div>
-          <h3 class="title">OpenVPN and IPsec</h3>
-          <p>Pritunl is built with OpenVPN and any existing OpenVPN client can be used. IPsec is used for site-to-site links and VPC peering.</p>
+          <h3 class="title">Multiple Protocols</h3>
+          <p>Pritunl supports both OpenVPN and WireGuard clients. IPsec is used for site-to-site links and VPC peering.</p>
         </div>
         <div class="item col-md-4 col-sm-4 col-xs-12">
           <div class="list-img">
@@ -980,9 +998,9 @@ sudo systemctl enable pritunl mongod</textarea>
     <div class="container">
       <div class="row">
         <h2 class="logo title text-center"><a href="//client.pritunl.com" target="_blank">pritunl client</a></h2>
-        <h2 class="title text-center">Open Source OpenVPN Client</h2>
+        <h2 class="title text-center">Open Source OpenVPN and WireGuard Client</h2>
         <div class="item col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
-          <p class="desc">Free and open source cross platform OpenVPN client. Connect to any OpenVPN server with a secure open source client. Additonal integration available when connecting to a Pritunl server. Free and open source alternative to Viscosity.</p>
+          <p class="desc">Free and open source cross platform OpenVPN and WireGuard client. Connect to any OpenVPN server with a secure open source client. Additonal integration available when connecting to a Pritunl server. Free and open source alternative to Viscosity.</p>
         </div>
         <div class="item col-md-12 col-sm-12 col-xs-12">
           <img class="client-screenshot" src="img/screenshot.png" alt="Client Screenshot"/><br>
