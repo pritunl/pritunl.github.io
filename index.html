@@ -798,7 +798,7 @@ header_class: header-top
         </div>
         <div
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-one btn btn-lg btn-default">AmazonLinux 1</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 9</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 16.04</button><button class="server-distro server-ubuntu-two btn btn-lg btn-default">Ubuntu 18.04</button>
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-one btn btn-lg btn-default">AmazonLinux 1</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 9</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 18.04</button><button class="server-distro server-ubuntu-two btn btn-lg btn-default">Ubuntu 20.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -895,11 +895,11 @@ sudo systemctl enable mongod pritunl</textarea>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
           <h3 class="title text-center">Debian Stretch</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb http://repo.mongodb.org/apt/debian stretch/mongodb-org/4.2 main
+deb https://repo.mongodb.org/apt/debian stretch/mongodb-org/4.2 main
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt stretch main
+deb https://repo.pritunl.com/stable/apt stretch main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
@@ -912,11 +912,11 @@ sudo systemctl enable mongod pritunl</textarea>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian Buster</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb http://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main
+deb https://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt buster main
+deb https://repo.pritunl.com/stable/apt buster main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
@@ -956,13 +956,13 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
-          <h3 class="title text-center">Ubuntu Xenial</h3>
+          <h3 class="title text-center">Ubuntu Bionic</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt xenial main
+deb https://repo.pritunl.com/stable/apt bionic main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
@@ -974,13 +974,13 @@ sudo systemctl enable pritunl mongod</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
-          <h3 class="title text-center">Ubuntu Bionic</h3>
+          <h3 class="title text-center">Ubuntu Focal</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse
+deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.2 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt bionic main
+deb https://repo.pritunl.com/stable/apt focal main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
@@ -1008,7 +1008,7 @@ sudo systemctl enable pritunl mongod</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 8</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 8</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 31</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 16.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 18.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 19.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 8</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 8</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 32</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 18.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 19.10</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 20.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1077,7 +1077,7 @@ gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rp
 sudo yum install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-fedora">
-          <h3 class="title text-center">Fedora 31</h3>
+          <h3 class="title text-center">Fedora 32</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
@@ -1091,9 +1091,9 @@ gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rp
 sudo dnf install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
-          <h3 class="title text-center">Ubuntu Xenial</h3>
+          <h3 class="title text-center">Ubuntu Bionic</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt xenial main
+deb https://repo.pritunl.com/stable/apt bionic main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1101,9 +1101,9 @@ sudo apt-get update
 sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
-          <h3 class="title text-center">Ubuntu Bionic</h3>
+          <h3 class="title text-center">Ubuntu Eoan</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt bionic main
+deb https://repo.pritunl.com/stable/apt eoan main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
@@ -1111,9 +1111,9 @@ sudo apt-get update
 sudo apt-get install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
-          <h3 class="title text-center">Ubuntu Eoan</h3>
+          <h3 class="title text-center">Ubuntu Focal</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt disco main
+deb https://repo.pritunl.com/stable/apt focal main
 EOF
 
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
