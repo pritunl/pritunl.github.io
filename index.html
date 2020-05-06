@@ -798,7 +798,7 @@ header_class: header-top
         </div>
         <div
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-one btn btn-lg btn-default">AmazonLinux 1</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-debian-jessie btn btn-lg btn-default">Debian 9</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 18.04</button><button class="server-distro server-ubuntu-two btn btn-lg btn-default">Ubuntu 20.04</button>
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-centos-8 btn btn-lg btn-default">CentOS 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux-7 btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-oracle-linux-8 btn btn-lg btn-default">Oracle Linux 8</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 18.04</button><button class="server-distro server-ubuntu-two btn btn-lg btn-default">Ubuntu 20.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -813,32 +813,6 @@ sudo pacman -Sy
 sudo pacman -S --noconfirm pritunl
 sudo systemctl start mongodb pritunl
 sudo systemctl enable mongodb pritunl</textarea>
-        </div>
-        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-one">
-          <h3 class="title text-center">AmazonLinux 1</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
-[mongodb-org-4.2]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/amazon/2013.03/mongodb-org/4.2/x86_64/
-gpgcheck=1
-enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
-EOF
-
-sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
-[pritunl]
-name=Pritunl Repository
-baseurl=https://repo.pritunl.com/stable/yum/centos/7/
-gpgcheck=1
-enabled=1
-EOF
-
-sudo yum -y install epel-release
-gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
-sudo yum -y install pritunl mongodb-org
-sudo service mongod start
-sudo start pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-two">
           <h3 class="title text-center">AmazonLinux 2</h3>
@@ -892,20 +866,29 @@ sudo yum -y install pritunl mongodb-org
 sudo systemctl start mongod pritunl
 sudo systemctl enable mongod pritunl</textarea>
         </div>
-        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-jessie">
-          <h3 class="title text-center">Debian Stretch</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/debian stretch/mongodb-org/4.2 main
+        <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-8">
+          <h3 class="title text-center">CentOS 8</h3>
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
+[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
 EOF
 
-sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt stretch main
+sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+[pritunl]
+name=Pritunl Repository
+baseurl=https://repo.pritunl.com/stable/yum/centos/8/
+gpgcheck=1
+enabled=1
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get --assume-yes install pritunl mongodb-org
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
+sudo yum -y install pritunl mongodb-org
 sudo systemctl start mongod pritunl
 sudo systemctl enable mongod pritunl</textarea>
         </div>
@@ -927,7 +910,7 @@ sudo systemctl start mongodb pritunl
 sudo systemctl enable mongodb pritunl</textarea>
         </div>
         <div
-          class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux">
+          class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux-7">
           <h3 class="title text-center">Oracle Linux 7</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
 [mongodb-org-4.2]
@@ -948,6 +931,33 @@ EOF
 
 sudo yum -y install oracle-epel-release-el7
 sudo yum-config-manager --enable ol7_developer_epel
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
+sudo yum -y install pritunl mongodb-org
+sudo systemctl start mongod pritunl
+sudo systemctl enable mongod pritunl</textarea>
+        </div>
+        <div
+          class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux-8">
+          <h3 class="title text-center">Oracle Linux 8</h3>
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
+[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+EOF
+
+sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
+[pritunl]
+name=Pritunl Repository
+baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/8/
+gpgcheck=1
+enabled=1
+EOF
+
+sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rpm --import key.tmp; rm -f key.tmp
 sudo yum -y install pritunl mongodb-org

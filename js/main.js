@@ -253,27 +253,27 @@ jQuery(document).ready(function($) {
     $target.removeClass('btn-default').addClass('btn-primary');
 
     $('.server .install-archlinux').hide();
-    $('.server .install-amazon-linux-one').hide();
     $('.server .install-amazon-linux-two').hide();
     $('.server .install-centos-7').hide();
-    $('.server .install-debian-jessie').hide();
+    $('.server .install-centos-8').hide();
     $('.server .install-debian-stretch').hide();
     $('.server .install-ubuntu-one').hide();
     $('.server .install-ubuntu-two').hide();
-    $('.server .install-oracle-linux').hide();
+    $('.server .install-oracle-linux-7').hide();
+    $('.server .install-oracle-linux-8').hide();
 
     if ($target.hasClass('server-archlinux')) {
       type = 'archlinux';
       $('.server .install-archlinux').show();
-    } else if ($target.hasClass('server-amazon-linux-one')) {
-      type = 'amazon-linux-one';
-      $('.server .install-amazon-linux-one').show();
     } else if ($target.hasClass('server-amazon-linux-two')) {
       type = 'amazon-linux-two';
       $('.server .install-amazon-linux-two').show();
     } else if ($target.hasClass('server-centos-7')) {
       type = 'centos-7';
       $('.server .install-centos-7').show();
+    } else if ($target.hasClass('server-centos-8')) {
+      type = 'centos-8';
+      $('.server .install-centos-8').show();
     } else if ($target.hasClass('server-debian-jessie')) {
       type = 'debian-jessie';
       $('.server .install-debian-jessie').show();
@@ -286,9 +286,12 @@ jQuery(document).ready(function($) {
     } else if ($target.hasClass('server-ubuntu-two')) {
       type = 'ubuntu-two';
       $('.server .install-ubuntu-two').show();
-    } else if ($target.hasClass('server-oracle-linux')) {
-      type = 'oracle-linux';
-      $('.server .install-oracle-linux').show();
+    } else if ($target.hasClass('server-oracle-linux-7')) {
+      type = 'oracle-linux-7';
+      $('.server .install-oracle-linux-7').show();
+    } else if ($target.hasClass('server-oracle-linux-8')) {
+      type = 'oracle-linux-8';
+      $('.server .install-oracle-linux-8').show();
     }
 
     if (loaded.indexOf('server-' + type) === -1) {

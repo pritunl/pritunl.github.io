@@ -1584,12 +1584,14 @@ strong {
 .server .install-amazon-linux-one,
 .server .install-amazon-linux-two,
 .server .install-centos-7,
+.server .install-centos-8,
 .server .install-debian-wheezy,
 .server .install-debian-jessie,
 .server .install-debian-stretch,
 .server .install-ubuntu-one,
 .server .install-ubuntu-two,
-.server .install-oracle-linux {
+.server .install-oracle-linux-7,
+.server .install-oracle-linux-8 {
   display: none;
 }
 .client .logo a,
