@@ -1105,6 +1105,9 @@ strong {
 .client-download {
   width: 206px;
 }
+.client .client-title {
+  margin-bottom: 5px;
+}
 .plans {
   position: relative;
   padding-top: 50px;
