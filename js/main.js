@@ -559,8 +559,8 @@ jQuery(document).ready(function($) {
         currencyCode: 'USD',
         requiredShippingContactFields: ['email'],
         total: {
-          label: 'Enterprise ($50/month)',
-          amount: '50.00'
+          label: 'Enterprise ($70/month)',
+          amount: '70.00'
         }
       };
     } else if (plan === 'enterprise_plus') {
