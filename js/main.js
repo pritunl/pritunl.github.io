@@ -505,9 +505,9 @@ jQuery(document).ready(function($) {
       });
     } else if (plan === 'enterprise') {
       checkout.open({
-        amount: 5000,
+        amount: 7000,
         name: 'Pritunl Enterprise',
-        description: 'Subscribe to Enterprise ($50/month)',
+        description: 'Subscribe to Enterprise ($70/month)',
         panelLabel: 'Subscribe'
       });
     } else if (plan === 'enterprise_plus') {
