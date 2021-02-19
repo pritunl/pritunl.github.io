@@ -816,13 +816,13 @@ sudo systemctl enable mongodb pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-two">
           <h3 class="title text-center">AmazonLinux 2</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
-[mongodb-org-4.2]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.4.repo &lt;&lt; EOF
+[mongodb-org-4.4]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/4.2/x86_64/
+baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/4.4/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -842,13 +842,13 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
-[mongodb-org-4.2]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.4.repo &lt;&lt; EOF
+[mongodb-org-4.4]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.4/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -868,13 +868,13 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-8">
           <h3 class="title text-center">CentOS 8</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
-[mongodb-org-4.2]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.4.repo &lt;&lt; EOF
+[mongodb-org-4.4]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.2/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.4/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -894,15 +894,15 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian Buster</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/debian buster/mongodb-org/4.2 main
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list &lt;&lt; EOF
+deb https://repo.mongodb.org/apt/debian buster/mongodb-org/4.4 main
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb https://repo.pritunl.com/stable/apt buster main
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-server
@@ -912,13 +912,13 @@ sudo systemctl enable mongodb pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux-7">
           <h3 class="title text-center">Oracle Linux 7</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
-[mongodb-org-4.2]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.4.repo &lt;&lt; EOF
+[mongodb-org-4.4]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.4/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -940,13 +940,13 @@ sudo systemctl enable mongod pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux-8">
           <h3 class="title text-center">Oracle Linux 8</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.2.repo &lt;&lt; EOF
-[mongodb-org-4.2]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-4.4.repo &lt;&lt; EOF
+[mongodb-org-4.4]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.2/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/4.4/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-4.4.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -967,15 +967,15 @@ sudo systemctl enable mongod pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu Bionic</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list &lt;&lt; EOF
+deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.4 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb https://repo.pritunl.com/stable/apt bionic main
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-org
@@ -985,15 +985,15 @@ sudo systemctl enable pritunl mongod</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Focal</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.2 multiverse
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list &lt;&lt; EOF
+deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb https://repo.pritunl.com/stable/apt focal main
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv E162F504A20CDF15827F718D4B7C549A058F8B6B
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
 sudo apt-get --assume-yes install pritunl mongodb-org
