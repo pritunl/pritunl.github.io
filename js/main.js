@@ -579,8 +579,8 @@ jQuery(document).ready(function($) {
         currencyCode: 'USD',
         requiredShippingContactFields: ['email'],
         total: {
-          label: 'Support ($900/quarter)',
-          amount: '900.00'
+          label: 'Support ($6000/year)',
+          amount: '6000.00'
         }
       };
     }
