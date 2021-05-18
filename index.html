@@ -846,9 +846,9 @@ EOF
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt-get update
-sudo apt-get --assume-yes install pritunl mongodb-server
-sudo systemctl start mongodb pritunl
-sudo systemctl enable mongodb pritunl</textarea>
+sudo apt-get --assume-yes install pritunl mongodb-org
+sudo systemctl start mongod pritunl
+sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux-7">
