@@ -526,18 +526,6 @@ jQuery(document).ready(function($) {
       });
     }
   };
-  $('.plans .premium-sub-btn').click(function() {
-    openCheckout('premium');
-  });
-  $('.plans .enterprise-sub-btn').click(function() {
-    openCheckout('enterprise');
-  });
-  $('.plans .enterprise-plus-sub-btn').click(function() {
-    openCheckout('enterprise_plus');
-  });
-  $('.plans .support-sub-btn').click(function() {
-    openCheckout('support');
-  });
 
   var openApplePay = function(plan) {
     checkoutPlan = plan;
