@@ -735,7 +735,7 @@ header_class: header-top
         </div>
         <div
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-centos-8 btn btn-lg btn-default">CentOS 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux-7 btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-oracle-linux-8 btn btn-lg btn-default">Oracle Linux 8</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 20.04</button><button class="server-distro server-ubuntu-two btn btn-lg btn-default">Ubuntu 22.04</button>
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-centos-8 btn btn-lg btn-default">CentOS 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux-7 btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-oracle-linux-8 btn btn-lg btn-default">Oracle Linux 8</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 18.04</button><button class="server-distro server-ubuntu-two btn btn-lg btn-default">Ubuntu 20.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -904,13 +904,13 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
-          <h3 class="title text-center">Ubuntu Focal</h3>
+          <h3 class="title text-center">Ubuntu Bionic</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+deb https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/5.0 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt focal main
+deb https://repo.pritunl.com/stable/apt bionic main
 EOF
 
 sudo apt-get --assume-yes install gnupg
@@ -923,13 +923,13 @@ sudo systemctl enable pritunl mongod</textarea>
         </div>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
-          <h3 class="title text-center">Ubuntu Jammy</h3>
+          <h3 class="title text-center">Ubuntu Focal</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/5.0 multiverse
+deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt jammy main
+deb https://repo.pritunl.com/stable/apt focal main
 EOF
 
 sudo apt-get --assume-yes install gnupg
