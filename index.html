@@ -839,11 +839,11 @@ sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb https://repo.pritunl.com/stable/apt buster main
 EOF
 
-sudo apt-get --assume-yes install gnupg
+sudo apt --assume-yes install gnupg
 wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get --assume-yes install pritunl mongodb-org
+sudo apt update
+sudo apt --assume-yes install pritunl mongodb-org
 sudo systemctl start mongod pritunl
 sudo systemctl enable mongod pritunl</textarea>
         </div>
@@ -913,12 +913,12 @@ sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb https://repo.pritunl.com/stable/apt focal main
 EOF
 
-sudo apt-get --assume-yes install gnupg
+sudo apt --assume-yes install gnupg
 wget -qO- https://www.mongodb.org/static/pgp/server-5.0.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-org-5.0.asc
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc
-sudo apt-get update
-sudo apt-get --assume-yes install pritunl mongodb-org
+sudo apt update
+sudo apt --assume-yes install pritunl mongodb-org
 sudo systemctl start pritunl mongod
 sudo systemctl enable pritunl mongod</textarea>
         </div>
@@ -933,12 +933,12 @@ sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
 deb https://repo.pritunl.com/stable/apt jammy main
 EOF
 
-sudo apt-get --assume-yes install gnupg
+sudo apt --assume-yes install gnupg
 wget -qO- https://www.mongodb.org/static/pgp/server-5.0.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-org-5.0.asc
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc
-sudo apt-get update
-sudo apt-get --assume-yes install pritunl mongodb-org
+sudo apt update
+sudo apt --assume-yes install pritunl mongodb-org
 sudo systemctl start pritunl mongod
 sudo systemctl enable pritunl mongod</textarea>
         </div>
@@ -1008,10 +1008,10 @@ sudo yum install pritunl-client-electron</textarea>
 deb http://repo.pritunl.com/stable/apt buster main
 EOF
 
-sudo apt-get install dirmngr
+sudo apt install dirmngr
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-electron</textarea>
+sudo apt update
+sudo apt install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
           <h3 class="title text-center">Oracle Linux 7</h3>
@@ -1047,9 +1047,11 @@ sudo dnf install pritunl-client-electron</textarea>
 deb https://repo.pritunl.com/stable/apt bionic main
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-electron</textarea>
+sudo apt --assume-yes install gnupg
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc
+sudo apt update
+sudo apt install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Focal</h3>
@@ -1057,9 +1059,11 @@ sudo apt-get install pritunl-client-electron</textarea>
 deb https://repo.pritunl.com/stable/apt focal main
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-electron</textarea>
+sudo apt --assume-yes install gnupg
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc
+sudo apt update
+sudo apt install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
           <h3 class="title text-center">Ubuntu Jammy</h3>
@@ -1067,9 +1071,11 @@ sudo apt-get install pritunl-client-electron</textarea>
 deb https://repo.pritunl.com/stable/apt jammy main
 EOF
 
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
-sudo apt-get update
-sudo apt-get install pritunl-client-electron</textarea>
+sudo apt --assume-yes install gnupg
+gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
+gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc
+sudo apt update
+sudo apt install pritunl-client-electron</textarea>
         </div>
       </div>
       <div class="row">
