@@ -742,7 +742,7 @@ header_class: header-top
         </div>
         <div
           class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-centos-8 btn btn-lg btn-default">CentOS 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux-7 btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-oracle-linux-8 btn btn-lg btn-default">Oracle Linux 8</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 20.04</button>
+          <button class="server-distro server-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="server-distro server-amazon-linux-two btn btn-lg btn-default">AmazonLinux 2</button><button class="server-distro server-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="server-distro server-centos-8 btn btn-lg btn-default">CentOS 8</button><button class="server-distro server-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="server-distro server-oracle-linux-7 btn btn-lg btn-default">Oracle Linux 7</button><button class="server-distro server-oracle-linux-8 btn btn-lg btn-default">Oracle Linux 8</button><button class="server-distro server-ubuntu-one btn btn-lg btn-default">Ubuntu 20.04</button><button class="server-distro server-ubuntu-two btn btn-lg btn-default">Ubuntu 22.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -760,13 +760,13 @@ sudo systemctl enable mongodb pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-amazon-linux-two">
           <h3 class="title text-center">AmazonLinux 2</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-5.0.repo &lt;&lt; EOF
-[mongodb-org-5.0]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo &lt;&lt; EOF
+[mongodb-org-6.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/5.0/x86_64/
+baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/6.0/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -786,13 +786,13 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
           <h3 class="title text-center">CentOS 7</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-5.0.repo &lt;&lt; EOF
-[mongodb-org-5.0]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo &lt;&lt; EOF
+[mongodb-org-6.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/5.0/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/6.0/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -812,13 +812,13 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-8">
           <h3 class="title text-center">CentOS 8</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-5.0.repo &lt;&lt; EOF
-[mongodb-org-5.0]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo &lt;&lt; EOF
+[mongodb-org-6.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/5.0/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -838,8 +838,8 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian Buster</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list &lt;&lt; EOF
+deb https://repo.mongodb.org/apt/debian buster/mongodb-org/6.0 main
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
@@ -847,7 +847,7 @@ deb https://repo.pritunl.com/stable/apt buster main
 EOF
 
 sudo apt --assume-yes install gnupg
-wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 sudo apt update
 sudo apt --assume-yes install pritunl mongodb-org
@@ -857,13 +857,13 @@ sudo systemctl enable mongod pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux-7">
           <h3 class="title text-center">Oracle Linux 7</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-5.0.repo &lt;&lt; EOF
-[mongodb-org-5.0]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo &lt;&lt; EOF
+[mongodb-org-6.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/5.0/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/6.0/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -885,13 +885,13 @@ sudo systemctl enable mongod pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-oracle-linux-8">
           <h3 class="title text-center">Oracle Linux 8</h3>
-          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-5.0.repo &lt;&lt; EOF
-[mongodb-org-5.0]
+          <textarea class="editor bash">sudo tee /etc/yum.repos.d/mongodb-org-6.0.repo &lt;&lt; EOF
+[mongodb-org-6.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/5.0/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/8/mongodb-org/6.0/x86_64/
 gpgcheck=1
 enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-5.0.asc
+gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc
 EOF
 
 sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
@@ -912,8 +912,8 @@ sudo systemctl enable mongod pritunl</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
           <h3 class="title text-center">Ubuntu Focal</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list &lt;&lt; EOF
+deb https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
@@ -921,7 +921,7 @@ deb https://repo.pritunl.com/stable/apt focal main
 EOF
 
 sudo apt --assume-yes install gnupg
-wget -qO- https://www.mongodb.org/static/pgp/server-5.0.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-org-5.0.asc
+wget -qO- https://www.mongodb.org/static/pgp/server-6.0.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-org-6.0.asc
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc
 sudo apt update
@@ -932,8 +932,8 @@ sudo systemctl enable pritunl mongod</textarea>
         <div
           class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
           <h3 class="title text-center">Ubuntu Jammy</h3>
-          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list &lt;&lt; EOF
-deb https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/5.0 multiverse
+          <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list &lt;&lt; EOF
+deb https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse
 EOF
 
 sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
@@ -941,7 +941,7 @@ deb https://repo.pritunl.com/stable/apt jammy main
 EOF
 
 sudo apt --assume-yes install gnupg
-wget -qO- https://www.mongodb.org/static/pgp/server-5.0.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-org-5.0.asc
+wget -qO- https://www.mongodb.org/static/pgp/server-6.0.asc | sudo tee /etc/apt/trusted.gpg.d/mongodb-org-6.0.asc
 gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A
 gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A | sudo tee /etc/apt/trusted.gpg.d/pritunl.asc
 sudo apt update
