@@ -970,7 +970,7 @@ sudo systemctl enable pritunl mongod</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">CentOS 7</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 7</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 38</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 20.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 22.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 23.04</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 38</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 20.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 22.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 23.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -985,11 +985,11 @@ sudo pacman -Sy
 sudo pacman -S pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-5 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
-          <h3 class="title text-center">CentOS 7</h3>
+          <h3 class="title text-center">AlmaLinux 9</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=https://repo.pritunl.com/stable/yum/centos/7/
+baseurl=https://repo.pritunl.com/stable/yum/almalinux/9/
 gpgcheck=1
 enabled=1
 EOF
@@ -1013,9 +1013,9 @@ gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rp
 sudo yum install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
-          <h3 class="title text-center">Debian Buster</h3>
+          <h3 class="title text-center">Debian Bookworm</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb http://repo.pritunl.com/stable/apt buster main
+deb http://repo.pritunl.com/stable/apt bookworm main
 EOF
 
 sudo apt install dirmngr
@@ -1024,11 +1024,11 @@ sudo apt update
 sudo apt install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
-          <h3 class="title text-center">Oracle Linux 7</h3>
+          <h3 class="title text-center">Oracle Linux 9</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/7/
+baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/9/
 gpgcheck=1
 enabled=1
 EOF
@@ -1038,11 +1038,11 @@ gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rp
 sudo yum install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-fedora">
-          <h3 class="title text-center">Fedora 38</h3>
+          <h3 class="title text-center">Fedora 39</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Stable Repository
-baseurl=https://repo.pritunl.com/stable/yum/fedora/38/
+baseurl=https://repo.pritunl.com/stable/yum/fedora/39/
 gpgcheck=1
 enabled=1
 EOF
