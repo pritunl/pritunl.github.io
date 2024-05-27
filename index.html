@@ -970,7 +970,7 @@ sudo systemctl enable pritunl mongod</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 38</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default">Ubuntu 20.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 22.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 24.04</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 10</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 38</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default" style="display: none !important">Ubuntu 22.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 23.10</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 24.04</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1052,9 +1052,9 @@ gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; sudo rp
 sudo dnf install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-one">
-          <h3 class="title text-center">Ubuntu Focal</h3>
+          <h3 class="title text-center">Ubuntu Jammy</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt focal main
+deb https://repo.pritunl.com/stable/apt jammy main
 EOF
 
 sudo apt --assume-yes install gnupg
@@ -1064,9 +1064,9 @@ sudo apt update
 sudo apt install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-two">
-          <h3 class="title text-center">Ubuntu Jammy</h3>
+          <h3 class="title text-center">Ubuntu Mantic</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb https://repo.pritunl.com/stable/apt jammy main
+deb https://repo.pritunl.com/stable/apt mantic main
 EOF
 
 sudo apt --assume-yes install gnupg
