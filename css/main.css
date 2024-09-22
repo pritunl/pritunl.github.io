@@ -1521,7 +1521,7 @@ strong {
 .client .btn.client-distro,
 .server .btn.server-distro,
 .install .server-auto .btn.server-region {
-  min-width: 135px;
+  min-width: 150px;
   display: inline-block;
   margin: 10px;
   font-size: 16px;
