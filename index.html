@@ -1003,7 +1003,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 12</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 40</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default" style="display: none !important">Ubuntu 22.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 24.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 24.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 12</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 41</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default" style="display: none !important">Ubuntu 22.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 24.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 24.10</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1055,11 +1055,11 @@ EOF
 sudo dnf install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-fedora">
-          <h3 class="title text-center">Fedora 40</h3>
+          <h3 class="title text-center">Fedora 41</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Repository
-baseurl=https://repo.pritunl.com/stable/yum/fedora/40/
+baseurl=https://repo.pritunl.com/stable/yum/fedora/41/
 gpgcheck=1
 enabled=1
 gpgkey=https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc
@@ -1104,15 +1104,18 @@ sudo apt install pritunl-client-electron</textarea>
       <div class="row">
         <div class="item col-md-6 col-sm-12 col-xs-12">
           <h3 class="title text-center client-title">macOS Apple Silicon + Intel</h3>
-          <div class="client-ver">version: v1.3.4059.45</div>
+          <div class="client-ver">version: v1.3.4066.51</div>
           <a class="client-sum btn btn-lg btn-default" href="https://raw.githubusercontent.com/pritunl/pritunl-client-electron/master/SHA256" target="_blank">SHA-256 Checksum</a><br>
-          <a class="client-download btn btn-lg btn-success" href="https://github.com/pritunl/pritunl-client-electron/releases/download/1.3.4059.45/Pritunl.pkg.zip">Download Pkg</a>
+          <a class="client-download btn btn-lg btn-success" href="https://github.com/pritunl/pritunl-client-electron/releases/download/1.3.4066.51/Pritunl.pkg.zip">Download Pkg</a>
         </div>
         <div class="item col-md-6 col-sm-12 col-xs-12">
           <h3 class="title text-center client-title">Windows x86 + ARM</h3>
-          <div class="client-ver">version: v1.3.4059.45</div>
+          <div class="client-ver">version: v1.3.4066.51</div>
+          <div class="alert alert-danger" role="alert">
+            This release uses a new Windows code signing certificate. Chrome may display a warning that this file is not commonly downloaded.
+          </div>
           <a class="client-sum btn btn-lg btn-default" href="https://raw.githubusercontent.com/pritunl/pritunl-client-electron/master/SHA256" target="_blank">SHA-256 Checksum</a><br>
-          <a class="client-download btn btn-lg btn-success" href="https://github.com/pritunl/pritunl-client-electron/releases/download/1.3.4059.45/Pritunl.exe">Download Installer</a>
+          <a class="client-download btn btn-lg btn-success" href="https://github.com/pritunl/pritunl-client-electron/releases/download/1.3.4066.51/Pritunl.exe">Download Installer</a>
         </div>
       </div>
     </div>
