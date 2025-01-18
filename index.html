@@ -851,7 +851,7 @@ sudo systemctl enable mongod pritunl</textarea>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
           <h3 class="title text-center">Debian Bookworm</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/mongodb-org.list &lt;&lt; EOF
-deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu bookworm/mongodb-org/7.0 multiverse
+deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main
 EOF
 
 sudo tee /etc/apt/sources.list.d/openvpn.list &lt;&lt; EOF
