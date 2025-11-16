@@ -93,28 +93,28 @@ header_class: header-top
         <h2 class="title text-center">Multi-Cloud VPC Peering</h2>
         <div class="item col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
           <div class="img-overlay-box">
-            <a href="https://docs.pritunl.com/kb/vpn/pritunl-link/aws" target="_blank"><img class="feature" src="img/aws.png" alt="AWS"/></a>
+            <a href="https://docs.pritunl.com/kb/vpn/link/aws" target="_blank"><img class="feature" src="img/aws.png" alt="AWS"/></a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="item col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
           <div class="img-overlay-box">
-            <a href="https://docs.pritunl.com/kb/vpn/pritunl-link/google-cloud" target="_blank"><img class="feature" src="img/google_cloud.png" alt="Google Cloud"/></a>
+            <a href="https://docs.pritunl.com/kb/vpn/link/google-cloud" target="_blank"><img class="feature" src="img/google_cloud.png" alt="Google Cloud"/></a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="item col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
           <div class="img-overlay-box">
-            <a href="https://docs.pritunl.com/kb/vpn/single-sign-on/azure" target="_blank"><img class="feature" src="img/azure.png" alt="Azure"/></a>
+            <a href="https://docs.pritunl.com/kb/vpn/sso/azure" target="_blank"><img class="feature" src="img/azure.png" alt="Azure"/></a>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="item col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
           <div class="img-overlay-box">
-            <a href="https://docs.pritunl.com/kb/vpn/pritunl-link/oracle-cloud" target="_blank"><img class="feature" src="img/oracle_cloud.png" alt="Oracle Cloud"/></a>
+            <a href="https://docs.pritunl.com/kb/vpn/link/oracle-cloud" target="_blank"><img class="feature" src="img/oracle_cloud.png" alt="Oracle Cloud"/></a>
           </div>
         </div>
       </div>
@@ -1002,7 +1002,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 12</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 41</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default" style="display: none !important">Ubuntu 22.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 24.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 25.04</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 12</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 43</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default" style="display: none !important">Ubuntu 22.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 24.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 25.10</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1054,11 +1054,11 @@ EOF
 sudo dnf install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-fedora">
-          <h3 class="title text-center">Fedora 42</h3>
+          <h3 class="title text-center">Fedora 43</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Repository
-baseurl=https://repo.pritunl.com/stable/yum/fedora/42/
+baseurl=https://repo.pritunl.com/stable/yum/fedora/43/
 gpgcheck=1
 enabled=1
 gpgkey=https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc
@@ -1089,9 +1089,9 @@ sudo apt update
 sudo apt install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-ubuntu-three">
-          <h3 class="title text-center">Ubuntu 25.04</h3>
+          <h3 class="title text-center">Ubuntu 25.10</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb [ signed-by=/usr/share/keyrings/pritunl.gpg ] https://repo.pritunl.com/stable/apt plucky main
+deb [ signed-by=/usr/share/keyrings/pritunl.gpg ] https://repo.pritunl.com/stable/apt questing main
 EOF
 
 sudo apt --assume-yes install gnupg
