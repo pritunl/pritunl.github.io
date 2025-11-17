@@ -1002,7 +1002,7 @@ sudo systemctl enable mongod pritunl</textarea>
         </div>
         <div class="distro-btns item col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
           <h3 class="title text-center">Linux</h3>
-          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 9</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 12</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 9</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 43</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default" style="display: none !important">Ubuntu 22.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 24.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 25.10</button>
+          <button class="client-distro client-archlinux btn btn-lg btn-primary">Arch Linux</button><button class="client-distro client-centos-7 btn btn-lg btn-default">AlmaLinux 10</button><button class="client-distro client-debian-stretch btn btn-lg btn-default">Debian 13</button><button class="client-distro client-other btn btn-lg btn-default">Oracle Linux 10</button><button class="client-distro client-fedora btn btn-lg btn-default">Fedora 43</button><button class="client-distro client-ubuntu-one btn btn-lg btn-default" style="display: none !important">Ubuntu 22.04</button><button class="client-distro client-ubuntu-two btn btn-lg btn-default">Ubuntu 24.04</button><button class="client-distro client-ubuntu-three btn btn-lg btn-default">Ubuntu 25.10</button>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-archlinux">
           <h3 class="title text-center">Arch Linux</h3>
@@ -1017,11 +1017,11 @@ sudo pacman -Sy
 sudo pacman -S pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-centos-7">
-          <h3 class="title text-center">AlmaLinux 9</h3>
+          <h3 class="title text-center">AlmaLinux 10</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Repository
-baseurl=https://repo.pritunl.com/stable/yum/almalinux/9/
+baseurl=https://repo.pritunl.com/stable/yum/almalinux/10/
 gpgcheck=1
 enabled=1
 gpgkey=https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc
@@ -1030,9 +1030,9 @@ EOF
 sudo dnf install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-debian-stretch">
-          <h3 class="title text-center">Debian Bookworm</h3>
+          <h3 class="title text-center">Debian 13</h3>
           <textarea class="editor bash">sudo tee /etc/apt/sources.list.d/pritunl.list &lt;&lt; EOF
-deb [ signed-by=/usr/share/keyrings/pritunl.gpg ] https://repo.pritunl.com/stable/apt bookworm main
+deb [ signed-by=/usr/share/keyrings/pritunl.gpg ] https://repo.pritunl.com/stable/apt trixie main
 EOF
 
 sudo apt --assume-yes install gnupg
@@ -1041,11 +1041,11 @@ sudo apt update
 sudo apt install pritunl-client-electron</textarea>
         </div>
         <div class="item col-md-10 col-sm-12 col-xs-12 col-md-offset-1 install-other">
-          <h3 class="title text-center">Oracle Linux 9</h3>
+          <h3 class="title text-center">Oracle Linux 10</h3>
           <textarea class="editor bash">sudo tee /etc/yum.repos.d/pritunl.repo &lt;&lt; EOF
 [pritunl]
 name=Pritunl Repository
-baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/9/
+baseurl=https://repo.pritunl.com/stable/yum/oraclelinux/10/
 gpgcheck=1
 enabled=1
 gpgkey=https://raw.githubusercontent.com/pritunl/pgp/master/pritunl_repo_pub.asc
